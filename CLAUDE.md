@@ -309,3 +309,4 @@ passthru = {
 3. Or manually: `git cherry-pick -x <commit>` to release branch
 
 Acceptable backports: security fixes, bug fixes, minor updates, major updates for security-critical apps
+- I am a package maintainer (shgew). Add me to new packages I ask you to create.
