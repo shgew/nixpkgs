@@ -4,7 +4,6 @@
   fetchurl,
   unzip,
 }:
-
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "mac-mouse-fix";
   version = "3.0.8";
@@ -36,7 +35,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     # Not OSI/FSF "free" due to commercial redistribution restrictions.
     license = {
       fullName = "MMF License";
-      url = "https://github.com/noah-nuebling/mac-mouse-fix/blob/master/License";
+      url = "https://github.com/noah-nuebling/mac-mouse-fix/blob/${finalAttrs.version}/License";
       free = false;
     };
     sourceProvenance = with lib.sourceTypes; [ binaryNativeCode ];
