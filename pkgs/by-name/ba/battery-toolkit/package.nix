@@ -33,7 +33,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     changelog = "https://github.com/mhaeuser/Battery-Toolkit/releases/tag/${finalAttrs.version}";
     license = lib.licenses.bsd3;
     maintainers = with lib.maintainers; [ shgew ];
-    platforms = lib.platforms.darwin;
+    platforms = [ "aarch64-darwin" ];
     sourceProvenance = with lib.sourceTypes; [ binaryNativeCode ];
   };
 })
