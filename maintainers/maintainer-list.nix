@@ -4927,6 +4927,17 @@
     githubId = 9336788;
     name = "Claes Hallström";
   };
+  claymorwan = {
+    name = "claymorwan";
+    github = "claymorwan";
+    githubId = 86072589;
+    email = "claymorwan@fembois.dev";
+    keys = [
+      {
+        fingerprint = "AA7C 29C3 A26A DB2F 80E5  294D CC5E 1DF0 6FB7 8249";
+      }
+    ];
+  };
   clebs = {
     email = "borja.clemente@gmail.com";
     github = "clebs";
@@ -6450,6 +6461,12 @@
     github = "devins2518";
     githubId = 17111639;
     name = "Devin Singh";
+  };
+  devoid = {
+    name = "Scott Devoid";
+    email = "nixpkgs-github@d3void.net";
+    github = "devoid";
+    githubId = 581597;
   };
   devplayer0 = {
     email = "dev@nul.ie";
@@ -27939,6 +27956,12 @@
     name = "Han Verstraete";
     keys = [ { fingerprint = "2145 955E 3F5E 0C95 3458  41B5 11F7 BAEA 8567 43FF"; } ];
   };
+  wenbin-liu = {
+    name = "wenbin-liu";
+    email = "wenbin_liu@outlook.com";
+    github = "wenbin-liu";
+    githubId = 25171141;
+  };
   wenjinnn = {
     name = "wenjin";
     email = "hewenjin94@outlook.com";
@@ -28830,6 +28853,12 @@
     github = "yoctocell";
     githubId = 40352765;
     name = "Yoctocell";
+  };
+  YodaDaCoda = {
+    email = "pickeringw@gmail.com";
+    github = "YodaDaCoda";
+    githubId = 365349;
+    name = "William Brockhus";
   };
   yogansh = {
     email = "yogansh@yogansh.tech";
