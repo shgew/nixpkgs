@@ -5747,8 +5747,6 @@ self: super: with self; {
 
   fritzconnection = callPackage ../development/python-modules/fritzconnection { };
 
-  froide = toPythonModule (pkgs.froide.override { python3Packages = self; });
-
   frozendict = callPackage ../development/python-modules/frozendict { };
 
   frozenlist = callPackage ../development/python-modules/frozenlist { };
@@ -7104,6 +7102,8 @@ self: super: with self; {
   icalendar = callPackage ../development/python-modules/icalendar { };
 
   icalendar-compatibility = callPackage ../development/python-modules/icalendar-compatibility { };
+
+  icalendar-searcher = callPackage ../development/python-modules/icalendar-searcher { };
 
   icalevents = callPackage ../development/python-modules/icalevents { };
 
