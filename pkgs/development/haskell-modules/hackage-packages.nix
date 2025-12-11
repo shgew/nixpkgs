@@ -221576,7 +221576,6 @@ self: {
       ];
       description = "Stream eventlog data to the OpenTelemetry Collector";
       license = lib.licensesSpdx."BSD-3-Clause";
-      hydraPlatforms = lib.platforms.none;
       mainProgram = "eventlog-live-otelcol";
     }
   ) { };
@@ -281292,7 +281291,6 @@ self: {
       ];
       description = "Native Haskell implementation of the gRPC framework";
       license = lib.licensesSpdx."BSD-3-Clause";
-      hydraPlatforms = lib.platforms.none;
     }
   ) { };
 
@@ -362501,8 +362499,6 @@ self: {
       ];
       description = "Library for HTTP/2 over TLS";
       license = lib.licenses.bsd3;
-      hydraPlatforms = lib.platforms.none;
-      broken = true;
     }
   ) { };
 
