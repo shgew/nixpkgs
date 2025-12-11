@@ -196371,8 +196371,6 @@ self: {
       ];
       description = "Disjoint containers";
       license = lib.licensesSpdx."BSD-3-Clause";
-      hydraPlatforms = lib.platforms.none;
-      broken = true;
     }
   ) { };
 
