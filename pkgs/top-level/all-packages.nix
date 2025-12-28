@@ -1156,13 +1156,18 @@ with pkgs;
   # Git with SVN support, but without GUI.
   gitSVN = lowPrio (git.override { svnSupport = true; });
 
-  git-doc = lib.addMetaAttrs {
-    description = "Additional documentation for Git";
-    longDescription = ''
-      This package contains additional documentation (HTML and text files) that
-      is referenced in the man pages of Git.
-    '';
-  } gitFull.doc;
+  git-doc =
+    # doc attribute is not present at least for pkgsLLVM
+    if (gitFull ? doc) then
+      lib.addMetaAttrs {
+        description = "Additional documentation for Git";
+        longDescription = ''
+          This package contains additional documentation (HTML and text files) that
+          is referenced in the man pages of Git.
+        '';
+      } gitFull.doc
+    else
+      throw "'git-doc' can't be evaluated as 'gitFull' does not expose 'doc' attribute";
 
   gitMinimal = git.override {
     withManual = false;
@@ -1455,10 +1460,6 @@ with pkgs;
   };
 
   angie-console-light = callPackage ../servers/http/angie/console-light.nix { };
-
-  apk-tools = callPackage ../tools/package-management/apk-tools {
-    lua = lua5_3;
-  };
 
   appimage-run = callPackage ../tools/package-management/appimage-run { };
   appimage-run-tests = callPackage ../tools/package-management/appimage-run/test.nix {
@@ -1865,9 +1866,12 @@ with pkgs;
 
   dune_2 = callPackage ../by-name/du/dune/package.nix {
     version = "2.9.3";
+    inherit ocamlPackages;
   };
 
-  dune_3 = callPackage ../by-name/du/dune/package.nix { };
+  dune_3 = callPackage ../by-name/du/dune/package.nix {
+    inherit ocamlPackages;
+  };
 
   dvc = with python3.pkgs; toPythonApplication dvc;
 
@@ -2068,6 +2072,8 @@ with pkgs;
       { };
 
   online-judge-tools = with python3.pkgs; toPythonApplication online-judge-tools;
+
+  opaline = callPackage ../by-name/op/opaline/package.nix { inherit ocamlPackages; };
 
   inherit (ocamlPackages) patdiff;
 
@@ -2424,9 +2430,6 @@ with pkgs;
     opensslSupport = false;
     ngtcp2 = ngtcp2-gnutls;
   };
-
-  curl-impersonate-ff = curl-impersonate.curl-impersonate-ff;
-  curl-impersonate-chrome = curl-impersonate.curl-impersonate-chrome;
 
   cve-bin-tool = python3Packages.callPackage ../tools/security/cve-bin-tool { };
 
@@ -2895,8 +2898,6 @@ with pkgs;
   hyphen = callPackage ../development/libraries/hyphen { };
 
   hyphenDicts = recurseIntoAttrs (callPackages ../development/libraries/hyphen/dictionaries.nix { });
-
-  icemon = libsForQt5.callPackage ../applications/networking/icemon { };
 
   icepeak = haskell.lib.compose.justStaticExecutables haskellPackages.icepeak;
 
@@ -3614,8 +3615,6 @@ with pkgs;
 
   po4a = perlPackages.Po4a;
 
-  podman-compose = python3Packages.callPackage ../applications/virtualization/podman-compose { };
-
   polaris = callPackage ../servers/polaris { };
 
   polaris-web = callPackage ../servers/polaris/web.nix { };
@@ -3868,8 +3867,6 @@ with pkgs;
   texmaker = qt6Packages.callPackage ../applications/editors/texmaker { };
 
   texworks = qt6Packages.callPackage ../applications/editors/texworks { };
-
-  thinkpad-scripts = python3.pkgs.callPackage ../tools/misc/thinkpad-scripts { };
 
   tiled = libsForQt5.callPackage ../applications/editors/tiled { };
 
@@ -5740,7 +5737,7 @@ with pkgs;
     mkRuby
     ruby_3_3
     ruby_3_4
-    ruby_3_5
+    ruby_4_0
     ;
 
   ruby = ruby_3_3;
@@ -5748,7 +5745,7 @@ with pkgs;
 
   rubyPackages_3_3 = recurseIntoAttrs ruby_3_3.gems;
   rubyPackages_3_4 = recurseIntoAttrs ruby_3_4.gems;
-  rubyPackages_3_5 = recurseIntoAttrs ruby_3_5.gems;
+  rubyPackages_4_0 = recurseIntoAttrs ruby_4_0.gems;
 
   inherit (callPackages ../applications/networking/cluster/spark { })
     spark_4_0
@@ -5861,8 +5858,6 @@ with pkgs;
   yakut = python3Packages.callPackage ../development/tools/misc/yakut { };
 
   ### DEVELOPMENT / TOOLS / LANGUAGE-SERVERS
-
-  fortls = python3.pkgs.callPackage ../development/tools/language-servers/fortls { };
 
   fortran-language-server =
     python3.pkgs.callPackage ../development/tools/language-servers/fortran-language-server
@@ -8615,6 +8610,11 @@ with pkgs;
     go = buildPackages.go_1_25;
   };
 
+  go_1_26 = callPackage ../development/compilers/go/1.26.nix { };
+  buildGo126Module = callPackage ../build-support/go/module.nix {
+    go = buildPackages.go_1_26;
+  };
+
   ### DEVELOPMENT / HARE
 
   hareHook = callPackage ../by-name/ha/hare/hook.nix { };
@@ -9533,8 +9533,6 @@ with pkgs;
 
     in
     recurseIntoAttrs xorgPackages;
-
-  xwayland = callPackage ../servers/x11/xorg/xwayland.nix { };
 
   zabbixFor = version: rec {
     agent = (callPackages ../servers/monitoring/zabbix/agent.nix { }).${version};
@@ -12450,10 +12448,6 @@ with pkgs;
     inherit (haskellPackages) ghcWithPackages;
   };
 
-  xmonad_log_applet = callPackage ../applications/window-managers/xmonad/log-applet {
-    inherit (xfce) libxfce4util xfce4-panel;
-  };
-
   xmonad_log_applet_mate = xmonad_log_applet.override {
     desktopSupport = "mate";
   };
@@ -12480,8 +12474,6 @@ with pkgs;
   youtube-dl = with python3Packages; toPythonApplication youtube-dl;
 
   youtube-dl-light = with python3Packages; toPythonApplication youtube-dl-light;
-
-  youtube-music = callPackage ../applications/audio/youtube-music { };
 
   yt-dlp-light = yt-dlp.override {
     atomicparsleySupport = false;
@@ -13844,8 +13836,6 @@ with pkgs;
       inherit (python3Packages) supervisor;
     }
   );
-
-  lice = python3Packages.callPackage ../tools/misc/lice { };
 
   mysql-workbench = callPackage ../by-name/my/mysql-workbench/package.nix (
     let
