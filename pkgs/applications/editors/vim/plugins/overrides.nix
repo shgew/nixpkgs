@@ -796,7 +796,7 @@ assertNoAdditions {
     };
 
   codewindow-nvim = super.codewindow-nvim.overrideAttrs {
-    dependencies = [ self.nvim-treesitter ];
+    dependencies = [ self.nvim-treesitter-legacy ];
   };
 
   colorful-menu-nvim = super.colorful-menu-nvim.overrideAttrs {
@@ -1365,10 +1365,13 @@ assertNoAdditions {
   };
 
   go-nvim = super.go-nvim.overrideAttrs {
+    dependencies = with self; [
+      nvim-treesitter
+      guihua-lua
+    ];
     checkInputs = with self; [
       luasnip
       null-ls-nvim
-      nvim-treesitter
     ];
     nvimSkipModules = [
       "init"
@@ -1397,6 +1400,25 @@ assertNoAdditions {
 
   guard-collection = super.guard-collection.overrideAttrs {
     dependencies = [ self.guard-nvim ];
+  };
+
+  guihua-lua = super.guihua-lua.overrideAttrs {
+    dependencies = [ self.nvim-treesitter ];
+
+    buildPhase = ''
+      runHook preBuild
+
+      pushd lua/fzy
+      make
+      popd
+
+      runHook postBuild
+    '';
+
+    nvimSkipModules = [
+      # lua module '.init' not found
+      "fzy.fzy-lua-native"
+    ];
   };
 
   gx-nvim = super.gx-nvim.overrideAttrs {
@@ -1543,7 +1565,7 @@ assertNoAdditions {
   };
 
   iswap-nvim = super.iswap-nvim.overrideAttrs {
-    dependencies = [ self.nvim-treesitter ];
+    dependencies = [ self.nvim-treesitter-legacy ];
   };
 
   jdd-nvim = super.jdd-nvim.overrideAttrs {
@@ -1684,7 +1706,7 @@ assertNoAdditions {
   leap-ast-nvim = super.leap-ast-nvim.overrideAttrs {
     dependencies = with self; [
       leap-nvim
-      nvim-treesitter
+      nvim-treesitter-legacy
     ];
   };
 
@@ -1927,7 +1949,7 @@ assertNoAdditions {
     };
 
   markid = super.markid.overrideAttrs {
-    dependencies = [ self.nvim-treesitter ];
+    dependencies = [ self.nvim-treesitter-legacy ];
   };
 
   mason-lspconfig-nvim = super.mason-lspconfig-nvim.overrideAttrs {
@@ -2421,7 +2443,7 @@ assertNoAdditions {
       nvim-cmp
       nvim-lspconfig
       telescope-nvim
-      nvim-treesitter
+      nvim-treesitter-legacy
       nvchad-ui
     ];
     nvimSkipModules = [
@@ -2464,7 +2486,7 @@ assertNoAdditions {
 
   nvim-biscuits = super.nvim-biscuits.overrideAttrs {
     dependencies = with self; [
-      nvim-treesitter
+      nvim-treesitter-legacy
       plenary-nvim
     ];
   };
@@ -2526,7 +2548,7 @@ assertNoAdditions {
   };
 
   nvim-FeMaco-lua = super.nvim-FeMaco-lua.overrideAttrs {
-    dependencies = [ self.nvim-treesitter ];
+    dependencies = [ self.nvim-treesitter-legacy ];
   };
 
   nvim-fzf-commands = super.nvim-fzf-commands.overrideAttrs {
@@ -2677,6 +2699,8 @@ assertNoAdditions {
     checkInputs = [
       # Optional telescope picker
       self.telescope-nvim
+      # Optional fzf-lua integration
+      self.fzf-lua
     ];
   };
 
@@ -2699,16 +2723,16 @@ assertNoAdditions {
     # Optional toggleterm integration
     checkInputs = [ self.toggleterm-nvim ];
     dependencies = with self; [
-      nvim-treesitter
-      nvim-treesitter-parsers.c_sharp
-      nvim-treesitter-parsers.go
-      nvim-treesitter-parsers.haskell
-      nvim-treesitter-parsers.javascript
-      nvim-treesitter-parsers.python
-      nvim-treesitter-parsers.ruby
-      nvim-treesitter-parsers.rust
-      nvim-treesitter-parsers.typescript
-      nvim-treesitter-parsers.zig
+      nvim-treesitter-legacy
+      nvim-treesitter-legacy-parsers.c_sharp
+      nvim-treesitter-legacy-parsers.go
+      nvim-treesitter-legacy-parsers.haskell
+      nvim-treesitter-legacy-parsers.javascript
+      nvim-treesitter-legacy-parsers.python
+      nvim-treesitter-legacy-parsers.ruby
+      nvim-treesitter-legacy-parsers.rust
+      nvim-treesitter-legacy-parsers.typescript
+      nvim-treesitter-legacy-parsers.zig
     ];
     nvimSkipModules = [
       # Broken runners
@@ -2738,29 +2762,34 @@ assertNoAdditions {
     callPackage ./nvim-treesitter/overrides.nix { } self super
   );
 
+  # TODO: raise warning at 26.04; drop at 26.11
+  nvim-treesitter-legacy = super.nvim-treesitter-legacy.overrideAttrs (
+    callPackage ./nvim-treesitter-legacy/overrides.nix { } self super
+  );
+
   nvim-treesitter-context = super.nvim-treesitter-context.overrideAttrs {
     # Meant for CI installing parsers
     nvimSkipModules = [ "install_parsers" ];
   };
 
   nvim-treesitter-endwise = super.nvim-treesitter-endwise.overrideAttrs {
-    dependencies = [ self.nvim-treesitter ];
+    dependencies = [ self.nvim-treesitter-legacy ];
   };
 
   nvim-treesitter-pairs = super.nvim-treesitter-pairs.overrideAttrs {
-    dependencies = [ self.nvim-treesitter ];
+    dependencies = [ self.nvim-treesitter-legacy ];
   };
 
   nvim-treesitter-pyfold = super.nvim-treesitter-pyfold.overrideAttrs {
-    dependencies = [ self.nvim-treesitter ];
+    dependencies = [ self.nvim-treesitter-legacy ];
   };
 
   nvim-treesitter-refactor = super.nvim-treesitter-refactor.overrideAttrs {
-    dependencies = [ self.nvim-treesitter ];
+    dependencies = [ self.nvim-treesitter-legacy ];
   };
 
   nvim-treesitter-sexp = super.nvim-treesitter-sexp.overrideAttrs {
-    dependencies = [ self.nvim-treesitter ];
+    dependencies = [ self.nvim-treesitter-legacy ];
   };
 
   nvim-treesitter-textobjects = super.nvim-treesitter-textobjects.overrideAttrs {
@@ -2768,7 +2797,7 @@ assertNoAdditions {
   };
 
   nvim-treesitter-textsubjects = super.nvim-treesitter-textsubjects.overrideAttrs {
-    dependencies = [ self.nvim-treesitter ];
+    dependencies = [ self.nvim-treesitter-legacy ];
   };
 
   nvim-ufo = super.nvim-ufo.overrideAttrs {
@@ -2948,6 +2977,7 @@ assertNoAdditions {
       # Optional integration
       neotest
       toggleterm-nvim
+      nodejs
       nvim-dap
     ];
     checkPhase = ''
@@ -3485,6 +3515,13 @@ assertNoAdditions {
 
   telescope-glyph-nvim = super.telescope-github-nvim.overrideAttrs {
     dependencies = [ self.telescope-nvim ];
+  };
+
+  telescope-hierarchy-nvim = super.telescope-hierarchy-nvim.overrideAttrs {
+    dependencies = with self; [
+      telescope-nvim
+      plenary-nvim
+    ];
   };
 
   telescope-live-grep-args-nvim = super.telescope-live-grep-args-nvim.overrideAttrs {
