@@ -29283,8 +29283,6 @@ self: {
       ];
       description = "Library for using Mixed Integer Programming (MIP)";
       license = lib.licenses.bsd3;
-      hydraPlatforms = lib.platforms.none;
-      broken = true;
     }
   ) { };
 
@@ -29345,6 +29343,7 @@ self: {
       description = "A GLPK backend to the MIP library";
       license = lib.licenses.gpl3Only;
       hydraPlatforms = lib.platforms.none;
+      broken = true;
     }
   ) { inherit (pkgs) glpk; };
 
