@@ -2611,8 +2611,8 @@ let
         mktplcRef = {
           name = "language-julia";
           publisher = "julialang";
-          version = "1.170.2";
-          hash = "sha256-1Qu7d3Acrb/+uvAQMID3daH7UJcxt/Lr4yG0sVSlsYU=";
+          version = "1.171.2";
+          hash = "sha256-XELIrqcyd6DEpJjbSlE17noiYa8CZvDwnodA1QALewM=";
         };
         meta = {
           changelog = "https://marketplace.visualstudio.com/items/julialang.language-julia/changelog";
@@ -3411,8 +3411,8 @@ let
         mktplcRef = {
           name = "remote-containers";
           publisher = "ms-vscode-remote";
-          version = "0.434.0";
-          hash = "sha256-XhD/5+YcYPD1b2lMsTfIVIU8wbCWrgP+2dgrt7mDV/I=";
+          version = "0.437.0";
+          hash = "sha256-shEBOvwJokLOXIr4oEsSsvsxQ2WAThjlLJ4dCSfONgI=";
         };
         meta = {
           description = "Open any folder or repository inside a Docker container";
