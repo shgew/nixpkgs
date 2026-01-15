@@ -239746,7 +239746,7 @@ self: {
           Cabal,
           directory,
           filepath,
-          fltk14,
+          fltk_1_4,
           libGL,
           libGLU,
           mtl,
@@ -239775,7 +239775,7 @@ self: {
             text
             vector
           ];
-          librarySystemDepends = [ fltk14 ];
+          librarySystemDepends = [ fltk_1_4 ];
           libraryPkgconfigDepends = [
             libGL
             libGLU
@@ -239800,7 +239800,7 @@ self: {
         }
       )
       {
-        inherit (pkgs) fltk14;
+        inherit (pkgs) fltk_1_4;
         inherit (pkgs) libGL;
         inherit (pkgs) libGLU;
         inherit (pkgs) pkg-config;
