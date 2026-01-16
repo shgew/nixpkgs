@@ -4151,6 +4151,7 @@ with pkgs;
   corretto11 = javaPackages.compiler.corretto11;
   corretto17 = javaPackages.compiler.corretto17;
   corretto21 = javaPackages.compiler.corretto21;
+  corretto25 = javaPackages.compiler.corretto25;
 
   inherit (callPackage ../development/compilers/crystal { })
     crystal_1_14
@@ -12615,12 +12616,6 @@ with pkgs;
   };
 
   tibia = pkgsi686Linux.callPackage ../games/tibia { };
-
-  speed_dreams = callPackage ../games/speed-dreams {
-    # Torcs wants to make shared libraries linked with plib libraries (it provides static).
-    # i686 is the only platform I know than can do that linking without plib built with -fPIC
-    libpng = libpng12;
-  };
 
   ultrastar-creator = libsForQt5.callPackage ../tools/misc/ultrastar-creator { };
 
