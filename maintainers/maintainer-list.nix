@@ -7635,12 +7635,6 @@
     githubId = 161958668;
     name = "Élise Souche";
   };
-  elitak = {
-    email = "elitak@gmail.com";
-    github = "elitak";
-    githubId = 769073;
-    name = "Eric Litak";
-  };
   elizagamedev = {
     email = "eliza@eliza.sh";
     github = "elizagamedev";
@@ -19111,18 +19105,6 @@
     githubId = 3521180;
     name = "Tom Sydney Kerckhove";
   };
-  normalcea = {
-    name = "normalcea";
-    email = "normalc@posteo.net";
-    github = "normalcea";
-    githubId = 190049873;
-    keys = [
-      {
-        fingerprint = "6057 1155 7BA4 B922 66D6 2064 3DE3 BCB2 142A 8C71";
-      }
-    ];
-    matrix = "@normalcea:matrix.org";
-  };
   norpol = {
     name = "Syd Lightyear";
     email = "norpol+nixpkgs@exaple.org";
@@ -23416,12 +23398,6 @@
     github = "sarcasticadmin";
     githubId = 30531572;
     name = "Robert James Hernandez";
-  };
-  sargon = {
-    email = "danielehlers@mindeye.net";
-    github = "sargon";
-    githubId = 178904;
-    name = "Daniel Ehlers";
   };
   sarunint = {
     email = "nixpkgs@sarunint.com";
