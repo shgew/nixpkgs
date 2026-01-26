@@ -551,6 +551,7 @@ mapAliases {
   devdocs-desktop = throw "'devdocs-desktop' has been removed as it is unmaintained upstream and vendors insecure dependencies"; # Added 2025-06-11
   dfilemanager = throw "'dfilemanager' has been dropped as it was unmaintained"; # Added 2025-06-03
   discord-screenaudio = throw "discord-screenaudio has been removed because it was archived upstream. Use vesktop instead."; # added 2025-11-29
+  DisnixWebService = warnAlias "'DisnixWebService' has been renamed to 'disnix-web-service'" disnix-web-service; # Added 2026-01-14
   dleyna-connector-dbus = throw "'dleyna-connector-dbus' has been renamed to/replaced by 'dleyna'"; # Converted to throw 2025-10-27
   dleyna-core = throw "'dleyna-core' has been renamed to/replaced by 'dleyna'"; # Converted to throw 2025-10-27
   dleyna-renderer = throw "'dleyna-renderer' has been renamed to/replaced by 'dleyna'"; # Converted to throw 2025-10-27
@@ -779,6 +780,7 @@ mapAliases {
   gnome-passwordsafe = throw "'gnome-passwordsafe' has been renamed to/replaced by 'gnome-secrets'"; # Converted to throw 2025-10-27
   gnome-recipes = throw "'gnome-recipes' has been removed due to lack of upstream maintenance and dependency on insecure libraries"; # Added 2025-09-06
   gnome-resources = throw "'gnome-resources' has been renamed to/replaced by 'resources'"; # Converted to throw 2025-10-27
+  gnome-settings-daemon46 = throw "'gnome-settings-daemon46' has been removed, no longer used by Pantheon"; # Added 2026-01-24
   gns3Packages = throw "'gns3Packages' has been removed. Use 'gns3-gui' and 'gns3-server' instead."; # Added 2026-01-18
   gnu-cobol = throw "'gnu-cobol' has been renamed to/replaced by 'gnucobol'"; # Converted to throw 2025-10-27
   gnubik = throw "'gnubik' has been removed due to lack of maintenance upstream and its dependency on GTK 2"; # Added 2025-09-16
@@ -815,6 +817,7 @@ mapAliases {
   guile-disarchive = throw "'guile-disarchive' has been renamed to/replaced by 'disarchive'"; # Converted to throw 2025-10-27
   guile-sdl = throw "guile-sdl has been removed, as it was broken"; # Added 2025-08-25
   gutenprintBin = gutenprint-bin; # Added 2025-08-21
+  gwrap = warnAlias "The 'gwrap' alias has been removed. The correct name of the package is 'g-wrap'" g-wrap; # Added 2026-01-25
   gxneur = throw "'gxneur' has been removed due to lack of maintenance and reliance on gnome2 and 2to3."; # Added 2025-08-17
   hacpack = throw "hacpack has been removed from nixpkgs, as it has been taken down upstream"; # Added 2025-09-26
   harmony-music = throw "harmony-music is unmaintained and has been removed"; # Added 2025-08-26
@@ -929,6 +932,7 @@ mapAliases {
   libast = throw "'libast' has been removed due to lack of maintenance upstream."; # Added 2025-06-09
   libayatana-appindicator-gtk3 = throw "'libayatana-appindicator-gtk3' has been renamed to/replaced by 'libayatana-appindicator'"; # Converted to throw 2025-10-27
   libayatana-indicator-gtk3 = throw "'libayatana-indicator-gtk3' has been renamed to/replaced by 'libayatana-indicator'"; # Converted to throw 2025-10-27
+  libbaseencode = throw "'libbaseencode' has been removed because it was deprecated and archived upstream. Consider using 'libcotp' instead"; # Added 2026-01-15
   libbencodetools = throw "'libbencodetools' has been renamed to/replaced by 'bencodetools'"; # Converted to throw 2025-10-27
   libbpf_1 = throw "'libbpf_1' has been renamed to/replaced by 'libbpf'"; # Converted to throw 2025-10-27
   libbson = throw "'libbson' has been renamed to/replaced by 'mongoc'"; # Converted to throw 2025-10-27
@@ -1218,6 +1222,7 @@ mapAliases {
   mumps_par = throw "'mumps_par' has been renamed to/replaced by 'mumps-mpi'"; # Converted to throw 2025-10-27
   mustache-tcl = throw "'mustache-tcl' has been renamed to/replaced by 'tclPackages.mustache-tcl'"; # Converted to throw 2025-10-27
   mutt-with-sidebar = throw "'mutt-with-sidebar' has been renamed to/replaced by 'mutt'"; # Converted to throw 2025-10-27
+  mutter46 = throw "'mutter46' has been removed, no longer used by Pantheon"; # Added 2026-01-24
   muzika = throw "muzika was discontinued upstream in november 2024"; # Added 2025-12-15;
   mx-puppet-discord = throw "mx-puppet-discord was removed since the packaging was unmaintained and was the sole user of sha1 hashes in nixpkgs"; # Added 2025-07-24
   mysql-client = throw "mysql-client has been replaced by mariadb.client"; # Converted to throw 2025-10-26
@@ -1539,6 +1544,7 @@ mapAliases {
   retroshare06 = throw "'retroshare06' has been renamed to/replaced by 'retroshare'"; # Converted to throw 2025-10-27
   rewind-ai = throw "'rewind-ai' has been removed due to lack of of maintenance upstream"; # Added 2025-08-03
   rigsofrods = throw "'rigsofrods' has been renamed to/replaced by 'rigsofrods-bin'"; # Converted to throw 2025-10-27
+  rili = throw "'rili' has been dropped in favor of its maintained fork 'li-ri'"; # Added 2026-01-03
   river = throw "'river' has been renamed to/replaced by 'river-classic'"; # Added 2025-08-30
   rke2_1_29 = throw "'rke2_1_29' has been removed from nixpkgs as it has reached end of life"; # Added 2025-05-05
   rke2_1_30 = throw "'rke2_1_30' has been removed from nixpkgs as it has reached end of life"; # Added 2025-11-04
@@ -1796,6 +1802,7 @@ mapAliases {
   vbetool = throw "'vbetool' has been removed as it is broken and not maintained upstream."; # Added 2025-06-11
   vboot_reference = vboot-utils; # Added 2025-11-01
   vc_0_7 = throw "'vc_0_7' has been removed as it was broken, unused in nixpkgs and unmaintained"; # Added 2025-10-20
+  vdhcoapp = throw "VDH >= 10 doesn't require a companion app and the repo has been archived."; # Added 2026-01-26
   vdirsyncerStable = throw "'vdirsyncerStable' has been renamed to/replaced by 'vdirsyncer'"; # Converted to throw 2025-10-27
   ventoy-bin = throw "'ventoy-bin' has been renamed to/replaced by 'ventoy'"; # Converted to throw 2025-10-27
   ventoy-bin-full = throw "'ventoy-bin-full' has been renamed to/replaced by 'ventoy-full'"; # Converted to throw 2025-10-27

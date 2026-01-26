@@ -1,26 +1,35 @@
 {
-  lib,
   stdenv,
   fetchFromGitHub,
-  cmake,
-  qt6,
-  openssl,
   libpulseaudio,
+  openssl,
+  qt6,
+  cmake,
   pkg-config,
-  nix-update-script,
+  lib,
 }:
-stdenv.mkDerivation (finalAttrs: {
+
+stdenv.mkDerivation {
   pname = "librepods";
-  version = "0.1.0";
+  version = "0.1.0-unstable-2025-12-07";
 
   src = fetchFromGitHub {
     owner = "kavishdevar";
     repo = "librepods";
-    rev = "linux-v${finalAttrs.version}";
-    hash = "sha256-HHF14I6mpCHsRcSzQmrZhGeCGr+1oNCK4esOjVu4M+E=";
+    rev = "0e1f784737122913c21b429810d059aadfb4479e";
+    hash = "sha256-nXEMIyQWEDMjyKGPAleqqSttznNmrdSHKT4Kr2tLHBY=";
   };
 
-  sourceRoot = "${finalAttrs.src.name}/linux";
+  sourceRoot = "source/linux";
+
+  buildInputs = [
+    libpulseaudio
+    openssl
+    qt6.qtbase
+    qt6.qtconnectivity
+    qt6.qtquick3d
+    qt6.qttools
+  ];
 
   nativeBuildInputs = [
     cmake
@@ -28,26 +37,10 @@ stdenv.mkDerivation (finalAttrs: {
     qt6.wrapQtAppsHook
   ];
 
-  buildInputs = [
-    qt6.qtbase
-    qt6.qtconnectivity
-    qt6.qtmultimedia
-    qt6.qtdeclarative
-    openssl
-    libpulseaudio
-  ];
-
-  passthru.updateScript = nix-update-script {
-    extraArgs = [ "--version-regex=linux-v([\\d\\.]+)" ];
-  };
-
   meta = {
-    description = "Open-source AirPods integration for Linux";
     homepage = "https://github.com/kavishdevar/librepods";
-    changelog = "https://github.com/kavishdevar/librepods/releases/tag/${finalAttrs.src.rev}";
-    license = lib.licenses.agpl3Only;
-    maintainers = with lib.maintainers; [ shgew ];
-    platforms = lib.platforms.linux;
-    mainProgram = "librepods";
+    description = "AirPods liberated from Apple's ecosystem";
+    license = lib.licenses.gpl3;
+    maintainers = [ lib.maintainers.thefossguy ];
   };
-})
+}

@@ -14091,7 +14091,7 @@ self: {
       directory,
       filepath,
       JuicyPixels,
-      libX11,
+      libx11,
       mwc-random,
       primitive,
       random,
@@ -14113,12 +14113,12 @@ self: {
         random
         vector
       ];
-      executableSystemDepends = [ libX11 ];
+      executableSystemDepends = [ libx11 ];
       description = "Generates colorful wallpapers";
       license = lib.licenses.mit;
       mainProgram = "FractalArt";
     }
-  ) { inherit (pkgs.xorg) libX11; };
+  ) { inherit (pkgs) libx11; };
 
   Fractaler = callPackage (
     {
@@ -14737,9 +14737,9 @@ self: {
           mkDerivation,
           base,
           libGL,
-          libX11,
-          libXext,
-          libXfixes,
+          libx11,
+          libxext,
+          libxfixes,
           OpenGL,
         }:
         mkDerivation {
@@ -14754,9 +14754,9 @@ self: {
           ];
           librarySystemDepends = [
             libGL
-            libX11
-            libXext
-            libXfixes
+            libx11
+            libxext
+            libxfixes
           ];
           description = "A Haskell binding for GLFW";
           license = lib.licenses.bsd3;
@@ -14766,9 +14766,9 @@ self: {
       )
       {
         inherit (pkgs) libGL;
-        inherit (pkgs.xorg) libX11;
-        inherit (pkgs.xorg) libXext;
-        inherit (pkgs.xorg) libXfixes;
+        inherit (pkgs) libx11;
+        inherit (pkgs) libxext;
+        inherit (pkgs) libxfixes;
       };
 
   GLFW-OGL =
@@ -14777,8 +14777,8 @@ self: {
         {
           mkDerivation,
           base,
-          libX11,
-          libXrandr,
+          libx11,
+          libxrandr,
           mtl,
           OGL,
         }:
@@ -14793,8 +14793,8 @@ self: {
             OGL
           ];
           librarySystemDepends = [
-            libX11
-            libXrandr
+            libx11
+            libxrandr
           ];
           description = "A binding for GLFW (OGL)";
           license = lib.licenses.bsd3;
@@ -14802,8 +14802,8 @@ self: {
         }
       )
       {
-        inherit (pkgs.xorg) libX11;
-        inherit (pkgs.xorg) libXrandr;
+        inherit (pkgs) libx11;
+        inherit (pkgs) libxrandr;
       };
 
   GLFW-b = callPackage (
@@ -14908,7 +14908,7 @@ self: {
           mkDerivation,
           base,
           libGL,
-          libX11,
+          libx11,
         }:
         mkDerivation {
           pname = "GLHUI";
@@ -14917,7 +14917,7 @@ self: {
           libraryHaskellDepends = [ base ];
           librarySystemDepends = [
             libGL
-            libX11
+            libx11
           ];
           description = "Open OpenGL context windows in X11 with libX11";
           license = lib.licenses.bsd3;
@@ -14926,7 +14926,7 @@ self: {
       )
       {
         inherit (pkgs) libGL;
-        inherit (pkgs.xorg) libX11;
+        inherit (pkgs) libx11;
       };
 
   GLM = callPackage (
@@ -18474,7 +18474,7 @@ self: {
           bytestring,
           hg3dsdl2050,
           HGamer3D-Data,
-          libX11,
+          libx11,
           SDL2,
           utf8-string,
         }:
@@ -18490,7 +18490,7 @@ self: {
           ];
           librarySystemDepends = [
             hg3dsdl2050
-            libX11
+            libx11
             SDL2
           ];
           description = "SDL2 Binding for HGamer3D";
@@ -18501,7 +18501,7 @@ self: {
       {
         inherit (pkgs) SDL2;
         hg3dsdl2050 = null;
-        inherit (pkgs.xorg) libX11;
+        inherit (pkgs) libx11;
       };
 
   HGamer3D-SFML-Binding =
@@ -47788,12 +47788,12 @@ self: {
           mkDerivation,
           base,
           data-default-class,
-          libX11,
-          libXext,
-          libXinerama,
-          libXrandr,
-          libXrender,
-          libXScrnSaver,
+          libx11,
+          libxext,
+          libxinerama,
+          libxrandr,
+          libxrender,
+          libxscrnsaver,
         }:
         mkDerivation {
           pname = "X11";
@@ -47806,12 +47806,12 @@ self: {
             data-default-class
           ];
           librarySystemDepends = [
-            libX11
-            libXext
-            libXinerama
-            libXrandr
-            libXrender
-            libXScrnSaver
+            libx11
+            libxext
+            libxinerama
+            libxrandr
+            libxrender
+            libxscrnsaver
           ];
           description = "A binding to the X11 graphics library";
           license = lib.licenses.bsd3;
@@ -47819,19 +47819,19 @@ self: {
         }
       )
       {
-        inherit (pkgs.xorg) libX11;
-        inherit (pkgs.xorg) libXScrnSaver;
-        inherit (pkgs.xorg) libXext;
-        inherit (pkgs.xorg) libXinerama;
-        inherit (pkgs.xorg) libXrandr;
-        inherit (pkgs.xorg) libXrender;
+        inherit (pkgs) libx11;
+        inherit (pkgs) libxext;
+        inherit (pkgs) libxinerama;
+        inherit (pkgs) libxrandr;
+        inherit (pkgs) libxrender;
+        inherit (pkgs) libxscrnsaver;
       };
 
   X11-extras = callPackage (
     {
       mkDerivation,
       base,
-      libX11,
+      libx11,
       X11,
     }:
     mkDerivation {
@@ -47844,13 +47844,13 @@ self: {
         base
         X11
       ];
-      librarySystemDepends = [ libX11 ];
+      librarySystemDepends = [ libx11 ];
       description = "Missing bindings to the X11 graphics library";
       license = lib.licenses.bsd3;
       hydraPlatforms = lib.platforms.none;
       broken = true;
     }
-  ) { inherit (pkgs.xorg) libX11; };
+  ) { inherit (pkgs) libx11; };
 
   X11-rm = callPackage (
     {
@@ -47923,7 +47923,7 @@ self: {
     {
       mkDerivation,
       base,
-      libXft,
+      libxft,
       utf8-string,
       X11,
     }:
@@ -47936,12 +47936,12 @@ self: {
         utf8-string
         X11
       ];
-      libraryPkgconfigDepends = [ libXft ];
+      libraryPkgconfigDepends = [ libxft ];
       description = "Bindings to the Xft and some Xrender parts";
       license = lib.licensesSpdx."BSD-3-Clause";
       maintainers = [ lib.maintainers.slotThe ];
     }
-  ) { inherit (pkgs.xorg) libXft; };
+  ) { inherit (pkgs) libxft; };
 
   X11-xshape = callPackage (
     {
@@ -48001,7 +48001,7 @@ self: {
       license = lib.licenses.bsd3;
       platforms = lib.platforms.windows;
     }
-  ) { inherit (pkgs.xorg) xinput; };
+  ) { inherit (pkgs) xinput; };
 
   XML = callPackage (
     {
@@ -48212,18 +48212,18 @@ self: {
     {
       mkDerivation,
       base,
-      libXau,
+      libxau,
     }:
     mkDerivation {
       pname = "Xauth";
       version = "0.1";
       sha256 = "1mvflp6y1nz9961gngbwk0b7wr8sx3p6296jfvvb6ln1kvm2scxs";
       libraryHaskellDepends = [ base ];
-      libraryPkgconfigDepends = [ libXau ];
+      libraryPkgconfigDepends = [ libxau ];
       description = "A binding to the X11 authentication library";
       license = lib.licenses.bsd3;
     }
-  ) { inherit (pkgs.xorg) libXau; };
+  ) { inherit (pkgs) libxau; };
 
   Xec = callPackage (
     {
@@ -105264,14 +105264,14 @@ self: {
           bindings-DSL,
           HUnit,
           libGL,
-          libX11,
-          libXcursor,
-          libXext,
-          libXfixes,
-          libXi,
-          libXinerama,
-          libXrandr,
-          libXxf86vm,
+          libx11,
+          libxcursor,
+          libxext,
+          libxfixes,
+          libxi,
+          libxinerama,
+          libxrandr,
+          libxxf86vm,
           test-framework,
           test-framework-hunit,
         }:
@@ -105285,14 +105285,14 @@ self: {
           ];
           librarySystemDepends = [
             libGL
-            libX11
-            libXcursor
-            libXext
-            libXfixes
-            libXi
-            libXinerama
-            libXrandr
-            libXxf86vm
+            libx11
+            libxcursor
+            libxext
+            libxfixes
+            libxi
+            libxinerama
+            libxrandr
+            libxxf86vm
           ];
           testHaskellDepends = [
             base
@@ -105306,14 +105306,14 @@ self: {
       )
       {
         inherit (pkgs) libGL;
-        inherit (pkgs.xorg) libX11;
-        inherit (pkgs.xorg) libXcursor;
-        inherit (pkgs.xorg) libXext;
-        inherit (pkgs.xorg) libXfixes;
-        inherit (pkgs.xorg) libXi;
-        inherit (pkgs.xorg) libXinerama;
-        inherit (pkgs.xorg) libXrandr;
-        inherit (pkgs.xorg) libXxf86vm;
+        inherit (pkgs) libx11;
+        inherit (pkgs) libxcursor;
+        inherit (pkgs) libxext;
+        inherit (pkgs) libxfixes;
+        inherit (pkgs) libxi;
+        inherit (pkgs) libxinerama;
+        inherit (pkgs) libxrandr;
+        inherit (pkgs) libxxf86vm;
       };
 
   bindings-K8055 = callPackage (
@@ -112798,8 +112798,8 @@ self: {
           filepath,
           finite-typelits,
           hspec,
-          libX11,
-          libXrandr,
+          libx11,
+          libxrandr,
           lifted-base,
           monad-control,
           mtl,
@@ -112838,8 +112838,8 @@ self: {
             X11
           ];
           librarySystemDepends = [
-            libX11
-            libXrandr
+            libx11
+            libxrandr
           ];
           executableHaskellDepends = [ base ];
           testHaskellDepends = [
@@ -112857,8 +112857,8 @@ self: {
         }
       )
       {
-        inherit (pkgs.xorg) libX11;
-        inherit (pkgs.xorg) libXrandr;
+        inherit (pkgs) libx11;
+        inherit (pkgs) libxrandr;
       };
 
   bludigon =
@@ -112874,8 +112874,8 @@ self: {
           filepath,
           finite-typelits,
           hspec,
-          libX11,
-          libXrandr,
+          libx11,
+          libxrandr,
           lifted-base,
           monad-control,
           mtl,
@@ -112914,8 +112914,8 @@ self: {
             X11
           ];
           librarySystemDepends = [
-            libX11
-            libXrandr
+            libx11
+            libxrandr
           ];
           executableHaskellDepends = [ base ];
           testHaskellDepends = [
@@ -112935,8 +112935,8 @@ self: {
         }
       )
       {
-        inherit (pkgs.xorg) libX11;
-        inherit (pkgs.xorg) libXrandr;
+        inherit (pkgs) libx11;
+        inherit (pkgs) libxrandr;
       };
 
   bluefin = callPackage (
@@ -229157,7 +229157,7 @@ self: {
       mkDerivation,
       base,
       base-prelude,
-      libXtst,
+      libxtst,
       split,
       X11,
     }:
@@ -229171,13 +229171,13 @@ self: {
         split
         X11
       ];
-      librarySystemDepends = [ libXtst ];
+      librarySystemDepends = [ libxtst ];
       description = "A crossplatform library to simulate keyboard input";
       license = lib.licenses.bsd3;
       hydraPlatforms = lib.platforms.none;
       broken = true;
     }
-  ) { inherit (pkgs.xorg) libXtst; };
+  ) { inherit (pkgs) libxtst; };
 
   fakedata = callPackage (
     {
@@ -249257,8 +249257,8 @@ self: {
           bytestring,
           containers,
           directory,
-          libX11,
-          libXext,
+          libx11,
+          libxext,
           old-time,
           parallel,
           process,
@@ -249284,8 +249284,8 @@ self: {
             unix
           ];
           librarySystemDepends = [
-            libX11
-            libXext
+            libx11
+            libxext
           ];
           executableHaskellDepends = [
             array
@@ -249301,8 +249301,8 @@ self: {
         }
       )
       {
-        inherit (pkgs.xorg) libX11;
-        inherit (pkgs.xorg) libXext;
+        inherit (pkgs) libx11;
+        inherit (pkgs) libxext;
       };
 
   fugue = callPackage (
@@ -270088,7 +270088,7 @@ self: {
       haskell-gi,
       haskell-gi-base,
       haskell-gi-overloading,
-      libX11,
+      libx11,
       text,
       transformers,
     }:
@@ -270111,11 +270111,11 @@ self: {
         text
         transformers
       ];
-      libraryPkgconfigDepends = [ libX11 ];
+      libraryPkgconfigDepends = [ libx11 ];
       description = "xlib bindings";
       license = lib.licenses.lgpl21Only;
     }
-  ) { inherit (pkgs.xorg) libX11; };
+  ) { inherit (pkgs) libx11; };
 
   giak = callPackage (
     {
@@ -286017,9 +286017,9 @@ self: {
           directory,
           exceptions,
           hashable,
-          libX11,
-          libXau,
-          libXScrnSaver,
+          libx11,
+          libxau,
+          libxscrnsaver,
           microlens,
           microlens-mtl,
           protolude,
@@ -286058,9 +286058,9 @@ self: {
             X11
           ];
           executablePkgconfigDepends = [
-            libX11
-            libXau
-            libXScrnSaver
+            libx11
+            libxau
+            libxscrnsaver
             xcb
             xdmcp
           ];
@@ -286070,9 +286070,9 @@ self: {
         }
       )
       {
-        inherit (pkgs.xorg) libX11;
-        inherit (pkgs.xorg) libXScrnSaver;
-        inherit (pkgs.xorg) libXau;
+        inherit (pkgs) libx11;
+        inherit (pkgs) libxau;
+        inherit (pkgs) libxscrnsaver;
         xcb = null;
         xdmcp = null;
       };
@@ -289142,7 +289142,7 @@ self: {
       base,
       glib,
       gtk3,
-      libX11,
+      libx11,
     }:
     mkDerivation {
       pname = "gtk-traymanager";
@@ -289153,11 +289153,11 @@ self: {
         glib
         gtk3
       ];
-      libraryPkgconfigDepends = [ libX11 ];
+      libraryPkgconfigDepends = [ libx11 ];
       description = "A wrapper around the eggtraymanager library for Linux system trays";
       license = lib.licenses.lgpl21Only;
     }
-  ) { inherit (pkgs.xorg) libX11; };
+  ) { inherit (pkgs) libx11; };
 
   gtk2hs-buildtools = callPackage (
     {
@@ -289572,10 +289572,10 @@ self: {
           gtk2hs-buildtools,
           gtkglext,
           libGLU,
-          libICE,
-          libSM,
-          libXmu,
-          libXt,
+          libice,
+          libsm,
+          libxmu,
+          libxt,
           pango,
         }:
         mkDerivation {
@@ -289597,10 +289597,10 @@ self: {
           librarySystemDepends = [
             gtk2
             libGLU
-            libICE
-            libSM
-            libXmu
-            libXt
+            libice
+            libsm
+            libxmu
+            libxt
           ];
           libraryPkgconfigDepends = [ gtkglext ];
           libraryToolDepends = [ gtk2hs-buildtools ];
@@ -289614,10 +289614,10 @@ self: {
         inherit (pkgs) gtk2;
         inherit (pkgs.gnome2) gtkglext;
         inherit (pkgs) libGLU;
-        inherit (pkgs.xorg) libICE;
-        inherit (pkgs.xorg) libSM;
-        inherit (pkgs.xorg) libXmu;
-        inherit (pkgs.xorg) libXt;
+        inherit (pkgs) libice;
+        inherit (pkgs) libsm;
+        inherit (pkgs) libxmu;
+        inherit (pkgs) libxt;
       };
 
   gtkimageview = callPackage (
@@ -290394,12 +290394,12 @@ self: {
           containers,
           lens,
           libGL,
-          libX11,
-          libXcursor,
-          libXext,
-          libXi,
-          libXinerama,
-          libXrandr,
+          libx11,
+          libxcursor,
+          libxext,
+          libxi,
+          libxinerama,
+          libxrandr,
           linear,
           template-haskell,
           text,
@@ -290425,12 +290425,12 @@ self: {
           librarySystemDepends = [
             c
             libGL
-            libX11
-            libXcursor
-            libXext
-            libXi
-            libXinerama
-            libXrandr
+            libx11
+            libxcursor
+            libxext
+            libxi
+            libxinerama
+            libxrandr
           ];
           description = "Raylib bindings for Haskell";
           license = lib.licensesSpdx."Apache-2.0";
@@ -290440,12 +290440,12 @@ self: {
       {
         c = null;
         inherit (pkgs) libGL;
-        inherit (pkgs.xorg) libX11;
-        inherit (pkgs.xorg) libXcursor;
-        inherit (pkgs.xorg) libXext;
-        inherit (pkgs.xorg) libXi;
-        inherit (pkgs.xorg) libXinerama;
-        inherit (pkgs.xorg) libXrandr;
+        inherit (pkgs) libx11;
+        inherit (pkgs) libxcursor;
+        inherit (pkgs) libxext;
+        inherit (pkgs) libxi;
+        inherit (pkgs) libxinerama;
+        inherit (pkgs) libxrandr;
       };
 
   h-reversi = callPackage (
@@ -342135,8 +342135,8 @@ self: {
           hoodle-types,
           http-types,
           lens,
-          libX11,
-          libXi,
+          libx11,
+          libxi,
           monad-loops,
           mtl,
           network-uri,
@@ -342214,8 +342214,8 @@ self: {
             xournal-parser
           ];
           librarySystemDepends = [
-            libX11
-            libXi
+            libx11
+            libxi
           ];
           description = "Core library for hoodle";
           license = lib.licenses.bsd3;
@@ -342223,8 +342223,8 @@ self: {
         }
       )
       {
-        inherit (pkgs.xorg) libX11;
-        inherit (pkgs.xorg) libXi;
+        inherit (pkgs) libx11;
+        inherit (pkgs) libxi;
       };
 
   hoodle-extra = callPackage (
@@ -475538,7 +475538,7 @@ self: {
           inline-c,
           libGL,
           libGLU,
-          libX11,
+          libx11,
           QuickCheck,
           text,
           vector,
@@ -475562,7 +475562,7 @@ self: {
             glew
             libGL
             libGLU
-            libX11
+            libx11
           ];
           libraryPkgconfigDepends = [
             freetype
@@ -475587,7 +475587,7 @@ self: {
         inherit (pkgs) glew;
         inherit (pkgs) libGL;
         inherit (pkgs) libGLU;
-        inherit (pkgs.xorg) libX11;
+        inherit (pkgs) libx11;
       };
 
   nanovg-simple = callPackage (
@@ -491837,8 +491837,8 @@ self: {
           base,
           either,
           libGL,
-          libX11,
-          libXinerama,
+          libx11,
+          libxinerama,
           monads-tf,
           ovr,
           systemd,
@@ -491858,8 +491858,8 @@ self: {
           ];
           librarySystemDepends = [
             libGL
-            libX11
-            libXinerama
+            libx11
+            libxinerama
             ovr
             systemd
           ];
@@ -491871,8 +491871,8 @@ self: {
       )
       {
         inherit (pkgs) libGL;
-        inherit (pkgs.xorg) libX11;
-        inherit (pkgs.xorg) libXinerama;
+        inherit (pkgs) libx11;
+        inherit (pkgs) libxinerama;
         ovr = null;
         inherit (pkgs) systemd;
       };
@@ -528022,7 +528022,7 @@ self: {
       mkDerivation,
       base,
       base-unicode-symbols,
-      libXinerama,
+      libxinerama,
       X11,
     }:
     mkDerivation {
@@ -528036,12 +528036,12 @@ self: {
         base-unicode-symbols
         X11
       ];
-      executableSystemDepends = [ libXinerama ];
+      executableSystemDepends = [ libxinerama ];
       description = "A utility for X11 that moves the mouse cursor using the keyboard";
       license = lib.licenses.gpl3Only;
       mainProgram = "place-cursor-at";
     }
-  ) { inherit (pkgs.xorg) libXinerama; };
+  ) { inherit (pkgs) libxinerama; };
 
   placeholder = callPackage (
     {
@@ -620388,7 +620388,7 @@ self: {
           base,
           bytestring,
           containers,
-          libXft,
+          libxft,
           mtl,
           parsec,
           permute,
@@ -620431,7 +620431,7 @@ self: {
             X11-xshape
           ];
           libraryPkgconfigDepends = [
-            libXft
+            libxft
             xext
           ];
           executableHaskellDepends = [
@@ -620455,7 +620455,7 @@ self: {
             X11-xshape
           ];
           executablePkgconfigDepends = [
-            libXft
+            libxft
             xext
           ];
           description = "A programming language for simple GUIs";
@@ -620466,7 +620466,7 @@ self: {
         }
       )
       {
-        inherit (pkgs.xorg) libXft;
+        inherit (pkgs) libxft;
         xext = null;
       };
 
@@ -742896,7 +742896,7 @@ self: {
           directory,
           filepath,
           libGL,
-          libX11,
+          libx11,
           process,
           split,
           wxdirect,
@@ -742924,7 +742924,7 @@ self: {
           ];
           librarySystemDepends = [
             libGL
-            libX11
+            libx11
           ];
           libraryPkgconfigDepends = [ wxGTK ];
           doHaddock = false;
@@ -742937,7 +742937,7 @@ self: {
       )
       {
         inherit (pkgs) libGL;
-        inherit (pkgs.xorg) libX11;
+        inherit (pkgs) libx11;
         inherit (pkgs) wxGTK;
       };
 
@@ -743274,7 +743274,7 @@ self: {
       base,
       c2hs,
       containers,
-      libXi,
+      libxi,
       mtl,
       X11,
     }:
@@ -743288,12 +743288,12 @@ self: {
         mtl
         X11
       ];
-      librarySystemDepends = [ libXi ];
+      librarySystemDepends = [ libxi ];
       libraryToolDepends = [ c2hs ];
       description = "Haskell FFI bindings for X11 XInput library (-lXi)";
       license = lib.licenses.bsd3;
     }
-  ) { inherit (pkgs.xorg) libXi; };
+  ) { inherit (pkgs) libxi; };
 
   x509 = callPackage (
     {
@@ -747236,9 +747236,9 @@ self: {
           http-types,
           iwlib,
           libmpd,
-          libXpm,
-          libXrandr,
-          libXrender,
+          libxpm,
+          libxrandr,
+          libxrender,
           mtl,
           old-locale,
           pango,
@@ -747320,9 +747320,9 @@ self: {
             X11-xft
           ];
           librarySystemDepends = [
-            libXpm
-            libXrandr
-            libXrender
+            libxpm
+            libxrandr
+            libxrender
             wirelesstools
           ];
           executableHaskellDepends = [
@@ -747371,9 +747371,9 @@ self: {
         }
       )
       {
-        inherit (pkgs.xorg) libXpm;
-        inherit (pkgs.xorg) libXrandr;
-        inherit (pkgs.xorg) libXrender;
+        inherit (pkgs) libxpm;
+        inherit (pkgs) libxrandr;
+        inherit (pkgs) libxrender;
         inherit (pkgs) wirelesstools;
       };
 
@@ -748835,7 +748835,7 @@ self: {
     {
       mkDerivation,
       base,
-      libXtst,
+      libxtst,
       X11,
     }:
     mkDerivation {
@@ -748846,11 +748846,11 @@ self: {
         base
         X11
       ];
-      librarySystemDepends = [ libXtst ];
+      librarySystemDepends = [ libxtst ];
       description = "Thin FFI bindings to X11 XTest library";
       license = lib.licenses.bsd3;
     }
-  ) { inherit (pkgs.xorg) libXtst; };
+  ) { inherit (pkgs) libxtst; };
 
   xturtle = callPackage (
     {
