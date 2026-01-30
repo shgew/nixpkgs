@@ -52,7 +52,10 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     changelog = "https://github.com/waydabber/BetterDisplay/releases/tag/v${finalAttrs.version}";
     license = [ lib.licenses.unfree ];
     sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
-    maintainers = with lib.maintainers; [ DimitarNestorov ];
+    maintainers = with lib.maintainers; [
+      DimitarNestorov
+      shgew
+    ];
     platforms = lib.platforms.darwin;
   };
 })
