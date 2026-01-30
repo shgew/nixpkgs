@@ -100,7 +100,10 @@ python3Packages.buildPythonApplication rec {
         ++ lib.optional rtmpSupport rtmpdump;
     in
     lib.optionals (packagesToBinPath != [ ]) [
-      ''--prefix PATH : "${lib.makeBinPath packagesToBinPath}"''
+      "--prefix"
+      "PATH"
+      ":"
+      ''"${lib.makeBinPath packagesToBinPath}"''
     ];
 
   checkPhase = ''
