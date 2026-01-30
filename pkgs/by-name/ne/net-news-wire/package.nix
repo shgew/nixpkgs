@@ -9,11 +9,11 @@
 
 stdenvNoCC.mkDerivation rec {
   pname = "net-news-wire";
-  version = "6.2";
+  version = "7.0";
 
   src = fetchurl {
     url = "https://github.com/Ranchero-Software/NetNewsWire/releases/download/mac-${version}/NetNewsWire${version}.zip";
-    hash = "sha256-DXpC2bXgFRKYULXlrkDkwxtU77iChh5SITAIEQC5exQ=";
+    hash = "sha256-1yPgYq7t2bTXD7PA9HqB8wnkB3z045KPMGjaDkS8kcg=";
   };
 
   sourceRoot = ".";
@@ -35,7 +35,7 @@ stdenvNoCC.mkDerivation rec {
   passthru.updateScript = nix-update-script {
     extraArgs = [
       "--version-regex"
-      "^mac-(\\d+\\.\\d+\\.\\d+)$"
+      "^mac-(\\d+\\.\\d+(?:\\.\\d+)?)$"
     ];
   };
 
