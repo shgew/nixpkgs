@@ -15337,11 +15337,11 @@
     name = "Andreas Wagner";
   };
   lpchaim = {
-    email = "lpchaim@gmail.comm";
+    email = "lpchaim@proton.me";
     matrix = "@lpchaim:matrix.org";
     github = "lpchaim";
     githubId = 4030336;
-    name = "Lucas Chaim";
+    name = "Luna Perroni";
   };
   lpostula = {
     email = "lois@postu.la";
