@@ -58,10 +58,15 @@ rustPlatform.buildRustPackage (finalAttrs: {
   cargoHash = "sha256-TVsPS1jzDzRSY9b636Tv30WupCnyfADeA+8pYn8STIs=";
 
   cargoBuildFlags = [
-    "--package rerun-cli"
-    "--package rerun_c"
+    "--package"
+    "rerun-cli"
+    "--package"
+    "rerun_c"
   ];
-  cargoTestFlags = [ "--package rerun-cli" ];
+  cargoTestFlags = [
+    "--package"
+    "rerun-cli"
+  ];
   buildNoDefaultFeatures = true;
   buildFeatures = [
     "native_viewer"
