@@ -109,6 +109,10 @@ buildPythonPackage (finalAttrs: {
   disabledTestPaths = [
     # requires `cpflows`, not in Nixpkgs
     "test/torch/model"
+  ]
+  ++ lib.optionals stdenv.hostPlatform.isDarwin [
+    # Trace/BPT trap: 5
+    "test/torch/test_torch_item_id_info.py"
   ];
 
   disabledTests = [
