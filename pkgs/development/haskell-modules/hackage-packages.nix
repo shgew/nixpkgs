@@ -406584,9 +406584,7 @@ self: {
       testToolDepends = [ hspec-discover ];
       description = "Krank checks issue tracker link status in your source code";
       license = lib.licensesSpdx."BSD-3-Clause";
-      hydraPlatforms = lib.platforms.none;
       mainProgram = "krank";
-      broken = true;
     }
   ) { };
 
