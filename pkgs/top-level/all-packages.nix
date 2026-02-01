@@ -1008,14 +1008,6 @@ with pkgs;
     crate = "api";
   };
 
-  # This is to workaround gfal2-python broken against Python 3.12 or later.
-  # TODO: Remove these lines after solving the breakage.
-  gfal2-util = callPackage ../by-name/gf/gfal2-util/package.nix (
-    lib.optionalAttrs python3Packages.gfal2-python.meta.broken {
-      python3Packages = python311Packages;
-    }
-  );
-
   htop-vim = htop.override { withVimKeys = true; };
 
   inherit (callPackages ../tools/networking/iroh/default.nix { })
@@ -10363,10 +10355,6 @@ with pkgs;
   hledger-utils = with python3.pkgs; toPythonApplication hledger-utils;
 
   hpack = haskell.lib.compose.justStaticExecutables haskellPackages.hpack;
-
-  hugin = callPackage ../by-name/hu/hugin/package.nix {
-    wxGTK = wxGTK32;
-  };
 
   huggle = libsForQt5.callPackage ../applications/misc/huggle { };
 
