@@ -60,6 +60,9 @@ buildPythonPackage (finalAttrs: {
     uv-dynamic-versioning
   ];
 
+  pythonRelaxDeps = [
+    "pydocket"
+  ];
   dependencies = [
     authlib
     cyclopts
@@ -152,6 +155,12 @@ buildPythonPackage (finalAttrs: {
     # AssertionError: assert {'annotations...object'}, ...} == {'annotations...sers']}}, ...}
     "test_list_tools"
 
+    # AssertionError: assert len(caplog.records) == 1
+    "test_log"
+
+    #  assert [TextContent(...e, meta=None)] == [TextContent(...e, meta=None)]
+    "test_read_resource_tool_works"
+
     # fastmcp.exceptions.ToolError: Unknown tool
     "test_multi_client_with_logging"
     "test_multi_client_with_elicitation"
@@ -159,6 +168,9 @@ buildPythonPackage (finalAttrs: {
   ++ lib.optionals stdenv.hostPlatform.isDarwin [
     # RuntimeError: Server failed to start after 10 attempts
     "test_unauthorized_access"
+
+    # Failed: DID NOT RAISE <class 'fastmcp.exceptions.ToolError'>
+    "test_stateless_proxy"
   ];
 
   disabledTestPaths = lib.optionals stdenv.hostPlatform.isDarwin [

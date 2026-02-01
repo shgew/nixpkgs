@@ -1005,8 +1005,8 @@ let
         mktplcRef = {
           name = "coder-remote";
           publisher = "coder";
-          version = "1.11.6";
-          hash = "sha256-yMhbOnG7jVO0oPzLa+El5i7KlD1GCYTOcfF0cOUf5hQ=";
+          version = "1.12.2";
+          hash = "sha256-0ZX0EQnPIqREsIy5dSML94PXD0Z+UZCIKwdqXVYTc1Q=";
         };
         meta = {
           description = "Extension for Visual Studio Code to open any Coder workspace in VS Code with a single click";
@@ -1268,8 +1268,8 @@ let
         mktplcRef = {
           publisher = "denoland";
           name = "vscode-deno";
-          version = "3.48.0";
-          hash = "sha256-AWnX4toFJnIhflc039fN31lrrTaKKXUSrePanWoZnJI=";
+          version = "3.49.0";
+          hash = "sha256-eyH5zPLhDjEEVom1nDUo9rSh/O3QtjcFIMcp/XuibFE=";
         };
         meta = {
           changelog = "https://marketplace.visualstudio.com/items/denoland.vscode-deno/changelog";
@@ -1475,8 +1475,8 @@ let
         mktplcRef = {
           publisher = "editorconfig";
           name = "editorconfig";
-          version = "0.17.4";
-          hash = "sha256-MYPYhSKAxgaZ0UijxU+xiO4HDPLtXGymhN+2YmTev8M=";
+          version = "0.18.1";
+          hash = "sha256-pFd1CTJL3xQ3HHzQs3f4R5f6xlCghNh8Kv+3AT/Qrqo=";
         };
         meta = {
           changelog = "https://marketplace.visualstudio.com/items/EditorConfig.EditorConfig/changelog";
@@ -1711,8 +1711,8 @@ let
         mktplcRef = {
           name = "vscode-jest-runner";
           publisher = "firsttris";
-          version = "0.4.98";
-          hash = "sha256-UhPkiUIIIf58D9hO4mFZba+IO4uJZkP18BH6PTVVfHk=";
+          version = "0.4.112";
+          hash = "sha256-NKnAGGgckVsIn3O842BPWJ3cXM1Ap0yK9Rsrdjfmf5M=";
         };
         meta = {
           description = "Simple way to run or debug a single (or multiple) tests from context-menu";
@@ -1851,8 +1851,8 @@ let
         mktplcRef = {
           name = "godot-tools";
           publisher = "geequlim";
-          version = "2.5.1";
-          hash = "sha256-kAzRSNZw1zaECblJv7NzXnE2JXSy9hzdT2cGX+uwleY=";
+          version = "2.6.0";
+          hash = "sha256-b6aH4LAqXjwRp2dFa7+hhQL3ac9K7Zmat5ncaRLooD0=";
         };
         meta = {
           description = "VS Code extension for game development with Godot Engine and GDScript";
@@ -2611,8 +2611,8 @@ let
         mktplcRef = {
           name = "language-julia";
           publisher = "julialang";
-          version = "1.174.2";
-          hash = "sha256-nlMuWnJOtUlCB9RGWUngB8KgIiNxoQTHkjI6ZtO/Gjs=";
+          version = "1.176.2";
+          hash = "sha256-vhdEGbIBMLTci803O+3ALDgCG2VmhjFmhcDy4rsa+BI=";
         };
         meta = {
           changelog = "https://marketplace.visualstudio.com/items/julialang.language-julia/changelog";
@@ -2818,8 +2818,8 @@ let
         mktplcRef = {
           publisher = "llvm-vs-code-extensions";
           name = "vscode-clangd";
-          version = "0.2.0";
-          hash = "sha256-I5cvu+DKtpE0s9IzLl487FnqfGeBsueHY9CTP/o2XyU=";
+          version = "0.4.0";
+          hash = "sha256-A1+JaodEBWCQ5NqLkXfNqhOr8j2aFQzEofU+wseh/SY=";
         };
         meta = {
           description = "C/C++ completion, navigation, and insights";

@@ -8,18 +8,18 @@
 
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "meilisearch";
-  version = "1.33.1";
+  version = "1.34.3";
 
   src = fetchFromGitHub {
     owner = "meilisearch";
     repo = "meilisearch";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-q1sDiIJETk22Ain8M1LfhFZ2sUSq7H5qNCs23f0qsz4=";
+    hash = "sha256-aO2OEXnYnejG3/7rVtpgIuPJkFW2clj4HooIWoEWDcE=";
   };
 
   cargoBuildFlags = [ "--package=meilisearch" ];
 
-  cargoHash = "sha256-Ae/KR45LXwXd/qTeKTAoWPnsue4ekNr1SP7oJ8EN+Q8=";
+  cargoHash = "sha256-ZnztQOL+q+Bk+Vms5NiBVG2FrzKS0Cn+S3COWMe+tbw=";
 
   # Default features include mini dashboard which downloads something from the internet.
   buildNoDefaultFeatures = true;

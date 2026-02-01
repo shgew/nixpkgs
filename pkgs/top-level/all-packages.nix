@@ -956,13 +956,6 @@ with pkgs;
 
   opnplug = adlplug.override { type = "OPN"; };
 
-  aegisub = callPackage ../by-name/ae/aegisub/package.nix (
-    {
-      luajit = luajit.override { enable52Compat = true; };
-    }
-    // (config.aegisub or { })
-  );
-
   acme-client = callPackage ../tools/networking/acme-client {
     stdenv = gccStdenv;
   };
@@ -1351,10 +1344,6 @@ with pkgs;
   johnny-reborn = callPackage ../applications/misc/johnny-reborn/with-data.nix { };
 
   ### APPLICATIONS/TERMINAL-EMULATORS
-
-  kitty = callPackage ../by-name/ki/kitty/package.nix {
-    inherit (darwin) autoSignDarwinBinariesHook;
-  };
 
   mlterm-wayland = mlterm.override {
     enableX11 = false;
@@ -1763,15 +1752,7 @@ with pkgs;
     asciidoc = asciidoc-full;
   };
 
-  dino = callPackage ../applications/networking/instant-messengers/dino {
-    inherit (gst_all_1)
-      gstreamer
-      gst-plugins-base
-      gst-plugins-bad
-      gst-vaapi
-      ;
-    gst-plugins-good = gst_all_1.gst-plugins-good.override { gtkSupport = true; };
-  };
+  dino = callPackage ../applications/networking/instant-messengers/dino { };
 
   dnschef = python3Packages.callPackage ../tools/networking/dnschef { };
 
@@ -1810,10 +1791,6 @@ with pkgs;
   easycrypt-runtest = callPackage ../applications/science/logic/easycrypt/runtest.nix { };
 
   easyocr = with python3.pkgs; toPythonApplication easyocr;
-
-  element-web = callPackage ../by-name/el/element-web/package.nix {
-    conf = config.element-web.conf or { };
-  };
 
   espanso-wayland = espanso.override {
     x11Support = false;
@@ -1956,10 +1933,6 @@ with pkgs;
   mobilizon = callPackage ../servers/mobilizon {
     beamPackages = beam.packages.erlang_27.extend (self: super: { elixir = self.elixir_1_18; });
     mobilizon-frontend = callPackage ../servers/mobilizon/frontend.nix { };
-  };
-
-  monado = callPackage ../by-name/mo/monado/package.nix {
-    inherit (gst_all_1) gstreamer gst-plugins-base;
   };
 
   nltk-data = recurseIntoAttrs (callPackage ../tools/text/nltk-data { });
@@ -2171,8 +2144,6 @@ with pkgs;
 
   unify = with python3Packages; toPythonApplication unify;
 
-  usb-modeswitch-data = callPackage ../by-name/us/usb-modeswitch/data.nix { };
-
   persistent-evdev = python3Packages.callPackage ../servers/persistent-evdev { };
 
   inherit (import ../development/libraries/libsbsms pkgs)
@@ -2350,10 +2321,6 @@ with pkgs;
   };
 
   diffutils = callPackage ../tools/text/diffutils { };
-
-  dotnetfx35 = callPackage ../development/libraries/dotnetfx35 { };
-
-  dotnetfx40 = callPackage ../development/libraries/dotnetfx40 { };
 
   drone = callPackage ../development/tools/continuous-integration/drone { };
   drone-oss = callPackage ../development/tools/continuous-integration/drone {
@@ -2610,6 +2577,7 @@ with pkgs;
     godotPackages_4_3
     godotPackages_4_4
     godotPackages_4_5
+    godotPackages_4_6
     godotPackages_4
     godotPackages
     godot_4_3
@@ -2621,6 +2589,9 @@ with pkgs;
     godot_4_5
     godot_4_5-mono
     godot_4_5-export-templates-bin
+    godot_4_6
+    godot_4_6-mono
+    godot_4_6-export-templates-bin
     godot_4
     godot_4-mono
     godot_4-export-templates-bin
@@ -3453,10 +3424,6 @@ with pkgs;
 
   tautulli = python3Packages.callPackage ../servers/tautulli { };
 
-  plfit = callPackage ../by-name/pl/plfit/package.nix {
-    python = null;
-  };
-
   inherit (callPackage ../development/tools/pnpm { })
     pnpm_8
     pnpm_9
@@ -4090,6 +4057,7 @@ with pkgs;
   );
   flutterPackages = flutterPackages-bin;
   flutter = flutterPackages.stable;
+  flutter341 = flutterPackages.v3_41;
   flutter338 = flutterPackages.v3_38;
   flutter335 = flutterPackages.v3_35;
   flutter332 = flutterPackages.v3_32;
@@ -5387,35 +5355,26 @@ with pkgs;
   phpExtensions = recurseIntoAttrs php.extensions;
   phpPackages = recurseIntoAttrs php.packages;
 
-  # Import PHP84 interpreter, extensions and packages
-  php84 = callPackage ../development/interpreters/php/8.4.nix {
-    stdenv = if stdenv.cc.isClang then llvmPackages.stdenv else stdenv;
-    pcre2 = pcre2.override {
-      withJitSealloc = false; # See https://bugs.php.net/bug.php?id=78927 and https://bugs.php.net/bug.php?id=78630
-    };
-  };
-  php84Extensions = recurseIntoAttrs php84.extensions;
-  php84Packages = recurseIntoAttrs php84.packages;
+  # Import PHP interpreters
+  inherit (callPackage ./../development/interpreters/php { })
+    php82
+    php83
+    php84
+    php85
+    ;
 
-  # Import PHP83 interpreter, extensions and packages
-  php83 = callPackage ../development/interpreters/php/8.3.nix {
-    stdenv = if stdenv.cc.isClang then llvmPackages.stdenv else stdenv;
-    pcre2 = pcre2.override {
-      withJitSealloc = false; # See https://bugs.php.net/bug.php?id=78927 and https://bugs.php.net/bug.php?id=78630
-    };
-  };
+  # PHP Extensions and Packages
+  php82Extensions = recurseIntoAttrs php82.extensions;
+  php82Packages = recurseIntoAttrs php82.packages;
+
   php83Extensions = recurseIntoAttrs php83.extensions;
   php83Packages = recurseIntoAttrs php83.packages;
 
-  # Import PHP82 interpreter, extensions and packages
-  php82 = callPackage ../development/interpreters/php/8.2.nix {
-    stdenv = if stdenv.cc.isClang then llvmPackages.stdenv else stdenv;
-    pcre2 = pcre2.override {
-      withJitSealloc = false; # See https://bugs.php.net/bug.php?id=78927 and https://bugs.php.net/bug.php?id=78630
-    };
-  };
-  php82Extensions = recurseIntoAttrs php82.extensions;
-  php82Packages = recurseIntoAttrs php82.packages;
+  php84Extensions = recurseIntoAttrs php84.extensions;
+  php84Packages = recurseIntoAttrs php84.packages;
+
+  php85Extensions = recurseIntoAttrs php85.extensions;
+  php85Packages = recurseIntoAttrs php85.packages;
 
   polyml = callPackage ../development/compilers/polyml { };
   polyml56 = callPackage ../development/compilers/polyml/5.6.nix { };
@@ -6303,10 +6262,6 @@ with pkgs;
     replay-node-cli
     ;
 
-  rescript-language-server = callPackage ../by-name/re/rescript-language-server/package.nix {
-    rescript-editor-analysis = vscode-extensions.chenglou92.rescript-vscode.rescript-editor-analysis;
-  };
-
   rnginline = with python3Packages; toPythonApplication rnginline;
 
   rr = callPackage ../development/tools/analysis/rr { };
@@ -6513,6 +6468,7 @@ with pkgs;
     boost187
     boost188
     boost189
+    boost190
     ;
 
   boost = boost187;
@@ -7779,10 +7735,6 @@ with pkgs;
   librdf_redland = callPackage ../development/libraries/librdf/redland.nix { };
   redland = librdf_redland; # added 2018-04-25
 
-  renovate = callPackage ../by-name/re/renovate/package.nix {
-    nodejs = nodejs_22;
-  };
-
   qadwaitadecorations-qt6 = callPackage ../by-name/qa/qadwaitadecorations/package.nix {
     useQt6 = true;
   };
@@ -8023,10 +7975,6 @@ with pkgs;
 
   vte-gtk4 = vte.override {
     gtkVersion = "4";
-  };
-
-  vtfedit = callPackage ../by-name/vt/vtfedit/package.nix {
-    wine = wineWowPackages.staging;
   };
 
   inherit (callPackage ../development/libraries/vtk { }) vtk_9_5;
@@ -8594,12 +8542,6 @@ with pkgs;
 
   inherit
     ({
-      kanidm_1_5 = callPackage ../servers/kanidm/1_5.nix {
-        kanidmWithSecretProvisioning = kanidmWithSecretProvisioning_1_5;
-      };
-      kanidm_1_6 = callPackage ../servers/kanidm/1_6.nix {
-        kanidmWithSecretProvisioning = kanidmWithSecretProvisioning_1_6;
-      };
       kanidm_1_7 = callPackage ../servers/kanidm/1_7.nix {
         kanidmWithSecretProvisioning = kanidmWithSecretProvisioning_1_7;
       };
@@ -8607,17 +8549,11 @@ with pkgs;
         kanidmWithSecretProvisioning = kanidmWithSecretProvisioning_1_8;
       };
 
-      kanidmWithSecretProvisioning_1_5 = kanidm_1_5.override { enableSecretProvisioning = true; };
-      kanidmWithSecretProvisioning_1_6 = kanidm_1_6.override { enableSecretProvisioning = true; };
       kanidmWithSecretProvisioning_1_7 = kanidm_1_7.override { enableSecretProvisioning = true; };
       kanidmWithSecretProvisioning_1_8 = kanidm_1_8.override { enableSecretProvisioning = true; };
     })
-    kanidm_1_5
-    kanidm_1_6
     kanidm_1_7
     kanidm_1_8
-    kanidmWithSecretProvisioning_1_5
-    kanidmWithSecretProvisioning_1_6
     kanidmWithSecretProvisioning_1_7
     kanidmWithSecretProvisioning_1_8
     ;
@@ -9429,12 +9365,24 @@ with pkgs;
       inherit modules;
     };
 
-  nushell = callPackage ../shells/nushell { };
-
-  nushellPlugins = recurseIntoAttrs (
-    callPackage ../shells/nushell/plugins {
-    }
-  );
+  nushellPlugins = recurseIntoAttrs {
+    gstat = callPackage ../by-name/nu/nushell-plugin-gstat/package.nix { };
+    formats = callPackage ../by-name/nu/nushell-plugin-formats/package.nix { };
+    polars = callPackage ../by-name/nu/nushell-plugin-polars/package.nix { };
+    query = callPackage ../by-name/nu/nushell-plugin-query/package.nix { };
+    net = callPackage ../by-name/nu/nushell-plugin-net/package.nix { };
+    units = callPackage ../by-name/nu/nushell-plugin-units/package.nix { };
+    highlight = callPackage ../by-name/nu/nushell-plugin-highlight/package.nix { };
+    dbus = callPackage ../by-name/nu/nushell-plugin-dbus/package.nix {
+      inherit dbus;
+    };
+    skim = callPackage ../by-name/nu/nushell-plugin-skim/package.nix { };
+    semver = callPackage ../by-name/nu/nushell-plugin-semver/package.nix { };
+    hcl = callPackage ../by-name/nu/nushell-plugin-hcl/package.nix { };
+    desktop_notifications =
+      callPackage ../by-name/nu/nushell-plugin-desktop_notifications/package.nix
+        { };
+  };
 
   net-tools =
     # some platforms refer back to this from unixtools, so this is needed to
@@ -9447,10 +9395,6 @@ with pkgs;
   nftables = callPackage ../os-specific/linux/nftables { };
 
   open-vm-tools-headless = open-vm-tools.override { withX = false; };
-
-  odin = callPackage ../by-name/od/odin/package.nix {
-    llvmPackages = llvmPackages_18;
-  };
 
   pam =
     if stdenv.hostPlatform.isLinux then
@@ -10050,11 +9994,6 @@ with pkgs;
     haskell.lib.compose.justStaticExecutables haskellPackages.darcs
   );
 
-  darktable = callPackage ../by-name/da/darktable/package.nix {
-    lua = lua5_4;
-    pugixml = pugixml.override { shared = true; };
-  };
-
   datadog-agent = callPackage ../tools/networking/dd-agent/datadog-agent.nix {
     pythonPackages = datadog-integrations-core { };
   };
@@ -10064,10 +10003,6 @@ with pkgs;
     callPackage ../tools/networking/dd-agent/integrations-core.nix {
       extraIntegrations = extras;
     };
-
-  dbeaver-bin = callPackage ../by-name/db/dbeaver-bin/package.nix {
-    inherit (darwin) autoSignDarwinBinariesHook;
-  };
 
   deadbeefPlugins = recurseIntoAttrs {
     headerbar-gtk3 = callPackage ../applications/audio/deadbeef/plugins/headerbar-gtk3.nix { };
@@ -12089,9 +12024,7 @@ with pkgs;
 
   pmars-x11 = pmars.override { enableXwinGraphics = true; };
 
-  vanillatd = callPackage ../by-name/va/vanillatd/package.nix { appName = "vanillatd"; };
-
-  vanillara = callPackage ../by-name/va/vanillatd/package.nix { appName = "vanillara"; };
+  vanillara = vanillatd.override { appName = "vanillara"; };
 
   anki-utils = callPackage ../by-name/an/anki/addons/anki-utils.nix { };
   ankiAddons = recurseIntoAttrs (callPackage ../by-name/an/anki/addons { });
@@ -12142,8 +12075,6 @@ with pkgs;
     d1x-rebirth-full
     d2x-rebirth-full
     ;
-
-  factorio = callPackage ../by-name/fa/factorio/package.nix { releaseType = "alpha"; };
 
   factorio-experimental = factorio.override {
     releaseType = "alpha";
