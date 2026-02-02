@@ -1,6 +1,5 @@
 {
   lib,
-  stdenv,
   fetchFromGitHub,
   llvmPackages_19,
   boost,
@@ -21,8 +20,9 @@ let
   #
   # > Where `.#` is the flake path were the repo `wasmedge` was cloned at the expected version.
   llvmPackages = llvmPackages_19;
+  stdenv = llvmPackages.stdenv;
 in
-llvmPackages.stdenv.mkDerivation (finalAttrs: {
+stdenv.mkDerivation (finalAttrs: {
   pname = "wasmedge";
   version = "0.16.1";
 

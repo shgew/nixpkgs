@@ -3665,10 +3665,6 @@ with pkgs;
 
   buildWasmBindgenCli = callPackage ../build-support/wasm-bindgen-cli { };
 
-  wasmedge = callPackage ../development/tools/wasmedge {
-    stdenv = clangStdenv;
-  };
-
   woodpecker-agent = callPackage ../development/tools/continuous-integration/woodpecker/agent.nix { };
 
   woodpecker-cli = callPackage ../development/tools/continuous-integration/woodpecker/cli.nix { };
