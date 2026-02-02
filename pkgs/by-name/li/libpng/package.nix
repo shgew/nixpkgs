@@ -5,6 +5,7 @@
   zlib,
   apngSupport ? true,
   testers,
+  darwin,
 }:
 
 assert zlib != null;
@@ -17,8 +18,11 @@ let
   };
   whenPatched = lib.optionalString apngSupport;
 
+  # libpng is a dependency of xcbuild. Avoid an infinite recursion by using a bootstrap stdenv
+  # that does not propagate xcrun.
+  stdenv' = if stdenv.hostPlatform.isDarwin then darwin.bootstrapStdenv else stdenv;
 in
-stdenv.mkDerivation (finalAttrs: {
+stdenv'.mkDerivation (finalAttrs: {
   pname = "libpng" + whenPatched "-apng";
   version = "1.6.53";
 
