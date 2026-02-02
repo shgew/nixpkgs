@@ -1205,6 +1205,7 @@ mapAliases {
   minetest-touch = throw "'minetest-touch' has been renamed to/replaced by 'luanti-client'"; # Converted to throw 2025-10-27
   minetestclient = throw "'minetestclient' has been renamed to/replaced by 'luanti-client'"; # Converted to throw 2025-10-27
   minetestserver = throw "'minetestserver' has been renamed to/replaced by 'luanti-server'"; # Converted to throw 2025-10-27
+  minio_legacy_fs = throw "'minio_legacy_fs' has been removed, migrate your data and use 'minio'"; # Added 2026-02-02
   minizincide = warnAlias "'minizincide' has been renamed to 'minizinc-ide'" minizinc-ide; # Added 2026-01-03
   minizip2 = throw "'minizip2' has been renamed to/replaced by 'minizip-ng'"; # Converted to throw 2025-10-27
   miru = throw "'miru' has been removed due to lack maintenance"; # Added 2025-08-21
