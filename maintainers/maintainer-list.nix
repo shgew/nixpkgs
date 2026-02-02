@@ -11047,6 +11047,11 @@
     githubId = 207392575;
     name = "Isaac Kabel";
   };
+  ikci = {
+    github = "ikcii";
+    githubId = 48479629;
+    name = "ikci";
+  };
   ikervagyok = {
     email = "ikervagyok@gmail.com";
     github = "ikervagyok";
