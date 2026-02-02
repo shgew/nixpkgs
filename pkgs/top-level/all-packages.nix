@@ -991,10 +991,6 @@ with pkgs;
 
   dehinter = with python3Packages; toPythonApplication dehinter;
 
-  gamemode = callPackage ../tools/games/gamemode {
-    libgamemode32 = pkgsi686Linux.gamemode.lib;
-  };
-
   gamescope-wsi = callPackage ../by-name/ga/gamescope/package.nix {
     enableExecutable = false;
     enableWsi = true;
@@ -1040,10 +1036,6 @@ with pkgs;
 
   shaperglot = with python3Packages; toPythonApplication shaperglot;
 
-  supermin = callPackage ../tools/virtualization/supermin {
-    ocamlPackages = ocaml-ng.ocamlPackages_4_14;
-  };
-
   ufolint = with python3Packages; toPythonApplication ufolint;
 
   ventoy-full = ventoy.override {
@@ -1066,17 +1058,6 @@ with pkgs;
   waydroid-nftables = waydroid.override { withNftables = true; };
 
   winbox = winbox3;
-  winbox3 = callPackage ../tools/admin/winbox {
-    wine = wineWowPackages.stable;
-  };
-
-  yabridge = callPackage ../tools/audio/yabridge {
-    wine = wineWowPackages.yabridge;
-  };
-
-  yabridgectl = callPackage ../tools/audio/yabridgectl {
-    wine = wineWowPackages.yabridge;
-  };
 
   ### APPLICATIONS/VERSION-MANAGEMENT
 
@@ -1662,8 +1643,6 @@ with pkgs;
 
   clickgen = with python3Packages; toPythonApplication clickgen;
 
-  cloud-init = callPackage ../tools/virtualization/cloud-init { inherit systemd; };
-
   coloredlogs = with python3Packages; toPythonApplication coloredlogs;
 
   czkawka-full = czkawka.wrapper.override {
@@ -1727,10 +1706,6 @@ with pkgs;
 
   discourseAllPlugins = discourse.override {
     plugins = lib.filter (p: p ? pluginName) (builtins.attrValues discourse.plugins);
-  };
-
-  disorderfs = callPackage ../tools/filesystems/disorderfs {
-    asciidoc = asciidoc-full;
   };
 
   dino = callPackage ../applications/networking/instant-messengers/dino { };
@@ -1907,9 +1882,7 @@ with pkgs;
           throw "mesonEmulatorHook may only be added to nativeBuildInputs when the target binaries can't be executed; however you are attempting to use it in a situation where ${stdenv.hostPlatform.config} can execute ${stdenv.targetPlatform.config}. Consider only adding mesonEmulatorHook according to a conditional based canExecute in your package expression."
       );
 
-  mkspiffs = callPackage ../tools/filesystems/mkspiffs { };
-
-  mkspiffs-presets = recurseIntoAttrs (callPackages ../tools/filesystems/mkspiffs/presets.nix { });
+  mkspiffs-presets = recurseIntoAttrs (callPackages ../by-name/mk/mkspiffs/presets.nix { });
 
   mobilizon = callPackage ../servers/mobilizon {
     beamPackages = beam.packages.erlang_27.extend (self: super: { elixir = self.elixir_1_18; });
@@ -1945,8 +1918,6 @@ with pkgs;
   patool = with python3Packages; toPythonApplication patool;
 
   pixcat = with python3Packages; toPythonApplication pixcat;
-
-  pyznap = python3Packages.callPackage ../tools/backup/pyznap { };
 
   psrecord = python3Packages.callPackage ../tools/misc/psrecord { };
 
@@ -2007,18 +1978,6 @@ with pkgs;
 
   apc-temp-fetch = with python3.pkgs; callPackage ../tools/networking/apc-temp-fetch { };
 
-  asciidoc = callPackage ../tools/typesetting/asciidoc {
-    inherit (python3.pkgs)
-      pygments
-      matplotlib
-      numpy
-      aafigure
-      recursive-pth-loader
-      ;
-    w3m = w3m-batch;
-    enableStandardFeatures = false;
-  };
-
   asciidoc-full = asciidoc.override {
     enableStandardFeatures = true;
   };
@@ -2058,8 +2017,6 @@ with pkgs;
   bzip2_1_1 = callPackage ../tools/compression/bzip2/1_1.nix { };
 
   davix-copy = davix.override { enableThirdPartyCopy = true; };
-
-  cdist = python3Packages.callPackage ../tools/admin/cdist { };
 
   cemu-ti = qt5.callPackage ../applications/science/math/cemu-ti { };
 
@@ -2328,8 +2285,6 @@ with pkgs;
   dvtm-unstable = callPackage ../tools/misc/dvtm/unstable.nix { };
 
   engauge-digitizer = libsForQt5.callPackage ../applications/science/math/engauge-digitizer { };
-
-  kramdown-asciidoc = callPackage ../tools/typesetting/kramdown-asciidoc { };
 
   rocmPackages = recurseIntoAttrs (callPackage ../development/rocm-modules { });
 
@@ -2834,8 +2789,6 @@ with pkgs;
 
   keybase-gui = callPackage ../tools/security/keybase/gui.nix { };
 
-  kio-fuse = libsForQt5.callPackage ../tools/filesystems/kio-fuse { };
-
   krunvm = callPackage ../applications/virtualization/krunvm {
     inherit (darwin) sigtool;
   };
@@ -2847,11 +2800,6 @@ with pkgs;
   ksmoothdock = libsForQt5.callPackage ../applications/misc/ksmoothdock { };
 
   limine-full = limine.override { enableAll = true; };
-
-  liquidsoap = callPackage ../tools/audio/liquidsoap/full.nix {
-    ffmpeg = ffmpeg_6-full;
-    ocamlPackages = ocaml-ng.ocamlPackages_4_14;
-  };
 
   loganalyzer = libsForQt5.callPackage ../development/tools/loganalyzer { };
 
@@ -3338,8 +3286,6 @@ with pkgs;
 
   pulumiPackages = recurseIntoAttrs pulumi.pkgs;
 
-  pulumi-bin = callPackage ../tools/admin/pulumi-bin { };
-
   patch = gnupatch;
 
   pcscliteWithPolkit = pcsclite.override {
@@ -3637,8 +3583,6 @@ with pkgs;
 
   tinc = callPackage ../tools/networking/tinc { };
 
-  tikzit = libsForQt5.callPackage ../tools/typesetting/tikzit { };
-
   tinc_pre = callPackage ../tools/networking/tinc/pre.nix { };
 
   tldr-hs = haskellPackages.tldr;
@@ -3681,8 +3625,6 @@ with pkgs;
     withLuaJIT = true;
     withPython = true;
   };
-
-  unetbootin = libsForQt5.callPackage ../tools/cd-dvd/unetbootin { };
 
   unrpa = with python3Packages; toPythonApplication unrpa;
 
@@ -3743,11 +3685,6 @@ with pkgs;
 
   truecrack-cuda = truecrack.override { cudaSupport = true; };
 
-  turbovnc = callPackage ../tools/admin/turbovnc {
-    # fontDirectories = [ font-adobe-75dpi font-misc-misc font-cursor-misc font-bh-lucidatypewriter-75dpi ];
-    libjpeg_turbo = libjpeg_turbo.override { enableJava = true; };
-  };
-
   unbound-with-systemd = unbound.override {
     withSystemd = true;
   };
@@ -3763,20 +3700,6 @@ with pkgs;
     withDNSTAP = true;
     withTFO = true;
     withRedis = true;
-  };
-
-  unrar-wrapper = python3Packages.callPackage ../tools/archivers/unrar-wrapper { };
-
-  ugarit = callPackage ../tools/backup/ugarit {
-    inherit (chickenPackages_4) eggDerivation fetchegg;
-  };
-
-  ugarit-manifest-maker = callPackage ../tools/backup/ugarit-manifest-maker {
-    inherit (chickenPackages_4) eggDerivation fetchegg;
-  };
-
-  unar = callPackage ../tools/archivers/unar {
-    stdenv = clangStdenv;
   };
 
   unzipNLS = lowPrio (unzip.override { enableNLS = true; });
@@ -3816,10 +3739,6 @@ with pkgs;
   xdot = with python3Packages; toPythonApplication xdot;
 
   libxfs = xfsprogs.dev;
-
-  xmlto = callPackage ../tools/typesetting/xmlto {
-    w3m = w3m-batch;
-  };
 
   xorriso = libisoburn;
 
@@ -6064,8 +5983,6 @@ with pkgs;
 
   mavproxy = python3Packages.callPackage ../applications/science/robotics/mavproxy { };
 
-  meraki-cli = python3Packages.callPackage ../tools/admin/meraki-cli { };
-
   python-matter-server =
     with python3Packages;
     toPythonApplication (
@@ -6273,10 +6190,6 @@ with pkgs;
 
   c0 = callPackage ../development/compilers/c0 {
     stdenv = if stdenv.hostPlatform.isDarwin then gccStdenv else stdenv;
-  };
-
-  swftools = callPackage ../tools/video/swftools {
-    stdenv = gccStdenv;
   };
 
   teensyduino = arduino-core.override {
@@ -7255,10 +7168,6 @@ with pkgs;
 
   mbedtls_2 = callPackage ../development/libraries/mbedtls/2.nix { };
   mbedtls = callPackage ../development/libraries/mbedtls/3.nix { };
-
-  mergerfs = callPackage ../tools/filesystems/mergerfs { };
-
-  mergerfs-tools = callPackage ../tools/filesystems/mergerfs/tools.nix { };
 
   simple-dftd3 = callPackage ../development/libraries/science/chemistry/simple-dftd3 { };
 
@@ -10727,8 +10636,6 @@ with pkgs;
 
   mercurialFull = mercurial.override { fullBuild = true; };
 
-  meshcentral = callPackage ../tools/admin/meshcentral { };
-
   michabo = libsForQt5.callPackage ../applications/misc/michabo { };
 
   minitube = libsForQt5.callPackage ../applications/video/minitube { };
@@ -11010,8 +10917,6 @@ with pkgs;
 
   plover = recurseIntoAttrs (libsForQt5.callPackage ../applications/misc/plover { });
 
-  pokefinder = qt6Packages.callPackage ../tools/games/pokefinder { };
-
   pothos = libsForQt5.callPackage ../applications/radio/pothos { };
 
   # perhaps there are better apps for this task? It's how I had configured my previous system.
@@ -11228,10 +11133,6 @@ with pkgs;
   maestral-gui = qt6Packages.callPackage ../applications/networking/maestral-qt { };
 
   myfitnesspal = with python3Packages; toPythonApplication myfitnesspal;
-
-  libstrangle = callPackage ../tools/X11/libstrangle {
-    stdenv = stdenv_32bit;
-  };
 
   lightdm_qt = lightdm.override { withQt5 = true; };
 
@@ -11578,15 +11479,6 @@ with pkgs;
     }
   );
 
-  virtualglLib = callPackage ../tools/X11/virtualgl/lib.nix {
-    fltk = fltk_1_3;
-  };
-
-  virtualgl = callPackage ../tools/X11/virtualgl {
-    virtualglLib_i686 =
-      if stdenv.hostPlatform.system == "x86_64-linux" then pkgsi686Linux.virtualglLib else null;
-  };
-
   vlc-bin-universal = vlc-bin.override { variant = "universal"; };
 
   libvlc = vlc.override {
@@ -11706,10 +11598,6 @@ with pkgs;
   x2gokdriveclient = libsForQt5.callPackage ../applications/networking/remote/x2gokdriveclient { };
 
   x32edit = callPackage ../applications/audio/midas/x32edit.nix { };
-
-  xbindkeys-config = callPackage ../tools/X11/xbindkeys-config {
-    gtk = gtk2;
-  };
 
   kodiPackages = recurseIntoAttrs (kodi.packages);
 
@@ -12023,8 +11911,6 @@ with pkgs;
   };
 
   freeciv_gtk = freeciv;
-
-  ibmcloud-cli = callPackage ../tools/admin/ibmcloud-cli { stdenv = stdenvNoCC; };
 
   # used as base package for iortcw forks
   iortcw_sp = callPackage ../by-name/io/iortcw/sp.nix { };
@@ -13303,8 +13189,6 @@ with pkgs;
   sieveshell = with python3.pkgs; toPythonApplication managesieve;
 
   swift-corelibs-libdispatch = swiftPackages.Dispatch;
-
-  tidal-dl = python3Packages.callPackage ../tools/audio/tidal-dl { };
 
   duden = python3Packages.toPythonApplication python3Packages.duden;
 
