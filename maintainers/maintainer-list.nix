@@ -12076,6 +12076,11 @@
     githubId = 1198065;
     name = "Jeffrey David Johnson";
   };
+  jeffcshelton = {
+    github = "jeffcshelton";
+    githubId = 77426854;
+    name = "Jeff Shelton";
+  };
   jefferyoo = {
     email = "oojefferywm@proton.me";
     github = "jefferyoo";

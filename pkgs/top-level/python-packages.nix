@@ -4971,6 +4971,8 @@ self: super: with self; {
 
   envisage = callPackage ../development/python-modules/envisage { };
 
+  envoy-data-plane = callPackage ../development/python-modules/envoy-data-plane { };
+
   envoy-reader = callPackage ../development/python-modules/envoy-reader { };
 
   envoy-utils = callPackage ../development/python-modules/envoy-utils { };
@@ -9179,6 +9181,8 @@ self: super: with self; {
   lox = callPackage ../development/python-modules/lox { };
 
   lpc-checksum = callPackage ../development/python-modules/lpc-checksum { };
+
+  lpips = callPackage ../development/python-modules/lpips { };
 
   lrcalc-python = callPackage ../development/python-modules/lrcalc-python { };
 
