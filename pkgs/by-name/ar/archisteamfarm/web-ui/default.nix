@@ -2,7 +2,7 @@
   lib,
   fetchFromGitHub,
   buildNpmPackage,
-  ArchiSteamFarm,
+  archisteamfarm,
 }:
 
 buildNpmPackage rec {
@@ -33,6 +33,6 @@ buildNpmPackage rec {
     description = "Official web interface for ASF";
     license = lib.licenses.asl20;
     homepage = "https://github.com/JustArchiNET/ASF-ui";
-    inherit (ArchiSteamFarm.meta) maintainers platforms;
+    inherit (archisteamfarm.meta) maintainers platforms;
   };
 }
