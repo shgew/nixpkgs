@@ -47,7 +47,7 @@ stdenv.mkDerivation (finalAttrs: {
     homepage = "https://github.com/pantoniou/libfyaml";
     changelog = "https://github.com/pantoniou/libfyaml/releases/tag/v${finalAttrs.version}";
     license = lib.licenses.mit;
-    maintainers = [ ];
+    maintainers = with lib.maintainers; [ ilkecan ];
     pkgConfigModules = [ "libfyaml" ];
     platforms = lib.platforms.all;
   };

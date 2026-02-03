@@ -1,12 +1,17 @@
 {
+  lib,
   stdenvNoCC,
   fetchFromGitHub,
-  theme,
-  lib,
+  theme ? "black",
 }:
 
+assert lib.asserts.assertOneOf "theme" theme [
+  "black"
+  "white"
+];
+
 stdenvNoCC.mkDerivation (finalAttrs: {
-  pname = "gruppled-lite-cursors";
+  pname = "gruppled-${theme}-lite-cursors";
   version = "1.0.0";
 
   src = fetchFromGitHub {
@@ -17,12 +22,12 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   };
 
   installPhase = ''
-    mkdir -p $out/share/icons/${theme}
-    cp -r ${theme}/{cursors,index.theme} $out/share/icons/${theme}
+    mkdir -p $out/share/icons/gruppled_${theme}_lite
+    cp -r gruppled_${theme}_lite/{cursors,index.theme} $out/share/icons/gruppled_${theme}_lite
   '';
 
   meta = {
-    description = "Gruppled Lite Cursors theme";
+    description = "Gruppled ${lib.toSentenceCase theme} Lite Cursors theme";
     homepage = "https://github.com/nim65s/gruppled-lite-cursors";
     license = lib.licenses.gpl2Only;
     maintainers = with lib.maintainers; [ nim65s ];
