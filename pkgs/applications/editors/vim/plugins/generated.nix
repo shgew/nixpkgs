@@ -7337,6 +7337,19 @@ final: prev: {
     meta.hydraPlatforms = [ ];
   };
 
+  koda-nvim = buildVimPlugin {
+    pname = "koda.nvim";
+    version = "2.6.0-unstable-2026-02-04";
+    src = fetchFromGitHub {
+      owner = "oskarnurm";
+      repo = "koda.nvim";
+      rev = "9c69db5df7f1a82851d87fdac5b37a469213ac16";
+      hash = "sha256-Zcp7TKuAa7CvlDUv/9iFiuR3X68mPoug5EgsUhmtkkA=";
+    };
+    meta.homepage = "https://github.com/oskarnurm/koda.nvim/";
+    meta.hydraPlatforms = [ ];
+  };
+
   kommentary = buildVimPlugin {
     pname = "kommentary";
     version = "1.0-unstable-2023-11-29";
