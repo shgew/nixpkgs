@@ -558,9 +558,10 @@ let
       # https://chromium-review.googlesource.com/c/chromium/src/+/7022369
       ./patches/chromium-144-rustc_nightly_capability.patch
     ]
-    ++ lib.optionals (chromiumVersionAtLeast "144.0.7559.132") [
+    ++ lib.optionals (chromiumVersionAtLeast "144.0.7559.132" && !ungoogled) [
       # Rollup was swapped with esbuild because of compile failures on Windows,
       # which is not compatible with our build yet. So let's revert it for now.
+      # Ungoogled ships its own variant of this patch upstream.
       # https://issues.chromium.org/issues/461602362
       (fetchpatch {
         name = "revert-devtools-frontend-esbuild-instead-of-rollup.patch";
