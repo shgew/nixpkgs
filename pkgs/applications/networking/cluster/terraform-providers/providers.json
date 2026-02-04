@@ -571,20 +571,20 @@
     "vendorHash": "sha256-xIagZvWtlNpz5SQfxbA7r9ojAeS3CW2pwV337ObKOwU="
   },
   "hashicorp_google": {
-    "hash": "sha256-xqj0bA+tKpxJ0Wq0bGzBmpoCyALdgBrPUaw7A5zAxxA=",
+    "hash": "sha256-VJ9RGR7wmX8CkNvntxlbhGuIyrCALMVH+E7zRRbD1bY=",
     "homepage": "https://registry.terraform.io/providers/hashicorp/google",
     "owner": "hashicorp",
     "repo": "terraform-provider-google",
-    "rev": "v7.16.0",
+    "rev": "v7.17.0",
     "spdx": "MPL-2.0",
-    "vendorHash": "sha256-6re5ARUiWmpkND7hfjSDm2aOX5vlESp7UrcPJDNIJ+s="
+    "vendorHash": "sha256-u85rqTYpYFeTLGElOVojpsqUMZsopjpmsKwijsyLlz8="
   },
   "hashicorp_google-beta": {
-    "hash": "sha256-orMcxMY6btX5qejY+X21JSuoLp9M0JjUiDjrQ2LQjDA=",
+    "hash": "sha256-NRTnx5nqdCtjz0mGZjuA96jEzW1rKR+M0AY2//TAYk4=",
     "homepage": "https://registry.terraform.io/providers/hashicorp/google-beta",
     "owner": "hashicorp",
     "repo": "terraform-provider-google-beta",
-    "rev": "v7.17.0",
+    "rev": "v7.18.0",
     "spdx": "MPL-2.0",
     "vendorHash": "sha256-/wClcz8fwl9Of2JSKcfETs7VR6c5KrYnnF+yW5iUoSU="
   },
@@ -1049,11 +1049,11 @@
     "vendorHash": null
   },
   "oracle_oci": {
-    "hash": "sha256-zcYB7DEwffVzPm4OXots9Z7Gzu6k/Pcaa4ell0gT33Q=",
+    "hash": "sha256-gzjvdAuT3HDMRULa+b2u75zqei4x1ylj3NGyHh4qa+U=",
     "homepage": "https://registry.terraform.io/providers/oracle/oci",
     "owner": "oracle",
     "repo": "terraform-provider-oci",
-    "rev": "v7.31.0",
+    "rev": "v7.32.0",
     "spdx": "MPL-2.0",
     "vendorHash": null
   },
@@ -1247,11 +1247,11 @@
     "vendorHash": "sha256-/zsslNR7GDLFrtL4T0GLYhKTBof51ODavb/+PHdziS4="
   },
   "spotinst_spotinst": {
-    "hash": "sha256-aPOqAzK/FdDDTbl2WMKxA99a5w6ZM0xK/BLjzPnvuws=",
+    "hash": "sha256-yDwEtptwNXu/IpoKUK98UkpivTgJaY1FfsshsVpaaOk=",
     "homepage": "https://registry.terraform.io/providers/spotinst/spotinst",
     "owner": "spotinst",
     "repo": "terraform-provider-spotinst",
-    "rev": "v1.232.3",
+    "rev": "v1.232.4",
     "spdx": "MPL-2.0",
     "vendorHash": "sha256-Cj7RVITkFxIjAZAqHFhnoTa4lTZFXG22ny801g0Y+NE="
   },
@@ -1265,11 +1265,11 @@
     "vendorHash": "sha256-9M1DsE/FPQK8TG7xCJWbU3HAJCK3p/7lxdzjO1oAfWs="
   },
   "sumologic_sumologic": {
-    "hash": "sha256-UEJNCb1b2BXgBM6FuTHzw5O7FopY3Iv99Hv01KDjY8k=",
+    "hash": "sha256-jL64y4/v11ZPm7RuW9c5iumm490pRCHp4VHJjkIqGKE=",
     "homepage": "https://registry.terraform.io/providers/SumoLogic/sumologic",
     "owner": "SumoLogic",
     "repo": "terraform-provider-sumologic",
-    "rev": "v3.2.2",
+    "rev": "v3.2.3",
     "spdx": "MPL-2.0",
     "vendorHash": "sha256-IR6KjFW5GbsOIm3EEFyx3ctwhbifZlcNaZeGhbeK/Wo="
   },
@@ -1490,11 +1490,11 @@
     "vendorHash": "sha256-8vYTNSjEwalDsS77UUVw7u2K3bbK4HM3yiUR3Ppi79I="
   },
   "wgebis_mailgun": {
-    "hash": "sha256-W+cvYNwsa5T6ZIPeEVbO9ogdZurwDPOKUwJfPXNKSqg=",
+    "hash": "sha256-Li4eyqZ6huO5Q+XTcQ+HQCg8IOjhxGU9Z4Uw3TbMdAc=",
     "homepage": "https://registry.terraform.io/providers/wgebis/mailgun",
     "owner": "wgebis",
     "repo": "terraform-provider-mailgun",
-    "rev": "v0.8.1",
+    "rev": "v0.9.0",
     "spdx": "MPL-2.0",
     "vendorHash": "sha256-Z4DfoG4ApXbPNXZs9YvBWQj1bH7moLNI6P+nKDHt/Jc="
   },

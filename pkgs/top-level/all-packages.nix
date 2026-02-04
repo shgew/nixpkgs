@@ -1368,8 +1368,6 @@ with pkgs;
     };
   };
 
-  ArchiSteamFarm = callPackage ../applications/misc/ArchiSteamFarm { };
-
   arduino = arduino-core.override { withGui = true; };
 
   arduino-core = callPackage ../development/embedded/arduino/arduino-core/chrootenv.nix { };
@@ -3336,11 +3334,6 @@ with pkgs;
   playwright-driver = (callPackage ../development/web/playwright/driver.nix { }).playwright-core;
   playwright-test = (callPackage ../development/web/playwright/driver.nix { }).playwright-test;
 
-  inherit (callPackage ../servers/plik { })
-    plik
-    plikd
-    ;
-
   plex = callPackage ../servers/plex { };
 
   plexRaw = callPackage ../servers/plex/raw.nix { };
@@ -3664,10 +3657,6 @@ with pkgs;
   };
 
   buildWasmBindgenCli = callPackage ../build-support/wasm-bindgen-cli { };
-
-  wasmedge = callPackage ../development/tools/wasmedge {
-    stdenv = clangStdenv;
-  };
 
   woodpecker-agent = callPackage ../development/tools/continuous-integration/woodpecker/agent.nix { };
 
@@ -5548,7 +5537,6 @@ with pkgs;
   electron-source = callPackage ../development/tools/electron { };
 
   inherit (callPackages ../development/tools/electron/binary { })
-    electron_36-bin
     electron_37-bin
     electron_38-bin
     electron_39-bin
@@ -5556,7 +5544,6 @@ with pkgs;
     ;
 
   inherit (callPackages ../development/tools/electron/chromedriver { })
-    electron-chromedriver_36
     electron-chromedriver_37
     electron-chromedriver_38
     electron-chromedriver_39
@@ -5580,11 +5567,7 @@ with pkgs;
           });
       in
       {
-        electron_36 = electron_36-bin;
-        electron_37 = getElectronPkg {
-          src = electron-source.electron_37;
-          bin = electron_37-bin;
-        };
+        electron_37 = electron_37-bin;
         electron_38 = getElectronPkg {
           src = electron-source.electron_38;
           bin = electron_38-bin;
@@ -5599,7 +5582,6 @@ with pkgs;
         };
       }
     )
-    electron_36
     electron_37
     electron_38
     electron_39
@@ -6248,12 +6230,6 @@ with pkgs;
   };
 
   watson-ruby = callPackage ../development/tools/misc/watson-ruby { };
-
-  xcbuild = callPackage ../by-name/xc/xcbuild/package.nix {
-    stdenv =
-      # xcbuild is included in the SDK. Avoid an infinite recursion by using a bootstrap stdenv.
-      if stdenv.hostPlatform.isDarwin then darwin.bootstrapStdenv else stdenv;
-  };
 
   xcbuildHook = makeSetupHook {
     name = "xcbuild-hook";
@@ -7014,15 +6990,6 @@ with pkgs;
 
   libpeas = callPackage ../development/libraries/libpeas { };
   libpeas2 = callPackage ../development/libraries/libpeas/2.x.nix { };
-
-  libpng = callPackage ../development/libraries/libpng {
-    stdenv =
-      # libpng is a dependency of xcbuild. Avoid an infinite recursion by using a bootstrap stdenv
-      # that does not propagate xcrun.
-      if stdenv.hostPlatform.isDarwin then darwin.bootstrapStdenv else stdenv;
-  };
-
-  libpng12 = callPackage ../development/libraries/libpng/12.nix { };
 
   inherit
     (callPackages ../development/libraries/prometheus-client-c {
@@ -8459,9 +8426,6 @@ with pkgs;
   };
 
   minio = callPackage ../servers/minio { };
-  # Keep around to allow people to migrate their data from the old legacy fs format
-  # https://github.com/minio/minio/releases/tag/RELEASE.2022-10-29T06-21-33Z
-  minio_legacy_fs = callPackage ../servers/minio/legacy_fs.nix { };
 
   mkchromecast = libsForQt5.callPackage ../applications/networking/mkchromecast { };
 
@@ -8794,10 +8758,6 @@ with pkgs;
   pypiserver = with python3Packages; toPythonApplication pypiserver;
 
   qremotecontrol-server = libsForQt5.callPackage ../servers/misc/qremotecontrol-server { };
-
-  rabbitmq-server = callPackage ../by-name/ra/rabbitmq-server/package.nix {
-    beamPackages = beam27Packages.extend (self: super: { elixir = elixir_1_18; });
-  };
 
   rethinkdb = callPackage ../servers/nosql/rethinkdb {
     stdenv = clangStdenv;
@@ -9516,12 +9476,6 @@ with pkgs;
 
   dejavu_fonts = lowPrio (callPackage ../data/fonts/dejavu-fonts { });
 
-  # solve collision for nix-env before https://github.com/NixOS/nix/pull/815
-  dejavu_fontsEnv = buildEnv {
-    name = dejavu_fonts.name;
-    paths = [ dejavu_fonts.out ];
-  };
-
   docbook_sgml_dtd_31 = callPackage ../data/sgml+xml/schemas/sgml-dtd/docbook/3.1.nix { };
 
   docbook_sgml_dtd_41 = callPackage ../data/sgml+xml/schemas/sgml-dtd/docbook/4.1.nix { };
@@ -9565,22 +9519,8 @@ with pkgs;
 
   spacx-gtk-theme = callPackage ../data/themes/gtk-theme-framework { theme = "spacx"; };
 
-  inherit
-    ({
-      gruppled-black-cursors = callPackage ../data/icons/gruppled-cursors { theme = "gruppled_black"; };
-      gruppled-black-lite-cursors = callPackage ../data/icons/gruppled-lite-cursors {
-        theme = "gruppled_black_lite";
-      };
-      gruppled-white-cursors = callPackage ../data/icons/gruppled-cursors { theme = "gruppled_white"; };
-      gruppled-white-lite-cursors = callPackage ../data/icons/gruppled-lite-cursors {
-        theme = "gruppled_white_lite";
-      };
-    })
-    gruppled-black-cursors
-    gruppled-black-lite-cursors
-    gruppled-white-cursors
-    gruppled-white-lite-cursors
-    ;
+  gruppled-white-cursors = gruppled-black-cursors.override { theme = "white"; };
+  gruppled-white-lite-cursors = gruppled-black-lite-cursors.override { theme = "white"; };
 
   iosevka-comfy = recurseIntoAttrs (callPackages ../data/fonts/iosevka/comfy.nix { });
 
@@ -9749,10 +9689,6 @@ with pkgs;
   };
 
   audacious = audacious-bare.override { withPlugins = true; };
-
-  audacity = callPackage ../by-name/au/audacity/package.nix {
-    ffmpeg = ffmpeg_7;
-  };
 
   bambootracker-qt6 = bambootracker.override { withQt6 = true; };
 
@@ -12382,10 +12318,6 @@ with pkgs;
     ocamlPackages = ocaml-ng.ocamlPackages_4_12;
   };
 
-  bitwuzla = callPackage ../by-name/bi/bitwuzla/package.nix {
-    cadical = cadical.override { version = "2.1.3"; };
-  };
-
   inherit
     (callPackage ./rocq-packages.nix {
       inherit (ocaml-ng)
@@ -12461,10 +12393,6 @@ with pkgs;
       dontDisableStatic = true;
     });
     stdenv = gccStdenv;
-  };
-
-  cvc5 = callPackage ../by-name/cv/cvc5/package.nix {
-    cadical = cadical.override { version = "2.1.3"; };
   };
 
   ekrhyper = callPackage ../applications/science/logic/ekrhyper {
