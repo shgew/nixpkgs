@@ -2714,6 +2714,7 @@ assertNoAdditions {
     dependencies = with self; [
       none-ls-nvim
       nvim-treesitter-parsers.nu
+      plenary-nvim
     ];
   };
 
@@ -3755,6 +3756,7 @@ assertNoAdditions {
     ];
     dependencies = with self; [
       nvim-lspconfig
+      plenary-nvim
     ];
   };
 
