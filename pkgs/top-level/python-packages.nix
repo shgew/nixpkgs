@@ -3599,8 +3599,6 @@ self: super: with self; {
 
   datashaper = callPackage ../development/python-modules/datashaper { };
 
-  datatable = callPackage ../development/python-modules/datatable { };
-
   datauri = callPackage ../development/python-modules/datauri { };
 
   datefinder = callPackage ../development/python-modules/datefinder { };
@@ -20013,8 +20011,6 @@ self: super: with self; {
   typesense = callPackage ../development/python-modules/typesense {
     inherit (pkgs) typesense curl;
   };
-
-  typesentry = callPackage ../development/python-modules/typesentry { };
 
   typeshed-client = callPackage ../development/python-modules/typeshed-client { };
 
