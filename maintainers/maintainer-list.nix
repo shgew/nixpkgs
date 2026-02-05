@@ -26614,6 +26614,12 @@
     githubId = 633969;
     name = "Miroslav Vadkerti";
   };
+  ths-on = {
+    email = "thore.sommer@tum.de";
+    github = "THS-on";
+    githubId = 10854414;
+    name = "Thore Sommer";
+  };
   thtrf = {
     email = "thtrf@proton.me";
     github = "thtrf";
