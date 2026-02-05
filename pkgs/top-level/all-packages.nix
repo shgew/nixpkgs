@@ -11167,8 +11167,6 @@ with pkgs;
     inherit (haskellPackages) ghcWithPackages taffybar;
   };
 
-  tagainijisho = libsForQt5.callPackage ../applications/office/tagainijisho { };
-
   telegram-desktop =
     kdePackages.callPackage ../applications/networking/instant-messengers/telegram/telegram-desktop
       {
