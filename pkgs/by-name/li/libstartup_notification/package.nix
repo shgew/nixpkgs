@@ -5,7 +5,7 @@
   libX11,
   libxcb,
   pkg-config,
-  xcbutil,
+  libxcb-util,
 }:
 
 stdenv.mkDerivation (finalAttrs: {
@@ -24,7 +24,7 @@ stdenv.mkDerivation (finalAttrs: {
   buildInputs = [
     libX11
     libxcb
-    xcbutil
+    libxcb-util
   ];
 
   meta = {

@@ -4,7 +4,7 @@
   fetchFromGitLab,
   autoreconfHook,
   pkg-config,
-  utilmacros,
+  util-macros,
   libX11,
   libXaw,
   libXmu,
@@ -33,7 +33,7 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [
     autoreconfHook
     pkg-config
-    utilmacros
+    util-macros
   ];
   buildInputs = [
     libX11

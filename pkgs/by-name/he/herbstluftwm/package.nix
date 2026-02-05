@@ -16,7 +16,7 @@
   freetype,
   asciidoc,
   xdotool,
-  xorgserver,
+  xorg-server,
   xsetroot,
   xterm,
   runtimeShell,
@@ -109,7 +109,7 @@ stdenv.mkDerivation (finalAttrs: {
       ]
     ))
     xdotool
-    xorgserver
+    xorg-server
     xsetroot
     xterm
     python3.pkgs.pytestCheckHook

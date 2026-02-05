@@ -4,8 +4,8 @@
   factorio-utils,
   fetchurl,
   libGL,
-  libICE,
-  libSM,
+  libice,
+  libsm,
   libX11,
   libXcursor,
   libXext,
@@ -242,8 +242,8 @@ let
       libPath = lib.makeLibraryPath [
         alsa-lib
         libGL
-        libICE
-        libSM
+        libice
+        libsm
         libX11
         libXcursor
         libXext

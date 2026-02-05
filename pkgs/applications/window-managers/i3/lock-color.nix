@@ -5,8 +5,8 @@
   autoreconfHook,
   pkg-config,
   libxcb,
-  xcbutilkeysyms,
-  xcbutilimage,
+  libxcb-keysyms,
+  libxcb-image,
   pam,
   libX11,
   libev,
@@ -35,8 +35,8 @@ stdenv.mkDerivation rec {
   ];
   buildInputs = [
     libxcb
-    xcbutilkeysyms
-    xcbutilimage
+    libxcb-keysyms
+    libxcb-image
     pam
     libX11
     libev

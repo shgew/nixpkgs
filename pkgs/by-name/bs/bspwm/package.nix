@@ -4,9 +4,9 @@
   fetchFromGitHub,
   libxcb,
   libXinerama,
-  xcbutil,
-  xcbutilkeysyms,
-  xcbutilwm,
+  libxcb-util,
+  libxcb-keysyms,
+  libxcb-wm,
   nixosTests,
 }:
 
@@ -24,9 +24,9 @@ stdenv.mkDerivation (finalAttrs: {
   buildInputs = [
     libxcb
     libXinerama
-    xcbutil
-    xcbutilkeysyms
-    xcbutilwm
+    libxcb-util
+    libxcb-keysyms
+    libxcb-wm
   ];
 
   makeFlags = [ "PREFIX=$(out)" ];

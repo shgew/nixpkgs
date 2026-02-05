@@ -7854,8 +7854,6 @@ with pkgs;
     libmagic = file;
   };
 
-  xcb-util-cursor = libxcb-cursor;
-
   xgboostWithCuda = xgboost.override { cudaSupport = true; };
 
   zlib = callPackage ../development/libraries/zlib {
@@ -8824,17 +8822,6 @@ with pkgs;
 
   virtualenv-clone = with python3Packages; toPythonApplication virtualenv-clone;
 
-  fontadobe100dpi = font-adobe-100dpi;
-  fontadobeutopia100dpi = font-adobe-utopia-100dpi;
-  fontbh100dpi = font-bh-100dpi;
-  fontbhlucidatypewriter100dpi = font-bh-lucidatypewriter-100dpi;
-  fontbitstream100dpi = font-bitstream-100dpi;
-  fontutil = font-util;
-  libAppleWM = libapplewm;
-  libFS = libfs;
-  libICE = libice;
-  libpthreadstubs = libpthread-stubs;
-  libSM = libsm;
   libX11 = libx11;
   libXau = libxau;
   libXaw = libxaw;
@@ -8864,21 +8851,7 @@ with pkgs;
   libXxf86misc = libxxf86misc;
   libXxf86vm = libxxf86vm;
   mkfontdir = mkfontscale;
-  utilmacros = util-macros;
   xcbproto = xcb-proto;
-  xcbutil = libxcb-util;
-  xcbutilcursor = libxcb-cursor;
-  xcbutilerrors = libxcb-errors;
-  xcbutilimage = libxcb-image;
-  xcbutilkeysyms = libxcb-keysyms;
-  xcbutilrenderutil = libxcb-render-util;
-  xcbutilwm = libxcb-wm;
-  xf86inputevdev = xf86-input-evdev;
-  xf86inputlibinput = xf86-input-libinput;
-  xf86videonouveau = xf86-video-nouveau;
-  xkeyboardconfig = xkeyboard-config;
-  xorgcffiles = xorg-cf-files;
-  xorgserver = xorg-server;
 
   zabbixFor = version: rec {
     agent = (callPackages ../servers/monitoring/zabbix/agent.nix { }).${version};

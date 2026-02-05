@@ -9,14 +9,14 @@
   qtquickcontrols2,
   libXinerama,
   libxcb,
-  libSM,
+  libsm,
   libXi,
   libglvnd,
   libXext,
   libXrandr,
   mailspring,
   libX11,
-  libICE,
+  libice,
   libXrender,
   autoPatchelfHook,
   makeWrapper,
@@ -54,14 +54,14 @@ let
       qtquickcontrols2
       libXinerama
       libxcb
-      libSM
+      libsm
       libXi
       libglvnd
       libXext
       libXrandr
       mailspring
       libX11
-      libICE
+      libice
       libXrender
     ];
 
@@ -111,14 +111,14 @@ buildFHSEnv {
     qtquickcontrols2
     libXinerama
     libxcb
-    libSM
+    libsm
     libXi
     libglvnd
     libXext
     libXrandr
     mailspring
     libX11
-    libICE
+    libice
     libXrender
     openal
   ];

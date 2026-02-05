@@ -6,8 +6,8 @@
   autoreconfHook,
   installShellFiles,
   pixman,
-  xcbutil,
-  xcbutilimage,
+  libxcb-util,
+  libxcb-image,
   libseccomp,
   libjpeg,
   libpng,
@@ -32,8 +32,8 @@ stdenv.mkDerivation (finalAttrs: {
   ];
   buildInputs = [
     pixman
-    xcbutilimage
-    xcbutil
+    libxcb-image
+    libxcb-util
     libseccomp
     libjpeg
     libpng

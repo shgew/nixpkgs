@@ -11,12 +11,12 @@
   libXft,
   xorgproto,
   libv4l,
-  libFS,
+  libfs,
   libXaw,
   libXpm,
   libXext,
-  libSM,
-  libICE,
+  libsm,
+  libice,
   perl,
 }:
 
@@ -42,15 +42,15 @@ stdenv.mkDerivation (finalAttrs: {
     libXt
     libXft
     xorgproto
-    libFS
+    libfs
     perl
     alsa-lib
     aalib
     libXaw
     libXpm
     libXext
-    libSM
-    libICE
+    libsm
+    libice
     libv4l
   ];
 

@@ -4,8 +4,8 @@
   fetchFromGitHub,
   cmake,
   curl,
-  libICE,
-  libSM,
+  libice,
+  libsm,
   libX11,
   libXdmcp,
   libXext,
@@ -55,8 +55,8 @@ stdenv.mkDerivation (finalAttrs: {
     libXinerama
     libXrandr
     libXdmcp
-    libICE
-    libSM
+    libice
+    libsm
   ]
   ++ lib.optionals withLibei [
     libei

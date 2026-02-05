@@ -13,15 +13,15 @@
   pkg-config,
   gdk-pixbuf,
   libnotify,
-  libICE,
-  libSM,
+  libice,
+  libsm,
   libX11,
   libxkbfile,
   libXi,
   libXtst,
   libXrandr,
   libXinerama,
-  xkeyboardconfig,
+  xkeyboard-config,
   xinput,
   avahi-compat,
   libsForQt5,
@@ -53,7 +53,7 @@ stdenv.mkDerivation (finalAttrs: {
   ''
   + lib.optionalString stdenv.hostPlatform.isLinux ''
     substituteInPlace src/lib/synergy/unix/AppUtilUnix.cpp \
-      --replace-fail "/usr/share/X11/xkb/rules/evdev.xml" "${xkeyboardconfig}/share/X11/xkb/rules/evdev.xml"
+      --replace-fail "/usr/share/X11/xkb/rules/evdev.xml" "${xkeyboard-config}/share/X11/xkb/rules/evdev.xml"
   '';
 
   nativeBuildInputs = [
@@ -71,8 +71,8 @@ stdenv.mkDerivation (finalAttrs: {
     util-linux
     libselinux
     libsepol
-    libICE
-    libSM
+    libice
+    libsm
     libX11
     libXi
     libXtst

@@ -18,7 +18,7 @@
   libadwaita,
   libxcvt,
   libGL,
-  libICE,
+  libice,
   libX11,
   libXcomposite,
   libXcursor,
@@ -49,12 +49,12 @@
   pipewire,
   libgudev,
   libwacom,
-  libSM,
+  libsm,
   xwayland,
   mesa-gl-headers,
   meson,
   gnome-settings-daemon,
-  xorgserver,
+  xorg-server,
   python3,
   wayland-scanner,
   wrapGAppsHook4,
@@ -121,7 +121,7 @@ stdenv.mkDerivation (finalAttrs: {
     wayland-scanner
     wrapGAppsHook4
     gi-docgen
-    xorgserver
+    xorg-server
     gobject-introspection
     udevCheckHook
   ];
@@ -146,7 +146,7 @@ stdenv.mkDerivation (finalAttrs: {
     libinput
     libstartup_notification
     libwacom
-    libSM
+    libsm
     colord
     lcms2
     pango
@@ -158,7 +158,7 @@ stdenv.mkDerivation (finalAttrs: {
     wayland-protocols
     # X11 client
     gtk4
-    libICE
+    libice
     libX11
     libXcomposite
     libXcursor

@@ -8,13 +8,13 @@
   alsa-lib,
   libX11,
   libsndfile,
-  libSM,
+  libsm,
   libsamplerate,
   libtool,
   autoconf,
   automake,
   xorgproto,
-  libICE,
+  libice,
   pkg-config,
 }:
 
@@ -43,11 +43,11 @@ stdenv.mkDerivation rec {
     alsa-lib
     libX11
     libsndfile
-    libSM
+    libsm
     libsamplerate
     libtool
     xorgproto
-    libICE
+    libice
   ];
 
   meta = {

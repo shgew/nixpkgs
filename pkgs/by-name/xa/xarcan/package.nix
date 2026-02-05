@@ -7,7 +7,7 @@
   dbus,
   dri-pkgconfig-stub,
   libepoxy,
-  fontutil,
+  font-util,
   libGL,
   libX11,
   libXau,
@@ -30,9 +30,9 @@
   pixman,
   pkg-config,
   systemd,
-  xcbutil,
-  xcbutilwm,
-  xcbutilimage,
+  libxcb-util,
+  libxcb-wm,
+  libxcb-image,
   xkbcomp,
   xkeyboard_config,
   xorgproto,
@@ -63,7 +63,7 @@ stdenv.mkDerivation (finalPackages: rec {
     dbus
     dri-pkgconfig-stub
     libepoxy
-    fontutil
+    font-util
     libGL
     libX11
     libXau
@@ -83,9 +83,9 @@ stdenv.mkDerivation (finalPackages: rec {
     openssl
     pixman
     systemd
-    xcbutil
-    xcbutilwm
-    xcbutilimage
+    libxcb-util
+    libxcb-wm
+    libxcb-image
     xkbcomp
     xkeyboard_config
     xorgproto

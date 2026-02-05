@@ -6,7 +6,7 @@
   glib,
   libGL,
   libGLU,
-  libSM,
+  libsm,
 
   libXcomposite,
   libXi,
@@ -27,7 +27,7 @@
   cups,
   alsa-lib,
 
-  xkeyboardconfig,
+  xkeyboard-config,
   autoPatchelfHook,
   wrapQtAppsHook,
 }:
@@ -53,7 +53,7 @@ stdenv.mkDerivation rec {
     autoPatchelfHook
     wrapQtAppsHook
   ];
-  propagatedBuildInputs = [ xkeyboardconfig ];
+  propagatedBuildInputs = [ xkeyboard-config ];
   buildInputs = [
     dbus
     cups
@@ -64,7 +64,7 @@ stdenv.mkDerivation rec {
     gst_all_1.gstreamer
     libGL
     libGLU
-    libSM
+    libsm
     libX11
     libXcomposite
     libXi
@@ -126,7 +126,7 @@ stdenv.mkDerivation rec {
   postFixup = ''
     wrapProgram $out/bin/googleearth-pro \
       --set QT_QPA_PLATFORM xcb \
-      --set QT_XKB_CONFIG_ROOT "${xkeyboardconfig}/share/X11/xkb"
+      --set QT_XKB_CONFIG_ROOT "${xkeyboard-config}/share/X11/xkb"
   '';
 
   meta = {

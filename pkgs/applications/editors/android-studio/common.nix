@@ -38,11 +38,11 @@
   libxcb,
   libxkbcommon,
   mesa-demos,
-  xcbutilwm,
-  xcbutilrenderutil,
-  xcbutilkeysyms,
-  xcbutilimage,
-  xcbutilcursor,
+  libxcb-wm,
+  libxcb-render-util,
+  libxcb-keysyms,
+  libxcb-image,
+  libxcb-cursor,
   libxkbfile,
   libXcomposite,
   libXcursor,
@@ -171,11 +171,11 @@ let
             libX11
             libxcb
             libxkbcommon
-            xcbutilwm
-            xcbutilrenderutil
-            xcbutilkeysyms
-            xcbutilimage
-            xcbutilcursor
+            libxcb-wm
+            libxcb-render-util
+            libxcb-keysyms
+            libxcb-image
+            libxcb-cursor
             libice
             libsm
             libxkbfile

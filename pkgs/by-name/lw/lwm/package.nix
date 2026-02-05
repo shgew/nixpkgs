@@ -4,9 +4,9 @@
   fetchurl,
   imake,
   libX11,
-  libSM,
+  libsm,
   libXext,
-  libICE,
+  libice,
 }:
 
 stdenv.mkDerivation rec {
@@ -22,9 +22,9 @@ stdenv.mkDerivation rec {
 
   buildInputs = [
     libX11
-    libSM
+    libsm
     libXext
-    libICE
+    libice
   ];
 
   dontConfigure = true;

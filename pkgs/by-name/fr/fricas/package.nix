@@ -5,8 +5,8 @@
   sbcl,
   libX11,
   libXpm,
-  libICE,
-  libSM,
+  libice,
+  libsm,
   libXt,
   libXau,
   libXdmcp,
@@ -27,8 +27,8 @@ stdenv.mkDerivation (finalAttrs: {
     sbcl
     libX11
     libXpm
-    libICE
-    libSM
+    libice
+    libsm
     libXt
     libXau
     libXdmcp

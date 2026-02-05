@@ -11,8 +11,8 @@
   libXcursor,
   libXau,
   libXrandr,
-  libICE,
-  libSM,
+  libice,
+  libsm,
   imlib2,
   pango,
   libstartup_notification,
@@ -36,8 +36,8 @@ stdenv.mkDerivation rec {
     libXcursor
     libXau
     libXrandr
-    libICE
-    libSM
+    libice
+    libsm
     libstartup_notification
     python3
   ];

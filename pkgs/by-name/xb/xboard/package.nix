@@ -7,8 +7,8 @@
   xorgproto,
   libXt,
   libXaw,
-  libSM,
-  libICE,
+  libsm,
+  libice,
   libXmu,
   libXext,
   gnuchess,
@@ -46,8 +46,8 @@ stdenv.mkDerivation (finalAttrs: {
     xorgproto
     libXt
     libXaw
-    libSM
-    libICE
+    libsm
+    libice
     libXmu
     libXext
     gnuchess

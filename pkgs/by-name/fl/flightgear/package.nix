@@ -7,11 +7,11 @@
   freealut,
   libGLU,
   libGL,
-  libICE,
+  libice,
   libjpeg,
   openal,
   plib,
-  libSM,
+  libsm,
   libunwind,
   libX11,
   xorgproto,
@@ -75,12 +75,12 @@ stdenv.mkDerivation rec {
     freealut
     libGLU
     libGL
-    libICE
+    libice
     libjpeg
     openal
     openscenegraph
     plib
-    libSM
+    libsm
     libunwind
     libX11
     xorgproto

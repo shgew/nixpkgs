@@ -14,8 +14,8 @@
   openssl,
   libGL,
   libX11,
-  libICE,
-  libSM,
+  libice,
+  libsm,
   libXi,
   libXcursor,
   libXext,
@@ -103,8 +103,8 @@ buildDotnetModule (finalAttrs: {
     openssl
     libGL
     libX11
-    libICE
-    libSM
+    libice
+    libsm
     libXi
     libXcursor
     libXext

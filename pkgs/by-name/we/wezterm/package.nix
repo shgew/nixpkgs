@@ -19,10 +19,10 @@
   vulkan-loader,
   wayland,
   wezterm,
-  xcbutil,
-  xcbutilimage,
-  xcbutilkeysyms,
-  xcbutilwm,
+  libxcb-util,
+  libxcb-image,
+  libxcb-keysyms,
+  libxcb-wm,
   zlib,
 }:
 
@@ -78,10 +78,10 @@ rustPlatform.buildRustPackage rec {
     libxcb
     libxkbcommon
     wayland
-    xcbutil
-    xcbutilimage
-    xcbutilkeysyms
-    xcbutilwm # contains xcb-ewmh among others
+    libxcb-util
+    libxcb-image
+    libxcb-keysyms
+    libxcb-wm # contains xcb-ewmh among others
   ];
 
   buildFeatures = [ "distro-defaults" ];

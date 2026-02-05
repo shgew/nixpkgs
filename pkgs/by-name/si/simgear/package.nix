@@ -8,8 +8,8 @@
   libX11,
   libXext,
   libXi,
-  libICE,
-  libSM,
+  libice,
+  libsm,
   libXt,
   libXmu,
   libGLU,
@@ -49,8 +49,8 @@ stdenv.mkDerivation (finalAttrs: {
     libX11
     libXext
     libXi
-    libICE
-    libSM
+    libice
+    libsm
     libXt
     libXmu
     libGLU

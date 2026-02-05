@@ -22,10 +22,10 @@
   libGL,
   libxcb,
   vst2-sdk,
-  xcbutil,
+  libxcb-util,
   libxkbcommon,
-  xcbutilkeysyms,
-  xcb-util-cursor,
+  libxcb-keysyms,
+  libxcb-cursor,
   gtk3,
   webkitgtk_4_1,
   python3,
@@ -112,10 +112,10 @@ stdenv.mkDerivation (finalAttrs: {
     zenity
     alsa-tools
     libxcb
-    xcbutil
+    libxcb-util
     libxkbcommon
-    xcbutilkeysyms
-    xcb-util-cursor
+    libxcb-keysyms
+    libxcb-cursor
     mount
   ];
 

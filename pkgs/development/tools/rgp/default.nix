@@ -12,9 +12,9 @@
   libdrm,
   libGLU,
   libglvnd,
-  libICE,
+  libice,
   libkrb5,
-  libSM,
+  libsm,
   libX11,
   libxcb,
   libXi,
@@ -22,7 +22,7 @@
   libxml2_13,
   ncurses,
   wayland,
-  xcbutil,
+  libxcb-util,
   zlib,
   zstd,
 }:
@@ -53,9 +53,9 @@ stdenv.mkDerivation {
     libdrm
     libGLU
     libglvnd
-    libICE
+    libice
     libkrb5
-    libSM
+    libsm
     libX11
     libxcb
     libXi
@@ -63,7 +63,7 @@ stdenv.mkDerivation {
     libxml2_13
     ncurses
     wayland
-    xcbutil
+    libxcb-util
     zlib
     zstd
   ];

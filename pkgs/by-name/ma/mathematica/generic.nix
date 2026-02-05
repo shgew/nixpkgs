@@ -42,8 +42,8 @@
   pciutils,
   tre,
   unixODBC,
-  xcbutilimage,
-  xcbutilkeysyms,
+  libxcb-image,
+  libxcb-keysyms,
   xkeyboard_config,
   libxtst,
   libxscrnsaver,
@@ -127,8 +127,8 @@ stdenv.mkDerivation {
     pciutils
     tre
     unixODBC
-    xcbutilimage
-    xcbutilkeysyms
+    libxcb-image
+    libxcb-keysyms
     xkeyboard_config
     libice
     libsm
