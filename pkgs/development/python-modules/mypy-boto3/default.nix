@@ -347,8 +347,8 @@ in
       "sha256-omWYUcr7Aj6r1F1kKAmM32fn9577UeUgqesnIiBIpPQ=";
 
   mypy-boto3-connectcases =
-    buildMypyBoto3Package "connectcases" "1.42.35"
-      "sha256-y/EYsonfz1GwySCHmcVK5i3gVGarbM3bLvDIj/nFh9o=";
+    buildMypyBoto3Package "connectcases" "1.42.42"
+      "sha256-3L8y44S2aXjc3E6DRz87M0b5zlbI69YBJ+V9F9k71eo=";
 
   mypy-boto3-connectparticipant =
     buildMypyBoto3Package "connectparticipant" "1.42.3"
@@ -467,8 +467,8 @@ in
       "sha256-lNlav7BQkVjbYE9cdnvcdNki9IDo6tTlerD+lt69Rio=";
 
   mypy-boto3-eks =
-    buildMypyBoto3Package "eks" "1.42.28"
-      "sha256-8mDaLGqdD3M6ECsteVw6QMwcY7+VCCGZ2eJAEgwbBl4=";
+    buildMypyBoto3Package "eks" "1.42.42"
+      "sha256-pXTA2pR+HeMrI9BRE3GUGBQwCCzaqXoIukf9Ht/sQ6k=";
 
   mypy-boto3-elastic-inference =
     buildMypyBoto3Package "elastic-inference" "1.36.0"
@@ -862,8 +862,8 @@ in
       "sha256-Z+TiVg/mjr0vTU+awHlS7GCynOeSl+IPl0n9GaLTsYE=";
 
   mypy-boto3-medialive =
-    buildMypyBoto3Package "medialive" "1.42.36"
-      "sha256-XBfcemUPy5FRouYK1nMgcC8YFLHaZX62PaEpCVW6QI8=";
+    buildMypyBoto3Package "medialive" "1.42.42"
+      "sha256-Dd+4rZcLa6mnVHVXt30ty1Cl56bH+TC/93ZzzOX0SOQ=";
 
   mypy-boto3-mediapackage =
     buildMypyBoto3Package "mediapackage" "1.42.3"
@@ -1090,8 +1090,8 @@ in
       "sha256-XHcwFnP9i2zw5yPwvhcMMCSTmBpQy7ZdxQ4eMR0ao4M=";
 
   mypy-boto3-redshift =
-    buildMypyBoto3Package "redshift" "1.42.28"
-      "sha256-5OKcDz0wEDr7eDg1cNPSXemjvquYIHI+ozK2doNGAi8=";
+    buildMypyBoto3Package "redshift" "1.42.42"
+      "sha256-hQyZdqznZ8uJVoiwuiVRQRG8fDVWykuyWGJ6BOEc0bE=";
 
   mypy-boto3-redshift-data =
     buildMypyBoto3Package "redshift-data" "1.42.3"
@@ -1426,8 +1426,8 @@ in
       "sha256-M+FLFC+5NZyLL9opOIIqXF6H5g3YvbqHJ4rpDKL0uKw=";
 
   mypy-boto3-workspaces-web =
-    buildMypyBoto3Package "workspaces-web" "1.42.14"
-      "sha256-e7Qxen4pJIb+8N8ybp6DXwlul8WHKx7Lj5pnGC0yJJc=";
+    buildMypyBoto3Package "workspaces-web" "1.42.42"
+      "sha256-FHSL5KRc6cvB+vv/K/09WH7uvGE+2lJ17X1lduIOdzM=";
 
   mypy-boto3-xray =
     buildMypyBoto3Package "xray" "1.42.3"
