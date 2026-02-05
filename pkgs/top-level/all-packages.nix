@@ -11482,10 +11482,6 @@ with pkgs;
 
   webcamoid = qt6Packages.callPackage ../applications/video/webcamoid { };
 
-  webmacs = libsForQt5.callPackage ../applications/networking/browsers/webmacs {
-    stdenv = if stdenv.cc.isClang then gccStdenv else stdenv;
-  };
-
   webssh = with python3Packages; toPythonApplication webssh;
 
   wrapWeechat = callPackage ../applications/networking/irc/weechat/wrapper.nix { };
