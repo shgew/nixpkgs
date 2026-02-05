@@ -10,7 +10,7 @@
   # arguments from default.nix
   lang,
   meta,
-  name,
+  pname,
   src,
   version,
   # dependencies
@@ -89,7 +89,7 @@ in
 stdenv.mkDerivation {
   inherit
     meta
-    name
+    pname
     src
     version
     ;
