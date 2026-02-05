@@ -9,6 +9,12 @@
   moltenvk,
   wineRelease ? "stable",
   supportFlags,
+  # Staging native build deps
+  autoconf,
+  hexdump,
+  perl,
+  python3,
+  gitMinimal,
 }:
 
 let
@@ -25,6 +31,14 @@ with src;
       patches
       moltenvk
       wineRelease
+      # Forcing these `nativeBuildInputs` used in the `staging` to come
+      # from ambient `pkgs`, rather than being provided by
+      # `pkgsi686Linux.callPackage` for that platform.
+      autoconf
+      hexdump
+      perl
+      python3
+      gitMinimal
       ;
     pkgArches = [ pkgsi686Linux ];
     geckos = [ gecko32 ];
