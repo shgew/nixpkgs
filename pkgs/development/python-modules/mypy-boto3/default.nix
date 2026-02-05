@@ -139,8 +139,8 @@ in
       "sha256-9GHZy/GvevYqzWoY9ubb+/8P33SMvNUurg9WsUq82ls=";
 
   mypy-boto3-athena =
-    buildMypyBoto3Package "athena" "1.42.3"
-      "sha256-+XScvF3ZrTdLnbZ0hhURO/tvTVRWOcBwNL3JvHUfwq8=";
+    buildMypyBoto3Package "athena" "1.42.43"
+      "sha256-1IGcRscPDjjEn/7129vTl8jWakc/jBsRawOhxFq/66c=";
 
   mypy-boto3-auditmanager =
     buildMypyBoto3Package "auditmanager" "1.42.3"
@@ -571,8 +571,8 @@ in
       "sha256-N0kQ7Fc44SFKXhl4V+oAclPNlWhluOs53NDokiXcSNM=";
 
   mypy-boto3-glue =
-    buildMypyBoto3Package "glue" "1.42.25"
-      "sha256-wzYmHUL7I6KOi7PxXk/bUqkSEWD14hkICD+dLo1Gkrs=";
+    buildMypyBoto3Package "glue" "1.42.43"
+      "sha256-PBFrSU7QbOuaU5kWjYe6eA8k9BHdAZUuD3jMYLlFwF0=";
   mypy-boto3-grafana =
     buildMypyBoto3Package "grafana" "1.42.3"
       "sha256-wVeFhJIXV8wFQpCizH8IUh6JAFg+S67aTR60dqWk/3M=";
@@ -862,8 +862,8 @@ in
       "sha256-Z+TiVg/mjr0vTU+awHlS7GCynOeSl+IPl0n9GaLTsYE=";
 
   mypy-boto3-medialive =
-    buildMypyBoto3Package "medialive" "1.42.42"
-      "sha256-Dd+4rZcLa6mnVHVXt30ty1Cl56bH+TC/93ZzzOX0SOQ=";
+    buildMypyBoto3Package "medialive" "1.42.43"
+      "sha256-gDG9tW/b6kg1GYeKNV3rD5Jco5+Si1xrvn9VQpAkZrM=";
 
   mypy-boto3-mediapackage =
     buildMypyBoto3Package "mediapackage" "1.42.3"
@@ -1074,8 +1074,8 @@ in
       "sha256-q7GExVZQ4fHaCZ/xcFKUg09DH079zesCaqFB9KMr+eI=";
 
   mypy-boto3-ram =
-    buildMypyBoto3Package "ram" "1.42.3"
-      "sha256-Lk7eFLA/9yJkEdu0YML192R3pKdIe5hm0cQfKsugl3U=";
+    buildMypyBoto3Package "ram" "1.42.43"
+      "sha256-FpciTe6Hh8CMVneGk5dBHYHsUsOU8rikKReiH90BMaY=";
 
   mypy-boto3-rbin =
     buildMypyBoto3Package "rbin" "1.42.3"
@@ -1366,8 +1366,8 @@ in
       "sha256-RQkxMKk7svSYMoPac44m9X0YyEEQWCz/geSRD2qjlI8=";
 
   mypy-boto3-transfer =
-    buildMypyBoto3Package "transfer" "1.42.3"
-      "sha256-/ehkFniPKAPY5m1ijVnJhVccUgIbY5vnYGgv7E9TPhs=";
+    buildMypyBoto3Package "transfer" "1.42.43"
+      "sha256-rGnE1SfoFMgojEeHIz9kk3a76El0wccnm+4m2Cl1+hE=";
 
   mypy-boto3-translate =
     buildMypyBoto3Package "translate" "1.42.3"
@@ -1422,8 +1422,8 @@ in
       "sha256-bxh+mhwsHHwt/cx/njegTa/QGHu+xa7YPg4SRos1deM=";
 
   mypy-boto3-workspaces =
-    buildMypyBoto3Package "workspaces" "1.42.24"
-      "sha256-M+FLFC+5NZyLL9opOIIqXF6H5g3YvbqHJ4rpDKL0uKw=";
+    buildMypyBoto3Package "workspaces" "1.42.43"
+      "sha256-uZ/xdc5xCp0Kb+5LlHGEyo+iBB1iWB7Jo9szx+aY4SQ=";
 
   mypy-boto3-workspaces-web =
     buildMypyBoto3Package "workspaces-web" "1.42.42"
