@@ -816,6 +816,10 @@ self: super: with self; {
 
   apiflask = callPackage ../development/python-modules/apiflask { };
 
+  apify-fingerprint-datapoints =
+    callPackage ../development/python-modules/apify-fingerprint-datapoints
+      { };
+
   apipkg = callPackage ../development/python-modules/apipkg { };
 
   apischema = callPackage ../development/python-modules/apischema { };
