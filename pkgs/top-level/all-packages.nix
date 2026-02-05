@@ -12983,6 +12983,8 @@ with pkgs;
 
   tora = libsForQt5.callPackage ../development/tools/tora { };
 
+  torcs-without-data = callPackage ../../pkgs/by-name/to/torcs/without-data.nix { };
+
   nitrokey-app = libsForQt5.callPackage ../tools/security/nitrokey-app { };
 
   nitrokey-app2 = python3Packages.callPackage ../tools/security/nitrokey-app2 { };
