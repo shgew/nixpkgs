@@ -49,10 +49,10 @@
 
 let
   wine-build =
-    build: release:
+    build:
     lib.getAttr build (
       callPackage ./packages.nix {
-        wineRelease = release;
+        inherit wineRelease;
         supportFlags = {
           inherit
             alsaSupport
@@ -91,18 +91,5 @@ let
         inherit moltenvk;
       }
     );
-
-  baseRelease =
-    {
-      staging = "unstable";
-      yabridge = "yabridge";
-    }
-    .${wineRelease} or null;
 in
-if baseRelease != null then
-  (wine-build wineBuild baseRelease).override {
-    inherit wineRelease;
-    useStaging = true;
-  }
-else
-  wine-build wineBuild wineRelease
+wine-build wineBuild
