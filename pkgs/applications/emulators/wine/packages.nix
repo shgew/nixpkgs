@@ -7,7 +7,9 @@
   callPackage,
   replaceVars,
   moltenvk,
-  wineRelease ? "stable",
+  src,
+  pnameSuffix ? "",
+  useStaging ? false,
   supportFlags,
   # Staging native build deps
   autoconf,
@@ -18,19 +20,6 @@
 }:
 
 let
-  sources = callPackage ./sources.nix { };
-
-  # "staging" of course enables staging, but for "yabridge" we do too
-  # --- we are not interested in yabridge without the staging patches
-  # applied.
-  useStaging = wineRelease == "staging" || wineRelease == "yabridge";
-
-  # Map wineRelease to actual source. Many versions have a "staging"
-  # variant, but when we say "staging", the version we want to use is
-  # "unstable".
-  baseRelease = if wineRelease == "staging" then "unstable" else wineRelease;
-
-  src = lib.getAttr baseRelease (callPackage ./sources.nix { });
   inherit (src)
     version
     patches
@@ -48,7 +37,7 @@ in
       supportFlags
       patches
       moltenvk
-      wineRelease
+      pnameSuffix
       useStaging
       # Forcing these `nativeBuildInputs` used in the `staging` to come
       # from ambient `pkgs`, rather than being provided by
@@ -76,7 +65,7 @@ in
       supportFlags
       patches
       moltenvk
-      wineRelease
+      pnameSuffix
       useStaging
       ;
     pkgArches = [ pkgs ];
@@ -98,7 +87,7 @@ in
       supportFlags
       patches
       moltenvk
-      wineRelease
+      pnameSuffix
       useStaging
       ;
     stdenv = stdenv_32bit;
@@ -132,7 +121,7 @@ in
       version
       patches
       moltenvk
-      wineRelease
+      pnameSuffix
       useStaging
       ;
     supportFlags = supportFlags // {
