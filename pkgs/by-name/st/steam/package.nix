@@ -168,7 +168,8 @@ buildRuntimeEnv {
       makeSteamRun =
         package:
         buildRuntimeEnv {
-          name = "steam-run";
+          inherit (steam-unwrapped) version;
+          pname = "steam-run";
 
           extraPkgs = pkgs: package ++ extraPkgs pkgs;
 
