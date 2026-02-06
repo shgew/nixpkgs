@@ -13453,6 +13453,19 @@ final: prev: {
     meta.hydraPlatforms = [ ];
   };
 
+  qfctl-nvim = buildVimPlugin {
+    pname = "qfctl.nvim";
+    version = "0-unstable-2026-01-07";
+    src = fetchFromGitHub {
+      owner = "marcelbeumer";
+      repo = "qfctl.nvim";
+      rev = "c7779de59f61c2474f594a6e11ddbbff338d9e3f";
+      hash = "sha256-uNToBV6iYuRrWsd7Rs2Q/4VZ/mgmg7PipIVO2YVMqBE=";
+    };
+    meta.homepage = "https://github.com/marcelbeumer/qfctl.nvim/";
+    meta.hydraPlatforms = [ ];
+  };
+
   qmk-nvim = buildVimPlugin {
     pname = "qmk.nvim";
     version = "1.0.0-unstable-2025-06-22";
