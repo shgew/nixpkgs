@@ -33,12 +33,13 @@ rustPlatform.buildRustPackage rec {
 
   nativeBuildInputs = [
     installShellFiles
-  ]
-  ++ lib.optionals stdenv.hostPlatform.isLinux [
     pkg-config
   ];
 
-  buildInputs = lib.optionals stdenv.hostPlatform.isLinux [
+  buildInputs = [
+    oniguruma
+  ]
+  ++ lib.optionals stdenv.hostPlatform.isLinux [
     fontconfig
     libxcursor
     libxi
@@ -47,7 +48,6 @@ rustPlatform.buildRustPackage rec {
     wayland
     libxkbcommon
     openssl
-    oniguruma
   ];
 
   # use system oniguruma since the bundled one fails to build with gcc15

@@ -10,14 +10,14 @@
 
 python3Packages.buildPythonApplication rec {
   pname = "targetcli-fb";
-  version = "3.0.1";
+  version = "3.0.2";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "open-iscsi";
     repo = "targetcli-fb";
     tag = "v${version}";
-    hash = "sha256-jRujBgUdeJY8ekVBDscitajDhYohlx/BS4wn+jFkZSg=";
+    hash = "sha256-ajBKlgnXeksvEkewo93PIeqwI9X90NvLNf6YxzC0824=";
   };
 
   build-system = with python3Packages; [
