@@ -9556,6 +9556,12 @@
     githubId = 127353;
     name = "Geoffrey Huntley";
   };
+  gibbert = {
+    email = "gbjgms@gmail.com";
+    github = "zgibberish";
+    githubId = 67570424;
+    name = "gibbert";
+  };
   gigahawk = {
     email = "Jasper Chan";
     name = "jasperchan515@gmail.com";
