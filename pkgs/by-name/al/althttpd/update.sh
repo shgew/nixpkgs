@@ -27,7 +27,7 @@ commit_date=$(echo "$json_output" | jq -r '.date')
 if [ -z "$commit_date" ] || [ "$commit_date" = "null" ]; then
     commit_date=$(date +%Y-%m-%d)
 fi
-new_version="unstable-$commit_date"
+new_version="0-unstable-$commit_date"
 
 echo "Updating althttpd to $new_version (rev $new_rev)" >&2
 
