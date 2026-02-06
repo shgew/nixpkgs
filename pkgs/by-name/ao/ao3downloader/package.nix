@@ -8,14 +8,14 @@
 # https://github.com/nianeyna/ao3downloader/blob/f8399bb8aca276ae7359157b90afd13925c90056/pyproject.toml#L8
 python312Packages.buildPythonApplication rec {
   pname = "ao3downloader";
-  version = "2025.11.0";
+  version = "2026.2.0";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "nianeyna";
     repo = "ao3downloader";
     tag = "v${version}";
-    hash = "sha256-EXoDUeadR25XpUNkXIALbZOqUJIdTNdbfYZoVwgZq7U=";
+    hash = "sha256-NrVzRYNxvy8LOvXy0/1go0wEQyLt56inu+f93UFX1CM=";
   };
 
   build-system = with python312Packages; [

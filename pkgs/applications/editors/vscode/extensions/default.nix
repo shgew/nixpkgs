@@ -5215,8 +5215,8 @@ let
         mktplcRef = {
           name = "csharp-ls";
           publisher = "vytautassurvila";
-          version = "0.0.29";
-          hash = "sha256-0gh7q/F69OD/soRuZHHxC9PRtOXJmjZjei6IbV82Rgs=";
+          version = "0.0.30";
+          hash = "sha256-BVSazrQxVm4yYBVdtFP3Aojl06xI2msFXIGw64LeePY=";
         };
         meta = {
           changelog = "https://github.com/vytautassurvila/vscode-csharp-ls/blob/master/CHANGELOG.md";
