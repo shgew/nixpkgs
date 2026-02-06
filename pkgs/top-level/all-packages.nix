@@ -12779,8 +12779,6 @@ with pkgs;
     waylandSupport = true;
   };
 
-  qmake2cmake = python3Packages.callPackage ../tools/misc/qmake2cmake { };
-
   sail-riscv = callPackage ../applications/virtualization/sail-riscv {
     inherit (ocamlPackages) sail;
   };
