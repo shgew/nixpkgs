@@ -95,6 +95,7 @@ python.pkgs.buildPythonApplication rec {
     pyparsing
     pyserial
     pyyaml
+    requests
     resvg-py
     ruamel-yaml
     tornado
