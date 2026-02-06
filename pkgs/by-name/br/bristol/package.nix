@@ -5,8 +5,8 @@
   alsa-lib,
   libjack2,
   pkg-config,
-  libX11,
-  libXext,
+  libx11,
+  libxext,
   xorgproto,
   libpulseaudio,
   copyDesktopItems,
@@ -31,8 +31,8 @@ stdenv.mkDerivation rec {
     alsa-lib
     libjack2
     libpulseaudio
-    libX11
-    libXext
+    libx11
+    libxext
     xorgproto
   ];
 

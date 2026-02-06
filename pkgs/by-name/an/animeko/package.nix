@@ -7,8 +7,8 @@
   autoPatchelfHook,
   jetbrains, # Requird by upstream due to JCEF dependency
   fontconfig,
-  libXinerama,
-  libXrandr,
+  libxinerama,
+  libxrandr,
   file,
   gtk3,
   glib,
@@ -79,8 +79,8 @@
   boost,
   thrift,
   libGL,
-  libX11,
-  libXdamage,
+  libx11,
+  libxdamage,
   nss,
   nspr,
 }:
@@ -157,8 +157,8 @@ stdenv.mkDerivation (finalAttrs: {
 
   buildInputs = [
     fontconfig
-    libXinerama
-    libXrandr
+    libxinerama
+    libxrandr
     file
     shine
     libmpeg2
@@ -230,8 +230,8 @@ stdenv.mkDerivation (finalAttrs: {
     nss
     nspr
     libGL
-    libX11
-    libXdamage
+    libx11
+    libxdamage
   ];
 
   dontWrapQtApps = true;

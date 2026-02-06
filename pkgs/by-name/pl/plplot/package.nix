@@ -36,11 +36,13 @@ stdenv.mkDerivation rec {
     ];
 
   passthru = {
-    libX11 = libx11;
     inherit
       enableWX
       enableXWin
+      libx11
       ;
+    # backwards compat
+    libX11 = libx11;
   };
 
   cmakeFlags = [

@@ -8,11 +8,11 @@
   pixman,
   alsa-lib,
   openssl,
-  libXrandr,
-  libXfixes,
-  libXext,
-  libXrender,
-  libXinerama,
+  libxrandr,
+  libxfixes,
+  libxext,
+  libxrender,
+  libxinerama,
   libjpeg,
   zlib,
   spice-protocol,
@@ -53,11 +53,11 @@ stdenv.mkDerivation rec {
     cyrus_sasl
     glib
     gst_all_1.gst-plugins-base
-    libXext
-    libXfixes
-    libXinerama
-    libXrandr
-    libXrender
+    libxext
+    libxfixes
+    libxinerama
+    libxrandr
+    libxrender
     libcacard
     libjpeg
     libopus

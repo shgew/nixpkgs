@@ -13,7 +13,7 @@
   libGL,
   libpulseaudio,
   libsm,
-  libXxf86vm,
+  libxxf86vm,
   libx11,
   openssl_1_1,
   pango,
@@ -49,7 +49,7 @@ let
       glibc
       gtk2-x11
       libsm
-      libXxf86vm
+      libxxf86vm
       libx11
       openssl_1_1
       pango
@@ -124,7 +124,7 @@ buildFHSEnv {
     libGL
     libpulseaudio
     libsm
-    libXxf86vm
+    libxxf86vm
     libx11
     openssl_1_1
     pango

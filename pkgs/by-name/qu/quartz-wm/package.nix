@@ -6,11 +6,11 @@
   pixman,
   pkg-config,
   util-macros,
-  libXinerama,
+  libxinerama,
   libapplewm,
   xorgproto,
-  libXrandr,
-  libXext,
+  libxrandr,
+  libxext,
 }:
 
 clangStdenv.mkDerivation (finalAttrs: {
@@ -30,11 +30,11 @@ clangStdenv.mkDerivation (finalAttrs: {
     util-macros
   ];
   buildInputs = [
-    libXinerama
+    libxinerama
     libapplewm
     xorgproto
-    libXrandr
-    libXext
+    libxrandr
+    libxext
     pixman
   ];
 

@@ -9,9 +9,9 @@
   libice,
   libsm,
   libxcrypt,
-  libXinerama,
-  libXrandr,
-  libXtst,
+  libxinerama,
+  libxrandr,
+  libxtst,
   librep,
   makeWrapper,
   pango,
@@ -49,9 +49,9 @@ stdenv.mkDerivation (finalAttrs: {
     libice
     libsm
     libxcrypt
-    libXinerama
-    libXrandr
-    libXtst
+    libxinerama
+    libxrandr
+    libxtst
     librep
     pango
     rep-gtk

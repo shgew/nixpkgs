@@ -9,10 +9,10 @@
   jansson,
   lib,
   libGL,
-  libX11,
-  libXcursor,
-  libXext,
-  libXrandr,
+  libx11,
+  libxcursor,
+  libxext,
+  libxrandr,
   libarchive,
   libjack2,
   liblo,
@@ -57,10 +57,10 @@ stdenv.mkDerivation (finalAttrs: {
     freetype
     jansson
     libGL
-    libX11
-    libXcursor
-    libXext
-    libXrandr
+    libx11
+    libxcursor
+    libxext
+    libxrandr
     libarchive
     liblo
     libsamplerate

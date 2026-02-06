@@ -4,8 +4,8 @@
   fetchurl,
   cairo,
   fftwSinglePrec,
-  libX11,
-  libXft,
+  libx11,
+  libxft,
   libclthreads,
   libclxclient,
   libjack2,
@@ -25,8 +25,8 @@ stdenv.mkDerivation rec {
   buildInputs = [
     cairo
     fftwSinglePrec
-    libX11
-    libXft
+    libx11
+    libxft
     libclthreads
     libclxclient
     libjack2

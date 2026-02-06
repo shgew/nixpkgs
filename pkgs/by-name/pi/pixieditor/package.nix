@@ -13,13 +13,13 @@
   vulkan-loader,
   openssl,
   libGL,
-  libX11,
+  libx11,
   libice,
   libsm,
-  libXi,
-  libXcursor,
-  libXext,
-  libXrandr,
+  libxi,
+  libxcursor,
+  libxext,
+  libxrandr,
 
   makeDesktopItem,
   copyDesktopItems,
@@ -102,13 +102,13 @@ buildDotnetModule (finalAttrs: {
     vulkan-loader
     openssl
     libGL
-    libX11
+    libx11
     libice
     libsm
-    libXi
-    libXcursor
-    libXext
-    libXrandr
+    libxi
+    libxcursor
+    libxext
+    libxrandr
   ];
 
   desktopItems = [

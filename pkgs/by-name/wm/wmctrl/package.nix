@@ -2,10 +2,10 @@
   lib,
   stdenv,
   fetchurl,
-  libX11,
+  libx11,
   glib,
   pkg-config,
-  libXmu,
+  libxmu,
 }:
 
 stdenv.mkDerivation rec {
@@ -23,8 +23,8 @@ stdenv.mkDerivation rec {
   depsBuildBuild = [ pkg-config ];
   nativeBuildInputs = [ glib.dev ];
   buildInputs = [
-    libX11
-    libXmu
+    libx11
+    libxmu
     glib
   ];
 

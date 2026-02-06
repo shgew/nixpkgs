@@ -10,9 +10,9 @@
   tk,
   libGL,
   libGLU,
-  libXext,
-  libXmu,
-  libXi,
+  libxext,
+  libxmu,
+  libxi,
   vtk,
   withVtk ? false,
   opencascade-occt,
@@ -53,9 +53,9 @@ stdenv.mkDerivation (finalAttrs: {
     tk
     libGL
     libGLU
-    libXext
-    libXmu
-    libXi
+    libxext
+    libxmu
+    libxi
     rapidjson
   ]
   ++ lib.optional withVtk vtk;

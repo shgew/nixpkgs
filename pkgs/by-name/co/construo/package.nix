@@ -2,7 +2,7 @@
   lib,
   stdenv,
   fetchurl,
-  libX11,
+  libx11,
   zlib,
   xorgproto,
   withLibGL ? !stdenv.hostPlatform.isDarwin,
@@ -23,7 +23,7 @@ stdenv.mkDerivation rec {
   };
 
   buildInputs = [
-    libX11
+    libx11
     zlib
     xorgproto
   ]

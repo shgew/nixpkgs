@@ -7,18 +7,18 @@
   pkg-config,
   libtool,
   xbitmaps,
-  libXext,
-  libXft,
-  libXrender,
-  libXmu,
-  libXt,
+  libxext,
+  libxft,
+  libxrender,
+  libxmu,
+  libxt,
   expat,
   libjpeg,
   libpng,
   libiconv,
   flex,
-  libXp,
-  libXau,
+  libxp,
+  libxau,
   demoSupport ? false,
 }:
 # refer to the gentoo package
@@ -36,11 +36,11 @@ stdenv.mkDerivation rec {
     flex
     libtool
     xbitmaps
-    libXext
-    libXft
-    libXrender
-    libXmu
-    libXt
+    libxext
+    libxft
+    libxrender
+    libxmu
+    libxt
     expat
     libjpeg
     libpng
@@ -53,8 +53,8 @@ stdenv.mkDerivation rec {
   ];
 
   propagatedBuildInputs = [
-    libXp
-    libXau
+    libxp
+    libxau
   ];
 
   strictDeps = true;

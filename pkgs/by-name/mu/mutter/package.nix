@@ -19,19 +19,19 @@
   libadwaita,
   libxcvt,
   libGL,
-  libX11,
-  libXcomposite,
-  libXcursor,
-  libXdamage,
-  libXext,
-  libXfixes,
-  libXi,
+  libx11,
+  libxcomposite,
+  libxcursor,
+  libxdamage,
+  libxext,
+  libxfixes,
+  libxi,
   xkeyboard_config,
   libxkbcommon,
   libxcb,
-  libXrandr,
-  libXinerama,
-  libXau,
+  libxrandr,
+  libxinerama,
+  libxau,
   libinput,
   libdrm,
   libgbm,
@@ -161,19 +161,19 @@ stdenv.mkDerivation (finalAttrs: {
     wayland-protocols
     # X11 client
     gtk4
-    libX11
-    libXcomposite
-    libXcursor
-    libXdamage
-    libXext
-    libXfixes
-    libXi
+    libx11
+    libxcomposite
+    libxcursor
+    libxdamage
+    libxext
+    libxfixes
+    libxi
     xkeyboard_config
     libxkbcommon
     libxcb
-    libXrandr
-    libXinerama
-    libXau
+    libxrandr
+    libxinerama
+    libxau
 
     # for gdctl and gnome-service-client shebangs
     (python3.withPackages (pp: [

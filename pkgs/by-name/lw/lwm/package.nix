@@ -3,9 +3,9 @@
   stdenv,
   fetchurl,
   imake,
-  libX11,
+  libx11,
   libsm,
-  libXext,
+  libxext,
   libice,
 }:
 
@@ -21,9 +21,9 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ imake ];
 
   buildInputs = [
-    libX11
+    libx11
     libsm
-    libXext
+    libxext
     libice
   ];
 

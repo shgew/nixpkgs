@@ -2,8 +2,8 @@
   lib,
   stdenv,
   fetchurl,
-  libX11,
-  libXaw,
+  libx11,
+  libxaw,
 }:
 
 stdenv.mkDerivation rec {
@@ -16,8 +16,8 @@ stdenv.mkDerivation rec {
   };
 
   buildInputs = [
-    libX11
-    libXaw
+    libx11
+    libxaw
   ];
   installPhase = ''
     mkdir -p $out/bin

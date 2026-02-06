@@ -4,8 +4,8 @@
   fetchurl,
   imake,
   gccmakedep,
-  libXt,
-  libXext,
+  libxt,
+  libxext,
 }:
 
 stdenv.mkDerivation rec {
@@ -25,8 +25,8 @@ stdenv.mkDerivation rec {
   ];
 
   buildInputs = [
-    libXt
-    libXext
+    libxt
+    libxext
   ];
 
   installFlags = [

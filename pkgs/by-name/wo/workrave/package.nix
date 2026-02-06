@@ -12,8 +12,8 @@
   pkg-config,
   libice,
   libsm,
-  libXScrnSaver,
-  libXtst,
+  libxscrnsaver,
+  libxtst,
   gobject-introspection,
   glib,
   glibmm,
@@ -58,8 +58,8 @@ stdenv.mkDerivation rec {
   buildInputs = [
     libice
     libsm
-    libXScrnSaver
-    libXtst
+    libxscrnsaver
+    libxtst
     glib
     glibmm
     gtkmm3

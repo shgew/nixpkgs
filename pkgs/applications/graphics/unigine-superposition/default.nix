@@ -7,17 +7,17 @@
   fontconfig,
   zlib,
   qtquickcontrols2,
-  libXinerama,
+  libxinerama,
   libxcb,
   libsm,
-  libXi,
+  libxi,
   libglvnd,
-  libXext,
-  libXrandr,
+  libxext,
+  libxrandr,
   mailspring,
-  libX11,
+  libx11,
   libice,
-  libXrender,
+  libxrender,
   autoPatchelfHook,
   makeWrapper,
   xkeyboard_config,
@@ -52,17 +52,17 @@ let
       fontconfig
       zlib
       qtquickcontrols2
-      libXinerama
+      libxinerama
       libxcb
       libsm
-      libXi
+      libxi
       libglvnd
-      libXext
-      libXrandr
+      libxext
+      libxrandr
       mailspring
-      libX11
+      libx11
       libice
-      libXrender
+      libxrender
     ];
 
     installPhase = ''
@@ -109,17 +109,17 @@ buildFHSEnv {
     fontconfig
     zlib
     qtquickcontrols2
-    libXinerama
+    libxinerama
     libxcb
     libsm
-    libXi
+    libxi
     libglvnd
-    libXext
-    libXrandr
+    libxext
+    libxrandr
     mailspring
-    libX11
+    libx11
     libice
-    libXrender
+    libxrender
     openal
   ];
   runScript = "superposition";

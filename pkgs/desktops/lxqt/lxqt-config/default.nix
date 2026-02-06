@@ -5,9 +5,9 @@
   cmake,
   glib,
   kwindowsystem,
-  libXScrnSaver,
-  libXcursor,
-  libXdmcp,
+  libxscrnsaver,
+  libxcursor,
+  libxdmcp,
   libkscreen,
   liblxqt,
   libpthread-stubs,
@@ -48,9 +48,9 @@ stdenv.mkDerivation rec {
   buildInputs = [
     glib.bin
     kwindowsystem
-    libXScrnSaver
-    libXcursor
-    libXdmcp
+    libxscrnsaver
+    libxcursor
+    libxdmcp
     libkscreen
     liblxqt
     libpthread-stubs

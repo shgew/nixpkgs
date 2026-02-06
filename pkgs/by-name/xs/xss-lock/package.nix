@@ -7,8 +7,8 @@
   pkg-config,
   glib,
   libpthread-stubs,
-  libXau,
-  libXdmcp,
+  libxau,
+  libxdmcp,
   libxcb-util,
   nixosTests,
 }:
@@ -38,8 +38,8 @@ stdenv.mkDerivation {
   buildInputs = [
     glib
     libpthread-stubs
-    libXau
-    libXdmcp
+    libxau
+    libxdmcp
     libxcb-util
   ];
 

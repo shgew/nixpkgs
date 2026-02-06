@@ -9,8 +9,8 @@
   curl,
   libGLU,
   libGL,
-  libXmu,
-  libXi,
+  libxmu,
+  libxi,
   libglut,
   libjpeg,
   libtool,
@@ -19,9 +19,9 @@
   sqlite,
   gtk3,
   patchelf,
-  libXScrnSaver,
+  libxscrnsaver,
   libnotify,
-  libX11,
+  libx11,
   libxcb,
   headless ? false,
 }:
@@ -54,15 +54,15 @@ stdenv.mkDerivation rec {
   ++ lib.optionals (!headless) [
     libGLU
     libGL
-    libXmu
-    libXi
+    libxmu
+    libxi
     libglut
     libjpeg
     wxGTK32
     gtk3
-    libXScrnSaver
+    libxscrnsaver
     libnotify
-    libX11
+    libx11
     libxcb
     libxcb-util
   ];

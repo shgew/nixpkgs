@@ -18,13 +18,13 @@
   libGLU,
   libice,
   libsm,
-  libX11,
-  libXaw,
-  libXmu,
-  libXrandr,
-  libXrender,
-  libXt,
-  libXxf86vm,
+  libx11,
+  libxaw,
+  libxmu,
+  libxrandr,
+  libxrender,
+  libxt,
+  libxxf86vm,
   xorgproto,
   # optional
   withNvidiaCg ? false,
@@ -86,13 +86,13 @@ let
         libGLU
         libice
         libsm
-        libX11
-        libXaw
-        libXmu
-        libXrandr
-        libXrender
-        libXt
-        libXxf86vm
+        libx11
+        libxaw
+        libxmu
+        libxrandr
+        libxrender
+        libxt
+        libxxf86vm
         xorgproto
       ]
       ++ lib.optionals withNvidiaCg [

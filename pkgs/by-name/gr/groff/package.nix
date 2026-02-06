@@ -6,10 +6,10 @@
   enableGhostscript ? false,
   ghostscript,
   gawk,
-  libX11,
-  libXaw,
-  libXt,
-  libXmu, # for postscript and html output
+  libx11,
+  libxaw,
+  libxt,
+  libxmu, # for postscript and html output
   enableHtml ? false,
   psutils,
   netpbm, # for html output
@@ -87,10 +87,10 @@ stdenv.mkDerivation rec {
   ++ lib.optionals enableGhostscript [
     ghostscript
     gawk
-    libX11
-    libXaw
-    libXt
-    libXmu
+    libx11
+    libxaw
+    libxt
+    libxmu
   ]
   ++ lib.optionals enableHtml [
     psutils

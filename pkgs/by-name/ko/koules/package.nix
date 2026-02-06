@@ -7,8 +7,8 @@
   gccmakedep,
   imake,
   installShellFiles,
-  libX11,
-  libXext,
+  libx11,
+  libxext,
   makeDesktopItem,
 }:
 
@@ -34,8 +34,8 @@ stdenv.mkDerivation rec {
     copyDesktopItems
   ];
   buildInputs = [
-    libX11
-    libXext
+    libx11
+    libxext
   ];
 
   # Debian maintains lots of patches for koules. Let's include all of them.

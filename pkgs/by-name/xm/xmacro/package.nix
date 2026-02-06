@@ -2,10 +2,10 @@
   lib,
   stdenv,
   fetchurl,
-  libX11,
-  libXtst,
+  libx11,
+  libxtst,
   xorgproto,
-  libXi,
+  libxi,
 }:
 
 stdenv.mkDerivation rec {
@@ -20,10 +20,10 @@ stdenv.mkDerivation rec {
   preInstall = "echo -e 'install:\n	mkdir \${out}/bin;\n	cp xmacrorec2 xmacroplay \${out}/bin;' >>Makefile; ";
 
   buildInputs = [
-    libX11
-    libXtst
+    libx11
+    libxtst
     xorgproto
-    libXi
+    libxi
   ];
 
   meta = {

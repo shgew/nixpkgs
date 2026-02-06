@@ -10,9 +10,9 @@
   gnome-common,
   gtk3,
   libwnck,
-  libX11,
-  libXfixes,
-  libXi,
+  libx11,
+  libxfixes,
+  libxi,
   pango,
   gettext,
   pkg-config,
@@ -55,9 +55,9 @@ stdenv.mkDerivation rec {
     gnome-menus
     dconf
     gtk3
-    libX11
-    libXfixes
-    libXi
+    libx11
+    libxfixes
+    libxi
     libdbusmenu-gtk3
     libgee
     libwnck

@@ -15,12 +15,12 @@
   libnotify,
   libice,
   libsm,
-  libX11,
+  libx11,
   libxkbfile,
-  libXi,
-  libXtst,
-  libXrandr,
-  libXinerama,
+  libxi,
+  libxtst,
+  libxrandr,
+  libxinerama,
   xkeyboard-config,
   xinput,
   avahi-compat,
@@ -73,11 +73,11 @@ stdenv.mkDerivation (finalAttrs: {
     libsepol
     libice
     libsm
-    libX11
-    libXi
-    libXtst
-    libXrandr
-    libXinerama
+    libx11
+    libxi
+    libxtst
+    libxrandr
+    libxinerama
     libxkbfile
     xinput
     avahi-compat

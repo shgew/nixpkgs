@@ -7,8 +7,8 @@
   groff,
   libice,
   libsm,
-  libX11,
-  libXext,
+  libx11,
+  libxext,
 }:
 
 stdenv.mkDerivation rec {
@@ -23,8 +23,8 @@ stdenv.mkDerivation rec {
   buildInputs = [
     libice
     libsm
-    libX11
-    libXext
+    libx11
+    libxext
     lua
     gettext
     groff

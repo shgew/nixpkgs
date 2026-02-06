@@ -7,8 +7,8 @@
   cmake,
   lv2,
   libpthread-stubs,
-  libXdmcp,
-  libXft,
+  libxdmcp,
+  libxft,
   ntk,
   pcre,
   fftwFloat,
@@ -34,8 +34,8 @@ stdenv.mkDerivation (finalAttrs: {
     cairomm
     lv2
     libpthread-stubs
-    libXdmcp
-    libXft
+    libxdmcp
+    libxft
     ntk
     pcre
     fftwFloat

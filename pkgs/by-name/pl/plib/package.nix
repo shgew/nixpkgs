@@ -7,11 +7,11 @@
   libGL,
   libglut,
   SDL,
-  libXi,
+  libxi,
   libsm,
-  libXmu,
-  libXext,
-  libX11,
+  libxmu,
+  libxext,
+  libx11,
 }:
 
 stdenv.mkDerivation rec {
@@ -52,11 +52,11 @@ stdenv.mkDerivation rec {
     SDL
 
     # The following libs ought to be propagated build inputs of Mesa.
-    libXi
+    libxi
     libsm
-    libXmu
-    libXext
-    libX11
+    libxmu
+    libxext
+    libx11
   ];
 
   meta = {

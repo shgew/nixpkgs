@@ -7,9 +7,9 @@
   jq,
   expat,
   jsoncpp,
-  libX11,
-  libXdmcp,
-  libXrandr,
+  libx11,
+  libxdmcp,
+  libxrandr,
   libffi,
   libxcb,
   pkg-config,
@@ -48,9 +48,9 @@ stdenv.mkDerivation (finalAttrs: {
   buildInputs = [
     expat
     jsoncpp
-    libX11
-    libXdmcp
-    libXrandr
+    libx11
+    libxdmcp
+    libxrandr
     libffi
     libxcb
     valijson

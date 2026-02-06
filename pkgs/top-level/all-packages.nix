@@ -8815,34 +8815,6 @@ with pkgs;
 
   virtualenv-clone = with python3Packages; toPythonApplication virtualenv-clone;
 
-  libX11 = libx11;
-  libXau = libxau;
-  libXaw = libxaw;
-  libXcomposite = libxcomposite;
-  libXcursor = libxcursor;
-  libXdamage = libxdamage;
-  libXdmcp = libxdmcp;
-  libXext = libxext;
-  libXfixes = libxfixes;
-  libXfont2 = libxfont_2;
-  libXft = libxft;
-  libXi = libxi;
-  libXinerama = libxinerama;
-  libXmu = libxmu;
-  libXp = libxp;
-  libXpm = libxpm;
-  libXpresent = libxpresent;
-  libXrandr = libxrandr;
-  libXrender = libxrender;
-  libXres = libxres;
-  libXScrnSaver = libxscrnsaver;
-  libXt = libxt;
-  libXtst = libxtst;
-  libXv = libxv;
-  libXvMC = libxvmc;
-  libXxf86dga = libxxf86dga;
-  libXxf86misc = libxxf86misc;
-  libXxf86vm = libxxf86vm;
   mkfontdir = mkfontscale;
   xcbproto = xcb-proto;
 

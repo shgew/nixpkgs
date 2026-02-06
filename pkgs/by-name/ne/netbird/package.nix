@@ -9,9 +9,9 @@
   pkg-config,
   gtk3,
   libayatana-appindicator,
-  libX11,
-  libXcursor,
-  libXxf86vm,
+  libx11,
+  libxcursor,
+  libxxf86vm,
   versionCheckHook,
   netbird-management,
   netbird-relay,
@@ -84,9 +84,9 @@ buildGoModule (finalAttrs: {
   buildInputs = lib.optionals (stdenv.hostPlatform.isLinux && componentName == "ui") [
     gtk3
     libayatana-appindicator
-    libX11
-    libXcursor
-    libXxf86vm
+    libx11
+    libxcursor
+    libxxf86vm
   ];
 
   subPackages = [ component.module ];

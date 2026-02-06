@@ -5,9 +5,9 @@
   alsa-lib,
   libclthreads,
   libclxclient,
-  libX11,
-  libXft,
-  libXrender,
+  libx11,
+  libxft,
+  libxrender,
   fftwFloat,
   libjack2,
   zita-alsa-pcmi,
@@ -26,9 +26,9 @@ stdenv.mkDerivation rec {
     alsa-lib
     libclthreads
     libclxclient
-    libX11
-    libXft
-    libXrender
+    libx11
+    libxft
+    libxrender
     fftwFloat
     libjack2
     zita-alsa-pcmi

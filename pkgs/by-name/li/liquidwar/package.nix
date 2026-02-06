@@ -3,8 +3,8 @@
   stdenv,
   fetchurl,
   xorgproto,
-  libX11,
-  libXrender,
+  libx11,
+  libxrender,
   gmp,
   libjpeg,
   libpng,
@@ -41,7 +41,7 @@ stdenv.mkDerivation rec {
 
   buildInputs = [
     xorgproto
-    libX11
+    libx11
     gmp
     guile_2_0
     libjpeg
@@ -58,7 +58,7 @@ stdenv.mkDerivation rec {
     libogg
     libvorbis
     csound
-    libXrender
+    libxrender
     libcaca
     cunit
     libtool

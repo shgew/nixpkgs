@@ -39,8 +39,8 @@
   at-spi2-core,
   dbus,
   libepoxy,
-  libXdmcp,
-  libXtst,
+  libxdmcp,
+  libxtst,
   libpthread-stubs,
   libselinux,
   libsepol,
@@ -166,8 +166,8 @@ stdenv.mkDerivation (finalAttrs: {
     at-spi2-core
     dbus
     libepoxy
-    libXdmcp
-    libXtst
+    libxdmcp
+    libxtst
     libpthread-stubs
     libxkbcommon
     libselinux

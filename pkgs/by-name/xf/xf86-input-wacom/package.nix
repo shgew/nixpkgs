@@ -4,12 +4,12 @@
   autoreconfHook,
   fetchFromGitHub,
   xorgproto,
-  libX11,
-  libXext,
-  libXi,
-  libXinerama,
-  libXrandr,
-  libXrender,
+  libx11,
+  libxext,
+  libxi,
+  libxinerama,
+  libxrandr,
+  libxrender,
   ncurses,
   pixman,
   pkg-config,
@@ -37,12 +37,12 @@ stdenv.mkDerivation (finalAttrs: {
   ];
 
   buildInputs = [
-    libX11
-    libXext
-    libXi
-    libXinerama
-    libXrandr
-    libXrender
+    libx11
+    libxext
+    libxi
+    libxinerama
+    libxrandr
+    libxrender
     ncurses
     udev
     util-macros

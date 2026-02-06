@@ -22,9 +22,9 @@
   harfbuzz,
   libGL,
   libsm,
-  libXext,
-  libXinerama,
-  libXpm,
+  libxext,
+  libxinerama,
+  libxpm,
   libarchive,
   libass,
   libbluray-full,
@@ -203,9 +203,9 @@ stdenv.mkDerivation (finalAttrs: {
     protobuf
   ]
   ++ optionals skins2Support [
-    libXext
-    libXinerama
-    libXpm
+    libxext
+    libxinerama
+    libxpm
   ]
   ++ optionals waylandSupport [
     wayland

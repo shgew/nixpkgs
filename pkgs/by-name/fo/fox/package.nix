@@ -8,10 +8,10 @@
   zlib,
   bzip2,
   mesa_glu,
-  libXcursor,
-  libXext,
-  libXrandr,
-  libXft,
+  libxcursor,
+  libxext,
+  libxrandr,
+  libxft,
   cups,
 }:
 
@@ -31,10 +31,10 @@ stdenv.mkDerivation rec {
     zlib
     bzip2
     mesa_glu
-    libXcursor
-    libXext
-    libXrandr
-    libXft
+    libxcursor
+    libxext
+    libxrandr
+    libxft
   ]
   ++ lib.optionals stdenv.hostPlatform.isDarwin [
     cups

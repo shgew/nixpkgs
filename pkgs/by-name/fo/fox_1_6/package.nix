@@ -7,13 +7,13 @@
   libtiff,
   zlib,
   bzip2,
-  libXcursor,
-  libXrandr,
+  libxcursor,
+  libxrandr,
   libGLU,
   libGL,
-  libXext,
-  libXft,
-  libXfixes,
+  libxext,
+  libxft,
+  libxfixes,
   mesa,
   xinput,
 }:
@@ -33,13 +33,13 @@ stdenv.mkDerivation rec {
     libtiff
     zlib
     bzip2
-    libXcursor
-    libXrandr
-    libXext
-    libXft
+    libxcursor
+    libxrandr
+    libxext
+    libxft
     libGLU
     libGL
-    libXfixes
+    libxfixes
     xinput
   ];
 

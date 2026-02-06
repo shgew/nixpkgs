@@ -7,8 +7,8 @@
   alsa-lib,
   libjack2,
   libclxclient,
-  libX11,
-  libXft,
+  libx11,
+  libxft,
   readline,
   aeolus-stops,
 }:
@@ -28,8 +28,8 @@ stdenv.mkDerivation rec {
     alsa-lib
     libjack2
     libclxclient
-    libX11
-    libXft
+    libx11
+    libxft
     readline
   ];
 

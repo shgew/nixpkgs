@@ -7,10 +7,10 @@
   pkg-config,
   python3,
   libxml2,
-  libXinerama,
-  libXcursor,
-  libXau,
-  libXrandr,
+  libxinerama,
+  libxcursor,
+  libxau,
+  libxrandr,
   libice,
   libsm,
   imlib2,
@@ -32,10 +32,10 @@ stdenv.mkDerivation rec {
 
   buildInputs = [
     libxml2
-    libXinerama
-    libXcursor
-    libXau
-    libXrandr
+    libxinerama
+    libxcursor
+    libxau
+    libxrandr
     libice
     libsm
     libstartup_notification

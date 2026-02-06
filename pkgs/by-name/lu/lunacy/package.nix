@@ -7,12 +7,12 @@
   zlib,
   libgcc,
   fontconfig,
-  libX11,
+  libx11,
   lttng-ust,
   icu,
   libice,
   libsm,
-  libXcursor,
+  libxcursor,
   openssl,
   imagemagick,
   makeWrapper,
@@ -37,8 +37,8 @@ stdenv.mkDerivation (finalAttrs: {
     # Runtime deps
     libice
     libsm
-    libX11
-    libXcursor
+    libx11
+    libxcursor
   ];
 
   nativeBuildInputs = [
@@ -65,8 +65,8 @@ stdenv.mkDerivation (finalAttrs: {
   runtimeDependencies = [
     libice
     libsm
-    libX11
-    libXcursor
+    libx11
+    libxcursor
   ];
 
   dontBuild = true;

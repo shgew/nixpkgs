@@ -11,18 +11,18 @@
   libei,
   libGL,
   libGLU,
-  libX11,
-  libXau,
-  libXaw,
-  libXdmcp,
-  libXext,
-  libXfixes,
-  libXfont2,
-  libXmu,
-  libXpm,
-  libXrender,
-  libXres,
-  libXt,
+  libx11,
+  libxau,
+  libxaw,
+  libxdmcp,
+  libxext,
+  libxfixes,
+  libxfont_2,
+  libxmu,
+  libxpm,
+  libxrender,
+  libxres,
+  libxt,
   libdrm,
   libtirpc,
   # Disable withLibunwind as LLVM's libunwind will conflict and does not support the right symbols.
@@ -85,18 +85,18 @@ stdenv.mkDerivation rec {
     font-util
     libGL
     libGLU
-    libX11
-    libXau
-    libXaw
-    libXdmcp
-    libXext
-    libXfixes
-    libXfont2
-    libXmu
-    libXpm
-    libXrender
-    libXres
-    libXt
+    libx11
+    libxau
+    libxaw
+    libxdmcp
+    libxext
+    libxfixes
+    libxfont_2
+    libxmu
+    libxpm
+    libxrender
+    libxres
+    libxt
     libdrm
     libtirpc
     libxcb
