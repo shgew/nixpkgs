@@ -161,13 +161,12 @@ let
     );
 
   inherit
-    (callPackage ./maintainers.nix {
+    (callPackage ./maintainers.nix { } {
       changedattrs = lib.attrNames (lib.groupBy (a: a.name) changedPackagePlatformAttrs);
       changedpathsjson = touchedFilesJson;
       removedattrs = lib.attrNames (lib.groupBy (a: a.name) removedPackagePlatformAttrs);
     })
-    users
-    teams
+    maintainers
     packages
     ;
 in
@@ -179,12 +178,10 @@ runCommand "compare"
       cmp-stats
       codeowners
     ];
-    users = builtins.toJSON users;
-    teams = builtins.toJSON teams;
+    maintainers = builtins.toJSON maintainers;
     packages = builtins.toJSON packages;
     passAsFile = [
-      "users"
-      "teams"
+      "maintainers"
       "packages"
     ];
   }
@@ -265,7 +262,6 @@ runCommand "compare"
 
     done
 
-    cp "$usersPath" "$out/maintainers.json"
-    cp "$teamsPath" "$out/teams.json"
+    cp "$maintainersPath" "$out/maintainers.json"
     cp "$packagesPath" "$out/packages.json"
   ''

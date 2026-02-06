@@ -1,5 +1,7 @@
 {
   lib,
+}:
+{
   changedattrs,
   changedpathsjson,
   removedattrs,
@@ -49,16 +51,15 @@ let
         # updates to .json files.
         # TODO: Support by-name package sets.
         filenames = lib.optional (lib.length path == 1) "pkgs/by-name/${sharded (lib.head path)}/";
-        # meta.maintainers also contains all individual team members.
-        # We only want to ping individuals if they're added individually as maintainers, not via teams.
-        users = package.meta.nonTeamMaintainers or [ ];
-        teams = package.meta.teams or [ ];
+        # TODO: Refactor this so we can ping entire teams instead of the individual members.
+        # Note that this will require keeping track of GH team IDs in "maintainers/teams.nix".
+        maintainers = package.meta.maintainers or [ ];
       }
     ))
     # No need to match up packages without maintainers with their files.
     # This also filters out attributes where `packge = null`, which is the
     # case for libintl, for example.
-    (lib.filter (pkg: pkg.users != [ ] || pkg.teams != [ ]))
+    (lib.filter (pkg: pkg.maintainers != [ ]))
   ];
 
   relevantFilenames =
@@ -93,44 +94,20 @@ let
 
   attrsWithModifiedFiles = lib.filter (pkg: anyMatchingFiles pkg.filenames) attrsWithFilenames;
 
-  userPings =
+  listToPing = lib.concatMap (
     pkg:
     map (maintainer: {
-      type = "user";
-      userId = maintainer.githubId;
+      id = maintainer.githubId;
+      inherit (maintainer) github;
       packageName = pkg.name;
-    });
-
-  teamPings =
-    pkg: team:
-    if team ? github then
-      [
-        {
-          type = "team";
-          teamId = team.githubId;
-          packageName = pkg.name;
-        }
-      ]
-    else
-      userPings pkg team.members;
-
-  maintainersToPing = lib.concatMap (
-    pkg: userPings pkg pkg.users ++ lib.concatMap (teamPings pkg) pkg.teams
+      dueToFiles = pkg.filenames;
+    }) pkg.maintainers
   ) attrsWithModifiedFiles;
 
-  byType = lib.groupBy (ping: ping.type) maintainersToPing;
-
-  byUser = lib.pipe (byType.user or [ ]) [
-    (lib.groupBy (ping: toString ping.userId))
-    (lib.mapAttrs (_user: lib.map (pkg: pkg.packageName)))
-  ];
-  byTeam = lib.pipe (byType.team or [ ]) [
-    (lib.groupBy (ping: toString ping.teamId))
-    (lib.mapAttrs (_team: lib.map (pkg: pkg.packageName)))
-  ];
+  byMaintainer = lib.groupBy (ping: toString ping.id) listToPing;
 in
 {
-  users = byUser;
-  teams = byTeam;
-  packages = lib.catAttrs "name" attrsWithModifiedFiles;
+  maintainers = lib.mapAttrs (_: lib.catAttrs "packageName") byMaintainer;
+
+  packages = lib.catAttrs "packageName" listToPing;
 }
