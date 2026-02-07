@@ -1622,15 +1622,6 @@ with pkgs;
       '';
     });
 
-  cedille = callPackage ../applications/science/logic/cedille {
-    inherit (haskellPackages)
-      alex
-      happy
-      Agda
-      ghcWithPackages
-      ;
-  };
-
   clevercsv = with python3Packages; toPythonApplication clevercsv;
 
   cleanit = with python3Packages; toPythonApplication cleanit;
@@ -2595,10 +2586,6 @@ with pkgs;
 
   grub2_pvgrub_image = grub2_pvhgrub_image.override {
     grubPlatform = "xen";
-  };
-
-  grub4dos = callPackage ../tools/misc/grub4dos {
-    stdenv = stdenv_32bit;
   };
 
   gruut = with python3.pkgs; toPythonApplication gruut;
@@ -6167,10 +6154,6 @@ with pkgs;
   sqlite-utils = with python3Packages; toPythonApplication sqlite-utils;
 
   sqlmap = with python3Packages; toPythonApplication sqlmap;
-
-  c0 = callPackage ../development/compilers/c0 {
-    stdenv = if stdenv.hostPlatform.isDarwin then gccStdenv else stdenv;
-  };
 
   teensyduino = arduino-core.override {
     withGui = true;
