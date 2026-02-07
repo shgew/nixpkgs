@@ -6,14 +6,14 @@
   delta,
 }:
 
-buildGoModule rec {
+buildGoModule (finalAttrs: {
   pname = "diffnav";
   version = "0.6.0";
 
   src = fetchFromGitHub {
     owner = "dlvhdr";
     repo = "diffnav";
-    tag = "v${version}";
+    tag = "v${finalAttrs.version}";
     hash = "sha256-pak1R2BmL3A8YADwFw7QZk7JsGQzBBS/xHzRhYlMKGo=";
   };
 
@@ -31,11 +31,11 @@ buildGoModule rec {
   '';
 
   meta = {
-    changelog = "https://github.com/dlvhdr/diffnav/releases/tag/${src.rev}";
+    changelog = "https://github.com/dlvhdr/diffnav/releases/tag/${finalAttrs.src.rev}";
     description = "Git diff pager based on delta but with a file tree, à la GitHub";
     homepage = "https://github.com/dlvhdr/diffnav";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ amesgen ];
     mainProgram = "diffnav";
   };
-}
+})

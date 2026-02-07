@@ -5,14 +5,14 @@
   nixosTests,
 }:
 
-buildGoModule rec {
+buildGoModule (finalAttrs: {
   pname = "c2FmZQ";
   version = "0.5.5";
 
   src = fetchFromGitHub {
     owner = "c2FmZQ";
     repo = "c2FmZQ";
-    rev = "v${version}";
+    rev = "v${finalAttrs.version}";
     hash = "sha256-O4/V8fFiTfqTiJWPwEsdigdeKBmwGGo43ZvJXPcVRlE=";
   };
 
@@ -21,7 +21,7 @@ buildGoModule rec {
     "-w"
   ];
 
-  sourceRoot = "${src.name}/c2FmZQ";
+  sourceRoot = "${finalAttrs.src.name}/c2FmZQ";
 
   vendorHash = "sha256-B1kHtDHnviU60WEfmASMX69nyEepeeBdMZVtbcmZ9z4=";
 
@@ -40,4 +40,4 @@ buildGoModule rec {
     maintainers = with lib.maintainers; [ hmenke ];
     platforms = lib.platforms.linux;
   };
-}
+})

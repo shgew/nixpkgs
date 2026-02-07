@@ -9,14 +9,14 @@
   ghq,
 }:
 
-buildGoModule rec {
+buildGoModule (finalAttrs: {
   pname = "ghq";
   version = "1.8.1";
 
   src = fetchFromGitHub {
     owner = "x-motemen";
     repo = "ghq";
-    tag = "v${version}";
+    tag = "v${finalAttrs.version}";
     sha256 = "sha256-Iw8hu2QtnRgRbSTqtIPDmKbx5FcE2j68VfzP4egbZgY=";
   };
 
@@ -25,7 +25,7 @@ buildGoModule rec {
   doCheck = false;
 
   ldflags = [
-    "-X=main.Version=${version}"
+    "-X=main.Version=${finalAttrs.version}"
   ];
 
   nativeBuildInputs = [ installShellFiles ];
@@ -51,4 +51,4 @@ buildGoModule rec {
     license = lib.licenses.mit;
     mainProgram = "ghq";
   };
-}
+})
