@@ -26,10 +26,9 @@ let
           "\"" + (toString v) + "\""
       )
     ) a;
-  nonBlockSettings = lib.filterAttrs (
-    n: v: !(builtins.isAttrs v || builtins.isList v || isNull v)
-  ) cfg.settings;
-  pureBlockSettings = removeAttrs cfg.settings (builtins.attrNames nonBlockSettings);
+  settings = lib.filterAttrs (n: v: !(isNull v)) cfg.settings;
+  nonBlockSettings = lib.filterAttrs (n: v: !(builtins.isAttrs v || builtins.isList v)) settings;
+  pureBlockSettings = removeAttrs settings (builtins.attrNames nonBlockSettings);
   blocks =
     pureBlockSettings
     // lib.optionalAttrs cfg.fluidsynth {
