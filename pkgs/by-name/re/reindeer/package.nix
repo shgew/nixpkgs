@@ -7,14 +7,14 @@
   nix-update-script,
 }:
 
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage (finalAttrs: {
   pname = "reindeer";
   version = "2026.02.02.00";
 
   src = fetchFromGitHub {
     owner = "facebookincubator";
     repo = "reindeer";
-    tag = "v${version}";
+    tag = "v${finalAttrs.version}";
     hash = "sha256-NiS3TETnyGMGU+AxTNQIem3Cj2/c/VKSXSrcTX/5oME=";
   };
 
@@ -33,4 +33,4 @@ rustPlatform.buildRustPackage rec {
     license = with lib.licenses; [ mit ];
     maintainers = with lib.maintainers; [ amaanq ];
   };
-}
+})

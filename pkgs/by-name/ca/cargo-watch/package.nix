@@ -5,14 +5,14 @@
   fetchFromGitHub,
 }:
 
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage (finalAttrs: {
   pname = "cargo-watch";
   version = "8.5.3";
 
   src = fetchFromGitHub {
     owner = "watchexec";
     repo = "cargo-watch";
-    rev = "v${version}";
+    rev = "v${finalAttrs.version}";
     hash = "sha256-agwK20MkvnhqSVAWMy3HLkUJbraINn12i6VAg8mTzBk=";
   };
 
@@ -42,4 +42,4 @@ rustPlatform.buildRustPackage rec {
       matthiasbeyer
     ];
   };
-}
+})

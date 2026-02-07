@@ -7,14 +7,14 @@
   pkg-config,
 }:
 
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage (finalAttrs: {
   pname = "iay";
   version = "0.4.3";
 
   src = fetchFromGitHub {
     owner = "aaqaishtyaq";
     repo = "iay";
-    rev = "v${version}";
+    rev = "v${finalAttrs.version}";
     sha256 = "sha256-oNUK2ROcocKoIlAuNZcJczDYtSchzpB1qaYbSYsjN50=";
   };
 
@@ -42,4 +42,4 @@ rustPlatform.buildRustPackage rec {
     ];
     mainProgram = "iay";
   };
-}
+})

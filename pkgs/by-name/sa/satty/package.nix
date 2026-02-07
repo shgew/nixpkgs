@@ -14,7 +14,7 @@
   installShellFiles,
 }:
 
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage (finalAttrs: {
 
   pname = "satty";
   version = "0.20.1";
@@ -22,7 +22,7 @@ rustPlatform.buildRustPackage rec {
   src = fetchFromGitHub {
     owner = "gabm";
     repo = "Satty";
-    rev = "v${version}";
+    rev = "v${finalAttrs.version}";
     hash = "sha256-pR3Mc5Eue4YcIMcrzkyDhZPpovRFa8TW1PjL/ysH/7s=";
   };
 
@@ -66,4 +66,4 @@ rustPlatform.buildRustPackage rec {
     mainProgram = "satty";
     platforms = lib.platforms.linux;
   };
-}
+})

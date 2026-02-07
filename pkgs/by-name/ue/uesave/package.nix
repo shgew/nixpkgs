@@ -4,13 +4,13 @@
   rustPlatform,
   versionCheckHook,
 }:
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage (finalAttrs: {
   pname = "uesave";
   version = "0.7.0";
   src = fetchFromGitHub {
     owner = "trumank";
     repo = "uesave-rs";
-    rev = "v${version}";
+    rev = "v${finalAttrs.version}";
     hash = "sha256-Wn7/Ik8F3+gA66CpGZGwUer3zArCx7fx1IS6DGvqJDI=";
   };
 
@@ -20,7 +20,7 @@ rustPlatform.buildRustPackage rec {
     versionCheckHook
   ];
   doInstallCheck = true;
-  versionCheckProgram = "${placeholder "out"}/bin/${meta.mainProgram}";
+  versionCheckProgram = "${placeholder "out"}/bin/${finalAttrs.meta.mainProgram}";
 
   meta = {
     maintainers = with lib.maintainers; [ xddxdd ];
@@ -29,4 +29,4 @@ rustPlatform.buildRustPackage rec {
     license = lib.licenses.mit;
     mainProgram = "uesave";
   };
-}
+})

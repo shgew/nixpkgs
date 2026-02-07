@@ -4,14 +4,14 @@
   fetchFromGitHub,
 }:
 
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage (finalAttrs: {
   pname = "cargo-swift";
   version = "0.11.0";
 
   src = fetchFromGitHub {
     owner = "antoniusnaumann";
     repo = "cargo-swift";
-    rev = "v${version}";
+    rev = "v${finalAttrs.version}";
     hash = "sha256-abLXt9wIw/qhSkusRSmHJHU8feojaLVQeFP8DAkE1Gc=";
   };
 
@@ -27,4 +27,4 @@ rustPlatform.buildRustPackage rec {
     ];
     maintainers = with lib.maintainers; [ elliot ];
   };
-}
+})

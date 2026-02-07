@@ -5,14 +5,14 @@
   nix-update-script,
 }:
 
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage (finalAttrs: {
   pname = "microfetch";
   version = "0.4.9";
 
   src = fetchFromGitHub {
     owner = "NotAShelf";
     repo = "microfetch";
-    tag = "v${version}";
+    tag = "v${finalAttrs.version}";
     hash = "sha256-F3yRJrOzBzSDLadVTZqOPMaqF+3NSzedi222EawqVWQ=";
   };
 
@@ -31,4 +31,4 @@ rustPlatform.buildRustPackage rec {
     mainProgram = "microfetch";
     platforms = lib.platforms.linux;
   };
-}
+})

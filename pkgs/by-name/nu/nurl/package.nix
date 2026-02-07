@@ -9,14 +9,14 @@
   nix,
 }:
 
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage (finalAttrs: {
   pname = "nurl";
   version = "0.4.0";
 
   src = fetchFromGitHub {
     owner = "nix-community";
     repo = "nurl";
-    rev = "v${version}";
+    rev = "v${finalAttrs.version}";
     hash = "sha256-BxtvT2k4mErYPU9lNpZlat9ULI2wKXQToic7+PgkCSk=";
   };
 
@@ -53,7 +53,7 @@ rustPlatform.buildRustPackage rec {
   meta = {
     description = "Command-line tool to generate Nix fetcher calls from repository URLs";
     homepage = "https://github.com/nix-community/nurl";
-    changelog = "https://github.com/nix-community/nurl/blob/v${version}/CHANGELOG.md";
+    changelog = "https://github.com/nix-community/nurl/blob/v${finalAttrs.version}/CHANGELOG.md";
     license = lib.licenses.mpl20;
     maintainers = with lib.maintainers; [
       figsoda
@@ -61,4 +61,4 @@ rustPlatform.buildRustPackage rec {
     ];
     mainProgram = "nurl";
   };
-}
+})

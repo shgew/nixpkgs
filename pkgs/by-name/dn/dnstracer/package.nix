@@ -6,12 +6,12 @@
   perl,
 }:
 
-stdenv.mkDerivation rec {
+stdenv.mkDerivation (finalAttrs: {
   version = "1.10";
   pname = "dnstracer";
 
   src = fetchurl {
-    url = "https://www.mavetju.org/download/dnstracer-${version}.tar.bz2";
+    url = "https://www.mavetju.org/download/dnstracer-${finalAttrs.version}.tar.bz2";
     sha256 = "089bmrjnmsga2n0r4xgw4bwbf41xdqsnmabjxhw8lngg2pns1kb4";
   };
 
@@ -45,4 +45,4 @@ stdenv.mkDerivation rec {
     platforms = lib.platforms.all;
     mainProgram = "dnstracer";
   };
-}
+})
