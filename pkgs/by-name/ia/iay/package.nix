@@ -26,10 +26,12 @@ rustPlatform.buildRustPackage rec {
     openssl
   ];
 
-  NIX_LDFLAGS = lib.optionals stdenv.hostPlatform.isDarwin [
-    "-framework"
-    "AppKit"
-  ];
+  env = lib.optionalAttrs stdenv.hostPlatform.isDarwin {
+    NIX_LDFLAGS = toString [
+      "-framework"
+      "AppKit"
+    ];
+  };
 
   meta = {
     description = "Minimalistic, blazing-fast, and extendable prompt for bash and zsh";

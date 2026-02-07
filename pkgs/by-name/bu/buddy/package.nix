@@ -20,8 +20,13 @@ stdenv.mkDerivation rec {
     "CFLAGS=-O3"
     "CXXFLAGS=-O3"
   ];
-  env.NIX_CFLAGS_COMPILE = lib.optionalString stdenv.cc.isClang "-Wno-error=register";
-  NIX_LDFLAGS = "-lm";
+  env = {
+    NIX_LDFLAGS = "-lm";
+  }
+  // lib.optionalAttrs stdenv.cc.isClang {
+    NIX_CFLAGS_COMPILE = "-Wno-error=register";
+  };
+
   doCheck = true;
 
   meta = {

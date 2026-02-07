@@ -1519,10 +1519,6 @@ with pkgs;
     stdenv = clangStdenv;
   };
 
-  plausible = callPackage ../by-name/pl/plausible/package.nix {
-    beamPackages = beam27Packages.extend (self: super: { elixir = elixir_1_18; });
-  };
-
   reattach-to-user-namespace = callPackage ../os-specific/darwin/reattach-to-user-namespace { };
 
   xcodeenv = callPackage ../development/mobile/xcodeenv { };
