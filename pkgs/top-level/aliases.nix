@@ -877,6 +877,7 @@ mapAliases {
   immersed-vr = throw "'immersed-vr' has been renamed to/replaced by 'immersed'"; # Converted to throw 2025-10-27
   inconsolata-nerdfont = throw "'inconsolata-nerdfont' has been renamed to/replaced by 'nerd-fonts.inconsolata'"; # Converted to throw 2025-10-27
   incrtcl = throw "'incrtcl' has been renamed to/replaced by 'tclPackages.incrtcl'"; # Converted to throw 2025-10-27
+  infamousPlugins = infamousplugins; # Added 2026-02-08
   inotifyTools = throw "'inotifyTools' has been renamed to/replaced by 'inotify-tools'"; # Converted to throw 2025-10-27
   insync-emblem-icons = throw "'insync-emblem-icons' has been removed, use 'insync-nautilus' instead"; # Added 2025-05-14
   invalidateFetcherByDrvHash = throw "'invalidateFetcherByDrvHash' has been renamed to/replaced by 'testers.invalidateFetcherByDrvHash'"; # Converted to throw 2025-10-27
