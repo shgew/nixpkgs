@@ -9770,6 +9770,8 @@ self: super: with self; {
 
   mistral-common = callPackage ../development/python-modules/mistral-common { };
 
+  mistral-inference = callPackage ../development/python-modules/mistral-inference { };
+
   mistralai = callPackage ../development/python-modules/mistralai { };
 
   mistune = callPackage ../development/python-modules/mistune { };
@@ -10669,9 +10671,7 @@ self: super: with self; {
 
   napalm-ros = callPackage ../development/python-modules/napalm/ros.nix { };
 
-  napari = callPackage ../development/python-modules/napari {
-    inherit (pkgs.libsForQt5) mkDerivationWith wrapQtAppsHook;
-  };
+  napari = callPackage ../development/python-modules/napari { };
 
   napari-console = callPackage ../development/python-modules/napari-console { };
 
