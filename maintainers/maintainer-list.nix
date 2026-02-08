@@ -6100,6 +6100,12 @@
     githubId = 98460960;
     email = "david.weisse@gmx.net";
   };
+  davinci42 = {
+    name = "Dan Xin";
+    github = "davinci42";
+    githubId = 4347318;
+    email = "davinci42.cn@gmail.com";
+  };
   davisrichard437 = {
     email = "davisrichard437@gmail.com";
     github = "davisrichard437";
