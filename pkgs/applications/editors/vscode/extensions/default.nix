@@ -2344,8 +2344,8 @@ let
         mktplcRef = {
           name = "Ionide-fsharp";
           publisher = "Ionide";
-          version = "7.30.0";
-          hash = "sha256-cN+NWHkl21ibvW743ST4kFmxGwfc6ZyNWPOyIRjFEwU=";
+          version = "7.31.1";
+          hash = "sha256-phVmMpcg3t08IeUgEOzdFPhW9Z/4XjbzmM9j17ra+uo=";
         };
         meta = {
           changelog = "https://marketplace.visualstudio.com/items/Ionide.Ionide-fsharp/changelog";
@@ -4470,8 +4470,8 @@ let
         mktplcRef = {
           name = "vscode-stylelint";
           publisher = "stylelint";
-          version = "2.0.1";
-          hash = "sha256-TYUDm+i7Chuybbx91AUxH/oIyZYWpZ5XnYxjhjXGP88=";
+          version = "2.0.2";
+          hash = "sha256-nJYy7HFycKXTQCHgaLP46CGl0hlgaexL1QZ8icGpeVo=";
         };
         meta = {
           description = "Official Stylelint extension for Visual Studio Code";
@@ -4509,8 +4509,8 @@ let
         mktplcRef = {
           name = "svelte-vscode";
           publisher = "svelte";
-          version = "109.12.1";
-          hash = "sha256-0KotF1HGrM9BkImYAfSHGvAeUCZMRnveIBldjhxUUuY=";
+          version = "109.13.0";
+          hash = "sha256-8eHnAuQArNTOxewNWcPJRekXUyYGc6LnR66rHe5j9u0=";
         };
         meta = {
           changelog = "https://github.com/sveltejs/language-tools/releases";
