@@ -11861,8 +11861,6 @@ with pkgs;
 
   ultrastar-manager = libsForQt5.callPackage ../tools/misc/ultrastar-manager { };
 
-  ue4demos = recurseIntoAttrs (callPackage ../games/ue4demos { });
-
   # To ensure vdrift's code is built on hydra
   vdrift-bin = vdrift.bin;
 
