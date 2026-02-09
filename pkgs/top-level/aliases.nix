@@ -1280,6 +1280,7 @@ mapAliases {
   mold-wrapped = warnAlias "'mold-wrapped' has been renamed to 'mold'" pkgs.mold; # Added 2025-11-12
   mongodb-6_0 = throw "mongodb-6_0 has been removed, it's end of life since July 2025"; # Added 2025-07-23
   monitor = pantheon.elementary-monitor; # Added 2025-10-10
+  monkeysAudio = monkeys-audio; # Added 2026-02-08
   mono4 = mono6; # Added 2025-08-25
   mono5 = mono6; # Added 2025-08-25
   mono-addins = throw "mono-addins has been removed due to its dependency on the removed mono4. Consider alternative frameworks or migrate to newer .NET technologies."; # Added 2025-08-25
