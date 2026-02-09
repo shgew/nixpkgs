@@ -27136,12 +27136,6 @@
     githubId = 5623227;
     name = "Quentin Boyer";
   };
-  TredwellGit = {
-    email = "tredwell@tutanota.com";
-    github = "TredwellGit";
-    githubId = 61860346;
-    name = "Tredwell";
-  };
   treemo = {
     email = "matthieu.chevrier@treemo.fr";
     github = "treemo";
