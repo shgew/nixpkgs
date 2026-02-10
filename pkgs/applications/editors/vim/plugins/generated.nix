@@ -23141,6 +23141,19 @@ final: prev: {
     meta.hydraPlatforms = [ ];
   };
 
+  y9nika-nvim = buildVimPlugin {
+    pname = "y9nika.nvim";
+    version = "0-unstable-2026-01-17";
+    src = fetchFromGitHub {
+      owner = "y9san9";
+      repo = "y9nika.nvim";
+      rev = "f7174b7812e60379953a4102d6be20e47995b924";
+      hash = "sha256-bF9tFXLIYzjrMFVyB4FhsuC8eKiEutk7VjFHB+laAt4=";
+    };
+    meta.homepage = "https://github.com/y9san9/y9nika.nvim/";
+    meta.hydraPlatforms = [ ];
+  };
+
   yaml-companion-nvim = buildVimPlugin {
     pname = "yaml-companion.nvim";
     version = "0.1.3-unstable-2024-07-14";
