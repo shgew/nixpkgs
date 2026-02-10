@@ -7,21 +7,23 @@
   jre,
   ant,
   makeWrapper,
+  mkgmap,
   stripJavaArchivesHook,
   doCheck ? true,
 }:
+
 let
-  deps = import ../deps.nix { inherit fetchurl; };
+  inherit (mkgmap) deps;
   testInputs = import ./testinputs.nix { inherit fetchurl; };
 in
-stdenv.mkDerivation rec {
+stdenv.mkDerivation (finalAttrs: {
   pname = "splitter";
   version = "654";
 
   src = fetchsvn {
     url = "https://svn.mkgmap.org.uk/mkgmap/splitter/trunk";
-    rev = version;
-    sha256 = "sha256-y/pl8kIQ6fiF541ho72LMgJFWJdkUBqPToQGCGmmcfg=";
+    rev = finalAttrs.version;
+    hash = "sha256-y/pl8kIQ6fiF541ho72LMgJFWJdkUBqPToQGCGmmcfg=";
   };
 
   patches = [
@@ -31,33 +33,31 @@ stdenv.mkDerivation rec {
     ./fix-failing-test.patch
   ];
 
-  postPatch =
-    with deps;
-    ''
-      # Manually create version properties file for reproducibility
-      mkdir -p build/classes
-      cat > build/classes/splitter-version.properties << EOF
-        svn.version=${version}
-        build.timestamp=unknown
-      EOF
+  postPatch = ''
+    # Manually create version properties file for reproducibility
+    mkdir -p build/classes
+    cat > build/classes/splitter-version.properties << EOF
+      svn.version=${finalAttrs.version}
+      build.timestamp=unknown
+    EOF
 
-      # Put pre-fetched dependencies into the right place
-      mkdir -p lib/compile
-      cp ${fastutil} lib/compile/${fastutil.name}
-      cp ${osmpbf} lib/compile/${osmpbf.name}
-      cp ${protobuf} lib/compile/${protobuf.name}
-      cp ${xpp3} lib/compile/${xpp3.name}
-    ''
-    + lib.optionalString doCheck ''
-      mkdir -p lib/test
-      cp ${junit} lib/test/${junit.name}
-      cp ${hamcrest-core} lib/test/${hamcrest-core.name}
+    # Put pre-fetched dependencies into the right place
+    mkdir -p lib/compile
+    cp ${deps.fastutil} lib/compile/${deps.fastutil.name}
+    cp ${deps.osmpbf} lib/compile/${deps.osmpbf.name}
+    cp ${deps.protobuf} lib/compile/${deps.protobuf.name}
+    cp ${deps.xpp3} lib/compile/${deps.xpp3.name}
+  ''
+  + lib.optionalString doCheck ''
+    mkdir -p lib/test
+    cp ${deps.junit} lib/test/${deps.junit.name}
+    cp ${deps.hamcrest-core} lib/test/${deps.hamcrest-core.name}
 
-      mkdir -p test/resources/in/osm
-      ${lib.concatMapStringsSep "\n" (res: ''
-        cp ${res} test/resources/in/${builtins.replaceStrings [ "__" ] [ "/" ] res.name}
-      '') testInputs}
-    '';
+    mkdir -p test/resources/in/osm
+    ${lib.concatMapStringsSep "\n" (res: ''
+      cp ${res} test/resources/in/${builtins.replaceStrings [ "__" ] [ "/" ] res.name}
+    '') testInputs}
+  '';
 
   nativeBuildInputs = [
     jdk
@@ -94,9 +94,9 @@ stdenv.mkDerivation rec {
   '';
 
   passthru.updateScript = [
-    ../update.sh
+    ./update.sh
     "mkgmap-splitter"
-    meta.downloadPage
+    finalAttrs.meta.downloadPage
   ];
 
   meta = {
@@ -112,4 +112,4 @@ stdenv.mkDerivation rec {
       binaryBytecode # deps
     ];
   };
-}
+})

@@ -1,5 +1,5 @@
---- a/build.xml	(revision 597)
-+++ a/build.xml	(working copy)
+--- a/build.xml	2026-02-10 03:53:33.129313250 +0200
++++ b/build.xml	2026-02-10 03:53:36.908100965 +0200
 @@ -212,7 +212,7 @@
  		</propertyfile>
  	</target>
@@ -9,7 +9,7 @@
      <javac srcdir="${src}" destdir="${build.classes}" debug="yes" includeantruntime="false">
        <include name="**/*.java"/>
        <classpath refid="classpath"/>
-@@ -219,7 +219,7 @@
+@@ -222,7 +222,7 @@
      </javac>
    </target>
  
@@ -18,7 +18,7 @@
      <javac srcdir="${test}" destdir="${build.test-classes}" debug="yes" includeantruntime="false">
        <include name="**/*.java"/>
        <classpath refid="test.classpath"/>
-@@ -324,7 +324,7 @@
+@@ -330,7 +330,7 @@
  	</target>
  
  	<!-- Main -->
@@ -27,7 +27,7 @@
      <copy todir="${build.classes}">
        <fileset dir="${resources}">
          <include name="*.properties"/>
-@@ -349,7 +349,7 @@
+@@ -355,7 +355,7 @@
  			ignoreerrors="true"/>
  	</target>
   

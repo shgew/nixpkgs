@@ -3104,10 +3104,6 @@ with pkgs;
 
   nvfetcher = haskell.lib.compose.justStaticExecutables haskellPackages.nvfetcher;
 
-  mkgmap = callPackage ../applications/misc/mkgmap { };
-
-  mkgmap-splitter = callPackage ../applications/misc/mkgmap/splitter { };
-
   op-geth = callPackage ../applications/blockchains/optimism/geth.nix { };
 
   optimism = callPackage ../applications/blockchains/optimism { };
