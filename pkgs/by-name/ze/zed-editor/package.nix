@@ -49,6 +49,7 @@
 assert withGLES -> stdenv.hostPlatform.isLinux;
 
 let
+  channel = "stable";
   executableName = "zeditor";
   # Based on vscode.fhs
   # Zed allows for users to download and use extensions
@@ -284,7 +285,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
     )
   ''
   + lib.optionalString buildRemoteServer ''
-    install -Dm755 $release_target/remote_server $remote_server/bin/zed-remote-server-stable-$version
+    install -Dm755 $release_target/remote_server $remote_server/bin/zed-remote-server-${channel}-$version+${channel}
   ''
   + ''
     runHook postInstall
@@ -318,7 +319,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
     tests = {
       remoteServerVersion = testers.testVersion {
         package = finalAttrs.finalPackage.remote_server;
-        command = "zed-remote-server-stable-${finalAttrs.version} version";
+        command = "zed-remote-server-${channel}-${finalAttrs.version}+${channel} version";
       };
     }
     // lib.optionalAttrs stdenv.hostPlatform.isLinux {
