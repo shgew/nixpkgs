@@ -8,7 +8,7 @@
   wayland-protocols,
 }:
 let
-  pname = "LycheeSlicer";
+  pname = "lycheeslicer";
   version = "7.6.1";
 
   src = fetchurl {

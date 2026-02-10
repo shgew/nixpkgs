@@ -28,7 +28,7 @@ let
     ;
 in
 stdenv.mkDerivation (finalAttrs: {
-  pname = "melonDS";
+  pname = "melonds";
   version = "1.1-unstable-2026-02-02";
 
   src = fetchFromGitHub {
