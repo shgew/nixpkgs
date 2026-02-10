@@ -6,7 +6,7 @@
   faust2lv2,
 }:
 stdenv.mkDerivation {
-  pname = "mooSpace";
+  pname = "moospace";
   version = "0-unstable-2020-06-10";
 
   src = fetchFromGitHub {
