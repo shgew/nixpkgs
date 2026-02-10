@@ -2995,8 +2995,6 @@ with pkgs;
 
   marimo = with python3Packages; toPythonApplication marimo;
 
-  mbutil = python310Packages.callPackage ../applications/misc/mbutil { };
-
   mcstatus = with python3Packages; toPythonApplication mcstatus;
 
   miniupnpd = callPackage ../tools/networking/miniupnpd { };

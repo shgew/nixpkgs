@@ -6790,6 +6790,19 @@ final: prev: {
     meta.hydraPlatforms = [ ];
   };
 
+  im-select-nvim = buildVimPlugin {
+    pname = "im-select.nvim";
+    version = "0-unstable-2025-07-24";
+    src = fetchFromGitHub {
+      owner = "keaising";
+      repo = "im-select.nvim";
+      rev = "113a6905a1c95d2990269f96abcbad9718209557";
+      hash = "sha256-rtbqJjih9yy2svMIro7FbdH9DqGTumAmfcRICfqT8tQ=";
+    };
+    meta.homepage = "https://github.com/keaising/im-select.nvim/";
+    meta.hydraPlatforms = [ ];
+  };
+
   img-clip-nvim = buildVimPlugin {
     pname = "img-clip.nvim";
     version = "0.6.0-unstable-2025-12-19";
