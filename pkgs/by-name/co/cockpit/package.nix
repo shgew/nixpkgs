@@ -34,7 +34,7 @@
   pam,
   pkg-config,
   polkit,
-  python3Packages,
+  python312Packages,
   sscg,
   systemd,
   udev,
@@ -44,6 +44,12 @@
   withBranding ? true,
   nixos-icons,
 }:
+
+let
+  # Pinned to 3.12 due to cockpit-zfs dependency py-libzfs not being compatible
+  # with 3.13+
+  python3Packages = python312Packages;
+in
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "cockpit";
@@ -165,6 +171,11 @@ stdenv.mkDerivation (finalAttrs: {
       --replace-fail "/usr/lib/polkit-1/polkit-agent-helper-1" "/run/wrappers/bin/polkit-agent-helper-1"
   '';
 
+  preConfigure = ''
+    # Make sure our Python comes before any other Python (e.g. from asciidoc)
+    export PATH="${lib.makeBinPath [ python3Packages.python ]}:$PATH"
+  '';
+
   configureFlags = [
     "--enable-prefix-only=yes"
     "--disable-pcp" # TODO: figure out how to package its dependency
@@ -269,6 +280,7 @@ stdenv.mkDerivation (finalAttrs: {
   '';
 
   passthru = {
+    inherit python3Packages;
     tests = { inherit (nixosTests) cockpit; };
     updateScript = nix-update-script { };
     cockpitPath = [
