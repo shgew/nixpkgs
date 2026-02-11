@@ -7,7 +7,7 @@
   faust2lv2,
 }:
 stdenv.mkDerivation (finalAttrs: {
-  pname = "faustPhysicalModeling";
+  pname = "faust-physicalmodeling";
   version = "2.83.1";
 
   src = fetchFromGitHub {

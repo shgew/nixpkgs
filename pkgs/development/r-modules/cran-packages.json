@@ -5969,7 +5969,7 @@
       "name": "ChoR",
       "version": "0.0-4",
       "sha256": "08mildsx542zfm0kcdakcv7c71hb4jgbcq1lhidf0fz76zj1pzk1",
-      "depends": ["commonsMath", "rJava"]
+      "depends": ["commons-math", "rJava"]
     },
     "ChoiceModelR": {
       "name": "ChoiceModelR",
@@ -54295,8 +54295,8 @@
       "sha256": "0139jfaal03099kdykcljypaznrd7linx7x6fcm1wpgzykwxfivz",
       "depends": []
     },
-    "commonsMath": {
-      "name": "commonsMath",
+    "commons-math": {
+      "name": "commons-math",
       "version": "1.2.8",
       "sha256": "0qbb7c5xqffq17i636qf9ppanxlmph9wym9bz6n4dhscfniw14q8",
       "depends": []
@@ -147970,7 +147970,7 @@
       "name": "aibd",
       "version": "0.1.9",
       "sha256": "1ispw8y0k665fdpw1c0swmhzl596jr89lnwyq741ak6ic92s3pzz",
-      "depends": ["commonsMath", "rscala"],
+      "depends": ["commons-math", "rscala"],
       "broken": true
     },
     "aidar": {
@@ -152380,7 +152380,7 @@
       "name": "expands",
       "version": "2.1.3",
       "sha256": "00zb57gmpj86c7rvpqywpn4c5wl51immps935n3hd2fyk73vqljh",
-      "depends": ["ape", "commonsMath", "flexclust", "flexmix", "gplots", "matlab", "moments", "NbClust", "plyr", "RColorBrewer", "rJava"],
+      "depends": ["ape", "commons-math", "flexclust", "flexmix", "gplots", "matlab", "moments", "NbClust", "plyr", "RColorBrewer", "rJava"],
       "broken": true
     },
     "expectreg": {
@@ -162523,7 +162523,7 @@
       "name": "shallot",
       "version": "0.4.10",
       "sha256": "05ciafpahcrsh9kwg1yqwbmanvkbv1i1cjjpvq3w4cdqkhn4fam7",
-      "depends": ["commonsMath", "rscala"],
+      "depends": ["commons-math", "rscala"],
       "broken": true
     },
     "shiny_info": {

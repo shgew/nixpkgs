@@ -505,6 +505,15 @@ mapAliases {
   collada2gltf = throw "collada2gltf has been removed from Nixpkgs, as it has been unmaintained upstream for 5 years and does not build with supported GCC versions"; # Addd 2025-08-08
   colloid-kde = throw "'colloid-kde' has been removed, as it is only compatible with Plasma 5, which is EOL"; # Added 2025-08-20
   colorstorm = throw "'colorstorm' has been removed because it was unmaintained in nixpkgs and upstream was rewritten."; # Added 2025-06-15
+  commonsBcel = warnAlias "'commonsBcel' has been renamed to 'commons-bcel'" commons-bcel; # Added 2026-02-08
+  commonsBsf = warnAlias "'commonsBsf' has been renamed to 'commons-bsf'" commons-bsf; # Added 2026-02-08
+  commonsCompress = warnAlias "'commonsCompress' has been renamed to 'commons-compress'" commons-compress; # Added 2026-02-08
+  commonsDaemon = warnAlias "'commonsDaemon' has been renamed to 'commons-daemon'" commons-daemon; # Added 2026-02-08
+  commonsFileUpload = warnAlias "'commonsFileUpload' has been renamed to 'commons-fileupload'" commons-fileupload; # Added 2026-02-08
+  commonsIo = warnAlias "'commonsIo' has been renamed to 'commons-io'" commons-io; # Added 2026-02-08
+  commonsLang = warnAlias "'commonsLang' has been renamed to 'commons-lang'" commons-lang; # Added 2026-02-08
+  commonsLogging = warnAlias "'commonsLogging' has been renamed to 'commons-logging'" commons-logging; # Added 2026-02-08
+  commonsMath = warnAlias "'commonsMath' has been renamed to 'commons-math'" commons-math; # Added 2026-02-08
   computecpp = throw "'computecpp' has been removed because its source has been pulled"; # Added 2025-12-20
   computecpp-unwrapped = throw "'computecpp-unwrapped' has been removed because its source has been pulled"; # Added 2025-12-20
   conduwuit = throw "'conduwuit' has been removed as the upstream repository has been deleted. Consider migrating to 'matrix-conduit', 'matrix-continuwuity' or 'matrix-tuwunel' instead."; # Added 2025-08-08
@@ -644,6 +653,7 @@ mapAliases {
   fabs = throw "'fabs' has been removed due to being broken for more than a year; see RFC 180"; # Added 2026-02-05
   fast-cli = throw "'fast-cli' has been removed because it was unmaintainable in nixpkgs"; # Added 2025-11-17
   fastnlo_toolkit = throw "'fastnlo_toolkit' has been renamed to/replaced by 'fastnlo-toolkit'"; # Converted to throw 2025-10-27
+  faustPhysicalModeling = warnAlias "'faustPhysicalModeling' has been renamed to 'faust-physicalmodeling'" faust-physicalmodeling; # Added 2026-02-08
   faustStk = throw "'faustStk' has been renamed to/replaced by 'faustPhysicalModeling'"; # Converted to throw 2025-10-27
   fbjni = throw "fbjni has been removed, as it was broken"; # Added 2025-08-25
   fcitx5-catppuccin = throw "'fcitx5-catppuccin' has been renamed to/replaced by 'catppuccin-fcitx5'"; # Converted to throw 2025-10-27
@@ -1265,6 +1275,7 @@ mapAliases {
   melmatcheq.lv2 = melmatcheq-lv2; # Added 2025-09-27
   melonDS = warnAlias "'melonDS' has been renamed to 'melonds'" melonds; # Added 2026-02-08
   meshlab-unstable = throw "meshlab-unstable has been removed, as it was behind meshlab"; # Added 2025-09-21
+  metaBuildEnv = throw "'metaBuildEnv' has been removed, due to it being ancient unmaintained software"; # Added 2026-02-11
   meteo = throw "'meteo' has been removed as it was unmaintained and depends on deprecated webkitgtk_4_0"; # Added 2025-10-09
   microcodeAmd = throw "'microcodeAmd' has been renamed to/replaced by 'microcode-amd'"; # Converted to throw 2025-10-27
   microcodeIntel = throw "'microcodeIntel' has been renamed to/replaced by 'microcode-intel'"; # Converted to throw 2025-10-27
