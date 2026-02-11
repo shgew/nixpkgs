@@ -1755,12 +1755,6 @@
     matrix = "@andrew:kvalhe.im";
     name = "Andrew Kvalheim";
   };
-  andrewrk = {
-    email = "superjoe30@gmail.com";
-    github = "andrewrk";
-    githubId = 106511;
-    name = "Andrew Kelley";
-  };
   andrewzah = {
     name = "Andrew Zah";
     github = "andrewzah";
@@ -13849,12 +13843,6 @@
     github = "killercup";
     githubId = 20063;
     name = "Pascal Hertleif";
-  };
-  kiloreux = {
-    email = "kiloreux@gmail.com";
-    github = "kiloreux";
-    githubId = 6282557;
-    name = "Kiloreux Emperex";
   };
   kim0 = {
     email = "email.ahmedkamal@googlemail.com";

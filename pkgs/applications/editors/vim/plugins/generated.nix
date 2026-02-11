@@ -8560,6 +8560,19 @@ final: prev: {
     meta.hydraPlatforms = [ ];
   };
 
+  mcphub-nvim = buildVimPlugin {
+    pname = "mcphub.nvim";
+    version = "6.2.0-unstable-2026-01-18";
+    src = fetchFromGitHub {
+      owner = "ravitemer";
+      repo = "mcphub.nvim";
+      rev = "7cd5db330f41b7bae02b2d6202218a061c3ebc1f";
+      hash = "sha256-g9tPvjThz6EUk7zcY7lL+YH4lrT4x3FJ6jrNMHA8PAE=";
+    };
+    meta.homepage = "https://github.com/ravitemer/mcphub.nvim/";
+    meta.hydraPlatforms = [ ];
+  };
+
   mediawiki-vim = buildVimPlugin {
     pname = "mediawiki.vim";
     version = "0.2-unstable-2015-11-15";
