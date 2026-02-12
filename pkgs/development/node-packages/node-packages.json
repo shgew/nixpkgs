@@ -1,5 +1,5 @@
 [
-, "@tailwindcss/aspect-ratio"
+  "@tailwindcss/aspect-ratio"
 , "@tailwindcss/forms"
 , "@tailwindcss/line-clamp"
 , "@tailwindcss/typography"
