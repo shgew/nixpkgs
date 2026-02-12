@@ -10975,11 +10975,6 @@ with pkgs;
     syncthing-relay
     ;
 
-  syncthingtray = kdePackages.callPackage ../applications/misc/syncthingtray {
-    # renamed in KF5 -> KF6
-    plasma-framework = kdePackages.libplasma;
-  };
-
   synergyWithoutGUI = synergy.override { withGUI = false; };
 
   tabbed = callPackage ../applications/window-managers/tabbed {
