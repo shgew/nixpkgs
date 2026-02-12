@@ -12607,6 +12607,7 @@ with pkgs;
     nix-prefetch-bzr
     nix-prefetch-cvs
     nix-prefetch-darcs
+    nix-prefetch-fossil
     nix-prefetch-git
     nix-prefetch-hg
     nix-prefetch-pijul
