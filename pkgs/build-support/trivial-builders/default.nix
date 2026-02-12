@@ -1080,7 +1080,7 @@ rec {
 
         # Carry (and merge) information from the underlying `src` if present.
         # If there is not src.meta, this meta block will be blank regardless.
-        meta = lib.optionalAttrs (finalAttrs.src ? meta) removeAttrs finalAttrs.src.meta [ "position" ];
+        meta = lib.optionalAttrs (finalAttrs.src ? meta) (removeAttrs finalAttrs.src.meta [ "position" ]);
       };
   };
 
