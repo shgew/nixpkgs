@@ -1559,10 +1559,6 @@ with pkgs;
     withLibdnssdCompat = true;
   };
 
-  axel = callPackage ../tools/networking/axel {
-    libssl = openssl;
-  };
-
   babelfish = callPackage ../shells/fish/babelfish.nix { };
 
   bat-extras = recurseIntoAttrs (lib.makeScope newScope (import ../tools/misc/bat-extras));
@@ -5987,10 +5983,6 @@ with pkgs;
     )
       haskellPackages.haskell-ci;
 
-  nixbang = callPackage ../development/tools/misc/nixbang {
-    pythonPackages = python3Packages;
-  };
-
   nexusmods-app-unfree = nexusmods-app.override {
     pname = "nexusmods-app-unfree";
     _7zz = _7zz-rar;
@@ -6646,19 +6638,6 @@ with pkgs;
   gst_all_1 = recurseIntoAttrs (callPackage ../development/libraries/gstreamer { });
 
   grantlee = libsForQt5.callPackage ../development/libraries/grantlee { };
-
-  glib = callPackage ../by-name/gl/glib/package.nix (
-    let
-      glib-untested = glib.overrideAttrs { doCheck = false; };
-    in
-    {
-      # break dependency cycles
-      # these things are only used for tests, they don't get into the closure
-      shared-mime-info = shared-mime-info.override { glib = glib-untested; };
-      desktop-file-utils = desktop-file-utils.override { glib = glib-untested; };
-      dbus = dbus.override { enableSystemd = false; };
-    }
-  );
 
   glirc = haskell.lib.compose.justStaticExecutables haskellPackages.glirc;
 
