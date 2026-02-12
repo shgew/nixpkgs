@@ -100,6 +100,14 @@ stdenv.mkDerivation (finalAttrs: {
     tmpdir=$(mktemp -d)
     7z x ${finalAttrs.src} -o$tmpdir -y
 
+    if [ -d "$tmpdir/assets" ]; then
+      mv "$tmpdir/assets/"* "$tmpdir/"
+      rmdir "$tmpdir/assets"
+    elif [ -d "$tmpdir/Assets" ]; then
+      mv "$tmpdir/Assets/"* "$tmpdir/"
+      rmdir "$tmpdir/Assets"
+    fi
+
     ${lib.optionalString withBridgePatch ''
       cp ${./bridge_detour.lua} $tmpdir/bridge_detour.lua
 
@@ -145,7 +153,8 @@ stdenv.mkDerivation (finalAttrs: {
 
     makeWrapper $out/share/Balatro $out/bin/balatro ${lib.optionalString withMods ''
       --prefix LD_PRELOAD : '${lovely-injector}/lib/liblovely.so' \
-      --prefix LD_LIBRARY_PATH : '${lib.makeLibraryPath [ curl ]}''}
+      --prefix LD_LIBRARY_PATH : '${lib.makeLibraryPath [ curl ]}'
+    ''}
 
     runHook postInstall
   '';
