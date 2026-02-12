@@ -1149,15 +1149,6 @@ with pkgs;
 
   gitRepo = git-repo;
 
-  merge-fmt = callPackage ../applications/version-management/merge-fmt {
-    inherit (ocamlPackages)
-      buildDunePackage
-      cmdliner
-      base
-      stdio
-      ;
-  };
-
   svn-all-fast-export =
     libsForQt5.callPackage ../applications/version-management/svn-all-fast-export
       { };
@@ -1700,8 +1691,6 @@ with pkgs;
   };
 
   dino = callPackage ../applications/networking/instant-messengers/dino { };
-
-  dnschef = python3Packages.callPackage ../tools/networking/dnschef { };
 
   inherit (ocamlPackages) dot-merlin-reader;
 
@@ -9580,10 +9569,6 @@ with pkgs;
 
   awesomebump = libsForQt5.callPackage ../applications/graphics/awesomebump { };
 
-  backintime-common = callPackage ../applications/networking/sync/backintime/common.nix { };
-
-  backintime-qt = qt6.callPackage ../applications/networking/sync/backintime/qt.nix { };
-
   backintime = backintime-qt;
 
   bespokesynth-with-vst2 = bespokesynth.override {
@@ -11973,10 +11958,6 @@ with pkgs;
   siesta-mpi = callPackage ../by-name/si/siesta/package.nix { useMpi = true; };
 
   ### SCIENCE/BIOLOGY
-
-  cd-hit = callPackage ../applications/science/biology/cd-hit {
-    inherit (llvmPackages) openmp;
-  };
 
   deepdiff = with python3Packages; toPythonApplication deepdiff;
 
