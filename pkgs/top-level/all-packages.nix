@@ -1227,8 +1227,6 @@ with pkgs;
 
   libmirage = callPackage ../applications/emulators/cdemu/libmirage.nix { };
 
-  mame = libsForQt5.callPackage ../applications/emulators/mame { };
-
   mame-tools = lib.addMetaAttrs {
     description = mame.meta.description + " (tools only)";
   } (lib.getOutput "tools" mame);
@@ -10931,15 +10929,6 @@ with pkgs;
 
   curaPlugins = recurseIntoAttrs (callPackage ../applications/misc/cura/plugins.nix { });
 
-  prusa-slicer = callPackage ../applications/misc/prusa-slicer {
-    # Build with clang even on Linux, because GCC uses absolutely obscene amounts of memory
-    # on this particular code base (OOM with 32GB memory and --cores 16 on GCC, succeeds
-    # with --cores 32 on clang).
-    stdenv = clangStdenv;
-  };
-
-  super-slicer = callPackage ../applications/misc/prusa-slicer/super-slicer.nix { };
-
   super-slicer-beta = super-slicer.beta;
 
   super-slicer-latest = super-slicer.latest;
@@ -11912,8 +11901,6 @@ with pkgs;
     gnome48Extensions
     gnome49Extensions
     ;
-
-  gnome-extensions-cli = python3Packages.callPackage ../desktops/gnome/misc/gnome-extensions-cli { };
 
   gnome-session-ctl = callPackage ../by-name/gn/gnome-session/ctl.nix { };
 
