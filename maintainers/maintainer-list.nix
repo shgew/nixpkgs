@@ -22983,6 +22983,12 @@
     matrix = "@emma:rory.gay"; # preferred
     name = "Rory&";
   };
+  rosebeats = {
+    name = "Sophie Doiron";
+    email = "sophie.d21401@gmail.com";
+    github = "rosebeats";
+    githubId = 39890784;
+  };
   rosehobgoblin = {
     name = "J. L. Bowden";
     github = "rosehobgoblin";
