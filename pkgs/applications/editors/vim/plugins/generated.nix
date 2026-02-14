@@ -14495,6 +14495,19 @@ final: prev: {
     meta.hydraPlatforms = [ ];
   };
 
+  sonarqube-nvim = buildVimPlugin {
+    pname = "sonarqube.nvim";
+    version = "0-unstable-2025-06-24";
+    src = fetchFromGitHub {
+      owner = "iamkarasik";
+      repo = "sonarqube.nvim";
+      rev = "811bf8f46e0aa5ed9c9b5783aaf6f87640df553a";
+      hash = "sha256-GxXnfw+iKvcunFn+gM5zcknmc6KD5uDfbZEgDQ9bceY=";
+    };
+    meta.homepage = "https://github.com/iamkarasik/sonarqube.nvim/";
+    meta.hydraPlatforms = [ ];
+  };
+
   sonokai = buildVimPlugin {
     pname = "sonokai";
     version = "0.3.3-unstable-2026-01-21";
