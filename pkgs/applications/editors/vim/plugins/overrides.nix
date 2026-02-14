@@ -1619,9 +1619,8 @@ assertNoAdditions {
 
   jj-nvim = super.jj-nvim.overrideAttrs {
     # Don't install 30 MB of GIFs
-    installPhase = ''
-      mkdir $out
-      cp -r lua $out
+    postPatch = ''
+      rm -rf assets/
     '';
   };
 
