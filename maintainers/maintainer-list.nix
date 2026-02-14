@@ -21463,6 +21463,12 @@
     githubId = 4033651;
     name = "Keagan McClelland";
   };
+  prophetofxenu = {
+    email = "xenu@prophetofxenu.net";
+    github = "prophetofxenu";
+    githubId = 20529712;
+    name = "William Harrell";
+  };
   protoben = {
     email = "protob3n@gmail.com";
     github = "protoben";
