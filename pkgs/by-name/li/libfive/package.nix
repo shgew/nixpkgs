@@ -1,7 +1,6 @@
 {
   lib,
   stdenv,
-  wrapQtAppsHook,
   fetchFromGitHub,
   unstableGitUpdater,
   cmake,
@@ -13,7 +12,7 @@
   boost,
   guile,
   python3,
-  qtbase,
+  libsForQt5,
 }:
 
 stdenv.mkDerivation {
@@ -28,7 +27,7 @@ stdenv.mkDerivation {
   };
 
   nativeBuildInputs = [
-    wrapQtAppsHook
+    libsForQt5.wrapQtAppsHook
     cmake
     ninja
     pkg-config
@@ -41,7 +40,7 @@ stdenv.mkDerivation {
     boost
     guile
     python3
-    qtbase
+    libsForQt5.qtbase
   ];
 
   preConfigure = ''
