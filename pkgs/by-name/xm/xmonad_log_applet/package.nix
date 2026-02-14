@@ -11,7 +11,7 @@
   gtk2,
   gtk3,
   gnome-panel,
-  mate,
+  mate-panel,
   libxfce4util,
   xfce4-panel,
 }:
@@ -41,7 +41,7 @@ stdenv.mkDerivation rec {
   ]
   ++ lib.optionals (desktopSupport == "mate") [
     gtk3
-    mate.mate-panel
+    mate-panel
   ]
   ++ lib.optionals (desktopSupport == "xfce4") [
     gtk2
