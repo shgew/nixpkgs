@@ -10,7 +10,7 @@
 }:
 buildLua {
   pname = "videoclip";
-  version = "0-unstable-2026-01-22";
+  version = "0.2-unstable-2026-01-22";
 
   src = fetchFromGitHub {
     owner = "Ajatt-Tools";
@@ -31,7 +31,7 @@ buildLua {
   scriptPath = ".";
   passthru.scriptName = "videoclip";
   passthru.updateScript = unstableGitUpdater {
-    hardcodeZeroVersion = true;
+    tagPrefix = "v";
   };
 
   meta = {
