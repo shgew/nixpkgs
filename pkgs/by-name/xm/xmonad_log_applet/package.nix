@@ -60,7 +60,7 @@ stdenv.mkDerivation rec {
 
   # Setup hook replaces ${prefix} in pc files so we cannot use
   # --define-variable=prefix=$prefix
-  PKG_CONFIG_LIBXFCE4PANEL_1_0_LIBDIR = "$(out)/lib";
+  env.PKG_CONFIG_LIBXFCE4PANEL_1_0_LIBDIR = "$(out)/lib";
 
   meta = {
     homepage = "https://github.com/kalj/xmonad-log-applet";
