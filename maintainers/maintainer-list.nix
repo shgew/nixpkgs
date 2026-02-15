@@ -25010,6 +25010,12 @@
     githubId = 55726;
     name = "Stanislav Ochotnický";
   };
+  socksy = {
+    email = "ben.j.lovell@gmail.com";
+    github = "socksy";
+    githubId = 511549;
+    name = "Ben Lovell";
+  };
   sodagunz = {
     name = "sodagunz";
     github = "sodagunz";
