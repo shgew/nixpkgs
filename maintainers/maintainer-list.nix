@@ -17280,12 +17280,6 @@
     githubId = 4366292;
     name = "Michal Rus";
   };
-  michelk = {
-    email = "michel@kuhlmanns.info";
-    github = "michelk";
-    githubId = 1404919;
-    name = "Michel Kuhlmann";
-  };
   michojel = {
     email = "mic.liamg@gmail.com";
     github = "michojel";
