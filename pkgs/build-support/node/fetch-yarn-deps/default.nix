@@ -136,8 +136,11 @@ in
               prefetch-yarn-deps
               cacert
             ];
-            GIT_SSL_CAINFO = "${cacert}/etc/ssl/certs/ca-bundle.crt";
-            NODE_EXTRA_CA_CERTS = "${cacert}/etc/ssl/certs/ca-bundle.crt";
+
+            env = {
+              GIT_SSL_CAINFO = "${cacert}/etc/ssl/certs/ca-bundle.crt";
+              NODE_EXTRA_CA_CERTS = "${cacert}/etc/ssl/certs/ca-bundle.crt";
+            };
 
             buildPhase = ''
               runHook preBuild
