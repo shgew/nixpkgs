@@ -24636,6 +24636,13 @@
     github = "Silver-Golden";
     githubId = 7858375;
   };
+  silverhadch = {
+    email = "hadichokr@icloud.com";
+    matrix = "@silverhadch07:matrix.org";
+    name = "Hadi Chokr";
+    github = "silverhadch";
+    githubId = 158838697;
+  };
   simarra = {
     name = "simarra";
     email = "loic.martel@protonmail.com";
