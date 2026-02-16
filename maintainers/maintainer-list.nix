@@ -11111,6 +11111,12 @@
     githubId = 7481521;
     name = "Balázs Lengyel";
   };
+  ilai-deutel = {
+    github = "ilai-deutel";
+    githubId = 10098207;
+    name = "Ilaï Deutel";
+    keys = [ { fingerprint = "1025 8841 8FF7 E165 6964  90A2 06E8 A973 4948 08A2"; } ];
+  };
   ilarvne = {
     email = "ilarvne@proton.me";
     github = "ilarvne";
