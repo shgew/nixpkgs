@@ -1444,6 +1444,13 @@
     githubId = 373;
     name = "Alexandre Girard Davila";
   };
+  alyamanmas = {
+    email = "alyaman.maasarani@gmail.com";
+    github = "AlyamanMas";
+    githubId = 33905034;
+    name = "Alyaman Huzaifa Massarani";
+    keys = [ { fingerprint = "570D 147B 9514 08C6 2CD8  D530 515E 428A C916 D39C"; } ];
+  };
   amaanq = {
     email = "contact@amaanq.com";
     github = "amaanq";
