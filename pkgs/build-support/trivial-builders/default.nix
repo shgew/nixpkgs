@@ -572,69 +572,76 @@ rec {
     other derivations.  A derivation created with linkFarm is often used in CI
     as a easy way to build multiple derivations at once.
   */
-  symlinkJoin =
-    args_@{
-      name ?
-        assert lib.assertMsg (
-          args_ ? pname && args_ ? version
-        ) "symlinkJoin requires either a `name` OR `pname` and `version`";
-        "${args_.pname}-${args_.version}",
-      paths,
-      stripPrefix ? "",
-      preferLocalBuild ? true,
-      allowSubstitutes ? false,
-      postBuild ? "",
-      failOnMissing ? stripPrefix == "",
-      ...
-    }:
-    assert lib.assertMsg (stripPrefix != "" -> (hasPrefix "/" stripPrefix && stripPrefix != "/")) ''
-      stripPrefix must be either an empty string (disable stripping behavior), or relative path prefixed with /.
+  symlinkJoin = lib.extendMkDerivation {
+    constructDrv = stdenvNoCC.mkDerivation;
 
-      Ensure that the path starts with / and specifies path to the subdirectory.
-    '';
+    excludeDrvArgNames = [
+      "postBuild"
+      "stripPrefix"
+      "paths"
+      "failOnMissing"
+    ];
 
-    let
-      mapPaths =
-        f: paths:
-        map (
-          path:
-          if path == null then
-            null
-          else if isList path then
-            mapPaths f path
-          else
-            f path
-        ) paths;
-      args =
-        removeAttrs args_ [
-          "name"
-          "postBuild"
-          "stripPrefix"
-          "paths"
-          "failOnMissing"
-        ]
-        // {
-          # Allow getting the proper position of the output derivation.
-          # Since one of these are required, it should be fairly accurate.
-          pos =
-            if args_ ? pname then
-              builtins.unsafeGetAttrPos "pname" args_
+    extendDrvArgs =
+      finalAttrs:
+      args@{
+        name ?
+          assert lib.assertMsg (
+            finalAttrs ? pname && finalAttrs ? version
+          ) "symlinkJoin requires either a `name` OR `pname` and `version`";
+          "${finalAttrs.pname}-${finalAttrs.version}",
+        paths,
+        stripPrefix ? "",
+        preferLocalBuild ? true,
+        allowSubstitutes ? false,
+        postBuild ? "",
+        failOnMissing ? stripPrefix == "",
+        ...
+      }:
+      assert lib.assertMsg (stripPrefix != "" -> (hasPrefix "/" stripPrefix && stripPrefix != "/")) ''
+        stripPrefix must be either an empty string (disable stripping behavior), or relative path prefixed with /.
+
+        Ensure that the path starts with / and specifies path to the subdirectory.
+      '';
+      let
+        mapPaths =
+          f:
+          map (
+            path:
+            if path == null then
+              null
+            else if isList path then
+              mapPaths f path
             else
-              builtins.unsafeGetAttrPos "name" args_;
-          inherit preferLocalBuild allowSubstitutes;
-          paths = mapPaths (path: "${path}${stripPrefix}") paths;
-          passAsFile = [ "paths" ];
-        }; # pass the defaults
-    in
-    runCommand name args ''
-      mkdir -p $out
-      for i in $(cat $pathsPath); do
-        ${optionalString (!failOnMissing) "if test -d $i; then "}${lndir}/bin/lndir -silent $i $out${
-          optionalString (!failOnMissing) "; fi"
-        }
-      done
-      ${postBuild}
-    '';
+              f path
+          );
+      in
+      {
+        enableParallelBuilding = true;
+        inherit name allowSubstitutes preferLocalBuild;
+        passAsFile = [
+          "buildCommand"
+          "paths"
+        ];
+        paths = mapPaths (path: "${path}${stripPrefix}") paths;
+        buildCommand = ''
+          mkdir -p $out
+          for i in $(cat $pathsPath); do
+            ${optionalString (!failOnMissing) "if test -d $i; then "}${lndir}/bin/lndir -silent $i $out${
+              optionalString (!failOnMissing) "; fi"
+            }
+          done
+          ${postBuild}
+        '';
+      }
+      // lib.optionalAttrs (!args ? meta) {
+        pos =
+          if args ? pname then
+            builtins.unsafeGetAttrPos "pname" args
+          else
+            builtins.unsafeGetAttrPos "name" args;
+      };
+  };
 
   # TODO: move linkFarm docs to the Nixpkgs manual
   /*
