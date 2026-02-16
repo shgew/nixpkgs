@@ -29443,6 +29443,12 @@
     githubId = 8006928;
     name = "Yuannan (Brandon) Lin";
   };
+  yujonpradhananga = {
+    email = "yujonpradhan123@gmail.com";
+    github = "Yujonpradhananga";
+    githubId = 139200034;
+    name = "Yujon Pradhananga";
+  };
   yuka = {
     email = "yuka@yuka.dev";
     matrix = "@yuka:yuka.dev";
