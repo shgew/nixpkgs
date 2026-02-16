@@ -7095,6 +7095,12 @@
     githubId = 69208565;
     name = "Clément Boillot";
   };
+  drdo = {
+    email = "drdo@drdo.eu";
+    github = "drdo";
+    githubId = 446083;
+    name = "Daniel Rebelo de Oliveira";
+  };
   drets = {
     email = "dmitryrets@gmail.com";
     github = "drets";
