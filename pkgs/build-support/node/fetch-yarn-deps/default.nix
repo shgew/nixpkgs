@@ -31,7 +31,7 @@ in
 {
   prefetch-yarn-deps = stdenv.mkDerivation {
     pname = "prefetch-yarn-deps";
-    inherit (lib.trivial) version;
+    version = lib.trivial.release;
 
     dontUnpack = true;
     dontBuild = true;
@@ -68,7 +68,7 @@ in
 
   fixup-yarn-lock = stdenv.mkDerivation {
     pname = "fixup-yarn-lock";
-    inherit (lib.trivial) version;
+    version = lib.trivial.release;
 
     dontUnpack = true;
     dontBuild = true;
