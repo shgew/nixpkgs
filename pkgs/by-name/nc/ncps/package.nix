@@ -24,13 +24,13 @@ let
 in
 buildGoModule (finalAttrs: {
   pname = "ncps";
-  version = "0.8.5";
+  version = "0.8.6";
 
   src = fetchFromGitHub {
     owner = "kalbasit";
     repo = "ncps";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-0kQ2DTnBil7eSP/eSwLVqw/UyIwBMFtmKAeLCi64Fr8=";
+    hash = "sha256-Ep83aGlwf8qq7fmSCCH9zUztlXf4D3vvs9jkBBoN6Yw=";
   };
 
   vendorHash = "sha256-AcgC+zTS3eVsbcs0jim4zDBGc3lIjwPbdVT7/KQ9Lkc=";
