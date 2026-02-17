@@ -12593,6 +12593,12 @@
     githubId = 43830312;
     name = "Joël Miramon";
   };
+  jmmv = {
+    email = "julio@meroh.net";
+    github = "jmmv";
+    githubId = 879272;
+    name = "Julio Merino";
+  };
   jn-sena = {
     email = "jn-sena@proton.me";
     github = "jn-sena";
