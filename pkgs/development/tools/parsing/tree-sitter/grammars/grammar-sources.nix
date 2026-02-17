@@ -2026,6 +2026,18 @@
     };
   };
 
+  readline = {
+    version = "1.1.1";
+    url = "github:tree-sitter-grammars/tree-sitter-readline";
+    hash = "sha256-cbQnAPtgMnA41CTI9OyY8WYvdlJOC9g0ZMbitNSvtmI=";
+    meta = {
+      license = lib.licenses.mit;
+      maintainers = with lib.maintainers; [
+        Stebalien
+      ];
+    };
+  };
+
   regex = {
     version = "0.25.0";
     url = "github:tree-sitter/tree-sitter-regex";
