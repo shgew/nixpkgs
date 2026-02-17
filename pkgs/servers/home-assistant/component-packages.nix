@@ -126,7 +126,8 @@
       ];
     "airpatrol" =
       ps: with ps; [
-      ]; # missing inputs: airpatrol
+        airpatrol
+      ];
     "airq" =
       ps: with ps; [
         aioairq
@@ -7178,6 +7179,7 @@
     "airnow"
     "airobot"
     "airos"
+    "airpatrol"
     "airq"
     "airthings"
     "airthings_ble"

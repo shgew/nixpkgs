@@ -584,6 +584,8 @@ self: super: with self; {
 
   airos = callPackage ../development/python-modules/airos { };
 
+  airpatrol = callPackage ../development/python-modules/airpatrol { };
+
   airportsdata = callPackage ../development/python-modules/airportsdata { };
 
   airthings-ble = callPackage ../development/python-modules/airthings-ble { };
@@ -11300,6 +11302,8 @@ self: super: with self; {
       python3Packages = self;
     };
   };
+
+  onnx-asr = callPackage ../development/python-modules/onnx-asr { };
 
   onnx-ir = callPackage ../development/python-modules/onnx-ir { };
 
