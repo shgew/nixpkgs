@@ -6639,7 +6639,8 @@
       ];
     "viaggiatreno" =
       ps: with ps; [
-      ]; # missing inputs: viaggiatreno_ha
+        viaggiatreno-ha
+      ];
     "vicare" =
       ps: with ps; [
         pyvicare
