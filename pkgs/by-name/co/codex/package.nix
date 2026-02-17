@@ -9,6 +9,7 @@
   gitMinimal,
   libclang,
   makeBinaryWrapper,
+  libcap,
   nix-update-script,
   pkg-config,
   openssl,
@@ -53,6 +54,8 @@ rustPlatform.buildRustPackage (finalAttrs: {
   buildInputs = [
     libclang
     openssl
+  ] ++ lib.optionals stdenv.hostPlatform.isLinux [
+    libcap
   ];
 
   # NOTE: set LIBCLANG_PATH so bindgen can locate libclang, and adjust
