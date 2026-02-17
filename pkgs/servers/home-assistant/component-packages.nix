@@ -6772,7 +6772,8 @@
         python-matter-server
         pyturbojpeg
         securetar
-      ]; # missing inputs: visionpluspython
+        visionpluspython
+      ];
     "watttime" =
       ps: with ps; [
         aiowatttime
@@ -8131,6 +8132,7 @@
     "water_heater"
     "waterfurnace"
     "watergate"
+    "watts"
     "watttime"
     "waze_travel_time"
     "weather"
