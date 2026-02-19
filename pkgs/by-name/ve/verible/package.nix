@@ -30,6 +30,9 @@ buildBazelPackage {
     # a build string shown in the tools --version output.
     # If env variables not set, it would attempt to extract it from .git/.
     inherit GIT_DATE GIT_VERSION;
+  }
+  // lib.optionalAttrs stdenv.hostPlatform.isDarwin {
+    LIBTOOL = "${cctools}/bin/libtool";
   };
 
   # Derive nix package version from GIT_VERSION: "v1.2-345-abcde" -> "1.2.345"
@@ -67,7 +70,6 @@ buildBazelPackage {
     flex # .. to compile with newer glibc
     python3
   ];
-  LIBTOOL = lib.optionalString stdenv.hostPlatform.isDarwin "${cctools}/bin/libtool";
 
   postPatch = ''
     patchShebangs \
