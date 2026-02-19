@@ -8477,8 +8477,6 @@ with pkgs;
 
   qboot = pkgsi686Linux.callPackage ../applications/virtualization/qboot { };
 
-  rust-hypervisor-firmware = callPackage ../applications/virtualization/rust-hypervisor-firmware { };
-
   OVMF = callPackage ../applications/virtualization/OVMF {
     inherit (python3Packages) pexpect;
   };
