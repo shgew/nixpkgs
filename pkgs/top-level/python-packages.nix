@@ -14612,8 +14612,6 @@ self: super: with self; {
 
   pyroute2 = callPackage ../development/python-modules/pyroute2 { };
 
-  pyrr = callPackage ../development/python-modules/pyrr { };
-
   pyrsistent = callPackage ../development/python-modules/pyrsistent { };
 
   pyrss2gen = callPackage ../development/python-modules/pyrss2gen { };
