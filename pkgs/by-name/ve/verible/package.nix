@@ -19,15 +19,18 @@ let
     rev = "3f863a3f35f31b61982d813835d8637b3d93d87a";
     hash = "sha256-BsxP3GrS98ubIAkFx/c4pB1i97ZZL2TijS+2ORnooww=";
   };
-in
-buildBazelPackage rec {
-  pname = "verible";
-
-  # These environment variables are read in bazel/build-version.py to create
-  # a build string shown in the tools --version output.
-  # If env variables not set, it would attempt to extract it from .git/.
   GIT_DATE = "2025-08-29";
   GIT_VERSION = "v0.0-4023-gc1271a00";
+in
+buildBazelPackage {
+  pname = "verible";
+
+  env = {
+    # These environment variables are read in bazel/build-version.py to create
+    # a build string shown in the tools --version output.
+    # If env variables not set, it would attempt to extract it from .git/.
+    inherit GIT_DATE GIT_VERSION;
+  };
 
   # Derive nix package version from GIT_VERSION: "v1.2-345-abcde" -> "1.2.345"
   version = builtins.concatStringsSep "." (
