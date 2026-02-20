@@ -1020,6 +1020,7 @@ mapAliases {
   libdevil = throw "libdevil has been removed, as it was unmaintained in Nixpkgs and upstream since 2017"; # Added 2025-09-16
   libdevil-nox = throw "libdevil has been removed, as it was unmaintained in Nixpkgs and upstream since 2017"; # Added 2025-09-16
   libdwarf-lite = throw "`libdwarf-lite` has been replaced by `libdwarf` as it's mostly a mirror"; # Added 2025-06-16
+  libertine-g = warnAlias "'libertine-g' has been renamed to 'linux-libertine-g'" linux-libertine-g; # Added 2026-02-20
   libevdevplus = throw "'libevdevplus' has been removed, as it was unmaintained upstream since 2021, no longer builds, and is no longer used by anything"; # Added 2025-11-02
   libfakeXinerama = warnAlias "'libfakeXinerama' has been renamed to 'libfakexinerama'" libfakexinerama; # Added 2026-02-08
   libfprint-focaltech-2808-a658 = throw "'libfprint-focaltech-2808-a658' has been removed as it was broken and upstream was taken down"; # Added 2025-11-04
