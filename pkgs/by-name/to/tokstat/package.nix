@@ -35,7 +35,9 @@ rustPlatform.buildRustPackage (finalAttrs: {
   ];
 
   # For keyring support
-  PKG_CONFIG_PATH = lib.optionalString stdenv.hostPlatform.isLinux "${dbus.dev}/lib/pkgconfig";
+  env = lib.optionalAttrs stdenv.hostPlatform.isLinux {
+    PKG_CONFIG_PATH = "${dbus.dev}/lib/pkgconfig";
+  };
 
   postInstall = lib.optionalString (stdenv.buildPlatform.canExecute stdenv.hostPlatform) ''
     # Generate shell completions
