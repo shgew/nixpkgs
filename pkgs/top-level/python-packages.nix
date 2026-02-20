@@ -9760,6 +9760,8 @@ self: super: with self; {
 
   minio = callPackage ../development/python-modules/minio { };
 
+  minisbd = callPackage ../development/python-modules/minisbd { };
+
   miniupnpc = callPackage ../development/python-modules/miniupnpc { };
 
   mip = callPackage ../development/python-modules/mip { };
