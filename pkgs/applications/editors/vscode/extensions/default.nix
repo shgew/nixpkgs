@@ -3586,6 +3586,8 @@ let
         };
       };
 
+      nomicfoundation.hardhat-solidity = callPackage ./nomicfoundation.hardhat-solidity { };
+
       nonylene.dark-molokai-theme = buildVscodeMarketplaceExtension {
         mktplcRef = {
           name = "dark-molokai-theme";
