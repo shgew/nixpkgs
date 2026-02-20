@@ -12613,31 +12613,7 @@ with pkgs;
 
   wibo = pkgsi686Linux.callPackage ../applications/emulators/wibo { };
 
-  winePackagesFor =
-    wineBuild:
-    lib.makeExtensible (
-      self: with self; {
-        callPackage = newScope self;
-
-        inherit wineBuild;
-
-        inherit (callPackage ./wine-packages.nix { })
-          minimal
-          base
-          full
-          stable
-          stableFull
-          unstable
-          unstableFull
-          staging
-          stagingFull
-          wayland
-          waylandFull
-          yabridge
-          fonts
-          ;
-      }
-    );
+  winePackagesFor = wineBuild: callPackage ./wine-packages.nix { inherit wineBuild; };
 
   winePackages = recurseIntoAttrs (winePackagesFor (config.wine.build or "wine32"));
   wine64Packages = recurseIntoAttrs (winePackagesFor "wine64");
