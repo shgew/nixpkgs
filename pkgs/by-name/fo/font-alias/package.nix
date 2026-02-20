@@ -1,6 +1,6 @@
 {
   lib,
-  stdenv,
+  stdenvNoCC,
   fetchFromGitLab,
   gitUpdater,
   autoreconfHook,
@@ -8,7 +8,7 @@
   util-macros,
 }:
 
-stdenv.mkDerivation (finalAttrs: {
+stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "font-alias";
   version = "1.0.5";
 
@@ -40,7 +40,6 @@ stdenv.mkDerivation (finalAttrs: {
       cronyx
       mit
     ];
-    maintainers = [ ];
-    platforms = lib.platforms.all;
+    maintainers = with lib.maintainers; [ qweered ];
   };
 })
