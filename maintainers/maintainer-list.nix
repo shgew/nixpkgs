@@ -13962,6 +13962,11 @@
     githubId = 148352;
     name = "Jim Fowler";
   };
+  kitsunoff = {
+    github = "kitsunoff";
+    githubId = 58953114;
+    name = "Maxim Belyy";
+  };
   Kitt3120 = {
     email = "nixpkgs@schweren.dev";
     github = "Kitt3120";
