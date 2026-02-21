@@ -7215,6 +7215,11 @@
     name = "Tom van Dijk";
     keys = [ { fingerprint = "D044 F07B 8863 B681 26BD  79FE 7A98 4C82 07AD BA51"; } ];
   };
+  dtvillafana = {
+    github = "dtvillafana";
+    githubId = 82293276;
+    name = "David Villafaña";
+  };
   dudeofawesome = {
     email = "tourist-04.iced@icloud.com";
     github = "dudeofawesome";
