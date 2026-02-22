@@ -110,13 +110,13 @@
     "vendorHash": null
   },
   "bpg_proxmox": {
-    "hash": "sha256-BYpqXdtjEez7uOtUw3x70ki6sNVUzVuQVvQ8Y7vwOdc=",
+    "hash": "sha256-hyrbCXLsebkXdGovKxgLlRI6Y7WgHbLCclABRLxKzbE=",
     "homepage": "https://registry.terraform.io/providers/bpg/proxmox",
     "owner": "bpg",
     "repo": "terraform-provider-proxmox",
-    "rev": "v0.95.0",
+    "rev": "v0.96.0",
     "spdx": "MPL-2.0",
-    "vendorHash": "sha256-LvzKLPNZ+37qSSll6VqV44MOVe8/jGmUiKrSWCHkqf8="
+    "vendorHash": "sha256-oLvWBDf5wKI5lltwITHrJ+0RmEF1pMuqFoxd161uvrI="
   },
   "brightbox_brightbox": {
     "hash": "sha256-pwFbCP+qDL/4IUfbPRCkddkbsEEeAu7Wp12/mDL0ABA=",
@@ -1193,13 +1193,13 @@
     "vendorHash": "sha256-MIO0VHofPtKPtynbvjvEukMNr5NXHgk7BqwIhbc9+u0="
   },
   "selectel_selectel": {
-    "hash": "sha256-hmXFDWbo79t15nKsyDOi5SDzyG3tA+6oo7LPoMURzh8=",
+    "hash": "sha256-/1s3TQK8EkM7WgHW77a/JGsCemiustIwlLAam9CZpiY=",
     "homepage": "https://registry.terraform.io/providers/selectel/selectel",
     "owner": "selectel",
     "repo": "terraform-provider-selectel",
-    "rev": "v7.5.3",
+    "rev": "v7.5.4",
     "spdx": "MPL-2.0",
-    "vendorHash": "sha256-OJlD1P+CUEsLk2xSsQ2QQBvGewYNly1dIJh8kMi+ChE="
+    "vendorHash": "sha256-QdfBhTY7HwPqz9qm7KE0OL4ACOWiU8gLOKKdFbMrAro="
   },
   "siderolabs_talos": {
     "hash": "sha256-9VL2aa6wZFAfQ/rkfMKwWdDU9Vs6GwZzsvQpUfm7rME=",
