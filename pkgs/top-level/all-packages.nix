@@ -7176,7 +7176,7 @@ with pkgs;
 
   ogre = ogre_14;
 
-  openal = openalSoft;
+  openal = openal-soft;
 
   opencascade-occt_7_6 = opencascade-occt.overrideAttrs rec {
     pname = "opencascade-occt";
