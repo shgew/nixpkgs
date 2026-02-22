@@ -5,7 +5,7 @@
   cmake,
   pkg-config,
   udev,
-  protobuf,
+  protobuf_21,
 }:
 
 stdenv.mkDerivation (finalAttrs: {
@@ -15,8 +15,8 @@ stdenv.mkDerivation (finalAttrs: {
   src = fetchFromGitHub {
     owner = "jketterl";
     repo = "codecserver";
-    rev = finalAttrs.version;
-    sha256 = "sha256-JzaVBFl3JsFNDm4gy1qOKA9uAjUjNeMiI39l5gfH0aE=";
+    tag = finalAttrs.version;
+    hash = "sha256-JzaVBFl3JsFNDm4gy1qOKA9uAjUjNeMiI39l5gfH0aE=";
   };
 
   nativeBuildInputs = [
@@ -28,7 +28,7 @@ stdenv.mkDerivation (finalAttrs: {
     udev
   ];
 
-  propagatedBuildInputs = [ protobuf ];
+  propagatedBuildInputs = [ protobuf_21 ];
 
   postFixup = ''
     substituteInPlace "$out"/lib/pkgconfig/codecserver.pc \

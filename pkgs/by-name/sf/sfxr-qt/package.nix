@@ -2,11 +2,8 @@
   lib,
   stdenv,
   fetchFromGitHub,
+  libsForQt5,
   cmake,
-  extra-cmake-modules,
-  wrapQtAppsHook,
-  qtbase,
-  qtquickcontrols2,
   SDL,
   python3,
   catch2_3,
@@ -28,7 +25,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   nativeBuildInputs = [
     cmake
-    extra-cmake-modules
+    libsForQt5.extra-cmake-modules
     (python3.withPackages (
       pp: with pp; [
         pyyaml
@@ -36,12 +33,12 @@ stdenv.mkDerivation (finalAttrs: {
         setuptools
       ]
     ))
-    wrapQtAppsHook
+    libsForQt5.wrapQtAppsHook
   ];
 
   buildInputs = [
-    qtbase
-    qtquickcontrols2
+    libsForQt5.qtbase
+    libsForQt5.qtquickcontrols2
     SDL
   ];
 

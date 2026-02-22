@@ -2,9 +2,7 @@
   lib,
   stdenv,
   cmake,
-  extra-cmake-modules,
-  plasma-framework,
-  kwindowsystem,
+  libsForQt5,
   fetchFromGitHub,
 }:
 
@@ -15,18 +13,18 @@ stdenv.mkDerivation (finalAttrs: {
   src = fetchFromGitHub {
     owner = "jsmitar";
     repo = "PlayBar2";
-    rev = "v${finalAttrs.version}";
-    sha256 = "0iv2m4flgaz2r0k7f6l0ca8p6cw8j8j2gin1gci2pg3l5g5khbch";
+    tag = "v${finalAttrs.version}";
+    hash = "sha256-kC04yyt0vCsie8HGJySSiDNzkWKAGncmyOKrRx2pYkc=";
   };
 
   nativeBuildInputs = [
     cmake
-    extra-cmake-modules
+    libsForQt5.extra-cmake-modules
   ];
 
   buildInputs = [
-    plasma-framework
-    kwindowsystem
+    libsForQt5.plasma-framework
+    libsForQt5.kwindowsystem
   ];
 
   dontWrapQtApps = true;

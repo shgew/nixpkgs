@@ -4,7 +4,7 @@
   fetchurl,
   alsa-lib-with-plugins,
   alsa-utils,
-  fltk,
+  fltk_1_3,
   libjack2,
   libxft,
   libxpm,
@@ -20,7 +20,7 @@ stdenv.mkDerivation (finalAttrs: {
   version = "0.6.1";
 
   src = fetchurl {
-    url = "mirror://sourceforge/rakarrack/${finalAttrs.pname}-${finalAttrs.version}.tar.bz2";
+    url = "mirror://sourceforge/rakarrack/rakarrack-${finalAttrs.version}.tar.bz2";
     sha256 = "1rpf63pdn54c4yg13k7cb1w1c7zsvl97c4qxcpz41c8l91xd55kn";
   };
 
@@ -35,7 +35,7 @@ stdenv.mkDerivation (finalAttrs: {
   buildInputs = [
     alsa-lib-with-plugins
     alsa-utils
-    fltk
+    fltk_1_3
     libjack2
     libxft
     libxpm
