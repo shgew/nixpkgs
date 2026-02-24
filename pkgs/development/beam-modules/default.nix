@@ -89,6 +89,7 @@ let
       };
 
       elixir-ls = callPackage ./elixir-ls { inherit elixir; };
+      expert = callPackage ./expert { };
 
       lfe = callPackage ../interpreters/lfe { inherit erlang buildRebar3 fetchHex; };
 
