@@ -105,6 +105,8 @@ let
         mixBuildDirHook
         mixCompileHook
         mixAppConfigPatchHook
+        rebar3CompileHook
+        rebarDevendorPatchHook
         ;
     };
 in
