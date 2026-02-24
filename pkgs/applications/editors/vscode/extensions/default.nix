@@ -1967,8 +1967,8 @@ let
         mktplcRef = {
           name = "gitlab-workflow";
           publisher = "gitlab";
-          version = "6.69.3";
-          hash = "sha256-u9f743vZar9FYWXam94wdF6wBZxp6/fikZM0rGXfces=";
+          version = "6.71.0";
+          hash = "sha256-jOD5VFF9g4BNdpm3ZoCi0LPkkBmLZ7vlXVVHgiCGac8=";
         };
         meta = {
           description = "GitLab extension for Visual Studio Code";
@@ -2615,8 +2615,8 @@ let
         mktplcRef = {
           name = "language-julia";
           publisher = "julialang";
-          version = "1.182.2";
-          hash = "sha256-PIhaYlGxOGycuE9YKyJ0xD7QEjKgmtHX7l4x/xs0GjU=";
+          version = "1.187.2";
+          hash = "sha256-LYpcccJy+asBicetU6WD4yIvMDQTbg4b9GY20+TYsnc=";
         };
         meta = {
           changelog = "https://marketplace.visualstudio.com/items/julialang.language-julia/changelog";
@@ -2879,18 +2879,7 @@ let
         };
       };
 
-      mads-hartmann.bash-ide-vscode = buildVscodeMarketplaceExtension {
-        mktplcRef = {
-          publisher = "mads-hartmann";
-          name = "bash-ide-vscode";
-          version = "1.43.0";
-          hash = "sha256-IpJCzoYZ+L39HqBts487E00RfVnZhLa9wUYs2FIV9pQ=";
-        };
-        meta = {
-          license = lib.licenses.mit;
-          maintainers = [ lib.maintainers.kamadorueda ];
-        };
-      };
+      mads-hartmann.bash-ide-vscode = callPackage ./mads-hartmann.bash-ide-vscode { };
 
       marp-team.marp-vscode = buildVscodeMarketplaceExtension {
         mktplcRef = {
@@ -3044,6 +3033,8 @@ let
         };
       };
 
+      miguelsolorio.fluent-icons = callPackage ./miguelsolorio.fluent-icons { };
+
       miguelsolorio.min-theme = callPackage ./miguelsolorio.min-theme { };
 
       mikestead.dotenv = buildVscodeMarketplaceExtension {
@@ -3070,31 +3061,20 @@ let
         };
       };
 
-      mkhl.direnv = buildVscodeMarketplaceExtension {
-        mktplcRef = {
-          publisher = "mkhl";
-          name = "direnv";
-          version = "0.17.0";
-          hash = "sha256-9sFcfTMeLBGw2ET1snqQ6Uk//D/vcD9AVsZfnUNrWNg=";
-        };
-        meta = {
-          description = "direnv support for Visual Studio Code";
-          license = lib.licenses.bsd0;
-          downloadPage = "https://marketplace.visualstudio.com/items?itemName=mkhl.direnv";
-          maintainers = [ ];
-        };
-      };
+      mkhl.direnv = callPackage ./mkhl.direnv { };
 
       mkhl.shfmt = callPackage ./mkhl.shfmt { };
 
       mongodb.mongodb-vscode = callPackage ./mongodb.mongodb-vscode { };
 
+      motivesoft.vscode-man-page-syntax = callPackage ./motivesoft.vscode-man-page-syntax { };
+
       moshfeu.compare-folders = buildVscodeMarketplaceExtension {
         mktplcRef = {
           name = "compare-folders";
           publisher = "moshfeu";
-          version = "0.25.3";
-          hash = "sha256-QrSh8/AycC5nKbZ1+E3V/lJu/7Skket8b05yPnZg68s=";
+          version = "0.27.0";
+          hash = "sha256-v4ZIcrYa+5RXSX0OM5atXMcmN/EgAH6qqWS1vksxXpI=";
         };
 
         meta = {
@@ -3321,8 +3301,8 @@ let
         mktplcRef = {
           name = "cpptools-extension-pack";
           publisher = "ms-vscode";
-          version = "1.3.1";
-          hash = "sha256-HbI0UdN8uwHS2MPH1SGZhxNaN18cWzjMyWYcgVE7FjY=";
+          version = "1.5.1";
+          hash = "sha256-5jmv/CnuAMwG8asvW2iW8j837ldnLZ3rJSQbNsNvN0M=";
         };
         meta = {
           description = "Popular extensions for C++ development in Visual Studio Code";
@@ -3605,6 +3585,8 @@ let
           maintainers = [ lib.maintainers.kamadorueda ];
         };
       };
+
+      nomicfoundation.hardhat-solidity = callPackage ./nomicfoundation.hardhat-solidity { };
 
       nonylene.dark-molokai-theme = buildVscodeMarketplaceExtension {
         mktplcRef = {
@@ -4340,8 +4322,8 @@ let
         mktplcRef = {
           publisher = "sonarsource";
           name = "sonarlint-vscode";
-          version = "4.42.0";
-          hash = "sha256-jWw5vbORdi/qW8L4D1qbue8tdeiyof01FzJtcZUKs3Y=";
+          version = "4.43.0";
+          hash = "sha256-cpd8+fbp57l+XYBuDnz95lmKzJ8IUHu937KWHsLXrPk=";
         };
         meta.license = lib.licenses.lgpl3Only;
       };
@@ -4788,8 +4770,8 @@ let
         mktplcRef = {
           name = "emacs-mcx";
           publisher = "tuttieee";
-          version = "0.107.1";
-          hash = "sha256-x2WoDoYE4at2G8yuefc5evHRpCiJXh5WTTkNzW454N0=";
+          version = "0.107.2";
+          hash = "sha256-Id8pKACGLtRXas1Tb2dZrw+ZrZvAQLbWcI3Q1gYpXos=";
         };
         meta = {
           changelog = "https://github.com/whitphx/vscode-emacs-mcx/blob/main/CHANGELOG.md";
