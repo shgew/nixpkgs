@@ -358,6 +358,9 @@ let
 
         cudf = callPackage ../development/ocaml-modules/cudf { };
 
+        curl = callPackage ../development/ocaml-modules/curl { inherit (pkgs) curl; };
+        curl_lwt = callPackage ../development/ocaml-modules/curl/lwt.nix { };
+
         curly = callPackage ../development/ocaml-modules/curly {
           inherit (pkgs) curl;
         };
@@ -700,6 +703,8 @@ let
         gapi-ocaml = callPackage ../development/ocaml-modules/gapi-ocaml { };
 
         gd = callPackage ../development/ocaml-modules/gd { inherit (pkgs) gd; };
+
+        gdal = callPackage ../development/ocaml-modules/gdal { inherit (pkgs) gdal; };
 
         gen = callPackage ../development/ocaml-modules/gen { };
 
@@ -1606,7 +1611,7 @@ let
 
         octavius = callPackage ../development/ocaml-modules/octavius { };
 
-        ocurl = callPackage ../development/ocaml-modules/ocurl { };
+        ocurl = callPackage ../development/ocaml-modules/ocurl { inherit (pkgs) curl; };
 
         odate = callPackage ../development/ocaml-modules/odate { };
 
