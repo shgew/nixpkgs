@@ -15485,12 +15485,6 @@
     githubId = 4969294;
     name = "Louis Tim Larsen";
   };
-  lovek323 = {
-    email = "jason@oconal.id.au";
-    github = "lovek323";
-    githubId = 265084;
-    name = "Jason O'Conal";
-  };
   lovesegfault = {
     email = "meurerbernardo@gmail.com";
     matrix = "@lovesegfault:matrix.org";
