@@ -13336,10 +13336,12 @@
     name = "Julius Rickert";
   };
   julm = {
-    email = "julm+nixpkgs@sourcephile.fr";
+    email = "julm@sourcephile.fr";
+    matrix = "@julm:matrix.org";
     github = "ju1m";
     githubId = 21160136;
     name = "Julien Moutinho";
+    keys = [ { fingerprint = "4FE4 6703 4C11 017B 429B  AC53 A58C D81C 3863 926F"; } ];
   };
   Julow = {
     email = "jules@j3s.fr";
