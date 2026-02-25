@@ -25716,6 +25716,12 @@
     githubId = 12984845;
     name = "Subhrajyoti Sen";
   };
+  sudo-mac = {
+    email = "dreems2reality@gmail.com";
+    github = "sudo-mac";
+    githubId = 90754995;
+    name = "sudo-mac";
+  };
   sudoforge = {
     github = "sudoforge";
     githubId = 3893293;
