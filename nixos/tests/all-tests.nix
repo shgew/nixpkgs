@@ -1050,6 +1050,10 @@ in
     defaults.services.ncps.cache.storage.local = "/path/to/ncps";
   };
   ncps-ha-pg-redis = runTest ./ncps-ha-pg-redis.nix;
+  ncps-ha-pg-redis-cdc = runTest {
+    imports = [ ./ncps-ha-pg-redis.nix ];
+    defaults.services.ncps.cache.cdc.enabled = true;
+  };
   ndppd = runTest ./ndppd.nix;
   nebula-lighthouse-service = runTest ./nebula-lighthouse-service.nix;
   nebula.connectivity = runTest ./nebula/connectivity.nix;
