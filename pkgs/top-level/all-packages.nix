@@ -990,13 +990,8 @@ with pkgs;
     akkuPackages
     ;
 
-  alice-tools = callPackage ../tools/games/alice-tools {
-    withGUI = false;
-  };
-
-  alice-tools-qt5 = libsForQt5.callPackage ../tools/games/alice-tools { };
-
-  alice-tools-qt6 = qt6Packages.callPackage ../tools/games/alice-tools { };
+  alice-tools-qt5 = alice-tools.override { withQt5 = true; };
+  alice-tools-qt6 = alice-tools.override { withQt6 = true; };
 
   auditwheel = with python3Packages; toPythonApplication auditwheel;
 
@@ -1621,10 +1616,6 @@ with pkgs;
     extraPackages = [ ffmpeg ];
   };
 
-  compactor = callPackage ../applications/networking/compactor {
-    protobuf = protobuf_21;
-  };
-
   inherit (callPackages ../tools/misc/coreboot-utils { })
     msrtool
     cbmem
@@ -2181,17 +2172,13 @@ with pkgs;
     websocketSupport = true;
   };
 
-  curl = curlMinimal.override (
-    {
-      idnSupport = true;
-      pslSupport = true;
-      zstdSupport = true;
-      http3Support = true;
-    }
-    // lib.optionalAttrs (!stdenv.hostPlatform.isStatic) {
-      brotliSupport = true;
-    }
-  );
+  curl = curlMinimal.override {
+    idnSupport = true;
+    pslSupport = true;
+    zstdSupport = true;
+    http3Support = true;
+    brotliSupport = true;
+  };
 
   curlWithGnuTls = curl.override {
     gnutlsSupport = true;
@@ -3174,6 +3161,12 @@ with pkgs;
 
   update-systemd-resolved = callPackage ../tools/networking/openvpn/update-systemd-resolved.nix { };
 
+  openshadinglanguage = callPackage ../by-name/op/openshadinglanguage/package.nix {
+    libclang = llvmPackages_19.libclang;
+    clang = clang_19;
+    llvm = llvm_19;
+  };
+
   opentelemetry-collector = opentelemetry-collector-releases.otelcol;
   opentelemetry-collector-builder = callPackage ../tools/misc/opentelemetry-collector/builder.nix { };
   opentelemetry-collector-contrib = opentelemetry-collector-releases.otelcol-contrib;
@@ -3189,12 +3182,6 @@ with pkgs;
 
   opl3bankeditor = libsForQt5.callPackage ../tools/audio/opl3bankeditor { };
   opn2bankeditor = libsForQt5.callPackage ../tools/audio/opl3bankeditor/opn2bankeditor.nix { };
-
-  osl = libsForQt5.callPackage ../development/compilers/osl {
-    libclang = llvmPackages_19.libclang;
-    clang = clang_19;
-    llvm = llvm_19;
-  };
 
   p4c = callPackage ../development/compilers/p4c {
     protobuf = protobuf_21;
@@ -3656,8 +3643,6 @@ with pkgs;
   # It is also needed to reduce the amount of unnecessary stuff in the Darwin bootstrap.
   xarMinimal = callPackage ../by-name/xa/xar/package.nix { e2fsprogs = null; };
 
-  xdeltaUnstable = callPackage ../tools/compression/xdelta/unstable.nix { };
-
   xdot = with python3Packages; toPythonApplication xdot;
 
   libxfs = xfsprogs.dev;
@@ -3840,6 +3825,8 @@ with pkgs;
   devpi-server = python3Packages.callPackage ../development/tools/devpi-server { };
 
   dprint-plugins = recurseIntoAttrs (callPackage ../by-name/dp/dprint/plugins { });
+
+  reaction-plugins = reaction.passthru.plugins;
 
   elm2nix = haskell.lib.compose.justStaticExecutables haskellPackages.elm2nix;
 
@@ -8189,16 +8176,22 @@ with pkgs;
 
   buildHomeAssistantComponent = callPackage ../servers/home-assistant/build-custom-component { };
   home-assistant-custom-components = recurseIntoAttrs (
-    lib.packagesFromDirectoryRecursive {
-      inherit (home-assistant.python.pkgs) callPackage;
-      directory = ../servers/home-assistant/custom-components;
-    }
+    lib.makeExtensible (
+      self:
+      lib.packagesFromDirectoryRecursive {
+        inherit (home-assistant.python.pkgs) callPackage;
+        directory = ../servers/home-assistant/custom-components;
+      }
+    )
   );
   home-assistant-custom-lovelace-modules = recurseIntoAttrs (
-    lib.packagesFromDirectoryRecursive {
-      inherit callPackage;
-      directory = ../servers/home-assistant/custom-lovelace-modules;
-    }
+    lib.makeExtensible (
+      self:
+      lib.packagesFromDirectoryRecursive {
+        inherit callPackage;
+        directory = ../servers/home-assistant/custom-lovelace-modules;
+      }
+    )
   );
 
   home-assistant-cli = callPackage ../servers/home-assistant/cli.nix { };
@@ -10003,10 +9996,6 @@ with pkgs;
   inkscape-extensions = recurseIntoAttrs (
     callPackages ../applications/graphics/inkscape/extensions.nix { }
   );
-
-  ion3 = callPackage ../applications/window-managers/ion-3 {
-    lua = lua5_1;
-  };
 
   jabcode = callPackage ../development/libraries/jabcode { };
 
@@ -12522,7 +12511,12 @@ with pkgs;
 
   zncModules = recurseIntoAttrs (callPackage ../applications/networking/znc/modules.nix { });
 
-  dart = callPackage ../development/compilers/dart { };
+  inherit
+    ({
+      dart-bin = callPackage ../development/compilers/dart { };
+    })
+    dart-bin
+    ;
 
   inherit
     ({
@@ -12530,6 +12524,8 @@ with pkgs;
     })
     dart-source
     ;
+
+  dart = if stdenv.hostPlatform.isLinux then dart-source else dart-bin;
 
   pub2nix = recurseIntoAttrs (callPackage ../build-support/dart/pub2nix { });
 

@@ -5422,6 +5422,19 @@ final: prev: {
     meta.hydraPlatforms = [ ];
   };
 
+  flow-nvim = buildVimPlugin {
+    pname = "flow.nvim";
+    version = "2.0.2-unstable-2026-02-25";
+    src = fetchFromGitHub {
+      owner = "0xstepit";
+      repo = "flow.nvim";
+      rev = "1fe4ff584b53298e41a9f8cf108f23967cc9280c";
+      hash = "sha256-fc3H89D2xW2GZuJiHDgRJz5zYt8FQ4Azqh0o5HGcgLw=";
+    };
+    meta.homepage = "https://github.com/0xstepit/flow.nvim/";
+    meta.hydraPlatforms = [ ];
+  };
+
   fluent-vim = buildVimPlugin {
     pname = "fluent.vim";
     version = "0-unstable-2025-04-26";
@@ -14984,6 +14997,19 @@ final: prev: {
       fetchSubmodules = true;
     };
     meta.homepage = "https://github.com/AndrewRadev/switch.vim/";
+    meta.hydraPlatforms = [ ];
+  };
+
+  switcher-nvim = buildVimPlugin {
+    pname = "switcher-nvim";
+    version = "1.1.3-unstable-2026-02-04";
+    src = fetchFromGitHub {
+      owner = "neovim-idea";
+      repo = "switcher-nvim";
+      rev = "552a7fc0b1031c7565fe80bf7e2d0f1e3e7becf9";
+      hash = "sha256-7TicPnzHXB74xkpsppXMP0AvtfCgrWh/be/pXEmf1MY=";
+    };
+    meta.homepage = "https://github.com/neovim-idea/switcher-nvim/";
     meta.hydraPlatforms = [ ];
   };
 

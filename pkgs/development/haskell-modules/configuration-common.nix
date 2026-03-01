@@ -112,10 +112,12 @@ with haskellLib;
     (
       let
         # !!! Use cself/csuper inside for the actual overrides
-        cabalInstallOverlay = cself: csuper: {
-          Cabal = cself.Cabal_3_16_1_0;
-          Cabal-syntax = cself.Cabal-syntax_3_16_1_0;
-        };
+        cabalInstallOverlay =
+          cself: csuper:
+          lib.optionalAttrs (lib.versionOlder csuper.ghc.version "9.14") {
+            Cabal = cself.Cabal_3_16_1_0;
+            Cabal-syntax = cself.Cabal-syntax_3_16_1_0;
+          };
       in
       {
         cabal-install =
@@ -1028,6 +1030,11 @@ with haskellLib;
   rethinkdb = dontCheck super.rethinkdb;
   Rlang-QQ = dontCheck super.Rlang-QQ;
   sai-shape-syb = dontCheck super.sai-shape-syb;
+  # https://github.com/LeventErkok/sbv/pull/772#issuecomment-3930657736
+  # SBV requires a multitude of external tools, some not packaged with nixpkgs
+  # for tests to pass, users may only want to use one or two of tools.
+  # maintainer recomends disabling tests
+  sbv = dontCheck super.sbv;
   scp-streams = dontCheck super.scp-streams;
   sdl2 = dontCheck super.sdl2; # the test suite needs an x server
   separated = dontCheck super.separated;

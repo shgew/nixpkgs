@@ -133,6 +133,7 @@ mapAliases {
   configshell = throw "'configshell' has been renamed to/replaced by 'configshell-fb'"; # Converted to throw 2025-10-29
   cx_Freeze = throw "'cx_Freeze' has been renamed to/replaced by 'cx-freeze'"; # Converted to throw 2025-10-29
   cx_oracle = throw "'cx_oracle' has been renamed to/replaced by 'cx-oracle'"; # Converted to throw 2025-10-29
+  dalle-mini = throw "'dalle-mini' has been removed due to lack of upstream maintenance"; # added 2026-02-26
   datatable = throw "'datatable' has been removed due to lack of upstream maintenance"; # added 2026-02-02
   dateutil = throw "'dateutil' has been renamed to/replaced by 'python-dateutil'"; # Converted to throw 2025-10-29
   debian = throw "'debian' has been renamed to/replaced by 'python-debian'"; # Converted to throw 2025-10-29
@@ -342,6 +343,7 @@ mapAliases {
   pillow-avif-plugin = throw "'pillow-avif-plugin' has been removed because 'pillow' has native avif support since 11.3"; # added 2025-11-26
   pizzapi = throw "pizzapi was removed because it no longer works"; # added 2025-12-03
   pkuseg = throw "'pkuseg' has been removed because it was not supported on newer versions of Python"; # added 2026-01-20
+  ploomber-extension = throw "'ploomber-extension' has been removed since the upstream repo was archived"; # added 2026-02-16
   plumlightpad = throw "plumlightpad has been removed because the API was shut down"; # added 2025-11-04
   Polygon3 = throw "'Polygon3' has been renamed to/replaced by 'polygon3'"; # Converted to throw 2025-10-29
   posix_ipc = throw "'posix_ipc' has been renamed to/replaced by 'posix-ipc'"; # Converted to throw 2025-10-29
@@ -452,6 +454,7 @@ mapAliases {
   PyVirtualDisplay = throw "'PyVirtualDisplay' has been renamed to/replaced by 'pyvirtualdisplay'"; # Converted to throw 2025-10-29
   pyvoro = throw "pyvoro has been removed because it is unmaintained upstream and has been marked as broken since 2023."; # Added 2025-10-11
   pywal = pywal16; # added 2026-02-01
+  pywlroots = throw "pywlroots has been removed because it was no longer used by anything"; # added 2026-02-25
   qds_sdk = throw "'qds_sdk' has been renamed to/replaced by 'qds-sdk'"; # Converted to throw 2025-10-29
   qiskit-ibmq-provider = throw "qiskit-imbq-provider has been removed, since it was deprecated upstream"; # added 2025-09-13
   qiskit-ignis = throw "qiskit-ignis has been removed, since it was deprecated upstream"; # added 2025-09-13

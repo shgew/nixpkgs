@@ -1255,6 +1255,13 @@ assertNoAdditions {
     dependencies = [ self.nvzone-volt ];
   };
 
+  flow-nvim = super.flow-nvim.overrideAttrs {
+    nvimSkipModules = [
+      # Optional barbecue integration requires flow.setup() first.
+      "barbecue.theme.flow"
+    ];
+  };
+
   flutter-tools-nvim = super.flutter-tools-nvim.overrideAttrs {
     # Optional dap integration
     checkInputs = [ self.nvim-dap ];
@@ -3498,6 +3505,13 @@ assertNoAdditions {
         description = "synctex support between vim/neovim and evince";
       };
     });
+
+  switcher-nvim = super.switcher-nvim.overrideAttrs {
+    dependencies = with self; [
+      plenary-nvim
+      nvim-web-devicons
+    ];
+  };
 
   tardis-nvim = super.tardis-nvim.overrideAttrs (old: {
     dependencies = [ self.plenary-nvim ];
