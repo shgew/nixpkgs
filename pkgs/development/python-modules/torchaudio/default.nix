@@ -10,7 +10,6 @@
   ninja,
 
   # buildInputs
-  ffmpeg_6-full,
   pybind11,
   sox,
   torch,
@@ -99,16 +98,10 @@ buildPythonPackage.override { inherit stdenv; } (finalAttrs: {
 
   env = {
     TORCH_CUDA_ARCH_LIST = "${lib.concatStringsSep ";" torch.cudaCapabilities}";
-  };
-
-  # https://github.com/pytorch/audio/blob/v2.1.0/docs/source/build.linux.rst#optional-build-torchaudio-with-a-custom-built-ffmpeg
-  FFMPEG_ROOT = symlinkJoin {
-    name = "ffmpeg";
-    paths = [
-      ffmpeg_6-full.bin
-      ffmpeg_6-full.dev
-      ffmpeg_6-full.lib
-    ];
+    BUILD_SOX = 0;
+    BUILD_KALDI = 0;
+    BUILD_RNNT = 0;
+    BUILD_CTC_DECODER = 0;
   };
 
   nativeBuildInputs = [
@@ -127,7 +120,6 @@ buildPythonPackage.override { inherit stdenv; } (finalAttrs: {
   );
 
   buildInputs = [
-    ffmpeg_6-full
     pybind11
     sox
     torch.cxxdev
@@ -135,11 +127,6 @@ buildPythonPackage.override { inherit stdenv; } (finalAttrs: {
   ++ lib.optionals stdenv.cc.isClang [ llvmPackages.openmp ];
 
   dependencies = [ torch ];
-
-  BUILD_SOX = 0;
-  BUILD_KALDI = 0;
-  BUILD_RNNT = 0;
-  BUILD_CTC_DECODER = 0;
 
   preConfigure = lib.optionalString rocmSupport ''
     export ROCM_PATH=${rocmtoolkit_joined}

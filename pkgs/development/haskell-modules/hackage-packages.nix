@@ -17855,7 +17855,7 @@ self: {
       badPlatforms = lib.platforms.darwin;
       hydraPlatforms = lib.platforms.none;
     }
-  ) { inherit (pkgs) pfstools; };
+  ) { pfstools = null; };
 
   HERA = callPackage (
     {
