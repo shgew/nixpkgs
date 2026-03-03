@@ -356,6 +356,8 @@ let
 
         ctypes-foreign = callPackage ../development/ocaml-modules/ctypes/foreign.nix { };
 
+        cudd = callPackage ../development/ocaml-modules/cudd { };
+
         cudf = callPackage ../development/ocaml-modules/cudf { };
 
         curl = callPackage ../development/ocaml-modules/curl { inherit (pkgs) curl; };
@@ -1064,7 +1066,6 @@ let
         lambda-term = callPackage ../development/ocaml-modules/lambda-term { };
 
         lambdapi = callPackage ../development/ocaml-modules/lambdapi {
-          cmdliner = cmdliner_1;
           why3 = pkgs.why3.override { ocamlPackages = self; };
         };
 
@@ -1667,6 +1668,8 @@ let
         owl-base = callPackage ../development/ocaml-modules/owl-base { };
 
         ### P ###
+
+        pacomb = callPackage ../development/ocaml-modules/pacomb { };
 
         paf = callPackage ../development/ocaml-modules/paf { };
 
