@@ -7,11 +7,11 @@
 
 buildNpmPackage (finalAttrs: {
   pname = "context7-mcp";
-  version = "2.1.2";
+  version = "2.1.3";
 
   src = fetchzip {
     url = "https://registry.npmjs.org/@upstash/context7-mcp/-/context7-mcp-${finalAttrs.version}.tgz";
-    hash = "sha256-HILfbcpWZC25wesFdtJ4mulThsS6mZM3p/iU3V4UPVQ=";
+    hash = "sha256-+k/z6hA8XHdBPBWZ+VVZE/Y1gnWALXAmBYr6/CFKiYw=";
   };
 
   npmDepsHash = "sha256-xVRTtQ0uOA77fP/pxUC2ZpW28aJbIeSfB50GTmMkJ9c=";
