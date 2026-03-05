@@ -6,14 +6,15 @@
 
 buildNpmPackage (finalAttrs: {
   pname = "mcp-server-sequential-thinking";
-  version = "0.6.2";
+  version = "2025.12.18";
 
   src = fetchzip {
     url = "https://registry.npmjs.org/@modelcontextprotocol/server-sequential-thinking/-/server-sequential-thinking-${finalAttrs.version}.tgz";
-    hash = "sha256-U21rDtEpHYv+YPOs31AuGoTahR8QklNY4i0ySKWkX8U=";
+    hash = "sha256-4O9qTNwdi3Tfy0IrtwuHwQ8tZZpMKkDmHTFpJYACeuo=";
   };
 
-  npmDepsHash = "sha256-bTAP+oBezZ+W6dnJ67yLXzPRPbURFua7lqUX1ilQ4O0=";
+  npmDepsFetcherVersion = 2;
+  npmDepsHash = "sha256-r0RrOQ8RlspNbIiakpQ0Htc5Sus4MleUaUp3807XSlg=";
 
   dontNpmBuild = true;
 
