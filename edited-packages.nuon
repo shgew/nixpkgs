@@ -1,0 +1,21 @@
+{
+  linux: [
+    "proton-ge-bin"
+  ]
+  darwin: [
+    "battery-toolkit"
+    "betterdisplay"
+    "net-news-wire"
+    "secretive"
+    "tuist"
+    "xcodes"
+  ]
+  both: [
+    "codex"
+    "context7-mcp"
+    "ipsw"
+    "mcp-server-sequential-thinking"
+    "nushell"
+    "opencode"
+  ]
+}
