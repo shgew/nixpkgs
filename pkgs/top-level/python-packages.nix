@@ -318,6 +318,8 @@ self: super: with self; {
 
   aiohttp-apispec = callPackage ../development/python-modules/aiohttp-apispec { };
 
+  aiohttp-asgi-connector = callPackage ../development/python-modules/aiohttp-asgi-connector { };
+
   aiohttp-asyncmdnsresolver = callPackage ../development/python-modules/aiohttp-asyncmdnsresolver { };
 
   aiohttp-basicauth = callPackage ../development/python-modules/aiohttp-basicauth { };
@@ -831,6 +833,8 @@ self: super: with self; {
   aocd-example-parser = callPackage ../development/python-modules/aocd-example-parser { };
 
   apache-beam = callPackage ../development/python-modules/apache-beam { };
+
+  apache-tvm-ffi = callPackage ../development/python-modules/apache-tvm-ffi { };
 
   apcaccess = callPackage ../development/python-modules/apcaccess { };
 
@@ -3381,6 +3385,8 @@ self: super: with self; {
   cucumber-tag-expressions = callPackage ../development/python-modules/cucumber-tag-expressions { };
 
   cuda-bindings = callPackage ../development/python-modules/cuda-bindings { };
+
+  cuda-pathfinder = callPackage ../development/python-modules/cuda-pathfinder { };
 
   cupy = callPackage ../development/python-modules/cupy {
     cudaPackages =
@@ -6966,6 +6972,8 @@ self: super: with self; {
 
   herepy = callPackage ../development/python-modules/herepy { };
 
+  heretic-llm = callPackage ../development/python-modules/heretic-llm { };
+
   hetzner = callPackage ../development/python-modules/hetzner { };
 
   heudiconv = callPackage ../development/python-modules/heudiconv { };
@@ -7263,6 +7271,8 @@ self: super: with self; {
   hypothesis = callPackage ../development/python-modules/hypothesis { };
 
   hypothesis-auto = callPackage ../development/python-modules/hypothesis-auto { };
+
+  hypothesis_6_136 = callPackage ../development/python-modules/hypothesis/hypothesis_6_136.nix { };
 
   hypothesmith = callPackage ../development/python-modules/hypothesmith { };
 
@@ -10092,7 +10102,7 @@ self: super: with self; {
 
   monai-deploy = callPackage ../development/python-modules/monai-deploy { };
 
-  monarchmoney = callPackage ../development/python-modules/monarchmoney { };
+  monarchmoneycommunity = callPackage ../development/python-modules/monarchmoneycommunity { };
 
   monero = callPackage ../development/python-modules/monero { };
 
@@ -13720,6 +13730,8 @@ self: super: with self; {
 
   pygetwindow = callPackage ../development/python-modules/pygetwindow { };
 
+  pyghidra = callPackage ../development/python-modules/pyghidra { };
+
   pyghmi = callPackage ../development/python-modules/pyghmi { };
 
   pygit2 = callPackage ../development/python-modules/pygit2 { };
@@ -14427,6 +14439,8 @@ self: super: with self; {
   pypca = callPackage ../development/python-modules/pypca { };
 
   pypck = callPackage ../development/python-modules/pypck { };
+
+  pypcode = callPackage ../development/python-modules/pypcode { };
 
   pypdf = callPackage ../development/python-modules/pypdf { };
 
@@ -15200,6 +15214,8 @@ self: super: with self; {
   pytest-icdiff = callPackage ../development/python-modules/pytest-icdiff { };
 
   pytest-image-diff = callPackage ../development/python-modules/pytest-image-diff { };
+
+  pytest-insta = callPackage ../development/python-modules/pytest-insta { };
 
   pytest-instafail = callPackage ../development/python-modules/pytest-instafail { };
 
@@ -18610,7 +18626,9 @@ self: super: with self; {
 
   supabase = callPackage ../development/python-modules/supabase { };
 
-  supabase-functions = self.supafunc;
+  supabase-auth = callPackage ../development/python-modules/supabase-auth { };
+
+  supabase-functions = callPackage ../development/python-modules/supabase-functions { };
 
   supafunc = callPackage ../development/python-modules/supafunc { };
 
@@ -19382,6 +19400,8 @@ self: super: with self; {
   torchsnapshot = callPackage ../development/python-modules/torchsnapshot { };
 
   torchsummary = callPackage ../development/python-modules/torchsummary { };
+
+  torchtitan = callPackage ../development/python-modules/torchtitan { };
 
   torchtnt = callPackage ../development/python-modules/torchtnt { };
 
@@ -20240,6 +20260,8 @@ self: super: with self; {
     inherit (pkgs) libx11 libxext;
   };
 
+  uefi-firmware-parser = callPackage ../development/python-modules/uefi-firmware-parser { };
+
   ufal-chu-liu-edmonds = callPackage ../development/python-modules/ufal-chu-liu-edmonds { };
 
   ufmt = callPackage ../development/python-modules/ufmt { };
@@ -21041,7 +21063,7 @@ self: super: with self; {
   wurlitzer = callPackage ../development/python-modules/wurlitzer { };
 
   wxpython = callPackage ../development/python-modules/wxpython/4.2.nix {
-    wxGTK = pkgs.wxGTK32.override { withWebKit = true; };
+    wxGTK = pkgs.wxwidgets_3_2.override { withWebKit = true; };
   };
 
   wyoming = callPackage ../development/python-modules/wyoming { };

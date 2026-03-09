@@ -840,6 +840,7 @@ in
   keymap = handleTest ./keymap.nix { };
   kimai = runTest ./kimai.nix;
   kismet = runTest ./kismet.nix;
+  kiwix-serve = runTest ./kiwix-serve;
   kmonad = runTest ./kmonad.nix;
   kmscon = runTest ./kmscon.nix;
   knot = runTest ./knot.nix;
@@ -853,6 +854,7 @@ in
     inherit runTest;
     inherit (pkgs) lib;
   };
+  labgrid = runTest ./labgrid.nix;
   lact = runTest ./lact.nix;
   ladybird = runTest ./ladybird.nix;
   languagetool = runTest ./languagetool.nix;
@@ -1127,6 +1129,9 @@ in
   };
   nixos-rebuild-target-host = runTest {
     imports = [ ./nixos-rebuild-target-host.nix ];
+  };
+  nixos-rebuild-target-host-interrupted = runTest {
+    imports = [ ./nixos-rebuild-target-host-interrupted.nix ];
   };
   nixpkgs = pkgs.callPackage ../modules/misc/nixpkgs/test.nix { inherit evalMinimalConfig; };
   nixpkgs-config-allow-unfree =
@@ -1641,6 +1646,7 @@ in
   timezone = runTest ./timezone.nix;
   timidity = handleTestOn [ "aarch64-linux" "x86_64-linux" ] ./timidity { };
   tinc = handleTest ./tinc { };
+  tinyauth = runTest ./tinyauth.nix;
   tinydns = runTest ./tinydns.nix;
   tinyproxy = runTest ./tinyproxy.nix;
   tinywl = runTest ./tinywl.nix;
