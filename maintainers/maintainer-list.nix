@@ -2688,12 +2688,6 @@
     githubId = 2530548;
     name = "Aaron VerDow";
   };
-  averelld = {
-    email = "averell+nixos@rxd4.com";
-    github = "averelld";
-    githubId = 687218;
-    name = "averelld";
-  };
   avery = {
     email = "nixpkgs@avery.cafe";
     github = "coolavery";
@@ -6015,6 +6009,12 @@
     githubId = 7589338;
     name = "Daniel Șerbănescu";
   };
+  daskladas = {
+    email = "xvzrsm@tutanota.de";
+    github = "daskladas";
+    githubId = 155686186;
+    name = "Eric Heinemann";
+  };
   daspk04 = {
     email = "dpratyush.k@gmail.com";
     github = "daspk04";
@@ -6106,6 +6106,12 @@
     github = "CyborgPotato";
     githubId = 10701143;
     name = "David Crompton";
+  };
+  davidkern = {
+    email = "nixpkgs-davidkern@proton.me";
+    github = "davidkern";
+    githubId = 1548554;
+    name = "David Kern";
   };
   davidlghellin = {
     email = "hola@devel0pez.com";
@@ -10118,6 +10124,12 @@
     github = "guserav";
     githubId = 28863828;
     name = "guserav";
+  };
+  gustlik501 = {
+    email = "sevcnikar.gregor2@gmail.com";
+    github = "Gustlik501";
+    githubId = 36334538;
+    name = "Gustlik501";
   };
   guttermonk = {
     github = "guttermonk";
@@ -14279,6 +14291,13 @@
     githubId = 2037002;
     name = "Konstantinos";
   };
+  kosslan = {
+    email = "kosslan@kosslan.dev";
+    matrix = "@kosslan:kosslan.dev";
+    github = "kosslan";
+    githubId = 98048456;
+    name = "kosslan";
+  };
   kotatsuyaki = {
     email = "kotatsuyaki@mail.kotatsu.dev";
     github = "kotatsuyaki";
@@ -15789,6 +15808,12 @@
     github = "lukaswrz";
     githubId = 84395723;
     name = "Lukas Wurzinger";
+  };
+  luke = {
+    email = "luke@maraud.earth";
+    github = "LukeDSchenk";
+    githubId = 41804945;
+    name = "Luke Schenk";
   };
   lukebfox = {
     email = "lbentley-fox1@sheffield.ac.uk";
@@ -19915,6 +19940,11 @@
     github = "odygrd";
     githubId = 7397786;
     name = "Odysseas Georgoudis";
+  };
+  oenu = {
+    github = "oenu";
+    githubId = 51684443;
+    name = "Adam Newton-Blows";
   };
   ofalvai = {
     email = "ofalvai@gmail.com";
@@ -25400,6 +25430,12 @@
     email = "egibbons256@gmail.com";
     github = "spectre256";
     githubId = 72505298;
+  };
+  Sped0n = {
+    name = "Ryan Wen";
+    email = "hi@sped0n.com";
+    github = "Sped0n";
+    githubId = 197479310;
   };
   spencerjanssen = {
     email = "spencerjanssen@gmail.com";
