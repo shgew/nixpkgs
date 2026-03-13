@@ -2155,6 +2155,7 @@ with pkgs;
     cudaPackages_12_9
     cudaPackages_13_0
     cudaPackages_13_1
+    cudaPackages_13_2
     ;
 
   cudaPackages_12 = cudaPackages_12_8;
@@ -5992,8 +5993,6 @@ with pkgs;
   inherit (regclient) regbot regctl regsync;
 
   reno = with python312Packages; toPythonApplication reno;
-
-  replace-secret = callPackage ../build-support/replace-secret/replace-secret.nix { };
 
   inherit (callPackage ../development/tools/replay-io { })
     replay-io
@@ -9880,7 +9879,7 @@ with pkgs;
     k3s_1_34
     k3s_1_35
     ;
-  k3s = k3s_1_34;
+  k3s = k3s_1_35;
 
   okteta = libsForQt5.callPackage ../applications/editors/okteta { };
 
@@ -10410,10 +10409,6 @@ with pkgs;
     tag = "-xine-full";
     withGstreamerBackend = false;
     withXineBackend = true;
-  };
-
-  rawtherapee = callPackage ../applications/graphics/rawtherapee {
-    fftw = fftwSinglePrec;
   };
 
   reaper = callPackage ../applications/audio/reaper {
@@ -11388,6 +11383,8 @@ with pkgs;
     xonotic-data
     xonotic
     ;
+
+  xash-dedicated = callPackage ../by-name/xa/xash3d-fwgs/package.nix { buildServer = true; };
 
   xonotic-glx =
     (callPackage ../games/xonotic {

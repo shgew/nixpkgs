@@ -4,12 +4,13 @@
   rustPlatform,
   fetchFromGitHub,
   installShellFiles,
+  cargo,
   clang,
   cmake,
   gitMinimal,
+  libcap,
   libclang,
   makeBinaryWrapper,
-  libcap,
   nix-update-script,
   pkg-config,
   openssl,
@@ -19,28 +20,30 @@
 }:
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "codex";
-  version = "0.110.0";
+  version = "0.111.0";
 
   src = fetchFromGitHub {
     owner = "openai";
     repo = "codex";
     tag = "rust-v${finalAttrs.version}";
-    hash = "sha256-RoWKOZCW5qR+NyBqU/AoloVYGscfiVaHZqnaTISTj9w=";
+    hash = "sha256-hdR70BhiMg9G/ibLCeHnRSY3PcGZDv0vnqBCbzSRD6I=";
   };
 
   sourceRoot = "${finalAttrs.src.name}/codex-rs";
 
-  cargoLock = {
-    lockFile = "${finalAttrs.src}/codex-rs/Cargo.lock";
-    outputHashes = {
-      "crossterm-0.28.1" = "sha256-6qCtfSMuXACKFb9ATID39XyFDIEMFDmbx6SSmNe+728=";
-      "nucleo-0.5.0" = "sha256-Hm4SxtTSBrcWpXrtSqeO0TACbUxq3gizg1zD/6Yw/sI=";
-      "ratatui-0.29.0" = "sha256-HBvT5c8GsiCxMffNjJGLmHnvG77A6cqEL+1ARurBXho=";
-      "runfiles-0.1.0" = "sha256-uJpVLcQh8wWZA3GPv9D8Nt43EOirajfDJ7eq/FB+tek=";
-      "tokio-tungstenite-0.28.0" = "sha256-hJAkvWxDjB9A9GqansahWhTmj/ekcelslLUTtwqI7lw=";
-      "tungstenite-0.27.0" = "sha256-AN5wql2X2yJnQ7lnDxpljNw0Jua40GtmT+w3wjER010=";
-    };
+  # TODO: Drop workaround once PR #486983 reaches master.
+  depsExtraArgs = {
+    nativeBuildInputs = [ cargo ];
+    postBuild = ''
+      # delete all Cargo.toml files for which `cargo metadata` fails
+      shopt -s globstar
+      for manifest_path in "$out"/**/Cargo.toml; do
+        cargo metadata --format-version 1 --no-deps --manifest-path "$manifest_path" >/dev/null || rm -v "$manifest_path"
+      done
+    '';
   };
+
+  cargoHash = "sha256-Ym2fB9IWQzYdgOX3hiBd9XUI00xF4cIoKO2jpal4eUA=";
 
   nativeBuildInputs = [
     clang
@@ -54,7 +57,8 @@ rustPlatform.buildRustPackage (finalAttrs: {
   buildInputs = [
     libclang
     openssl
-  ] ++ lib.optionals stdenv.hostPlatform.isLinux [
+  ]
+  ++ lib.optionals stdenv.hostPlatform.isLinux [
     libcap
   ];
 
@@ -112,8 +116,9 @@ rustPlatform.buildRustPackage (finalAttrs: {
     license = lib.licenses.asl20;
     mainProgram = "codex";
     maintainers = with lib.maintainers; [
-      malo
       delafthi
+      jeafleohj
+      malo
     ];
     platforms = lib.platforms.unix;
   };
