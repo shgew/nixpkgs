@@ -2066,7 +2066,8 @@ with pkgs;
 
     m17n = callPackage ../tools/inputmethods/ibus-engines/ibus-m17n { };
 
-    inherit mozc mozc-ut;
+    mozc = mozc.override { withIbus = true; };
+    mozc-ut = mozc-ut.override { withIbus = true; };
 
     openbangla-keyboard = libsForQt5.callPackage ../applications/misc/openbangla-keyboard {
       withIbusSupport = true;
@@ -7617,7 +7618,7 @@ with pkgs;
     gtkVersion = "4";
   };
 
-  inherit (callPackage ../development/libraries/vtk { }) vtk_9_5;
+  inherit (callPackage ../development/libraries/vtk { }) vtk_9_5 vtk_9_6;
 
   vtk = vtk_9_5;
 
@@ -7628,8 +7629,6 @@ with pkgs;
   };
 
   vtkWithQt6 = vtk.override { withQt6 = true; };
-
-  vulkan-caps-viewer = libsForQt5.callPackage ../tools/graphics/vulkan-caps-viewer { };
 
   wayland = callPackage ../development/libraries/wayland { };
   wayland-scanner = callPackage ../development/libraries/wayland/scanner.nix { };
@@ -9561,6 +9560,8 @@ with pkgs;
     pname = "firefox-bin";
   };
 
+  firefoxpwa = wrapFirefox firefoxpwa-unwrapped { };
+
   librewolf = wrapFirefox librewolf-unwrapped {
     inherit (librewolf-unwrapped) extraPrefsFiles extraPoliciesFiles;
     libName = "librewolf";
@@ -10190,10 +10191,6 @@ with pkgs;
     ;
 
   taxi-cli = with python3Packages; toPythonApplication taxi;
-
-  imapfilter = callPackage ../applications/networking/mailreaders/imapfilter.nix {
-    lua = lua5;
-  };
 
   mupdf-headless = mupdf.override {
     enableX11 = false;
@@ -12166,7 +12163,7 @@ with pkgs;
     );
 
   nix-eval-jobs = callPackage ../tools/package-management/nix-eval-jobs {
-    nixComponents = nixVersions.nixComponents_2_33;
+    nixComponents = nixVersions.nixComponents_2_34;
   };
 
   nix-delegate = haskell.lib.compose.justStaticExecutables haskellPackages.nix-delegate;
