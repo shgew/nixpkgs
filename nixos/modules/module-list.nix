@@ -1651,6 +1651,7 @@
   ./services/web-apps/goatcounter.nix
   ./services/web-apps/gotify-server.nix
   ./services/web-apps/gotosocial.nix
+  ./services/web-apps/goupile.nix
   ./services/web-apps/grav.nix
   ./services/web-apps/grocy.nix
   ./services/web-apps/guacamole-client.nix
@@ -1780,6 +1781,7 @@
   ./services/web-apps/vikunja.nix
   ./services/web-apps/wakapi.nix
   ./services/web-apps/weblate.nix
+  ./services/web-apps/websurfx.nix
   ./services/web-apps/whitebophir.nix
   ./services/web-apps/whoami.nix
   ./services/web-apps/wiki-js.nix

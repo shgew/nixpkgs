@@ -1,35 +1,100 @@
 {
   lib,
-  buildNpmPackage,
-  fetchzip,
+  stdenv,
+  fetchFromGitHub,
+  makeWrapper,
   nix-update-script,
+
+  nodejs,
+  pnpm,
+  pnpmConfigHook,
+  fetchPnpmDeps,
 }:
-
-buildNpmPackage (finalAttrs: {
+let
+  tag-prefix = "@upstash/context7-mcp";
+in
+stdenv.mkDerivation (finalAttrs: {
   pname = "context7-mcp";
-  version = "2.1.3";
+  version = "2.1.4";
 
-  src = fetchzip {
-    url = "https://registry.npmjs.org/@upstash/context7-mcp/-/context7-mcp-${finalAttrs.version}.tgz";
-    hash = "sha256-+k/z6hA8XHdBPBWZ+VVZE/Y1gnWALXAmBYr6/CFKiYw=";
+  src = fetchFromGitHub {
+    owner = "upstash";
+    repo = "context7";
+    tag = "${tag-prefix}@${finalAttrs.version}";
+    hash = "sha256-bQXmKY4I5k5uaQ2FVEOPkym5X3mR87nALf3+jqJjJjE=";
   };
 
-  npmDepsHash = "sha256-xVRTtQ0uOA77fP/pxUC2ZpW28aJbIeSfB50GTmMkJ9c=";
+  nativeBuildInputs = [
+    nodejs
+    pnpm
+    pnpmConfigHook
+    makeWrapper
+  ];
 
-  postPatch = ''
-    cp ${./package-lock.json} package-lock.json
+  pnpmDeps = fetchPnpmDeps {
+    inherit (finalAttrs) pname version src;
+    fetcherVersion = 3;
+    hash = "sha256-EjEdbPKXJbxaDBuAg/j+BSjI/W3HdsqbtDky0TPUB88=";
+  };
+
+  buildPhase = ''
+    runHook preBuild
+
+    pnpm --filter ${tag-prefix} build
+
+    runHook postBuild
   '';
 
-  dontNpmBuild = true;
+  installPhase = ''
+    runHook preInstall
 
-  passthru.updateScript = nix-update-script { };
+    pnpm --filter ${tag-prefix} \
+         --offline \
+         --config.inject-workspace-packages=true \
+         deploy $out/lib/context7
+
+    mkdir -p $out/bin
+    makeWrapper ${nodejs}/bin/node $out/bin/context7-mcp \
+      --add-flags "$out/lib/context7/dist/index.js"
+
+    cp -r $src/skills $out
+
+    runHook postInstall
+  '';
+
+  doInstallCheck = true;
+  installCheckPhase = ''
+    runHook preInstallCheck
+
+    echo "Executing custom version check for MCP stdio server..."
+
+    output=$(< /dev/null $out/bin/context7-mcp 2>&1 || true)
+
+    if echo "$output" | grep -Fq "v${finalAttrs.version}"; then
+      echo "versionCheckPhase: found version v${finalAttrs.version}"
+    else
+      echo "versionCheckPhase: failed to find version v${finalAttrs.version}"
+      echo "Output was:"
+      echo "$output"
+      exit 1
+    fi
+
+    runHook postInstallCheck
+  '';
+
+  passthru.updateScript = nix-update-script {
+    extraArgs = [ "--version-regex '${tag-prefix}@(.*)'" ];
+  };
 
   meta = {
-    description = "MCP server providing up-to-date documentation and code examples for any library";
-    homepage = "https://github.com/upstash/context7";
-    downloadPage = "https://www.npmjs.com/package/@upstash/context7-mcp";
+    description = "MCP Server for up-to-date code documentation for LLMs and AI code editors";
+    homepage = "https://context7.com/";
     license = lib.licenses.mit;
-    maintainers = with lib.maintainers; [ shgew ];
+    maintainers = with lib.maintainers; [
+      arunoruto
+      shgew
+    ];
     mainProgram = "context7-mcp";
+    platforms = with lib.platforms; linux ++ darwin;
   };
 })
