@@ -11,11 +11,11 @@
     "xcodes"
   ]
   both: [
-    "codex"
+    # "codex"
     "context7-mcp"
-    "ipsw"
+    # "ipsw"
     "mcp-server-sequential-thinking"
     "nushell"
-    "opencode"
+    # "opencode"
   ]
 }
