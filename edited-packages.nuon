@@ -13,9 +13,7 @@
   both: [
     # "codex"
     "context7-mcp"
-    # "ipsw"
     "mcp-server-sequential-thinking"
     "nushell"
-    # "opencode"
   ]
 }
