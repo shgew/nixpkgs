@@ -2534,7 +2534,8 @@
       ];
     "homevolt" =
       ps: with ps; [
-      ]; # missing inputs: homevolt
+        homevolt
+      ];
     "homewizard" =
       ps: with ps; [
         python-homewizard-energy
@@ -2738,7 +2739,8 @@
     "idrive_e2" =
       ps: with ps; [
         aiobotocore
-      ]; # missing inputs: idrive-e2-client
+        idrive-e2-client
+      ];
     "idteck_prox" =
       ps: with ps; [
         rfk101py
@@ -2824,7 +2826,8 @@
       ];
     "indevolt" =
       ps: with ps; [
-      ]; # missing inputs: indevolt-api
+        indevolt-api
+      ];
     "indianamichiganpower" =
       ps: with ps; [
       ];
@@ -3421,7 +3424,8 @@
       ];
     "liebherr" =
       ps: with ps; [
-      ]; # missing inputs: pyliebherrhomeapi
+        pyliebherrhomeapi
+      ];
     "life360" =
       ps: with ps; [
       ];
@@ -7604,6 +7608,7 @@
     "homekit_controller"
     "homematic"
     "homematicip_cloud"
+    "homevolt"
     "homewizard"
     "homeworks"
     "honeywell"
@@ -7626,6 +7631,7 @@
     "ibeacon"
     "icloud"
     "idasen_desk"
+    "idrive_e2"
     "ifttt"
     "igloohome"
     "ign_sismologia"
@@ -7638,6 +7644,7 @@
     "immich"
     "improv_ble"
     "incomfort"
+    "indevolt"
     "inels"
     "influxdb"
     "inkbird"
@@ -7709,6 +7716,7 @@
     "lg_thinq"
     "libre_hardware_monitor"
     "lidarr"
+    "liebherr"
     "life360"
     "lifx"
     "light"

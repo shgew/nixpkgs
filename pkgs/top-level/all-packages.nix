@@ -307,6 +307,8 @@ with pkgs;
   buildFHSEnvChroot = callPackage ../build-support/build-fhsenv-chroot { }; # Deprecated; use buildFHSEnv/buildFHSEnvBubblewrap
   buildFHSEnvBubblewrap = callPackage ../build-support/build-fhsenv-bubblewrap { };
 
+  buildLakePackage = callPackage ../build-support/lake { };
+
   cameractrls-gtk4 = cameractrls.override { withGtk = 4; };
 
   cameractrls-gtk3 = cameractrls.override { withGtk = 3; };
@@ -2151,7 +2153,7 @@ with pkgs;
     cudaPackages_13_2
     ;
 
-  cudaPackages_12 = cudaPackages_12_8;
+  cudaPackages_12 = cudaPackages_12_9;
 
   cudaPackages_13 = cudaPackages_13_0;
 
@@ -2845,6 +2847,8 @@ with pkgs;
 
   leanblueprint = with python3Packages; toPythonApplication leanblueprint;
 
+  leanPackages = callPackage ../top-level/lean-packages.nix { };
+
   inherit (callPackage ../development/tools/lerna { })
     lerna_6
     lerna_8
@@ -2996,7 +3000,7 @@ with pkgs;
   };
 
   # Not in aliases because it wouldn't get picked up by callPackage
-  netbox = netbox_4_4;
+  netbox = netbox_4_5;
 
   netcap-nodpi = callPackage ../by-name/ne/netcap/package.nix {
     withDpi = false;
@@ -3595,12 +3599,14 @@ with pkgs;
   inherit (callPackages ../servers/varnish { })
     varnish60
     varnish77
+    varnish80
     ;
   inherit (callPackages ../servers/varnish/packages.nix { })
     varnish60Packages
     varnish77Packages
+    varnish80Packages
     ;
-  varnishPackages = varnish77Packages;
+  varnishPackages = varnish80Packages;
   varnish = varnishPackages.varnish;
 
   vncdo = with python3Packages; toPythonApplication vncdo;
@@ -4600,6 +4606,7 @@ with pkgs;
   inherit (ocamlPackages)
     ocamlformat # latest version
     ocamlformat_0_28_1
+    ocamlformat_0_29_0
     ;
 
   inherit (ocamlPackages) odig;
@@ -10998,11 +11005,6 @@ with pkgs;
     # or xterm -ti 340
     SDL = SDL_sixel;
     SDL_image = SDL_image.override { SDL = SDL_sixel; };
-  };
-
-  zynaddsubfx = callPackage ../applications/audio/zynaddsubfx {
-    guiModule = "zest";
-    fftw = fftwSinglePrec;
   };
 
   zynaddsubfx-fltk = zynaddsubfx.override {
