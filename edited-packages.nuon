@@ -2,7 +2,7 @@
   linux: [
     "proton-ge-bin"
   ]
-  darwin: [
+  macos: [
     "battery-toolkit"
     "betterdisplay"
     "net-news-wire"
@@ -11,7 +11,6 @@
     "xcodes"
   ]
   both: [
-    # "codex"
     "context7-mcp"
     "mcp-server-sequential-thinking"
     "nushell"
