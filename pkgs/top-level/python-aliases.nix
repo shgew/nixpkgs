@@ -290,6 +290,13 @@ mapAliases {
   line_profiler = throw "'line_profiler' has been renamed to/replaced by 'line-profiler'"; # Converted to throw 2025-10-29
   linear-garage-door = throw "'linear-garage-door' has been superseded by 'nice-go'"; # Added 2025-11-16
   linear_operator = throw "'linear_operator' has been renamed to/replaced by 'linear-operator'"; # Converted to throw 2025-10-29
+  llama-cloud-services = throw "'llama-cloud-services' has been removed as it was deprecated upstream in favor of 'llama-cloud'"; # Added 2026-03-25
+  llama-index-embeddings-gemini = throw "'llama-index-embeddings-gemini' has been removed as it was deprecated upstream in favor of 'llama-index-embeddings-google-genai'"; # Added 2026-03-25
+  llama-index-embeddings-google = throw "'llama-index-embeddings-google' has been removed as it was deprecated upstream in favor of 'llama-index-embeddings-google-genai'"; # Added 2026-03-25
+  llama-index-indices-managed-llama-cloud = throw "'llama-index-indices-managed-llama-cloud' has been removed as it was deprecated upstream in favor of 'llama-cloud'"; # Added 2026-03-24
+  llama-index-multi-modal-llms-openai = throw "'llama-index-multi-modal-llms-openai' has been removed as it was deprecated in favor of 'llama-index-llms-openai'"; # added 2026-03-25
+  llama-index-readers-llama-parse = throw "'llama-index-readers-llama-parse' has been removed as it was deprecated upstream in favor of 'llama-cloud'"; # added 2026-03-25
+  llama-parse = throw "'llama-parse' has been removed as it was deprecated upstream in favor of 'llama-cloud'"; # added 2026-03-25
   lmcloud = throw "'lmcloud' has been renamed to/replaced by 'pylamarzocco'"; # Converted to throw 2025-10-29
   logilab_common = throw "'logilab_common' has been renamed to/replaced by 'logilab-common'"; # Converted to throw 2025-10-29
   loo-py = throw "'loo-py' has been renamed to/replaced by 'loopy'"; # Converted to throw 2025-10-29
@@ -529,6 +536,7 @@ mapAliases {
   sphinx-version-warning = throw "'sphinx-version-warning' has been abandoned upstream in 2019"; # Added 2026-01-18
   sphinx_rtd_theme = throw "'sphinx_rtd_theme' has been renamed to/replaced by 'sphinx-rtd-theme'"; # Converted to throw 2025-10-29
   sphinxcontrib-autoapi = throw "'sphinxcontrib-autoapi' has been renamed to/replaced by 'sphinx-autoapi'"; # Converted to throw 2025-10-29
+  sphinxcontrib-newsfeed = throw "'sphinxcontrib-newsfeed has been removed due to abandonment upstream"; # Added 2026-03-24
   sphinxcontrib_httpdomain = throw "'sphinxcontrib_httpdomain' has been renamed to/replaced by 'sphinxcontrib-httpdomain'"; # Converted to throw 2025-10-29
   sphinxcontrib_newsfeed = throw "'sphinxcontrib_newsfeed' has been renamed to/replaced by 'sphinxcontrib-newsfeed'"; # Converted to throw 2025-10-29
   sphinxcontrib_plantuml = throw "'sphinxcontrib_plantuml' has been renamed to/replaced by 'sphinxcontrib-plantuml'"; # Converted to throw 2025-10-29

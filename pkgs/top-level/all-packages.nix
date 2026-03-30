@@ -146,6 +146,14 @@ with pkgs;
 
   inherit (nix-update) nix-update-script;
 
+  nixos-test-driver = pkgs.python3Packages.callPackage ../../nixos/lib/test-driver {
+    qemu_pkg = pkgs.qemu;
+    imagemagick_light = pkgs.imagemagick_light.override { inherit (pkgs) libtiff; };
+    tesseract4 = pkgs.tesseract4.override { enableLanguages = [ "eng" ]; };
+    # We want `pkgs.systemd`, *not* `python3Packages.system`.
+    systemd = pkgs.systemd;
+  };
+
   ### Push NixOS tests inside the fixed point
 
   # See also allTestsForSystem in nixos/release.nix
@@ -324,8 +332,6 @@ with pkgs;
   chef-cli = callPackage ../tools/misc/chef-cli { };
 
   coolercontrol = recurseIntoAttrs (callPackage ../applications/system/coolercontrol { });
-
-  cup-docker-noserver = cup-docker.override { withServer = false; };
 
   dhallDirectoryToNix = callPackage ../build-support/dhall/directory-to-nix.nix { };
 
@@ -5808,7 +5814,7 @@ with pkgs;
   iaca = iaca_3_0;
 
   include-what-you-use = callPackage ../development/tools/analysis/include-what-you-use {
-    llvmPackages = llvmPackages_21;
+    llvmPackages = llvmPackages_22;
   };
 
   inherit (callPackage ../applications/misc/inochi2d { })
@@ -8074,6 +8080,16 @@ with pkgs;
 
   dodgy = with python3Packages; toPythonApplication dodgy;
 
+  dovecot_2_3 = dovecot;
+  dovecot_2_4 = callPackage ../by-name/do/dovecot/2.4.nix {
+    dovecot_pigeonhole = dovecot_pigeonhole_2_4;
+  };
+
+  dovecot_pigeonhole_0_5 = dovecot_pigeonhole;
+  dovecot_pigeonhole_2_4 = callPackage ../by-name/do/dovecot_pigeonhole/2.4.nix {
+    dovecot = dovecot_2_4;
+  };
+
   inherit (callPackages ../servers/firebird { })
     firebird_4
     firebird_3
@@ -8794,12 +8810,8 @@ with pkgs;
 
   rfkill_udev = callPackage ../os-specific/linux/rfkill/udev.nix { };
 
-  sgx-sdk = callPackage ../os-specific/linux/sgx/sdk {
-    ocamlPackages = ocaml-ng.ocamlPackages_5_3;
-  };
-
   sgx-psw = callPackage ../os-specific/linux/sgx/psw {
-    protobuf = protobuf_21;
+    protobuf = protobuf_33;
   };
 
   sinit = callPackage ../os-specific/linux/sinit {
@@ -9718,6 +9730,7 @@ with pkgs;
   inherit (callPackages ../development/libraries/wlroots { })
     wlroots_0_18
     wlroots_0_19
+    wlroots_0_20
     ;
 
   sway-contrib = recurseIntoAttrs (callPackages ../applications/misc/sway-contrib { });
@@ -10392,11 +10405,6 @@ with pkgs;
     withXineBackend = true;
   };
 
-  reaper = callPackage ../applications/audio/reaper {
-    jackLibrary = libjack2; # Another option is "pipewire.jack".
-    ffmpeg = ffmpeg_4-headless;
-  };
-
   rednotebook = python3Packages.callPackage ../applications/editors/rednotebook { };
 
   retroshare = libsForQt5.callPackage ../applications/networking/p2p/retroshare { };
@@ -10654,7 +10662,7 @@ with pkgs;
   transmission_4-qt = transmission_4-qt5;
 
   tinywl = callPackage ../applications/window-managers/tinywl {
-    wlroots = wlroots_0_19;
+    wlroots = wlroots_0_20;
   };
 
   tuxclocker = libsForQt5.callPackage ../applications/misc/tuxclocker {
