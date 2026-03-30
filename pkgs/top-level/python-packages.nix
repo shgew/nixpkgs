@@ -19239,6 +19239,8 @@ self: super: with self; {
 
   thingspeak = callPackage ../development/python-modules/thingspeak { };
 
+  things-py = callPackage ../development/python-modules/things-py { };
+
   thinqconnect = callPackage ../development/python-modules/thinqconnect { };
 
   thorlabspm100 = callPackage ../development/python-modules/thorlabspm100 { };
