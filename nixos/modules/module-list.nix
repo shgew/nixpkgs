@@ -357,6 +357,7 @@
   ./programs/wayland/wayfire.nix
   ./programs/wayland/wayvnc.nix
   ./programs/weylus.nix
+  ./programs/whois.nix
   ./programs/winbox.nix
   ./programs/wireshark.nix
   ./programs/wshowkeys.nix
@@ -745,7 +746,6 @@
   ./services/logging/logcheck.nix
   ./services/logging/logrotate.nix
   ./services/logging/logstash.nix
-  ./services/logging/promtail.nix
   ./services/logging/rsyslogd.nix
   ./services/logging/syslog-ng.nix
   ./services/logging/syslogd.nix
@@ -1347,7 +1347,6 @@
   ./services/networking/pptpd.nix
   ./services/networking/privoxy.nix
   ./services/networking/prosody.nix
-  ./services/networking/pyload.nix
   ./services/networking/quassel.nix
   ./services/networking/quicktun.nix
   ./services/networking/r53-ddns.nix
@@ -1730,6 +1729,7 @@
   ./services/web-apps/openwebrx.nix
   ./services/web-apps/outline.nix
   ./services/web-apps/pairdrop.nix
+  ./services/web-apps/papra.nix
   ./services/web-apps/part-db.nix
   ./services/web-apps/pdfding.nix
   ./services/web-apps/peering-manager.nix

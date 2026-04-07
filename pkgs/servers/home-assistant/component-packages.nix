@@ -2,7 +2,7 @@
 # Do not edit!
 
 {
-  version = "2026.3.4";
+  version = "2026.4.1";
   components = {
     "3_day_blinds" =
       ps: with ps; [
@@ -504,6 +504,9 @@
     "automation" =
       ps: with ps; [
       ];
+    "autoskope" =
+      ps: with ps; [
+      ]; # missing inputs: autoskope_client
     "avea" =
       ps: with ps; [
         avea
@@ -586,6 +589,9 @@
     "bang_olufsen" =
       ps: with ps; [
         mozart-api
+      ];
+    "battery" =
+      ps: with ps; [
       ];
     "bauknecht" =
       ps: with ps; [
@@ -742,12 +748,8 @@
         zeroconf
       ];
     "bmw_connected_drive" =
-      ps:
-      with ps;
-      [
-        bimmer-connected
-      ]
-      ++ bimmer-connected.optional-dependencies.china;
+      ps: with ps; [
+      ];
     "bond" =
       ps: with ps; [
         bond-async
@@ -883,6 +885,32 @@
         ha-ffmpeg
         py-canary
       ];
+    "casper_glow" =
+      ps: with ps; [
+        aioesphomeapi
+        aiohasupervisor
+        aioruuvigateway
+        aioshelly
+        aiousbwatcher
+        bleak
+        bleak-esphome
+        bleak-retry-connector
+        bluetooth-adapters
+        bluetooth-auto-recovery
+        bluetooth-data-tools
+        dbus-fast
+        esphome-dashboard-api
+        ha-ffmpeg
+        habluetooth
+        hassil
+        home-assistant-intents
+        ifaddr
+        mutagen
+        pymicro-vad
+        pyserial
+        pyspeex-noise
+        zeroconf
+      ]; # missing inputs: pycasperglow
     "cast" =
       ps: with ps; [
         aiohasupervisor
@@ -920,6 +948,9 @@
       ps: with ps; [
         pychannels
       ];
+    "chess_com" =
+      ps: with ps; [
+      ]; # missing inputs: chess-com-api
     "cisco_ios" =
       ps: with ps; [
         pexpect
@@ -1299,6 +1330,9 @@
         pillow
         pydoods
       ];
+    "door" =
+      ps: with ps; [
+      ];
     "doorbird" =
       ps: with ps; [
         doorbirdpy
@@ -1364,13 +1398,6 @@
       ];
     "duckdns" =
       ps: with ps; [
-      ];
-    "duke_energy" =
-      ps: with ps; [
-        aiodukeenergy
-        fnv-hash-fast
-        psutil-home-assistant
-        sqlalchemy
       ];
     "dunehd" =
       ps: with ps; [
@@ -1566,7 +1593,7 @@
     "enocean" =
       ps: with ps; [
         aiousbwatcher
-        enocean
+        enocean-async
         pyserial
       ];
     "enphase_envoy" =
@@ -1946,6 +1973,9 @@
       ps: with ps; [
         pyfreedompro
       ];
+    "freshr" =
+      ps: with ps; [
+      ]; # missing inputs: pyfreshr
     "fressnapf_tracker" =
       ps: with ps; [
         fressnapftracker
@@ -2009,6 +2039,9 @@
     "garadget" =
       ps: with ps; [
       ];
+    "garage_door" =
+      ps: with ps; [
+      ];
     "garages_amsterdam" =
       ps: with ps; [
         odp-amsterdam
@@ -2039,6 +2072,9 @@
         pyserial
         pyspeex-noise
         zeroconf
+      ];
+    "gate" =
+      ps: with ps; [
       ];
     "gaviota" =
       ps: with ps; [
@@ -2103,7 +2139,8 @@
       ];
     "ghost" =
       ps: with ps; [
-      ]; # missing inputs: aioghost
+        aioghost
+      ];
     "gios" =
       ps: with ps; [
         gios
@@ -2495,7 +2532,7 @@
         pyqrcode
         pyturbojpeg
         zeroconf
-      ];
+      ]; # missing inputs: homekit-audio-proxy
     "homekit_controller" =
       ps: with ps; [
         aioesphomeapi
@@ -2557,6 +2594,9 @@
       ps: with ps; [
         python-hpilo
       ];
+    "hr_energy_qube" =
+      ps: with ps; [
+      ]; # missing inputs: python-qube-heatpump
     "html5" =
       ps: with ps; [
         py-vapid
@@ -2606,6 +2646,9 @@
         energyflip-client
       ];
     "humidifier" =
+      ps: with ps; [
+      ];
+    "humidity" =
       ps: with ps; [
       ];
     "hunterdouglas_powerview" =
@@ -2768,6 +2811,9 @@
         defusedxml
         ihcsdk
       ];
+    "illuminance" =
+      ps: with ps; [
+      ];
     "image" =
       ps: with ps; [
       ];
@@ -2843,6 +2889,10 @@
       ps: with ps; [
         influxdb
         influxdb-client
+      ];
+    "infrared" =
+      ps: with ps; [
+        infrared-protocols
       ];
     "inkbird" =
       ps: with ps; [
@@ -3404,6 +3454,10 @@
     "levoit" =
       ps: with ps; [
       ];
+    "lg_infrared" =
+      ps: with ps; [
+        infrared-protocols
+      ];
     "lg_netcast" =
       ps: with ps; [
         ifaddr
@@ -3421,6 +3475,9 @@
       ps: with ps; [
         librehardwaremonitor-api
       ];
+    "lichess" =
+      ps: with ps; [
+      ]; # missing inputs: aiolichess
     "lidarr" =
       ps: with ps; [
         aiopyarr
@@ -3526,6 +3583,9 @@
     "logger" =
       ps: with ps; [
       ];
+    "lojack" =
+      ps: with ps; [
+      ]; # missing inputs: lojack-api
     "london_air" =
       ps: with ps; [
       ];
@@ -3830,9 +3890,6 @@
       ps: with ps; [
         mcstatus
       ];
-    "mini_connected" =
-      ps: with ps; [
-      ];
     "minio" =
       ps: with ps; [
         minio
@@ -3907,6 +3964,9 @@
       ps: with ps; [
         moehlenhoff-alpha2
       ];
+    "moisture" =
+      ps: with ps; [
+      ];
     "mold_indicator" =
       ps: with ps; [
       ];
@@ -3954,6 +4014,9 @@
         pyserial
         pyspeex-noise
         zeroconf
+      ];
+    "motion" =
+      ps: with ps; [
       ];
     "motion_blinds" =
       ps: with ps; [
@@ -4325,6 +4388,9 @@
       ps: with ps; [
         pyobihai
       ];
+    "occupancy" =
+      ps: with ps; [
+      ];
     "octoprint" =
       ps: with ps; [
         pyoctoprintapi
@@ -4420,7 +4486,7 @@
         ha-ffmpeg
         onvif-zeep-async
         wsdiscovery
-      ];
+      ]; # missing inputs: onvif_parsers
     "open_meteo" =
       ps: with ps; [
         open-meteo
@@ -4449,6 +4515,32 @@
     "openalpr_cloud" =
       ps: with ps; [
       ];
+    "opendisplay" =
+      ps: with ps; [
+        aioesphomeapi
+        aiohasupervisor
+        aioruuvigateway
+        aioshelly
+        aiousbwatcher
+        bleak
+        bleak-esphome
+        bleak-retry-connector
+        bluetooth-adapters
+        bluetooth-auto-recovery
+        bluetooth-data-tools
+        dbus-fast
+        esphome-dashboard-api
+        ha-ffmpeg
+        habluetooth
+        hassil
+        home-assistant-intents
+        ifaddr
+        mutagen
+        pymicro-vad
+        pyserial
+        pyspeex-noise
+        zeroconf
+      ]; # missing inputs: py-opendisplay
     "openerz" =
       ps: with ps; [
         openerz-api
@@ -4795,6 +4887,9 @@
         pyportainer
       ];
     "portlandgeneral" =
+      ps: with ps; [
+      ];
+    "power" =
       ps: with ps; [
       ];
     "powerfox" =
@@ -5828,6 +5923,9 @@
       ps: with ps; [
         solarlog-cli
       ];
+    "solarman" =
+      ps: with ps; [
+      ]; # missing inputs: solarman-opendata
     "solax" =
       ps: with ps; [
         solax
@@ -6203,6 +6301,9 @@
       ps: with ps; [
         temperusb
       ];
+    "temperature" =
+      ps: with ps; [
+      ];
     "template" =
       ps: with ps; [
       ];
@@ -6451,7 +6552,7 @@
       ++ python-kasa.optional-dependencies.speedups;
     "tplink_lte" =
       ps: with ps; [
-      ]; # missing inputs: tp-connected
+      ];
     "tplink_omada" =
       ps: with ps; [
         tplink-omada-client
@@ -6521,6 +6622,9 @@
       ps: with ps; [
         triggercmd
       ];
+    "trmnl" =
+      ps: with ps; [
+      ]; # missing inputs: trmnl
     "tts" =
       ps: with ps; [
         ha-ffmpeg
@@ -6588,6 +6692,9 @@
       ps: with ps; [
         aiounifi
       ];
+    "unifi_access" =
+      ps: with ps; [
+      ]; # missing inputs: py-unifi-access
     "unifi_direct" =
       ps: with ps; [
         unifi-ap
@@ -6930,9 +7037,15 @@
       ps: with ps; [
         wiffi
       ];
+    "wiim" =
+      ps: with ps; [
+      ]; # missing inputs: wiim
     "wilight" =
       ps: with ps; [
         pywilight
+      ];
+    "window" =
+      ps: with ps; [
       ];
     "wirelesstag" =
       ps: with ps; [
@@ -7338,6 +7451,7 @@
     "baf"
     "balboa"
     "bang_olufsen"
+    "battery"
     "bayesian"
     "binary_sensor"
     "blackbird"
@@ -7407,6 +7521,7 @@
     "deako"
     "debugpy"
     "deconz"
+    "decora_wifi"
     "default_config"
     "deluge"
     "demo"
@@ -7429,6 +7544,7 @@
     "dlna_dmr"
     "dlna_dms"
     "dnsip"
+    "door"
     "doorbird"
     "dormakaba_dkey"
     "downloader"
@@ -7438,7 +7554,6 @@
     "dsmr"
     "dsmr_reader"
     "duckdns"
-    "duke_energy"
     "dunehd"
     "duotecno"
     "dwd_weather_warnings"
@@ -7539,8 +7654,10 @@
     "fujitsu_fglair"
     "fully_kiosk"
     "fyta"
+    "garage_door"
     "garages_amsterdam"
     "gardena_bluetooth"
+    "gate"
     "gdacs"
     "generic"
     "generic_hygrostat"
@@ -7554,6 +7671,7 @@
     "geofency"
     "geonetnz_quakes"
     "geonetnz_volcano"
+    "ghost"
     "gios"
     "github"
     "glances"
@@ -7617,7 +7735,6 @@
     "homeassistant_sky_connect"
     "homeassistant_yellow"
     "homee"
-    "homekit"
     "homekit_controller"
     "homematic"
     "homematicip_cloud"
@@ -7632,6 +7749,7 @@
     "hue_ble"
     "huisbaasje"
     "humidifier"
+    "humidity"
     "hunterdouglas_powerview"
     "husqvarna_automower"
     "husqvarna_automower_ble"
@@ -7649,6 +7767,7 @@
     "ifttt"
     "igloohome"
     "ign_sismologia"
+    "illuminance"
     "image"
     "image_processing"
     "image_upload"
@@ -7661,6 +7780,7 @@
     "indevolt"
     "inels"
     "influxdb"
+    "infrared"
     "inkbird"
     "input_boolean"
     "input_button"
@@ -7726,6 +7846,7 @@
     "led_ble"
     "lektrico"
     "letpot"
+    "lg_infrared"
     "lg_netcast"
     "lg_soundbar"
     "lg_thinq"
@@ -7807,12 +7928,14 @@
     "modem_callerid"
     "modern_forms"
     "moehlenhoff_alpha2"
+    "moisture"
     "mold_indicator"
     "monarch_money"
     "monoprice"
     "monzo"
     "moon"
     "mopeka"
+    "motion"
     "motion_blinds"
     "motionblinds_ble"
     "motioneye"
@@ -7879,6 +8002,7 @@
     "nyt_games"
     "nzbget"
     "obihai"
+    "occupancy"
     "octoprint"
     "ohme"
     "ollama"
@@ -7890,7 +8014,6 @@
     "onedrive_for_business"
     "onewire"
     "onkyo"
-    "onvif"
     "open_meteo"
     "open_router"
     "openai_conversation"
@@ -7909,6 +8032,7 @@
     "opnsense"
     "opower"
     "oralb"
+    "orvibo"
     "osoenergy"
     "otbr"
     "otp"
@@ -7945,6 +8069,7 @@
     "pooldose"
     "poolsense"
     "portainer"
+    "power"
     "powerfox"
     "powerfox_local"
     "powerwall"
@@ -8156,6 +8281,7 @@
     "tellduslive"
     "teltonika"
     "temper"
+    "temperature"
     "template"
     "tesla_fleet"
     "tesla_wall_connector"
@@ -8183,8 +8309,10 @@
     "tomorrowio"
     "toon"
     "totalconnect"
+    "touchline"
     "touchline_sl"
     "tplink"
+    "tplink_lte"
     "tplink_omada"
     "traccar"
     "traccar_server"
@@ -8275,6 +8403,7 @@
     "whois"
     "wiffi"
     "wilight"
+    "window"
     "withings"
     "wiz"
     "wled"

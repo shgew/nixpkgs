@@ -19,7 +19,7 @@ python3Packages.buildPythonApplication (finalAttrs: {
 
   pyproject = true;
 
-  pythonRelaxDeps = [ "psutil" ];
+  pythonRelaxDeps = true;
 
   build-system = with python3Packages; [
     pdm-backend
@@ -32,6 +32,16 @@ python3Packages.buildPythonApplication (finalAttrs: {
   ];
 
   buildInputs = [ qt6.qtbase ];
+
+  nativeCheckInputs = with python3Packages; [
+    pytest-asyncio
+    pytestCheckHook
+  ];
+
+  pytestFlagsArray = [
+    "openfreebuds/driver/huawei/test/"
+    "openfreebuds/test/test_event_bus.py"
+  ];
 
   dependencies = with python3Packages; [
     aiocmd
@@ -55,6 +65,11 @@ python3Packages.buildPythonApplication (finalAttrs: {
 
   preFixup = ''
     makeWrapperArgs+=("''${qtWrapperArgs[@]}")
+  '';
+
+  postInstall = ''
+    mkdir -p "$out/share/applications"
+    mv openfreebuds_qt/assets/pw.mmk.OpenFreebuds.desktop "$out/share/applications"
   '';
 
   passthru.updateScript = nix-update-script { };
