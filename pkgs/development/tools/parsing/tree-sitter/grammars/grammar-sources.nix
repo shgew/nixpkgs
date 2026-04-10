@@ -1604,10 +1604,10 @@
   };
 
   matlab = {
-    version = "1.3.0-unstable-2025-11-22";
+    version = "1.3.0-unstable-2026-03-04";
     url = "github:acristoffers/tree-sitter-matlab";
-    rev = "1bccabdbd420a9c3c3f96f36d7f9e65b3d9c88ef";
-    hash = "sha256-V7GOXiR//JgxjTOxRi+PpfRGvunX4r3C0Bu1CrN+/K4=";
+    rev = "c2390a59016f74e7d5f75ef09510768b4f30217e";
+    hash = "sha256-WgyWvItbysSqeD/LdBr233NYlKF1HaxIDtHIr6BQOjw=";
     meta = {
       license = lib.licenses.mit;
       maintainers = with lib.maintainers; [
@@ -1804,6 +1804,16 @@
       maintainers = with lib.maintainers; [
         aciceri
       ];
+    };
+  };
+
+  opam = {
+    version = "0-unstable-2026-04-05";
+    url = "github:tmcgilchrist/tree-sitter-opam";
+    rev = "8869773f9cef795cc02da3b98cfafcaf9febc6b0";
+    hash = "sha256-q/BLM4d3H+dw93CbFLtynCJ1K4I4hJ9XBM4yaG2Z5Rk=";
+    meta = {
+      license = lib.licenses.mit;
     };
   };
 
@@ -2474,9 +2484,9 @@
   };
 
   sshclientconfig = rec {
-    version = "2026.2.18";
+    version = "2026.3.19";
     url = "github:metio/tree-sitter-ssh-client-config?ref=${version}";
-    hash = "sha256-zEQ9jof8CMx6YtzU+y/GnBeI7htv9EbUHtAKSmX6c3M=";
+    hash = "sha256-lR9YMp62YjB4OF/eSQlbEDOqGu5Ag/YMrZBIHldXN6s=";
     meta = {
       license = lib.licenses.cc0;
       maintainers = with lib.maintainers; [
@@ -2551,9 +2561,9 @@
   };
 
   t32 = {
-    version = "7.2.5";
+    version = "7.2.6";
     url = "github:xasc/tree-sitter-t32";
-    hash = "sha256-ysdKgzF5VFV0BeeXlV8gZ5pW7WzYJtYnyBE+MaxG3Jo=";
+    hash = "sha256-r89C29D8N8E+MJi+RUxTE0+Y/e4ykLzIDaw/AQHegLc=";
     meta = {
       maintainers = with lib.maintainers; [
         aciceri

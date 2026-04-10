@@ -441,6 +441,7 @@ mapAliases {
   charmcraft = throw "charmcraft was removed in Sep 25 following removal of LXD from nixpkgs"; # Added 2025-09-18
   charybdis = throw "charybdis was removed since its upstream repo was archived in 2021"; # Added 2026-01-13
   chatgpt-retrieval-plugin = throw "chatgpt-retrieval-plugin has been removed because it has been marked as broken since at least November 2024."; # Added 2025-09-28
+  chatmcp = throw "chatmcp has been removed, as it is unmaintained"; # Added 2026-04-09
   check-esxi-hardware = throw "'check-esxi-hardware' has been renamed to/replaced by 'nagiosPlugins.check_esxi_hardware'"; # Converted to throw 2025-10-27
   check-mssql-health = throw "'check-mssql-health' has been renamed to/replaced by 'nagiosPlugins.check_mssql_health'"; # Converted to throw 2025-10-27
   check-nwc-health = throw "'check-nwc-health' has been renamed to/replaced by 'nagiosPlugins.check_nwc_health'"; # Converted to throw 2025-10-27
@@ -505,6 +506,7 @@ mapAliases {
   cloudlogoffline = throw "cloudlogoffline has been removed"; # Added 2025-05-18
   clucene_core = warnAlias "'clucene_core' has been renamed to 'clucene-core'" clucene-core; # Added 2026-01-12
   clucene_core_2 = warnAlias "'clucene_core_2' has been renamed to 'clucene-core_2'" clucene-core_2; # Added 2026-01-12
+  cmtk = throw "'cmtk' has been dropped due to being broken since September 2025, with no complaints by any users of the package."; # Added 2026-04-05
   coc-sumneko-lua = throw "'coc-sumneko-lua' has been removed due to unmaintained and broken package. 'lua_ls' can be used as a replacement"; # Added 2026-02-04
   cockroachdb-bin = throw "'cockroachdb-bin' has been renamed to/replaced by 'cockroachdb'"; # Converted to throw 2025-10-27
   code-browser-gtk2 = throw "'code-browser-gtk2' has been removed, as it was broken since 22.11"; # Added 2025-08-22
@@ -642,6 +644,8 @@ mapAliases {
   electron_37 = throw "electron_37 has been removed in favor of newer versions"; # Added 2026-03-20
   electron_37-bin = throw "electron_37-bin has been removed in favor of newer versions"; # Added 2026-03-20
   elementsd-simplicity = throw "'elementsd-simplicity' has been removed due to lack of maintenance, consider using 'elementsd' instead"; # Added 2025-06-04
+  elixir_1_15 = throw "'elixir_1_15' has been removed, due to the removal of erlang_26 as EOL"; # added 2026-04-01
+  elixir_1_16 = throw "'elixir_1_16' has been removed, due to the removal of erlang_26 as EOL"; # added 2026-04-01
   elixir_ls = throw "'elixir_ls' has been renamed to/replaced by 'elixir-ls'"; # Converted to throw 2025-10-27
   elm-github-install = throw "'elm-github-install' has been removed as it is abandoned upstream and only supports Elm 0.18.0"; # Added 2025-08-25
   emacsMacport = throw "'emacsMacport' has been renamed to/replaced by 'emacs-macport'"; # Converted to throw 2025-10-27
@@ -661,6 +665,7 @@ mapAliases {
   eris-go = throw "'eris-go' has been removed due to a hostile upstream moving tags and breaking src FODs"; # Added 2025-09-01
   eriscmd = throw "'eriscmd' has been removed due to a hostile upstream moving tags and breaking src FODs"; # Added 2025-09-01
   erlang-ls = throw "'erlang-ls' has been removed as it has been archived upstream. Consider using 'erlang-language-platform' instead"; # Added 2025-10-02
+  erlang_26 = throw "'erlang_26' has been removed, as it is EOL"; # added 2026-04-01
   esbuild-config = throw "'esbuild-config' has been removed as it has been unmaintained upstream since September 2022"; # Added 2026-02-07
   etBook = warnAlias "'etBook' has been renamed to 'et-book'" et-book; # Added 2026-02-08
   ethercalc = throw "'ethercalc' has been removed from nixpkgs as the project was old, unmaintained, and could not be packaged well in nixpkgs"; # Added 2025-11-28
@@ -1606,6 +1611,7 @@ mapAliases {
   pidgin-window-merge = throw "'pidgin-window-merge' has been renamed to/replaced by 'pidginPackages.pidgin-window-merge'"; # Converted to throw 2025-10-27
   pidgin-xmpp-receipts = throw "'pidgin-xmpp-receipts' has been renamed to/replaced by 'pidginPackages.pidgin-xmpp-receipts'"; # Converted to throw 2025-10-27
   pilipalax = throw "'pilipalax' has been removed from nixpkgs due to it not being maintained"; # Added 2025-07-25
+  pinecone = throw "'pinecone' has been removed, as it is unmaintained and obsolete"; # Added 2026-03-31
   pinentry = throw "'pinentry' has been removed. Pick an appropriate variant like 'pinentry-curses' or 'pinentry-gnome3'"; # Converted to throw 2025-10-26
   pingvin-share = throw "'pingvin-share' has been removed as it was broken and archived upstream"; # Added 2025-11-08
   piper-train = throw "piper-train is now part of the piper package using the `withTrain` override"; # Added 2025-09-03
@@ -1779,6 +1785,7 @@ mapAliases {
   rust-synapse-state-compress = throw "'rust-synapse-state-compress' has been renamed to/replaced by 'rust-synapse-compress-state'"; # Converted to throw 2025-10-27
   rustc-wasm32 = throw "'rustc-wasm32' has been renamed to/replaced by 'rustc'"; # Converted to throw 2025-10-27
   rustic-rs = throw "'rustic-rs' has been renamed to/replaced by 'rustic'"; # Converted to throw 2025-10-27
+  rx = throw "'rx' has been dropped due to being broken since September 2025, with no complaints by any users of the package."; # Added 2026-04-05
   ryujinx = throw "'ryujinx' has been replaced by 'ryubing' as the new upstream"; # Added 2025-07-30
   ryujinx-greemdev = throw "'ryujinx-greemdev' has been renamed to/replaced by 'ryubing'"; # Converted to throw 2025-10-27
   scantailor = throw "'scantailor' has been renamed to/replaced by 'scantailor-advanced'"; # Converted to throw 2025-10-27
@@ -1913,6 +1920,7 @@ mapAliases {
   Sylk = throw "'Sylk' has been renamed to/replaced by 'sylk'"; # Converted to throw 2025-10-27
   symbiyosys = throw "'symbiyosys' has been renamed to/replaced by 'sby'"; # Converted to throw 2025-10-27
   syn2mas = throw "'syn2mas' has been removed. It has been integrated into the main matrix-authentication-service CLI as a subcommand: 'mas-cli syn2mas'."; # Added 2025-07-07
+  synapse-admin-etkecc = warnAlias "'synapse-admin-etkecc' has been renamed to 'ketesa'" ketesa; # Added 2026-04-03
   sync = throw "'sync' has been renamed to/replaced by 'taler-sync'"; # Converted to throw 2025-10-27
   syncall = throw "'syncall' has been removed because it has been marked as broken since at least November 2024."; # Added 2025-10-01
   syncthing-tray = throw "syncthing-tray has been removed because it is broken and unmaintained"; # Added 2025-05-18

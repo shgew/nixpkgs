@@ -238,7 +238,13 @@ in
     checkPhase = ''
       runHook preCheck
       # feel free to disable/adjust the tests
-      rm tests/base/test_apply.lua tests/base/test_vimscript_interpreter.lua
+      rm \
+        tests/base/test_apply.lua \
+        tests/base/test_vimscript_interpreter.lua
+
+      # screenshot tests are brittle, as they are meant to be run against very
+      # specific Neovim/ripgrep/ast-grep versions.
+      rm -rf tests/screenshots/*
 
       # Dependencies needed in special location
       mkdir -p deps/{ripgrep,astgrep}
@@ -249,8 +255,8 @@ in
 
       # Update dependency check to respect packaged version
       substituteInPlace lua/grug-far/test/dependencies.lua \
-        --replace-fail "local RG_VERSION = '14.1.0'" "local RG_VERSION = '${lib.getVersion ripgrep}'" \
-        --replace-fail "local SG_VERSION = '0.35.0'" "local SG_VERSION = '${lib.getVersion ast-grep}'"
+        --replace-fail "local RG_VERSION = '15.1.0'" "local RG_VERSION = '${lib.getVersion ripgrep}'" \
+        --replace-fail "local SG_VERSION = '0.41.1'" "local SG_VERSION = '${lib.getVersion ast-grep}'"
 
       make test dir=base
       runHook postCheck
@@ -445,8 +451,10 @@ in
         --replace-fail '"tree-sitter/lib/include",' '"${tree-sitter}/include"' \
         --replace-fail '"tree-sitter/lib/src"' ""
     '';
-    NIX_CFLAGS_COMPILE = "-I${tree-sitter}/include";
-    NIX_LDFLAGS = "-L${tree-sitter}/lib -ltree-sitter";
+    env = old.env // {
+      NIX_CFLAGS_COMPILE = "-I${tree-sitter}/include";
+      NIX_LDFLAGS = "-L${tree-sitter}/lib -ltree-sitter";
+    };
   });
 
   ltreesitter-ts = prev.ltreesitter-ts.overrideAttrs (old: {
@@ -460,8 +468,10 @@ in
       hash = "sha256-hKM5HQU7A08mA004ZMV7hIVq/2WR3KocMatnTplM8uU=";
     };
     nativeBuildInputs = old.nativeBuildInputs ++ [ icu ];
-    NIX_CFLAGS_COMPILE = "-I${lib.getDev icu}/include";
-    NIX_LDFLAGS = "-L${lib.getLib icu}/lib -licuuc -licui18n -licudata";
+    env = old.env // {
+      NIX_CFLAGS_COMPILE = "-I${lib.getDev icu}/include";
+      NIX_LDFLAGS = "-L${lib.getLib icu}/lib -licuuc -licui18n -licudata";
+    };
   });
 
   lua-cmsgpack = prev.lua-cmsgpack.overrideAttrs {

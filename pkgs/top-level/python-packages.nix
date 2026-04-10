@@ -382,6 +382,8 @@ self: super: with self; {
 
   aiokem = callPackage ../development/python-modules/aiokem { };
 
+  aiolichess = callPackage ../development/python-modules/aiolichess { };
+
   aiolifx = callPackage ../development/python-modules/aiolifx { };
 
   aiolifx-connection = callPackage ../development/python-modules/aiolifx-connection { };
@@ -2691,6 +2693,8 @@ self: super: with self; {
 
   chess = callPackage ../development/python-modules/chess { };
 
+  chess-com-api = callPackage ../development/python-modules/chess-com-api { };
+
   chevron = callPackage ../development/python-modules/chevron { };
 
   chex = callPackage ../development/python-modules/chex { };
@@ -3392,21 +3396,7 @@ self: super: with self; {
 
   cuda-pathfinder = callPackage ../development/python-modules/cuda-pathfinder { };
 
-  cupy = callPackage ../development/python-modules/cupy {
-    cudaPackages =
-      # CuDNN 9 is not supported:
-      # https://github.com/cupy/cupy/issues/8215
-      # NOTE: cupy 14 will drop support for cuDNN entirely.
-      # https://github.com/cupy/cupy/pull/9326
-      let
-        version = if pkgs.cudaPackages.backendStdenv.hasJetsonCudaCapability then "8.9.5" else "8.9.7";
-      in
-      pkgs.cudaPackages.override (prevArgs: {
-        manifests = prevArgs.manifests // {
-          cudnn = pkgs._cuda.manifests.cudnn.${version};
-        };
-      });
-  };
+  cupy = callPackage ../development/python-modules/cupy { };
 
   curated-tokenizers = callPackage ../development/python-modules/curated-tokenizers { };
 
@@ -4589,6 +4579,8 @@ self: super: with self; {
 
   docutils = callPackage ../development/python-modules/docutils { };
 
+  docutils-stubs = callPackage ../development/python-modules/docutils-stubs { };
+
   docx2python = callPackage ../development/python-modules/docx2python { };
 
   docx2txt = callPackage ../development/python-modules/docx2txt { };
@@ -5053,6 +5045,8 @@ self: super: with self; {
   envs = callPackage ../development/python-modules/envs { };
 
   enzyme = callPackage ../development/python-modules/enzyme { };
+
+  epaper-dithering = callPackage ../development/python-modules/epaper-dithering { };
 
   epc = callPackage ../development/python-modules/epc { };
 
@@ -7106,6 +7100,8 @@ self: super: with self; {
 
   homeconnect = callPackage ../development/python-modules/homeconnect { };
 
+  homekit-audio-proxy = callPackage ../development/python-modules/homekit-audio-proxy { };
+
   homelink-integration-api = callPackage ../development/python-modules/homelink-integration-api { };
 
   homematicip = callPackage ../development/python-modules/homematicip { };
@@ -8666,6 +8662,8 @@ self: super: with self; {
 
   libcst = callPackage ../development/python-modules/libcst { };
 
+  libdebug = callPackage ../development/python-modules/libdebug { inherit (pkgs) zstd; };
+
   libdnf = lib.pipe pkgs.libdnf [
     toPythonModule
     (
@@ -9276,6 +9274,8 @@ self: super: with self; {
   logutils = callPackage ../development/python-modules/logutils { };
 
   logzero = callPackage ../development/python-modules/logzero { };
+
+  lojack-api = callPackage ../development/python-modules/lojack-api { };
 
   lomond = callPackage ../development/python-modules/lomond { };
 
@@ -10787,6 +10787,8 @@ self: super: with self; {
 
   nampa = callPackage ../development/python-modules/nampa { };
 
+  nanoarrow = callPackage ../development/python-modules/nanoarrow { zstd-c = pkgs.zstd; };
+
   nanobind = callPackage ../development/python-modules/nanobind { };
 
   nanoeigenpy = callPackage ../development/python-modules/nanoeigenpy { };
@@ -11463,6 +11465,8 @@ self: super: with self; {
   onnxscript = callPackage ../development/python-modules/onnxscript { };
 
   onnxslim = callPackage ../development/python-modules/onnxslim { };
+
+  onvif-parsers = callPackage ../development/python-modules/onvif-parsers { };
 
   onvif-zeep = callPackage ../development/python-modules/onvif-zeep { };
 
@@ -12761,6 +12765,8 @@ self: super: with self; {
 
   pq = callPackage ../development/python-modules/pq { };
 
+  prana-api-client = callPackage ../development/python-modules/prana-api-client { };
+
   prance = callPackage ../development/python-modules/prance { };
 
   praw = callPackage ../development/python-modules/praw { };
@@ -13145,6 +13151,8 @@ self: super: with self; {
 
   py-ocsf-models = callPackage ../development/python-modules/py-ocsf-models { };
 
+  py-opendisplay = callPackage ../development/python-modules/py-opendisplay { };
+
   py-opensonic = callPackage ../development/python-modules/py-opensonic { };
 
   py-partiql-parser = callPackage ../development/python-modules/py-partiql-parser { };
@@ -13176,6 +13184,8 @@ self: super: with self; {
   py-tes = callPackage ../development/python-modules/py-tes { };
 
   py-ubjson = callPackage ../development/python-modules/py-ubjson { };
+
+  py-unifi-access = callPackage ../development/python-modules/py-unifi-access { };
 
   py-vapid = callPackage ../development/python-modules/py-vapid { };
 
@@ -13761,6 +13771,8 @@ self: super: with self; {
   pyformlang = callPackage ../development/python-modules/pyformlang { };
 
   pyfreedompro = callPackage ../development/python-modules/pyfreedompro { };
+
+  pyfreshr = callPackage ../development/python-modules/pyfreshr { };
 
   pyfribidi = callPackage ../development/python-modules/pyfribidi { };
 
@@ -15872,6 +15884,8 @@ self: super: with self; {
 
   python-ptrace = callPackage ../development/python-modules/python-ptrace { };
 
+  python-qube-heatpump = callPackage ../development/python-modules/python-qube-heatpump { };
+
   python-rabbitair = callPackage ../development/python-modules/python-rabbitair { };
 
   python-rapidjson = callPackage ../development/python-modules/python-rapidjson { };
@@ -17608,6 +17622,8 @@ self: super: with self; {
 
   sievelib = callPackage ../development/python-modules/sievelib { };
 
+  signalrcore = callPackage ../development/python-modules/signalrcore { };
+
   signalslot = callPackage ../development/python-modules/signalslot { };
 
   signedjson = callPackage ../development/python-modules/signedjson { };
@@ -17820,6 +17836,8 @@ self: super: with self; {
 
   slixmpp = callPackage ../development/python-modules/slixmpp { inherit (pkgs) gnupg; };
 
+  slixmpp-omemo = callPackage ../development/python-modules/slixmpp-omemo { };
+
   slob = callPackage ../development/python-modules/slob { };
 
   slovnet = callPackage ../development/python-modules/slovnet { };
@@ -17995,6 +18013,8 @@ self: super: with self; {
   solaredge-web = callPackage ../development/python-modules/solaredge-web { };
 
   solarlog-cli = callPackage ../development/python-modules/solarlog-cli { };
+
+  solarman-opendata = callPackage ../development/python-modules/solarman-opendata { };
 
   solax = callPackage ../development/python-modules/solax { };
 
@@ -19578,6 +19598,18 @@ self: super: with self; {
 
   transaction = callPackage ../development/python-modules/transaction { };
 
+  transformer-engine = callPackage ../development/python-modules/transformer-engine { };
+
+  transformer-engine-jax = transformer-engine.override {
+    withJax = true;
+    withPytorch = false;
+  };
+
+  transformer-engine-pytorch = transformer-engine.override {
+    withJax = false;
+    withPytorch = true;
+  };
+
   transformers = callPackage ../development/python-modules/transformers { };
 
   transformers_4 = callPackage ../development/python-modules/transformers/4.nix { };
@@ -19711,6 +19743,8 @@ self: super: with self; {
       python3Packages = self;
     }
   );
+
+  trmnl = callPackage ../development/python-modules/trmnl { };
 
   troi = callPackage ../development/python-modules/troi { };
 
@@ -20375,7 +20409,11 @@ self: super: with self; {
 
   ucsmsdk = callPackage ../development/python-modules/ucsmsdk { };
 
+  udapi = callPackage ../development/python-modules/udapi { };
+
   udatetime = callPackage ../development/python-modules/udatetime { };
+
+  udtools = callPackage ../development/python-modules/udtools { };
 
   ueagle = callPackage ../development/python-modules/ueagle { };
 
@@ -21106,6 +21144,8 @@ self: super: with self; {
   wiffi = callPackage ../development/python-modules/wiffi { };
 
   wifi = callPackage ../development/python-modules/wifi { };
+
+  wiim = callPackage ../development/python-modules/wiim { };
 
   wikipedia = callPackage ../development/python-modules/wikipedia { };
 

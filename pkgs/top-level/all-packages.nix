@@ -1560,8 +1560,6 @@ with pkgs;
     stdenv = clangStdenv;
   };
 
-  reattach-to-user-namespace = callPackage ../os-specific/darwin/reattach-to-user-namespace { };
-
   xcodeenv = callPackage ../development/mobile/xcodeenv { };
 
   androidenv = callPackage ../development/mobile/androidenv { };
@@ -2245,11 +2243,6 @@ with pkgs;
   };
 
   diffutils = callPackage ../tools/text/diffutils { };
-
-  drone = callPackage ../development/tools/continuous-integration/drone { };
-  drone-oss = callPackage ../development/tools/continuous-integration/drone {
-    enableUnfree = false;
-  };
 
   dsview = libsForQt5.callPackage ../applications/science/electronics/dsview { };
 
@@ -5008,7 +5001,6 @@ with pkgs;
     erlang
     erlang_28
     erlang_27
-    erlang_26
     ;
 
   inherit (beam.packages.erlang_28.beamPackages)
@@ -5024,11 +5016,6 @@ with pkgs;
     lfe
     ;
 
-  inherit (beam.packages.erlang_26.beamPackages)
-    elixir_1_16
-    elixir_1_15
-    ;
-
   inherit (beam.packages.erlang)
     erlfmt
     elvis-erlang
@@ -5041,12 +5028,10 @@ with pkgs;
   beamPackages = dontRecurseIntoAttrs beam.packages.erlang.beamPackages;
   beamMinimalPackages = dontRecurseIntoAttrs beam_minimal.packages.erlang.beamPackages;
 
-  beam26Packages = recurseIntoAttrs beam.packages.erlang_26.beamPackages;
   beam27Packages = recurseIntoAttrs beam.packages.erlang_27.beamPackages;
   beam28Packages = recurseIntoAttrs beam.packages.erlang_28.beamPackages;
   beam29Packages = dontRecurseIntoAttrs beam.packages.erlang_29.beamPackages;
 
-  beamMinimal26Packages = recurseIntoAttrs beam_minimal.packages.erlang_26.beamPackages;
   beamMinimal27Packages = recurseIntoAttrs beam_minimal.packages.erlang_27.beamPackages;
   beamMinimal28Packages = recurseIntoAttrs beam_minimal.packages.erlang_28.beamPackages;
   beamMinimal29Packages = dontRecurseIntoAttrs beam_minimal.packages.erlang_29.beamPackages;
@@ -8069,7 +8054,6 @@ with pkgs;
     # Effective Cassandra 4.0.2 there is full Java 11 support
     #  -- https://cassandra.apache.org/doc/latest/cassandra/new/java11.html
     jre = pkgs.jdk11_headless;
-    python = python3;
   };
   cassandra = cassandra_4;
 
@@ -9288,7 +9272,7 @@ with pkgs;
     bitwig-studio-unwrapped = bitwig-studio5-unwrapped;
   };
 
-  bitwig-studio = bitwig-studio5;
+  bitwig-studio = bitwig-studio6;
 
   blucontrol = callPackage ../applications/misc/blucontrol/wrapper.nix {
     inherit (haskellPackages) ghcWithPackages;
@@ -12379,7 +12363,33 @@ with pkgs;
 
   hy = with python3Packages; toPythonApplication hy;
 
-  ghc-standalone-archive = callPackage ../os-specific/darwin/ghc-standalone-archive { };
+  ghc-standalone-archive =
+    {
+      haskellPackages,
+      src,
+      deps ? p: [ ],
+      name,
+    }:
+    let
+      inherit (haskellPackages) ghc ghcWithPackages;
+      with-env = ghcWithPackages deps;
+      ghcName = "${ghc.targetPrefix}ghc";
+    in
+    runCommand name
+      {
+        buildInputs = [
+          with-env
+          cctools
+        ];
+      }
+      ''
+        mkdir -p $out/lib
+        mkdir -p $out/include
+        ${ghcName} ${src} -staticlib -outputdir . -o $out/lib/${name}.a -stubdir $out/include
+        for file in ${ghc}/lib/${ghcName}-${ghc.version}/include/*; do
+          ln -sv $file $out/include
+        done
+      '';
 
   vdr = callPackage ../applications/video/vdr { };
   vdrPlugins = recurseIntoAttrs (callPackage ../applications/video/vdr/plugins.nix { });
