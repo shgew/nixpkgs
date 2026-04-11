@@ -11,6 +11,7 @@
     "xcodes"
   ]
   both: [
+    "claude-code"
     "context7-mcp"
     "mcp-server-sequential-thinking"
     "nushell"
