@@ -1437,6 +1437,21 @@ let
         };
       };
 
+      drblury.protobuf-vsc = buildVscodeMarketplaceExtension {
+        mktplcRef = {
+          name = "protobuf-vsc";
+          publisher = "DrBlury";
+          version = "1.6.0";
+          hash = "sha256-HvTJSFRKO0K7Ud9381viPrXp3TInB1FT97qZArosAjY=";
+        };
+        meta = {
+          description = "Comprehensive Protocol Buffers support with syntax highlighting, IntelliSense, diagnostics and formatting";
+          downloadPage = "https://marketplace.visualstudio.com/items?itemName=DrBlury.protobuf-vsc";
+          homepage = "https://github.com/DrBlury/protobuf-vsc-extension";
+          license = lib.licenses.mit;
+        };
+      };
+
       eamodio.gitlens = callPackage ./eamodio.gitlens { };
 
       earthly.earthfile-syntax-highlighting = buildVscodeMarketplaceExtension {
@@ -2398,6 +2413,8 @@ let
 
       jackmacwindows.craftos-pc = callPackage ./jackmacwindows.craftos-pc { };
 
+      jakestanger.corn = callPackage ./jakestanger.corn { };
+
       james-yu.latex-workshop = callPackage ./james-yu.latex-workshop { };
 
       jamesyang999.vscode-emacs-minimum = buildVscodeMarketplaceExtension {
@@ -3073,8 +3090,8 @@ let
         mktplcRef = {
           name = "compare-folders";
           publisher = "moshfeu";
-          version = "0.28.0";
-          hash = "sha256-QoaZ/P2lIaJQjD9RF7+pUJkOneR9olCe6xuT/9vsiZ4=";
+          version = "0.29.0";
+          hash = "sha256-oX4182qaoHbvZC9MdzzARBlW4MbtE7H0Fg687K5h2XQ=";
         };
 
         meta = {
@@ -4076,8 +4093,8 @@ let
         mktplcRef = {
           name = "sas-lsp";
           publisher = "SAS";
-          version = "1.18.0";
-          hash = "sha256-OP0UUANqoQoxr+10/NkwveEULKWFrDn/dmEg0CHMZp0=";
+          version = "1.19.1";
+          hash = "sha256-aVtMiSbPLs6zIdcD0TopIAVKvJksSdTy9ND+jGw/G0A=";
         };
         meta = {
           changelog = "https://marketplace.visualstudio.com/items/SAS.sas-lsp/changelog";
@@ -4232,8 +4249,8 @@ let
         mktplcRef = {
           name = "signageos-vscode-sops";
           publisher = "signageos";
-          version = "0.9.3";
-          hash = "sha256-fOSLlszr6yLkRC9gy+MCnL+Y/1TXrmVWAWavpvXHj4U=";
+          version = "0.9.4";
+          hash = "sha256-SH+hmxFQAXcL0MP9WToGmvdBjn/l2TWxF/YL30FwXes=";
         };
         meta = {
           changelog = "https://marketplace.visualstudio.com/items/signageos.signageos-vscode-sops/changelog";
@@ -4617,8 +4634,8 @@ let
         mktplcRef = {
           name = "ayu";
           publisher = "teabyii";
-          version = "1.1.11";
-          sha256 = "sha256-0gfevhXxrZC2rpWIaZM7aNfZrh/KIjoDWkZreeVU+EI=";
+          version = "1.1.12";
+          sha256 = "sha256-pwLvik3GRMLyr6GeTmZh1MrkgH1MgbyoembNmQxg4I0=";
         };
         meta = {
           description = "Simple theme with bright colors and comes in three versions — dark, light and mirage for all day long comfortable work";
@@ -4772,8 +4789,8 @@ let
         mktplcRef = {
           name = "emacs-mcx";
           publisher = "tuttieee";
-          version = "0.109.2";
-          hash = "sha256-rrTM/xzp8IoQRtUrg8rsP6gUPwUeZ6TMz1Sc7QyA5r0=";
+          version = "0.110.2";
+          hash = "sha256-E2L95LQw/Oku8cJMpKVeY6VOhZzIkSkZI4+ozmFqyg4=";
         };
         meta = {
           changelog = "https://github.com/whitphx/vscode-emacs-mcx/blob/main/CHANGELOG.md";
@@ -5205,8 +5222,8 @@ let
         mktplcRef = {
           name = "csharp-ls";
           publisher = "vytautassurvila";
-          version = "0.0.30";
-          hash = "sha256-BVSazrQxVm4yYBVdtFP3Aojl06xI2msFXIGw64LeePY=";
+          version = "0.0.31";
+          hash = "sha256-d2vHhM+/hzT/JdFzu2WtJiWY2BHGk8SicleHxwm8ciY=";
         };
         meta = {
           changelog = "https://github.com/vytautassurvila/vscode-csharp-ls/blob/master/CHANGELOG.md";
@@ -5333,8 +5350,8 @@ let
         mktplcRef = {
           name = "php-debug";
           publisher = "xdebug";
-          version = "1.40.0";
-          hash = "sha256-B8x954/nltRZcuX9y1NYu5JrDGiYxuPINSs1bgtCnWA=";
+          version = "1.40.1";
+          hash = "sha256-WI4d6Kk+lEmFTYYfwSH7q32YaOeokdEquFtZQJcyyDA=";
         };
         meta = {
           description = "PHP Debug Adapter";
@@ -5373,6 +5390,8 @@ let
           maintainers = [ ];
         };
       };
+
+      yoshi47.selection-path-copier = callPackage ./yoshi47.selection-path-copier { };
 
       yy0931.vscode-sqlite3-editor = callPackage ./yy0931.vscode-sqlite3-editor { };
 
