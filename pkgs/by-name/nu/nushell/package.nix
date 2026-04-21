@@ -75,6 +75,8 @@ rustPlatform.buildRustPackage (finalAttrs: {
         "plugins::stress_internals::test_local_socket"
 
         # Error:   × I/O error: Operation not permitted (os error 1)
+        "shell::environment::env::env_shlvl_in_exec_repl"
+        "shell::environment::env::env_shlvl_in_repl"
         "shell::environment::env::path_is_a_list_in_repl"
         "shell::environment::env::env_shlvl_in_repl"
         "shell::environment::env::env_shlvl_in_exec_repl"
