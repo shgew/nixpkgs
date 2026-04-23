@@ -2,8 +2,18 @@
   lib,
   buildNpmPackage,
   fetchFromGitHub,
+  fetchurl,
+  makeWrapper,
+  versionCheckHook,
 }:
 
+let
+  axeVersion = "1.5.2";
+  axeSrc = fetchurl {
+    url = "https://github.com/cameroncooke/AXe/releases/download/v${axeVersion}/AXe-macOS-v${axeVersion}-universal.tar.gz";
+    hash = "sha256-Uct+fyxf7JCoTP2ol4PilW6inQnkoOBqfuNlD8i5h0w=";
+  };
+in
 buildNpmPackage (finalAttrs: {
   pname = "xcode-build-mcp";
   version = "2.3.2";
@@ -17,35 +27,37 @@ buildNpmPackage (finalAttrs: {
 
   npmDepsHash = "sha256-jgvxXxvmdMr/qK3iGPAF/fjo2ob5aKIlXXJbRqDVOCI=";
 
-  # The `prepare` script tries to install git hooks
-  npmFlags = [ "--ignore-scripts" ];
+  __structuredAttrs = true;
 
-  # Generate src/version.ts then build with tsup
-  preBuild = ''
-    node --input-type=module -e "
-      import { readFile, writeFile } from 'node:fs/promises';
-      const pkg = JSON.parse(await readFile('package.json', 'utf8'));
-      const content =
-        \"export const version = '\" + pkg.version + \"';\\n\" +
-        \"export const iOSTemplateVersion = '\" + pkg.iOSTemplateVersion + \"';\\n\" +
-        \"export const macOSTemplateVersion = '\" + pkg.macOSTemplateVersion + \"';\\n\";
-      await writeFile('src/version.ts', content, 'utf8');
-    "
+  nativeBuildInputs = [ makeWrapper ];
+
+  # AXe is normally downloaded by scripts/bundle-axe.sh at build time; fetch it
+  # declaratively and drop it into bundled/ so the sandboxed build skips network.
+  # `export npmDeps` works around npmConfigHook reading it as an env var while
+  # `__structuredAttrs = true` keeps it in .attrs.json only.
+  postPatch = ''
+    export npmDeps
+    mkdir -p bundled
+    tar -xzf ${axeSrc} -C bundled
   '';
 
   npmBuildScript = "build:tsup";
 
   postInstall = ''
-    wrapProgram $out/bin/xcodebuildmcp \
-      --set XCODEBUILDMCP_SENTRY_DISABLED true
-    wrapProgram $out/bin/xcodebuildmcp-doctor \
-      --set XCODEBUILDMCP_SENTRY_DISABLED true
+    for bin in xcodebuildmcp xcodebuildmcp-doctor; do
+      wrapProgram $out/bin/$bin \
+        --set-default XCODEBUILDMCP_SENTRY_DISABLED true
+    done
   '';
 
+  doInstallCheck = true;
+  nativeInstallCheckInputs = [ versionCheckHook ];
+  versionCheckProgramArg = "--version";
+
   meta = {
-    description = "Model Context Protocol server that provides Xcode build, test, and simulator tools for AI coding agents";
+    description = "MCP server providing Xcode project, simulator, and device management tools for AI agents";
     homepage = "https://github.com/getsentry/XcodeBuildMCP";
-    changelog = "https://github.com/getsentry/XcodeBuildMCP/blob/${finalAttrs.src.rev}/CHANGELOG.md";
+    changelog = "https://github.com/getsentry/XcodeBuildMCP/releases/tag/v${finalAttrs.version}";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ shgew ];
     mainProgram = "xcodebuildmcp";
