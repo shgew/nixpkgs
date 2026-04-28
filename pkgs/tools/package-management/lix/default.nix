@@ -20,9 +20,11 @@
   nixpkgs-reviewFull,
   nil,
   nix-direnv,
+  nix-du,
   nix-fast-build,
   haskell,
   nix-serve-ng,
+  nixos-rebuild-ng,
   colmena,
   nix-update,
   nix-init,
@@ -127,6 +129,10 @@ let
             nix = self.lix;
           };
 
+          nix-du = nix-du.override {
+            nix = self.lix;
+          };
+
           nix-eval-jobs = self.callPackage (callPackage ./common-nix-eval-jobs.nix nix-eval-jobs-args) {
             stdenv = lixStdenv;
           };
@@ -142,6 +148,10 @@ let
               broken = false;
             }))
           ];
+
+          nixos-rebuild-ng = nixos-rebuild-ng.override {
+            nix = self.lix;
+          };
 
           colmena = colmena.override {
             nix = self.lix;
