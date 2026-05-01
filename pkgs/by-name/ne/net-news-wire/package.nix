@@ -9,11 +9,11 @@
 
 stdenvNoCC.mkDerivation rec {
   pname = "net-news-wire";
-  version = "7.0.4";
+  version = "7.0.5";
 
   src = fetchurl {
     url = "https://github.com/Ranchero-Software/NetNewsWire/releases/download/mac-${version}/NetNewsWire${version}.zip";
-    hash = "sha256-+RS3xCgVTLD/1LXa5gaQLDeByRH7CoW5N9GshDr50A0=";
+    hash = "sha256-R0d2X7zj/aiuG3g2D91EQleWRR57MZacyr6HuQHWD+k=";
   };
 
   sourceRoot = ".";
