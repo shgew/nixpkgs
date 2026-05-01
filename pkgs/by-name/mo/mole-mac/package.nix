@@ -3,20 +3,21 @@
   buildGoModule,
   fetchFromGitHub,
   makeWrapper,
+  nix-update-script,
 }:
 
 buildGoModule (finalAttrs: {
   pname = "mole-mac";
-  version = "1.33.0";
+  version = "1.36.3";
 
   src = fetchFromGitHub {
     owner = "tw93";
     repo = "Mole";
     tag = "V${finalAttrs.version}";
-    hash = "sha256-IQcnwpwzabRLznqSin73OI7G7Jw1OjXX2JBIPFkquas=";
+    hash = "sha256-X9qS4pMcDdRciuq0MnVYGj8Qf+YZ0W+l5g+t30F3Uxs=";
   };
 
-  vendorHash = "sha256-LznLZ0NO8VBWP95ReAVORUMIDhh7/pgTY5mGNN2tND8=";
+  vendorHash = "sha256-2UhKlei3yUJJkvavxUEQFcnaSekycaXymL29b7+Q0aw=";
 
   subPackages = [
     "cmd/analyze"
@@ -29,6 +30,13 @@ buildGoModule (finalAttrs: {
   ];
 
   nativeBuildInputs = [ makeWrapper ];
+
+  passthru.updateScript = nix-update-script {
+    extraArgs = [
+      "--version-regex"
+      "V(.*)"
+    ];
+  };
 
   postInstall = ''
     # Set up libexec directory with the shell script tree

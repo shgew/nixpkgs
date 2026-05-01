@@ -9,6 +9,7 @@
     "secretive"
     "tuist"
     "xcodes"
+    "mole-mac"
   ]
   both: [
     "claude-code"
