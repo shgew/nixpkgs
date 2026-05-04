@@ -1658,6 +1658,8 @@ with pkgs;
 
   intel-oneapi = recurseIntoAttrs (callPackage ../development/libraries/intel-oneapi { });
 
+  intelLlvmStdenv = intel-llvm.stdenv;
+
   cambrinary = python3Packages.callPackage ../applications/misc/cambrinary { };
 
   cplex = callPackage ../applications/science/math/cplex (config.cplex or { });
@@ -2128,7 +2130,7 @@ with pkgs;
 
   cudaPackages_12 = cudaPackages_12_9;
 
-  cudaPackages_13 = cudaPackages_13_0;
+  cudaPackages_13 = cudaPackages_13_2;
 
   cudaPackages = recurseIntoAttrs cudaPackages_12;
 
@@ -2467,32 +2469,6 @@ with pkgs;
 
   graphviz-nox = callPackage ../tools/graphics/graphviz {
     withXorg = false;
-  };
-
-  grub2 = callPackage ../tools/misc/grub/default.nix { };
-
-  grub2_efi = grub2.override {
-    efiSupport = true;
-  };
-
-  grub2_ieee1275 = grub2.override {
-    ieee1275Support = true;
-  };
-
-  grub2_light = grub2.override {
-    zfsSupport = false;
-  };
-
-  grub2_xen = grub2.override {
-    xenSupport = true;
-  };
-
-  grub2_xen_pvh = grub2.override {
-    xenPvhSupport = true;
-  };
-
-  grub2_pvgrub_image = grub2_pvhgrub_image.override {
-    grubPlatform = "xen";
   };
 
   gruut = with python3.pkgs; toPythonApplication gruut;
@@ -3519,6 +3495,12 @@ with pkgs;
     ;
   varnishPackages = varnish80Packages;
   varnish = varnishPackages.varnish;
+
+  inherit (callPackages ../servers/vinyl-cache { })
+    vinyl-cache_9
+    ;
+
+  vinyl-cache = vinyl-cache_9;
 
   vncdo = with python3Packages; toPythonApplication vncdo;
 
@@ -5961,8 +5943,6 @@ with pkgs;
 
   tflint-plugins = recurseIntoAttrs (callPackage ../development/tools/analysis/tflint-plugins { });
 
-  tree-sitter = makeOverridable (callPackage ../development/tools/parsing/tree-sitter) { };
-
   tree-sitter-grammars = recurseIntoAttrs tree-sitter.builtGrammars;
 
   uhdMinimal = uhd.override {
@@ -8014,9 +7994,6 @@ with pkgs;
 
   inherit
     ({
-      kanidm_1_7 = callPackage ../servers/kanidm/1_7.nix {
-        kanidmWithSecretProvisioning = kanidmWithSecretProvisioning_1_7;
-      };
       kanidm_1_8 = callPackage ../servers/kanidm/1_8.nix {
         kanidmWithSecretProvisioning = kanidmWithSecretProvisioning_1_8;
       };
@@ -8024,14 +8001,11 @@ with pkgs;
         kanidmWithSecretProvisioning = kanidmWithSecretProvisioning_1_9;
       };
 
-      kanidmWithSecretProvisioning_1_7 = kanidm_1_7.override { enableSecretProvisioning = true; };
       kanidmWithSecretProvisioning_1_8 = kanidm_1_8.override { enableSecretProvisioning = true; };
       kanidmWithSecretProvisioning_1_9 = kanidm_1_9.override { enableSecretProvisioning = true; };
     })
-    kanidm_1_7
     kanidm_1_8
     kanidm_1_9
-    kanidmWithSecretProvisioning_1_7
     kanidmWithSecretProvisioning_1_8
     kanidmWithSecretProvisioning_1_9
     ;
@@ -8444,8 +8418,6 @@ with pkgs;
   iputils = hiPrio (callPackage ../os-specific/linux/iputils { });
   # hiPrio for collisions with inetutils (ping)
 
-  iptables = callPackage ../os-specific/linux/iptables { };
-  iptables-legacy = callPackage ../os-specific/linux/iptables { nftablesCompat = false; };
   iptables-nftables-compat = iptables;
 
   jool-cli = callPackage ../os-specific/linux/jool/cli.nix { };
@@ -9453,13 +9425,23 @@ with pkgs;
     )
     // {
       jdk-no-jcef = callPackage ../development/compilers/jetbrains-jdk {
+        jdk = jdk25;
+        withJcef = false;
+      };
+      jdk-no-jcef-21 = callPackage ../development/compilers/jetbrains-jdk/21.nix {
         jdk = jdk21;
         withJcef = false;
       };
       jdk = callPackage ../development/compilers/jetbrains-jdk {
+        jdk = jdk25;
+      };
+      jdk-21 = callPackage ../development/compilers/jetbrains-jdk/21.nix {
         jdk = jdk21;
       };
       jcef = callPackage ../development/compilers/jetbrains-jdk/jcef.nix {
+        jdk = jdk25;
+      };
+      jcef-21 = callPackage ../development/compilers/jetbrains-jdk/jcef.nix {
         jdk = jdk21;
       };
     }
@@ -10203,7 +10185,6 @@ with pkgs;
       callPackage ../applications/networking/instant-messengers/ripcord/darwin.nix { };
 
   inherit (callPackage ../applications/networking/cluster/rke2 { })
-    rke2_1_32
     rke2_1_33
     rke2_1_34
     rke2_1_35
@@ -10516,12 +10497,19 @@ with pkgs;
         };
       };
     }).overrideAttrs
-      {
+      (old: {
         pname = "vim-darwin";
         meta = {
+          inherit (old.meta)
+            description
+            homepage
+            license
+            mainProgram
+            outputsToInstall
+            ;
           platforms = lib.platforms.darwin;
         };
-      };
+      });
 
   vimacs = callPackage ../applications/editors/vim/vimacs.nix { };
 

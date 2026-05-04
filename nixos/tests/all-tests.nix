@@ -678,6 +678,7 @@ in
   gotosocial = runTest ./web-apps/gotosocial.nix;
   goupile = runTest ./web-apps/goupile;
   grafana = handleTest ./grafana { };
+  grafana-to-ntfy = runTest ./grafana-to-ntfy.nix;
   graphite = runTest ./graphite.nix;
   grav = runTest ./web-apps/grav.nix;
   graylog = runTest ./graylog.nix;
@@ -1068,6 +1069,7 @@ in
   netbox_4_4 = handleTest ./web-apps/netbox/default.nix { netbox = pkgs.netbox_4_4; };
   netbox_4_5 = handleTest ./web-apps/netbox/default.nix { netbox = pkgs.netbox_4_5; };
   netdata = runTest ./netdata.nix;
+  netfoil = runTest ./netfoil.nix;
   networking.networkd = handleTest ./networking/networkd-and-scripted.nix { networkd = true; };
   networking.networkmanager = handleTest ./networking/networkmanager.nix { };
   networking.scripted = handleTest ./networking/networkd-and-scripted.nix { networkd = false; };
@@ -1139,6 +1141,7 @@ in
     pkgs.callPackage ../../pkgs/stdenv/generic/check-meta-test.nix
       { };
   nixseparatedebuginfod2 = runTest ./nixseparatedebuginfod2.nix;
+  nmtrust = runTest ./nmtrust.nix;
   node-red = runTest ./node-red.nix;
   nohang = runTest ./nohang.nix;
   nomad = runTest ./nomad.nix;
@@ -1753,6 +1756,10 @@ in
   victoriametrics = import ./victoriametrics { inherit runTest; };
   victoriatraces = import ./victoriatraces { inherit runTest; };
   vikunja = runTest ./vikunja.nix;
+  vinyl-cache_9 = runTest {
+    imports = [ ./vinyl-cache.nix ];
+    _module.args.package = pkgs.vinyl-cache_9;
+  };
   virtualbox = handleTestOn [ "x86_64-linux" ] ./virtualbox.nix { };
   vm-variant = handleTest ./vm-variant.nix { };
   vscode-remote-ssh = handleTestOn [ "x86_64-linux" ] ./vscode-remote-ssh.nix { };
