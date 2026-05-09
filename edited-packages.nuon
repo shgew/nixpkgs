@@ -13,7 +13,7 @@
   ]
   both: [
     "claude-code"
-    "context7-mcp"
+    "ctx7"
     "mcp-server-sequential-thinking"
     "nushell"
   ]
