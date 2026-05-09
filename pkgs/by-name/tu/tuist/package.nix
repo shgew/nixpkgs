@@ -8,11 +8,11 @@
 
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "tuist";
-  version = "4.191.6";
+  version = "4.192.3";
 
   src = fetchurl {
     url = "https://github.com/tuist/tuist/releases/download/${finalAttrs.version}/tuist.zip";
-    hash = "sha256-4dsVz8/58b3E+RUaSiAY3zI3e6U4IdVbq4pN/IzdYI4=";
+    hash = "sha256-wDId1g/IqOqKGXfbFOVmqV1ZhkyGOflCdW5+XlMWrkE=";
   };
 
   dontUnpack = true;
