@@ -3,7 +3,6 @@
     "proton-ge-bin"
   ]
   macos: [
-    "battery-toolkit"
     "betterdisplay"
     "net-news-wire"
     "secretive"
@@ -14,7 +13,6 @@
   both: [
     "claude-code"
     "ctx7"
-    "mcp-server-sequential-thinking"
     "nushell"
   ]
 }
