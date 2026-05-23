@@ -4,11 +4,13 @@
   ]
   macos: [
     "betterdisplay"
+    "mole-mac"
     "net-news-wire"
     "secretive"
+    "things3-mcp"
     "tuist"
+    "xcodebuildmcp"
     "xcodes"
-    "mole-mac"
   ]
   both: [
     "claude-code"
