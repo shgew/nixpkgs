@@ -19,6 +19,8 @@ buildNpmPackage (finalAttrs: {
 
   npmDepsHash = "sha256-veQRpP6Bxq0yjDYn07P7TMSdVIT8gWc3czXNfDhrla0=";
 
+  __structuredAttrs = true;
+
   dontNpmBuild = true;
 
   passthru.updateScript = ./update.sh;
