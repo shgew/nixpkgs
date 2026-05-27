@@ -41,6 +41,8 @@ stdenvNoCC.mkDerivation {
                      'DATA_DIR="$BASE_DIR/terminalphone"'
   '';
 
+  passthru.updateScript = ./update.sh;
+
   installPhase = ''
     runHook preInstall
 
