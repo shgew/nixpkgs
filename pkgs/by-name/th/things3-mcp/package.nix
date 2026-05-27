@@ -9,6 +9,8 @@ python3.pkgs.buildPythonApplication (finalAttrs: {
   version = "2.0.7";
   pyproject = true;
 
+  __structuredAttrs = true;
+
   src = fetchFromGitHub {
     owner = "rossshannon";
     repo = "Things3-MCP";
