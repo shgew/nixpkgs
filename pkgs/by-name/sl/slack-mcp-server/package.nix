@@ -6,16 +6,16 @@
 
 buildGoModule (finalAttrs: {
   pname = "slack-mcp-server";
-  version = "1.2.3";
+  version = "1.3.0";
 
   src = fetchFromGitHub {
     owner = "korotovsky";
     repo = "slack-mcp-server";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-AfmuQfV3RqFBw9b8B4aFM0EOuFQrUlUpTnMmQcyvCfU=";
+    hash = "sha256-I4f6yKV0BXtaxnqi/XNID+Pwl2mWjSqxIHhb07U7sc4=";
   };
 
-  vendorHash = "sha256-mR+UFQRi98OTCyNISy3e7QTGKusd8XhNW4iz57QvpZE=";
+  vendorHash = "sha256-+uQRODO9oL8mGKBmdghTxE6R9Fz+3GJFVTi17306gT8=";
 
   __structuredAttrs = true;
 
