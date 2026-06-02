@@ -16,16 +16,16 @@ let
 in
 buildNpmPackage (finalAttrs: {
   pname = "xcodebuildmcp";
-  version = "2.5.2";
+  version = "2.6.0";
 
   src = fetchFromGitHub {
     owner = "getsentry";
     repo = "XcodeBuildMCP";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-ir0ZpIpRtLqH/4yPQX+jfgosVpsuHg07iEeEb0yRGwg=";
+    hash = "sha256-CdgUL27w7OU4jsR4kC4hxs3Rtz0CdTnPmC+glAzvor4=";
   };
 
-  npmDepsHash = "sha256-qkNmrsbvBMac8ePquAArBlxO5RQBJ7D7BAKrO6srd0g=";
+  npmDepsHash = "sha256-gB6Fr1NggScAUuXG8O2h64gfbq7vwFGFOFv7lB/lu2Q=";
 
   __structuredAttrs = true;
 
