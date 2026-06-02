@@ -16,7 +16,7 @@
 
 stdenvNoCC.mkDerivation {
   pname = "terminalphone";
-  version = "1.1.6-unstable-2026-05-28";
+  version = "1.1.6-unstable-2026-06-01";
 
   src = fetchFromGitLab {
     owner = "here_forawhile";
