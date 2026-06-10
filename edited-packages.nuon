@@ -3,15 +3,25 @@
     "proton-ge-bin"
   ]
   macos: [
+    # "battery-toolkit"
     "betterdisplay"
+    "mole-mac"
+    "net-news-wire"
+    # "secretive"
     "things3-mcp"
     "tuist"
-    "xcodes"
+    "xcodebuildmcp"
+    # "xcodes"
   ]
   both: [
+    "ccstatusline"
+    # "ccusage"
     "claude-code"
-    "ctx7"
+    "context7-mcp"
+    # "ctx7"
     "nushell"
     "opencode"
+    # "slack-mcp-server"
+    # "terminalphone"
   ]
 }
