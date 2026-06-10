@@ -18,13 +18,13 @@ let
 in
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "ccusage";
-  version = "20.0.6";
+  version = "20.0.9";
 
   src = fetchFromGitHub {
     owner = "ryoppippi";
     repo = "ccusage";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-uf/FlPprxx4jh74YwjmYMtoIHpTkKrWTLetbNoYiFv4=";
+    hash = "sha256-D/nj0zycBA1lEj0cgZK11Jucjgq6kcmHNmZVFlIgkxE=";
   };
 
   sourceRoot = "${finalAttrs.src.name}/rust";
@@ -32,7 +32,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
   __structuredAttrs = true;
   strictDeps = true;
 
-  cargoHash = "sha256-izA2Gs5nPmt0zn6/e1xM80vyyQHYKGEUDpUFRpyFiB8=";
+  cargoHash = "sha256-ohhHq+h5K05IKvPTQKm0ctt+6rdvaQjiGehRwJYSxWQ=";
 
   cargoBuildFlags = [
     "-p"
