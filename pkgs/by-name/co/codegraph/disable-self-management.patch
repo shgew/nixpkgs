@@ -1,0 +1,43 @@
+diff --git a/src/installer/index.ts b/src/installer/index.ts
+--- a/src/installer/index.ts
++++ b/src/installer/index.ts
+@@ -12,9 +12,8 @@
+  */
+ 
+-import { execSync } from 'child_process';
+ import * as path from 'path';
+ import * as fs from 'fs';
+ import {
+   ALL_TARGETS,
+   detectAll,
+   getTarget,
+@@ -119,11 +118,5 @@ export async function runInstallerWithOptions(opts: RunInstallerOptions): Promis
+      }
+      if (shouldInstallGlobally) {
+-      const s = clack.spinner();
+-      s.start('Installing codegraph CLI...');
+-      try {
+-        execSync('npm install -g @colbymchenry/codegraph', { stdio: 'pipe', windowsHide: true });
+-        s.stop('Installed codegraph CLI on PATH');
+-      } catch {
+-        s.stop('Could not install (permission denied)');
+-        clack.log.warn('Try: sudo npm install -g @colbymchenry/codegraph');
+-      }
++      clack.log.info(
++        'CodeGraph is managed by Nix. Global npm installation is disabled.',
++      );
+diff --git a/src/upgrade/index.ts b/src/upgrade/index.ts
+--- a/src/upgrade/index.ts
++++ b/src/upgrade/index.ts
+@@ -309,6 +309,11 @@ function reindexAdvisory(): string {
+  */
+ export async function runUpgrade(opts: UpgradeOptions, deps: UpgradeDeps): Promise<number> {
+   const { currentVersion, method } = deps;
++  const disabledByNix: boolean = true;
++  if (disabledByNix) {
++    deps.error('CodeGraph is managed by Nix. Upgrade it by updating your Nixpkgs package set.');
++    return 1;
++  }
+ 
+   // Resolve the target version (pinned or latest).
+   let latest: string;
