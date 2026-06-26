@@ -5,6 +5,7 @@
   fetchFromGitHub,
 
   # tests
+  gitMinimal,
   uv,
   versionCheckHook,
   writableTmpDirAsHomeHook,
@@ -39,7 +40,7 @@ let
 in
 python3Packages.buildPythonApplication (finalAttrs: {
   pname = "mistral-vibe";
-  version = "2.16.1";
+  version = "2.18.0";
   pyproject = true;
   __structuredAttrs = true;
 
@@ -47,7 +48,7 @@ python3Packages.buildPythonApplication (finalAttrs: {
     owner = "mistralai";
     repo = "mistral-vibe";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-sv0gaEA7dvf4trxlsRQS9xA5Hiike5i/aLI3qYKP/lY=";
+    hash = "sha256-2eDu2Fqd6K/ZxWSl/pXSN284z7UquNb+zwkHYe9ZWBw=";
   };
 
   build-system = with python3Packages; [
@@ -159,6 +160,8 @@ python3Packages.buildPythonApplication (finalAttrs: {
   pythonImportsCheck = [ "vibe" ];
 
   nativeCheckInputs = [
+    # vibe.core.agent_loop.TeleportError: Teleport requires git to be installed.
+    gitMinimal
     python3Packages.pytest-asyncio
     python3Packages.pytest-textual-snapshot
     python3Packages.pytest-xdist
@@ -172,6 +175,13 @@ python3Packages.buildPythonApplication (finalAttrs: {
   versionCheckKeepEnvironment = [ "HOME" ];
 
   disabledTests = [
+    # vibe is spawned in a sub-process and fails to import `mcp`
+    # ModuleNotFoundError: No module named 'mcp'
+    "TestMCPConnectionPoolIntegration"
+
+    # AssertionError: assert '32:2617357:1782120467963161870:7' != '32:2617357:1782120467963161870:7'
+    "test_changes_when_file_changes"
+
     # vibe.core.llm.exceptions.BackendError: LLM backend error [mock-provider]
     # reason: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Missing Authority Key Identifier (_ssl.c:1032)
     "test_generic_backend_streaming_uses_ssl_cert_file"

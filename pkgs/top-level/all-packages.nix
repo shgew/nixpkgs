@@ -2131,6 +2131,7 @@ with pkgs;
     godotPackages_4_4
     godotPackages_4_5
     godotPackages_4_6
+    godotPackages_4_7
     godotPackages_4
     godotPackages
     godot_4_3
@@ -2145,6 +2146,9 @@ with pkgs;
     godot_4_6
     godot_4_6-mono
     godot_4_6-export-templates-bin
+    godot_4_7
+    godot_4_7-mono
+    godot_4_7-export-templates-bin
     godot_4
     godot_4-mono
     godot_4-export-templates-bin
@@ -2327,6 +2331,7 @@ with pkgs;
     definitions = {
       clojure = clojupyter.definition;
       octave = octave-kernel.definition;
+      r = r-ark-kernel.definition;
       # wolfram = wolfram-for-jupyter-kernel.definition; # unfree
     };
   };
@@ -3963,78 +3968,52 @@ with pkgs;
       llvmPackagesSet = recurseIntoAttrs (callPackages ../development/compilers/llvm { });
 
       llvmPackages_18 = llvmPackagesSet."18";
-      clang_18 = llvmPackages_18.clang;
-      lld_18 = llvmPackages_18.lld;
-      lldb_18 = llvmPackages_18.lldb;
-      llvm_18 = llvmPackages_18.llvm;
-
       llvmPackages_19 = llvmPackagesSet."19";
-      clang_19 = llvmPackages_19.clang;
-      lld_19 = llvmPackages_19.lld;
-      lldb_19 = llvmPackages_19.lldb;
-      llvm_19 = llvmPackages_19.llvm;
-      bolt_19 = llvmPackages_19.bolt;
-
       llvmPackages_20 = llvmPackagesSet."20";
-      clang_20 = llvmPackages_20.clang;
-      lld_20 = llvmPackages_20.lld;
-      lldb_20 = llvmPackages_20.lldb;
-      llvm_20 = llvmPackages_20.llvm;
-      bolt_20 = llvmPackages_20.bolt;
-      flang_20 = llvmPackages_20.flang;
-
       llvmPackages_21 = llvmPackagesSet."21";
-      clang_21 = llvmPackages_21.clang;
-      lld_21 = llvmPackages_21.lld;
-      lldb_21 = llvmPackages_21.lldb;
-      llvm_21 = llvmPackages_21.llvm;
-      bolt_21 = llvmPackages_21.bolt;
-      flang_21 = llvmPackages_21.flang;
-
       llvmPackages_22 = llvmPackagesSet."22";
-      clang_22 = llvmPackages_22.clang;
-      lld_22 = llvmPackages_22.lld;
-      lldb_22 = llvmPackages_22.lldb;
-      llvm_22 = llvmPackages_22.llvm;
-      bolt_22 = llvmPackages_22.bolt;
-      flang_22 = llvmPackages_22.flang;
 
       mkLLVMPackages = llvmPackagesSet.mkPackage;
     })
     llvmPackages_18
-    clang_18
-    lld_18
-    lldb_18
-    llvm_18
     llvmPackages_19
-    clang_19
-    lld_19
-    lldb_19
-    llvm_19
-    bolt_19
     llvmPackages_20
-    clang_20
-    lld_20
-    lldb_20
-    llvm_20
-    bolt_20
-    flang_20
     llvmPackages_21
-    clang_21
-    lld_21
-    lldb_21
-    llvm_21
-    bolt_21
-    flang_21
     llvmPackages_22
-    clang_22
-    lld_22
-    lldb_22
-    llvm_22
-    bolt_22
-    flang_22
     mkLLVMPackages
     ;
+
+  clang_18 = llvmPackages_18.clang;
+  lld_18 = llvmPackages_18.lld;
+  lldb_18 = llvmPackages_18.lldb;
+  llvm_18 = llvmPackages_18.llvm;
+
+  clang_19 = llvmPackages_19.clang;
+  lld_19 = llvmPackages_19.lld;
+  lldb_19 = llvmPackages_19.lldb;
+  llvm_19 = llvmPackages_19.llvm;
+  bolt_19 = llvmPackages_19.bolt;
+
+  clang_20 = llvmPackages_20.clang;
+  lld_20 = llvmPackages_20.lld;
+  lldb_20 = llvmPackages_20.lldb;
+  llvm_20 = llvmPackages_20.llvm;
+  bolt_20 = llvmPackages_20.bolt;
+  flang_20 = llvmPackages_20.flang;
+
+  clang_21 = llvmPackages_21.clang;
+  lld_21 = llvmPackages_21.lld;
+  lldb_21 = llvmPackages_21.lldb;
+  llvm_21 = llvmPackages_21.llvm;
+  bolt_21 = llvmPackages_21.bolt;
+  flang_21 = llvmPackages_21.flang;
+
+  clang_22 = llvmPackages_22.clang;
+  lld_22 = llvmPackages_22.lld;
+  lldb_22 = llvmPackages_22.lldb;
+  llvm_22 = llvmPackages_22.llvm;
+  bolt_22 = llvmPackages_22.bolt;
+  flang_22 = llvmPackages_22.flang;
 
   mitschemeX11 = mitscheme.override {
     enableX11 = true;
@@ -4197,7 +4176,6 @@ with pkgs;
   defaultCrateOverrides = callPackage ../build-support/rust/default-crate-overrides.nix { };
 
   inherit (callPackages ../development/tools/rust/cargo-pgrx { })
-    cargo-pgrx_0_12_6
     cargo-pgrx_0_16_0
     cargo-pgrx_0_16_1
     cargo-pgrx_0_17_0
@@ -4583,6 +4561,8 @@ with pkgs;
   };
 
   octave-kernel = recurseIntoAttrs (callPackage ../applications/editors/jupyter-kernels/octave { });
+
+  r-ark-kernel = callPackage ../applications/editors/jupyter-kernels/r-ark { };
 
   octavePackages = recurseIntoAttrs octave.pkgs;
 
@@ -5325,8 +5305,6 @@ with pkgs;
   nwjs-sdk = nwjs.override {
     sdk = true;
   };
-
-  openai = with python3Packages; toPythonApplication openai;
 
   openai-whisper = with python3.pkgs; toPythonApplication openai-whisper;
 
@@ -6530,8 +6508,8 @@ with pkgs;
   zunclient = with python313Packages; toPythonApplication python-zunclient;
 
   inherit (callPackages ../by-name/li/libressl { })
-    libressl_4_1
     libressl_4_2
+    libressl_4_3
     ;
 
   openssl = openssl_3_6;
@@ -7730,10 +7708,10 @@ with pkgs;
     enableAirplay2 = true;
   };
 
-  stalwart-webadmin = stalwart.webadmin;
-  stalwart-spam-filter = stalwart.spam-filter;
+  stalwart-webadmin = stalwart_0_15.webadmin;
+  stalwart-spam-filter = stalwart_0_15.spam-filter;
 
-  stalwart-enterprise = stalwart.override {
+  stalwart-enterprise = stalwart_0_15.override {
     stalwartEnterprise = true;
   };
 
