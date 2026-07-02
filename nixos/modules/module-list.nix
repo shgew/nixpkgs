@@ -1491,6 +1491,7 @@
   ./services/scheduling/atd.nix
   ./services/scheduling/cron.nix
   ./services/scheduling/fcron.nix
+  ./services/scheduling/gocron.nix
   ./services/scheduling/prefect.nix
   ./services/scheduling/scx-loader.nix
   ./services/scheduling/scx.nix
@@ -1707,6 +1708,7 @@
   ./services/web-apps/kavita.nix
   ./services/web-apps/keycloak.nix
   ./services/web-apps/kimai.nix
+  ./services/web-apps/koito.nix
   ./services/web-apps/komga.nix
   ./services/web-apps/lanraragi.nix
   ./services/web-apps/lasuite-docs.nix
