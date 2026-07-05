@@ -1,5 +1,7 @@
 {
   linux: [
+    "proton-cachyos-slr-bin"
+    "proton-cachyos-slr-bin-v3"
     "proton-ge-bin"
   ]
   macos: [
