@@ -10,19 +10,19 @@
     "mole-mac"
     "net-news-wire"
     # "secretive"
-    "things3-mcp"
+    # "things3-mcp"
     "tuist"
     "xcodebuildmcp"
     # "xcodes"
   ]
   both: [
-    "ccstatusline"
+    # "ccstatusline"
     # "ccusage"
-    "claude-code"
+    # "claude-code"
     "context7-mcp"
     # "ctx7"
     "nushell"
-    "opencode"
+    # "opencode"
     # "slack-mcp-server"
     # "terminalphone"
   ]
