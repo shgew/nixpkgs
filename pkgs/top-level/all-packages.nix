@@ -3054,6 +3054,7 @@ with pkgs;
     withDynlibModule = true;
     withPythonModule = true;
     withDoH = true;
+    withDoQ = true;
     withECS = true;
     withDNSCrypt = true;
     withDNSTAP = true;
@@ -5418,7 +5419,7 @@ with pkgs;
 
   tflint-plugins = recurseIntoAttrs (callPackage ../development/tools/analysis/tflint-plugins { });
 
-  tree-sitter-grammars = recurseIntoAttrs tree-sitter.builtGrammars;
+  tree-sitter-grammars = recurseIntoAttrs tree-sitter.grammarsScope;
 
   uhdMinimal = uhd.override {
     enableUtils = false;
