@@ -16,7 +16,7 @@
 
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "opencode";
-  version = "1.17.12";
+  version = "1.17.15";
 
   __structuredAttrs = true;
   strictDeps = true;
@@ -25,7 +25,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     owner = "anomalyco";
     repo = "opencode";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-eM+K/JrSjM5OtDLvPAXLQQx45K15rCxkac+HA8nq5gw=";
+    hash = "sha256-SBAKl0bsiSUDwvi+XCCgDL2SuP7NZAqx4iGyaMZz5N4=";
   };
 
   node_modules = stdenvNoCC.mkDerivation {
@@ -78,7 +78,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     # NOTE: Required else we get errors that our fixed-output derivation references store paths
     dontFixup = true;
 
-    outputHash = "sha256-bHEJKhmaqPO4+H3x7lNBxU/9dMd354bJ1hg7wakHXJQ=";
+    outputHash = "sha256-9oSXcvvISB6WAqI6f/GBZ3i9IBwYrRQvKs82SLibJNo=";
     outputHashAlgo = "sha256";
     outputHashMode = "recursive";
   };
@@ -165,8 +165,8 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
   passthru = {
     jsonschema = {
-      config = "${placeholder "out"}/share/opencode/config.json";
-      tui = "${placeholder "out"}/share/opencode/tui.json";
+      config = "${finalAttrs.finalPackage}/share/opencode/config.json";
+      tui = "${finalAttrs.finalPackage}/share/opencode/tui.json";
     };
     updateScript = nix-update-script {
       extraArgs = [

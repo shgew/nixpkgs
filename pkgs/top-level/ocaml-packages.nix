@@ -24,6 +24,8 @@ let
 
         aeneas = callPackage ../development/ocaml-modules/aeneas { };
 
+        alcobar = callPackage ../development/ocaml-modules/alcobar { };
+
         alcotest = callPackage ../development/ocaml-modules/alcotest { };
 
         alcotest-lwt = callPackage ../development/ocaml-modules/alcotest/lwt.nix { };
@@ -242,6 +244,8 @@ let
         carton-lwt = callPackage ../development/ocaml-modules/carton/lwt.nix {
           git-binary = pkgs.git;
         };
+
+        cascade = callPackage ../development/ocaml-modules/cascade { };
 
         cbor = callPackage ../development/ocaml-modules/cbor { };
 
@@ -705,6 +709,10 @@ let
         fs-io = callPackage ../development/ocaml-modules/fs-io { };
 
         functory = callPackage ../development/ocaml-modules/functory { };
+
+        fuse3 = callPackage ../development/ocaml-modules/fuse3 {
+          inherit (pkgs) fuse3;
+        };
 
         ### G ###
 
@@ -2187,6 +2195,8 @@ let
 
         tuntap = callPackage ../development/ocaml-modules/tuntap { };
 
+        tw = callPackage ../development/ocaml-modules/tw { };
+
         twt = callPackage ../development/ocaml-modules/twt { };
 
         type_eq = callPackage ../development/ocaml-modules/type_eq { };
@@ -2404,7 +2414,9 @@ rec {
 
   ocamlPackages_5_4 = mkOcamlPackages (callPackage ../development/compilers/ocaml/5.4.nix { });
 
-  ocamlPackages_latest = ocamlPackages_5_4;
+  ocamlPackages_5_5 = mkOcamlPackages (callPackage ../development/compilers/ocaml/5.5.nix { });
+
+  ocamlPackages_latest = ocamlPackages_5_5;
 
   ocamlPackages = ocamlPackages_5_4;
 

@@ -182,10 +182,10 @@ nixos/modules/installer/tools/nix-fallback-paths.nix  @Artturin @Ericson2314 @lo
 /pkgs/by-name/an/android*                     @NixOS/android
 
 # Python-related code and docs
-/doc/languages-frameworks/python.section.md   @mweinelt @natsukium
-/maintainers/scripts/update-python-libraries  @mweinelt @natsukium
-/pkgs/by-name/up/update-python-libraries      @mweinelt @natsukium
-/pkgs/development/interpreters/python         @mweinelt @natsukium
+/doc/languages-frameworks/python.section.md   @mweinelt
+/maintainers/scripts/update-python-libraries  @mweinelt
+/pkgs/by-name/up/update-python-libraries      @mweinelt
+/pkgs/development/interpreters/python         @mweinelt
 
 # CUDA
 /pkgs/top-level/cuda-packages.nix             @NixOS/cuda-maintainers
@@ -506,7 +506,7 @@ pkgs/by-name/oc/octodns/ @anthonyroussel
 pkgs/by-name/te/teleport*     @arianvp @justinas @sigma @tomberek @techknowlogick @JuliusFreudenberger
 
 # Warp-terminal
-pkgs/by-name/wa/warp-terminal/  @emilytrau @imadnyc @FlameFlag @johnrtitor
+pkgs/by-name/wa/warp-terminal/  @emilytrau @imadnyc @4evy @johnrtitor
 
 # Nim
 /doc/languages-frameworks/nim.section.md  @NixOS/nim
