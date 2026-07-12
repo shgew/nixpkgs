@@ -967,6 +967,8 @@ with pkgs;
 
   auditwheel = with python3Packages; toPythonApplication auditwheel;
 
+  btcli = with python3Packages; toPythonApplication bittensor-cli;
+
   btrsync = with python3Packages; toPythonApplication btrsync;
 
   davinci-resolve-studio = callPackage ../by-name/da/davinci-resolve/package.nix {
@@ -1578,8 +1580,6 @@ with pkgs;
   latex2mathml = with python3Packages; toPythonApplication latex2mathml;
 
   pgf = pgf2;
-
-  tetex = callPackage ../tools/typesetting/tex/tetex { libpng = libpng12; };
 
   texFunctions = callPackage ../tools/typesetting/tex/nix pkgs;
 
@@ -4388,12 +4388,13 @@ with pkgs;
     jre = jre8;
   };
 
-  inherit (callPackage ../applications/editors/jupyter-kernels/xeus-cling { })
+  inherit (callPackage ../applications/editors/jupyter-kernels/xeus-cpp { })
     cpp11-kernel
     cpp14-kernel
     cpp17-kernel
-    cpp2a-kernel
-    xeus-cling
+    cpp20-kernel
+    cpp23-kernel
+    xeus-cpp
     ;
 
   dhall = haskell.lib.compose.justStaticExecutables haskellPackages.dhall;
@@ -6363,10 +6364,6 @@ with pkgs;
   ngtcp2 = callPackage ../development/libraries/ngtcp2 { };
   ngtcp2-gnutls = callPackage ../development/libraries/ngtcp2/gnutls.nix { };
 
-  non = callPackage ../applications/audio/non {
-    wafHook = (waf.override { extraTools = [ "gccdeps" ]; }).hook;
-  };
-
   nss_latest = callPackage ../development/libraries/nss/latest.nix { };
   nss_esr = callPackage ../development/libraries/nss/esr.nix { };
   nss = nss_esr;
@@ -6495,8 +6492,6 @@ with pkgs;
 
   # pcre32 seems unused
   pcre-cpp = pcre.override { variant = "cpp"; };
-
-  pcre2 = callPackage ../development/libraries/pcre2 { };
 
   inherit
     (callPackage ../development/libraries/physfs {
@@ -8442,9 +8437,6 @@ with pkgs;
   );
   android-studio-for-platform = androidStudioForPlatformPackages.stable;
 
-  apngasm = callPackage ../applications/graphics/apngasm { };
-  apngasm_2 = callPackage ../applications/graphics/apngasm/2.nix { };
-
   arelle = with python3Packages; toPythonApplication arelle;
 
   astroid = callPackage ../applications/networking/mailreaders/astroid {
@@ -8539,10 +8531,6 @@ with pkgs;
     waveform-seekbar = callPackage ../applications/audio/deadbeef/plugins/waveform-seekbar.nix { };
   };
 
-  deadbeef-with-plugins = callPackage ../applications/audio/deadbeef/wrapper.nix {
-    plugins = [ ];
-  };
-
   inherit (callPackage ../development/tools/devpod { }) devpod devpod-desktop;
 
   djview4 = djview;
@@ -8618,11 +8606,7 @@ with pkgs;
     eval = false;
   } emacs.pkgs;
 
-  espeak-classic = callPackage ../applications/audio/espeak { };
-
   espeak = espeak-ng;
-
-  espeakedit = callPackage ../applications/audio/espeak/edit.nix { };
 
   evolution-data-server-gtk4 = evolution-data-server.override {
     withGtk3 = false;
@@ -9382,10 +9366,6 @@ with pkgs;
 
   rusty-psn-gui = rusty-psn.override { withGui = true; };
 
-  scantailor-advanced = callPackage ../applications/graphics/scantailor/advanced.nix { };
-
-  scantailor-universal = callPackage ../applications/graphics/scantailor/universal.nix { };
-
   sweethome3d = recurseIntoAttrs (
     (callPackage ../applications/misc/sweethome3d { })
     // (callPackage ../applications/misc/sweethome3d/editors.nix {
@@ -9572,8 +9552,6 @@ with pkgs;
   unigine-sanctuary = pkgsi686Linux.callPackage ../applications/graphics/unigine-sanctuary { };
 
   uuagc = haskell.lib.compose.justStaticExecutables haskellPackages.uuagc;
-
-  vdirsyncer = with python3Packages; toPythonApplication vdirsyncer;
 
   vim = vimUtils.makeCustomizable (
     callPackage ../applications/editors/vim {
@@ -10637,10 +10615,6 @@ with pkgs;
 
   faissWithCuda = faiss.override {
     cudaSupport = true;
-  };
-
-  megam = callPackage ../applications/science/misc/megam {
-    inherit (ocaml-ng.ocamlPackages_4_14) ocaml;
   };
 
   spyder = with python3.pkgs; toPythonApplication spyder;
