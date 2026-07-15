@@ -2159,6 +2159,8 @@ self: super: with self; {
 
   bandcamp-api = callPackage ../development/python-modules/bandcamp-api { };
 
+  bandcamp-async-api = callPackage ../development/python-modules/bandcamp-async-api { };
+
   bandit = callPackage ../development/python-modules/bandit { };
 
   bangla = callPackage ../development/python-modules/bangla { };
@@ -8368,6 +8370,8 @@ self: super: with self; {
   jax-cuda12-plugin = callPackage ../development/python-modules/jax-cuda12-plugin { };
 
   jax-jumpy = callPackage ../development/python-modules/jax-jumpy { };
+
+  jax-tap = callPackage ../development/python-modules/jax-tap { };
 
   jaxlib = jaxlib-bin;
 
@@ -16145,6 +16149,8 @@ self: super: with self; {
 
   pytest-metadata = callPackage ../development/python-modules/pytest-metadata { };
 
+  pytest-mh = callPackage ../development/python-modules/pytest-mh { };
+
   pytest-mock = callPackage ../development/python-modules/pytest-mock { };
 
   pytest-mockito = callPackage ../development/python-modules/pytest-mockito { };
@@ -19799,9 +19805,7 @@ self: super: with self; {
 
   systembridgemodels = callPackage ../development/python-modules/systembridgemodels { };
 
-  systemd-python = callPackage ../development/python-modules/systemd-python {
-    inherit (pkgs) systemd;
-  };
+  systemd-python = callPackage ../development/python-modules/systemd-python { };
 
   systemdunitparser = callPackage ../development/python-modules/systemdunitparser { };
 

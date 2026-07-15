@@ -296,6 +296,7 @@
   ./programs/opengamepadui.nix
   ./programs/openvpn3.nix
   ./programs/partition-manager.nix
+  ./programs/passless.nix
   ./programs/pay-respects.nix
   ./programs/plotinus.nix
   ./programs/pmount.nix
@@ -357,6 +358,7 @@
   ./programs/wayland/mangowc.nix
   ./programs/wayland/miracle-wm.nix
   ./programs/wayland/niri.nix
+  ./programs/wayland/pinnacle.nix
   ./programs/wayland/river.nix
   ./programs/wayland/sway.nix
   ./programs/wayland/uwsm.nix
@@ -730,6 +732,7 @@
   ./services/hardware/usbmuxd.nix
   ./services/hardware/usbrelayd.nix
   ./services/hardware/vdr.nix
+  ./services/hardware/watt.nix
   ./services/home-automation/deye-dummycloud.nix
   ./services/home-automation/ebusd.nix
   ./services/home-automation/esphome.nix
@@ -821,6 +824,7 @@
   ./services/matrix/mautrix-whatsapp.nix
   ./services/matrix/mjolnir.nix
   ./services/matrix/pantalaimon.nix
+  ./services/matrix/rust-federation-tester.nix
   ./services/matrix/synapse-auto-compressor.nix
   ./services/matrix/synapse.nix
   ./services/matrix/tuwunel.nix
@@ -1340,6 +1344,7 @@
   ./services/networking/nncp.nix
   ./services/networking/nntp-proxy.nix
   ./services/networking/nomad.nix
+  ./services/networking/nordvpn.nix
   ./services/networking/nsd.nix
   ./services/networking/ntopng.nix
   ./services/networking/ntp/chrony.nix
