@@ -12,16 +12,16 @@
 }:
 buildNpmPackage (finalAttrs: {
   pname = "pi-coding-agent";
-  version = "0.80.6";
+  version = "0.80.7";
 
   src = fetchFromGitHub {
     owner = "earendil-works";
     repo = "pi";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-e/wcHruEcBAHDF5tKvwew7LXjVp0eraHh2k+QaL2sCA=";
+    hash = "sha256-s7dD82fugvWRvqL1VTcEwCIR5JI6t7VeFHR9NdMtG00=";
   };
 
-  npmDepsHash = "sha256-xXEOR0epZcfbXayYGyJdBiFVliamBexqA+1Sd7wlGhU=";
+  npmDepsHash = "sha256-Bd/NIt3lyQR5Y7P+HksPxMQvJc0AjVfDi1M1bH3/eOg=";
 
   npmWorkspace = "packages/coding-agent";
 
@@ -104,7 +104,10 @@ buildNpmPackage (finalAttrs: {
     downloadPage = "https://www.npmjs.com/package/@earendil-works/pi-coding-agent";
     changelog = "https://github.com/earendil-works/pi/blob/main/packages/coding-agent/CHANGELOG.md";
     license = lib.licenses.mit;
-    maintainers = with lib.maintainers; [ munksgaard ];
+    maintainers = with lib.maintainers; [
+      munksgaard
+      bryanhonof
+    ];
     mainProgram = "pi";
   };
 })

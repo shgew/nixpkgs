@@ -2321,6 +2321,7 @@ with pkgs;
       clojure = clojupyter.definition;
       octave = octave-kernel.definition;
       r = r-ark-kernel.definition;
+      ruby = iruby.definition;
       # wolfram = wolfram-for-jupyter-kernel.definition; # unfree
     };
   };
@@ -4858,10 +4859,7 @@ with pkgs;
       in
       {
         electron_39 = electron_39-bin;
-        electron_40 = getElectronPkg {
-          src = electron-source.electron_40;
-          bin = electron_40-bin;
-        };
+        electron_40 = electron_40-bin;
         electron_41 = getElectronPkg {
           src = electron-source.electron_41;
           bin = electron_41-bin;
@@ -8539,9 +8537,6 @@ with pkgs;
   docker-client = docker.override { clientOnly = true; };
 
   docker-gc = callPackage ../applications/virtualization/docker/gc.nix { };
-  docker-machine-hyperkit =
-    callPackage ../applications/networking/cluster/docker-machine/hyperkit.nix
-      { };
   docker-buildx = callPackage ../applications/virtualization/docker/buildx.nix { };
   docker-compose = callPackage ../applications/virtualization/docker/compose.nix { };
   docker-sbom = callPackage ../applications/virtualization/docker/sbom.nix { };
@@ -10271,12 +10266,6 @@ with pkgs;
   libxc_7 = pkgs.libxc.override { version = "7.0.0"; };
 
   molbar = with python3Packages; toPythonApplication molbar;
-
-  nwchem = callPackage ../applications/science/chemistry/nwchem {
-    blas = blas-ilp64;
-    lapack = lapack-ilp64;
-    scalapack = scalapack-ilp64;
-  };
 
   pdb2pqr = with python3Packages; toPythonApplication pdb2pqr;
 
