@@ -18,12 +18,8 @@
   gdk-pixbuf,
   glib,
   glib-networking,
-  gnome2,
   gst_all_1,
-  gtk2,
-  gtk2-x11,
   gtk3,
-  gtk_engines,
   harfbuzzFull,
   heimdal,
   hyphen,
@@ -41,7 +37,6 @@
   libjson,
   libmanette,
   libnotify,
-  libpng12,
   libpulseaudio,
   libredirect,
   libseccomp,
@@ -77,7 +72,6 @@
   xprop,
   xdpyinfo,
   libxcb,
-  x264,
   zlib,
 
   extraCerts ? [ ],
@@ -115,12 +109,12 @@ let
 
 in
 
-stdenv.mkDerivation rec {
+stdenv.mkDerivation (finalAttrs: {
   pname = "citrix-workspace";
   version = "26.04.0.105";
 
   src = requireFile rec {
-    name = "linuxx64-${version}.tar.gz";
+    name = "linuxx64-${finalAttrs.version}.tar.gz";
     sha256 = "1kl6b1ldjd9gb6cmvhxf6ggvc3amq1kz0qwjlb1fp6dxx0pivwm8";
 
     message = ''
@@ -129,7 +123,7 @@ stdenv.mkDerivation rec {
 
       https://www.citrix.com/downloads/workspace-app/betas-and-tech-previews/workspace-app-tp-gcc11-for-linux.html
 
-      (if you do not find version ${version} there, try at
+      (if you do not find version ${finalAttrs.version} there, try at
       https://www.citrix.com/downloads/workspace-app/)
 
       Once you have downloaded the file, please use the following command and re-run the
@@ -145,7 +139,7 @@ stdenv.mkDerivation rec {
   __structuredAttrs = true;
   sourceRoot = ".";
   preferLocalBuild = true;
-  passthru.icaroot = "${placeholder "out"}/opt/citrix-icaclient";
+  passthru.icaroot = "${finalAttrs.finalPackage}/opt/citrix-icaclient";
 
   nativeBuildInputs = [
     autoPatchelfHook
@@ -168,11 +162,7 @@ stdenv.mkDerivation rec {
     fuse3'
     gdk-pixbuf
     glib-networking
-    gnome2.gtkglext
-    gtk2
-    gtk2-x11
     gtk3
-    gtk_engines
     harfbuzzFull
     heimdal
     hyphen
@@ -188,7 +178,6 @@ stdenv.mkDerivation rec {
     libjson
     libmanette
     libnotify
-    libpng12
     libpulseaudio
     libseccomp
     libsecret
@@ -212,7 +201,6 @@ stdenv.mkDerivation rec {
     libxaw
     libxmu
     libxtst
-    x264
     zlib
   ]
   ++ gstPackages;
@@ -344,6 +332,9 @@ stdenv.mkDerivation rec {
       # the tarball still contains the legacy WebKitGTK 4.0 bundle.
       rm -rf "$ICAInstDir/Webkit2gtk4.0"
 
+      # FHS launcher hinst generates even for non-root installs; it hardcodes
+      # store paths without any of the wrapper environment.
+      rm -f "$ICAInstDir/wfica.sh"
       if [ -f "$ICAInstDir/util/setlog" ]; then
         chmod +x "$ICAInstDir/util/setlog"
         ln -sf "$ICAInstDir/util/setlog" "$out/bin/citrix-setlog"
@@ -413,7 +404,12 @@ stdenv.mkDerivation rec {
       done
 
       echo "Copy .desktop files."
-      cp $out/opt/citrix-icaclient/desktop/* $out/share/applications/
+      cp $out/opt/citrix-icaclient/desktop/*.desktop $out/share/applications/
+
+      install -Dm444 "$ICAInstDir/desktop/Citrix-mime_types.xml" \
+        $out/share/mime/packages/Citrix-mime_types.xml
+      install -Dm444 "$ICAInstDir/icons/000_Receiver_64.png" \
+        $out/share/icons/hicolor/64x64/apps/Citrix-Receiver.png
 
       runHook postInstall
     '';
@@ -439,4 +435,4 @@ stdenv.mkDerivation rec {
     ];
     homepage = "https://www.citrix.com/downloads/workspace-app/betas-and-tech-previews/workspace-app-tp-gcc11-for-linux.html";
   };
-}
+})
