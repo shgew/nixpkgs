@@ -46,10 +46,18 @@ rustPlatform.buildRustPackage (finalAttrs: {
   };
 
   postInstall = lib.optionalString (stdenv.buildPlatform.canExecute stdenv.hostPlatform) ''
+    # The generated nushell completion declares an invalid parameter name
+    # (`[OWNER]/NAME`), which nushell refuses to parse; rewrite it to a valid
+    # identifier before installing.
+    $out/bin/fj completion nushell > fj.nu
+    substituteInPlace fj.nu \
+      --replace-fail '[OWNER]/NAME: string' 'owner_name: string'
+
     installShellCompletion --cmd fj \
       --bash <($out/bin/fj completion bash) \
       --fish <($out/bin/fj completion fish) \
-      --zsh <($out/bin/fj completion zsh)
+      --zsh <($out/bin/fj completion zsh) \
+      --nushell fj.nu
   '';
 
   nativeInstallCheckInputs = [ versionCheckHook ];
