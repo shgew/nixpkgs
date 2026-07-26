@@ -51,6 +51,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
     # identifier before installing.
     $out/bin/fj completion nushell > fj.nu
     substituteInPlace fj.nu \
+      --replace-fail 'Could not find keys file. Creating a new file.' "" \
       --replace-fail '[OWNER]/NAME: string' 'owner_name: string'
 
     installShellCompletion --cmd fj \
