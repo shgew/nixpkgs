@@ -355,7 +355,7 @@
   ./programs/wayland/hyprland.nix
   ./programs/wayland/hyprlock.nix
   ./programs/wayland/labwc.nix
-  ./programs/wayland/mangowc.nix
+  ./programs/wayland/mango.nix
   ./programs/wayland/miracle-wm.nix
   ./programs/wayland/niri.nix
   ./programs/wayland/pinnacle.nix
@@ -938,7 +938,6 @@
   ./services/misc/open-webui.nix
   ./services/misc/orthanc.nix
   ./services/misc/osrm.nix
-  ./services/misc/overseerr.nix
   ./services/misc/owncast.nix
   ./services/misc/packagekit.nix
   ./services/misc/paisa.nix
@@ -1290,6 +1289,7 @@
   ./services/networking/logmein-hamachi.nix
   ./services/networking/lokinet.nix
   ./services/networking/lxd-image-server.nix
+  ./services/networking/lxmd.nix
   ./services/networking/magic-wormhole-mailbox-server.nix
   ./services/networking/matterbridge.nix
   ./services/networking/meshtasticd.nix
@@ -1387,6 +1387,7 @@
   ./services/networking/redsocks.nix
   ./services/networking/reframe.nix
   ./services/networking/resilio.nix
+  ./services/networking/rnsd.nix
   ./services/networking/robustirc-bridge.nix
   ./services/networking/rosenpass.nix
   ./services/networking/routedns.nix
@@ -2052,6 +2053,7 @@
   ./virtualisation/openvswitch.nix
   ./virtualisation/parallels-guest.nix
   ./virtualisation/podman/default.nix
+  ./virtualisation/qemu-firmware.nix
   ./virtualisation/qemu-guest-agent.nix
   ./virtualisation/rosetta.nix
   ./virtualisation/spice-usb-redirection.nix

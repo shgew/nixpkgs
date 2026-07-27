@@ -7104,11 +7104,6 @@ with pkgs;
 
   ### DEVELOPMENT / R MODULES
 
-  R = callPackage ../applications/science/math/R {
-    # TODO: split docs into a separate output
-    withRecommendedPackages = false;
-  };
-
   rWrapper = callPackage ../development/r-modules/wrapper.nix {
     recommendedPackages = with rPackages; [
       boot
@@ -7417,10 +7412,6 @@ with pkgs;
   moodle = callPackage ../servers/web-apps/moodle { };
 
   moodle-utils = callPackage ../servers/web-apps/moodle/moodle-utils.nix { };
-
-  inherit (callPackage ../applications/networking/mullvad { })
-    mullvad
-    ;
 
   napalm =
     with python3Packages;
@@ -7981,7 +7972,6 @@ with pkgs;
 
   qemu_test = lowPrio (
     qemu.override {
-      hostCpuOnly = true;
       nixosTestRunner = true;
     }
   );
@@ -8436,6 +8426,9 @@ with pkgs;
   };
 
   bitwig-studio = bitwig-studio6;
+
+  brave = (callPackage ../applications/networking/browsers/brave { }).brave;
+  brave-origin = (callPackage ../applications/networking/browsers/brave { }).brave-origin;
 
   breezy = with python3Packages; toPythonApplication breezy;
 
@@ -9433,6 +9426,9 @@ with pkgs;
   thunderbird-esr-unwrapped = thunderbirdPackages.thunderbird-esr;
   thunderbird-esr = wrapThunderbird thunderbird-esr-unwrapped { };
 
+  thunderbird-153-unwrapped = thunderbirdPackages.thunderbird-153;
+  thunderbird-153 = wrapThunderbird thunderbirdPackages.thunderbird-153 { };
+
   thunderbird-140-unwrapped = thunderbirdPackages.thunderbird-140;
   thunderbird-140 = wrapThunderbird thunderbirdPackages.thunderbird-140 { };
 
@@ -10383,7 +10379,7 @@ with pkgs;
     (callPackage ./rocq-packages.nix {
       inherit (ocaml-ng)
         ocamlPackages_4_14
-        ocamlPackages_5_4
+        ocamlPackages_5_5
         ;
     })
     mkRocqPackages
@@ -10393,6 +10389,8 @@ with pkgs;
     rocq-core_9_1
     rocqPackages_9_2
     rocq-core_9_2
+    rocqPackages_9_3
+    rocq-core_9_3
     rocqPackages
     rocq-core
     ;
@@ -10404,12 +10402,13 @@ with pkgs;
         ocamlPackages_4_10
         ocamlPackages_4_12
         ocamlPackages_4_14
-        ocamlPackages_5_4
+        ocamlPackages_5_5
         ;
       inherit
         rocqPackages_9_0
         rocqPackages_9_1
         rocqPackages_9_2
+        rocqPackages_9_3
         rocqPackages
         ;
     })
@@ -10448,6 +10447,8 @@ with pkgs;
     coq_9_1
     coqPackages_9_2
     coq_9_2
+    coqPackages_9_3
+    coq_9_3
     coqPackages
     coq
     ;

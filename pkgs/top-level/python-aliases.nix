@@ -87,6 +87,7 @@ mapAliases {
   amazon-kclpy = throw "amazon-kclpy has been removed because it has been marked as broken since at least November 2024."; # Added 2025-10-03
   amazon_kclpy = throw "'amazon_kclpy' has been renamed to/replaced by 'amazon-kclpy'"; # Converted to throw 2025-10-29
   amqplib = throw "amqplib has been removed as it was unmaintained upstream"; # Added 2025-11-22
+  amqtt = throw "'amqtt' has been removed because it was broken and no longer used"; # added 2026-07-20
   ancp-bids = ancpbids; # added 2026-06-18
   ansible-vault-rw = ansible-vault; # Added 2026-07-10
   ansiconv = throw "ansiconv has been removed because it was archived upstream"; # Added 2026-01-14
@@ -151,6 +152,7 @@ mapAliases {
   chai = throw "'chai' has been removed as it is no longer maintained upstream and the repository was archived"; # Added 2026-06-08
   characteristic = throw "'characteristic' has been removed because it is no longer maintained upstream"; # Added 2026-01-14
   chart-studio = throw "'chart-studio' has been removed as it is no longer maintained upstream"; # Added 2026-03-12
+  cheetah3 = ct3; # added 2026-07-24
   chromeprint = throw "'chromaprint' was removed as it depended on m2r which was removed."; # Added 2026-05-27
   cirq-rigetti = throw "cirq-rigetti was removed because it is no longer provided by upstream"; # added 2025-09-13
   class-registry = throw "'class-registry' has been renamed to/replaced by 'phx-class-registry'"; # Converted to throw 2025-10-29
@@ -437,6 +439,9 @@ mapAliases {
   percol = throw "percol has been removed because it hasn't been updated since 2019"; # added 2025-05-25
   pilight = throw "'pilight' has been removed, because it is unmaintained since 2019 and the integration was removed from Home Assistant."; # added 2026-05-06
   pillow-avif-plugin = throw "'pillow-avif-plugin' has been removed because 'pillow' has native avif support since 11.3"; # added 2025-11-26
+  pinecone-client = warnAlias "'pinecone-client' has been renamed to 'pinecone'" pinecone; # added 2026-07-22
+  pinecone-plugin-assistant = throw "'pinecone-plugin-assistant' has been integrated into 'pinecone-client'"; # Added 2026-07-22
+  pinecone-plugin-interface = throw "'pinecone-plugin-interface' has been removed because the plugin discovery system was retired in 'pinecone-client' 9"; # Added 2026-07-22
   pizzapi = throw "pizzapi was removed because it no longer works"; # added 2025-12-03
   pkuseg = throw "'pkuseg' has been removed because it was not supported on newer versions of Python"; # added 2026-01-20
   ploomber-extension = throw "'ploomber-extension' has been removed since the upstream repo was archived"; # added 2026-02-16
@@ -662,7 +667,9 @@ mapAliases {
   tensorflow-estimator_2 = throw "'tensorflow-estimator_2' has been renamed to/replaced by 'tensorflow-estimator'"; # Converted to throw 2025-10-29
   tensorflow-tensorboard = throw "'tensorflow-tensorboard' has been renamed to/replaced by 'tensorboard'"; # Converted to throw 2025-10-29
   tensorflow-tensorboard_2 = throw "'tensorflow-tensorboard_2' has been renamed to/replaced by 'tensorflow-tensorboard'"; # Converted to throw 2025-10-29
+  termstyle = throw "'termstyle' has been removed, since it is unmaintained upstream"; # Added 2026-07-24
   testing-postgresql = throw "testing-postgresql has been removed, since it is unmaintained since 2017"; # added 2025-05-25
+  textwrap3 = throw "'textwrap3' has been removed, since it had no consumers in nixpkgs"; # Added 2026-07-24
   tgcrypto = throw "'tgcrypto' has been removed as it was archived upstream"; # Added 2026-03-21
   Theano = throw "'Theano' has been renamed to/replaced by 'theano'"; # Converted to throw 2025-10-29
   TheanoWithCuda = throw "'TheanoWithCuda' has been renamed to/replaced by 'theanoWithCuda'"; # Converted to throw 2025-10-29
@@ -697,6 +704,7 @@ mapAliases {
   vega_datasets = throw "'vega_datasets' has been renamed to/replaced by 'vega-datasets'"; # Converted to throw 2025-10-29
   ViennaRNA = throw "'ViennaRNA' has been renamed to/replaced by 'viennarna'"; # Converted to throw 2025-10-29
   vncdo = vncdotool; # Added 2026-06-30
+  volvooncall = "'volvooncall' was removed because Home Assistant dropped the integration"; # added 2026-07-20
   vulcan-api = throw "vulcan-api has been removed. Their API has changed and they don't allow access from unofficial software anymore."; # added 2025-09-05
   vxi11 = throw "'vxi11' has been removed as it was broken and unmaintained upstream"; # Added 2025-11-27
   Wand = throw "'Wand' has been renamed to/replaced by 'wand'"; # Converted to throw 2025-10-29
@@ -716,6 +724,7 @@ mapAliases {
   yasi = throw "'yasi' has been removed as it is unmaintained upstream"; # Added 2026-01-31
   ypy-websocket = throw "'ypy-websocket' has been removed as it was archived upstream; consider using 'pycrdt-websocket' instead"; # Added 2026-01-21
   z3 = throw "'z3' has been renamed to/replaced by 'z3-solver'"; # Converted to throw 2025-10-29
+  zadnegoale = throw "'zadnegoale' has been removed because it was archived upstream"; # Added 2026-07-23
   zc-buildout221 = throw "'zc-buildout221' has been renamed to/replaced by 'zc-buildout'"; # Converted to throw 2025-10-29
   zc_lockfile = throw "'zc_lockfile' has been renamed to/replaced by 'zc-lockfile'"; # Converted to throw 2025-10-29
   zebrafy = throw "'zebrafy' has been removed due to lack of upstream maintenance"; # Added 2026-05-11
