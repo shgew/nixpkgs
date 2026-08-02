@@ -2288,12 +2288,6 @@
     githubId = 225423001;
     name = "Argos Nothing";
   };
-  argrat = {
-    email = "n.bertazzo@protonmail.com";
-    github = "brtz-cs";
-    githubId = 98821629;
-    name = "Nicolò Bertazzo";
-  };
   arian-d = {
     email = "arianxdehghani@gmail.com";
     github = "Arian-D";
@@ -4234,6 +4228,12 @@
     keys = [ { fingerprint = "7B74 0DB9 F2AC 6D3B 226B  C530 78D7 4502 D92E 0218"; } ];
     matrix = "@brsvh:mozilla.org";
     name = "Burgess Chang";
+  };
+  brw = {
+    email = "hi@bas.sh";
+    github = "brw";
+    githubId = 7560938;
+    name = "Bas van den Wollenberg";
   };
   bryango = {
     name = "Bryan Lai";
@@ -7051,6 +7051,12 @@
     githubId = 265220;
     name = "David Leung";
   };
+  dhogenson = {
+    email = "dallin.hogenson@icloud.com";
+    github = "dhogenson";
+    githubId = 167140817;
+    name = "Dallin Hogenson";
+  };
   diadatp = {
     email = "nixpkgs@diadatp.com";
     github = "diadatp";
@@ -9373,6 +9379,12 @@
     github = "fluffynukeit";
     githubId = 844574;
     name = "Daniel Austin";
+  };
+  flupke = {
+    email = "luper.rouch@gmail.com";
+    github = "flupke";
+    githubId = 188962;
+    name = "Luper Rouch";
   };
   flyfloh = {
     email = "nix@halbmastwurf.de";
@@ -23049,6 +23061,12 @@
     githubId = 142632643;
     name = "purrpurrn";
   };
+  push-f = {
+    name = "Martin Fischer";
+    email = "martin@push-f.com";
+    github = "not-my-profile";
+    githubId = 73739153;
+  };
   putchar = {
     email = "slim.cadoux@gmail.com";
     matrix = "@putch4r:matrix.org";
@@ -24702,6 +24720,13 @@
     githubId = 6445619;
     name = "Ruben Cano Diaz";
   };
+  Ruddickmg = {
+    name = "Marcus Ruddick";
+    github = "Ruddickmg";
+    githubId = 8334416;
+    email = "ruddickmg@gmail.com";
+    keys = [ { fingerprint = "74FF 0519 D478 AD06 9C23  4F93 343E 322A 4E3B 4C82"; } ];
+  };
   RudiOnTheAir = {
     name = "Rüdiger Schwoon";
     email = "wolf@schwoon.info";
@@ -26054,6 +26079,13 @@
     github = "Shou";
     githubId = 819413;
     name = "Benedict Aas";
+  };
+  showhyt = {
+    email = "mirantuten@yandex.com";
+    github = "ShowhyT";
+    githubId = 109768004;
+    keys = [ { fingerprint = "94AD E7C4 73B5 3DC7 7615  D946 3E76 7D8C 58D4 8C78"; } ];
+    name = "Miran Tuten";
   };
   shunueda = {
     name = "Shun Ueda";
@@ -31798,6 +31830,11 @@
       { fingerprint = "CBF7 FA5E F4B5 8B68 5977  3E3E 4CAC 61D6 A482 FCD9"; }
       { fingerprint = "E22F 760E E074 E57A 21CB  1733 8DD2 9BB5 2C25 EA09"; }
     ];
+  };
+  zinzilulo = {
+    name = "zinzilulo";
+    github = "zinzilulo";
+    githubId = 214774502;
   };
   Zirconium419122 = {
     name = "Rasmus Liaskar";

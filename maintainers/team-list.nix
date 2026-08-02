@@ -550,6 +550,7 @@ with lib.maintainers;
       dotlambda
       ma27
       provokateurin
+      staticdev
     ];
     scope = "Maintain Nextcloud, its tests and the integration of applications.";
     shortName = "Nextcloud";
@@ -651,6 +652,16 @@ with lib.maintainers;
   postgres = {
     github = "postgres";
     enableFeatureFreezePing = true;
+  };
+
+  pulumi = {
+    scope = "Maintains the Pulumi IaC tool and its language-specific SDKs";
+    shortName = "Pulumi";
+    members = [
+      nicoo
+      tie
+      untio11
+    ];
   };
 
   python = {

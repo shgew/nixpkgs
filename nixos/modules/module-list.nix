@@ -290,6 +290,7 @@
   ./programs/noisetorch.nix
   ./programs/npm.nix
   ./programs/ns-usbloader.nix
+  ./programs/nushell.nix
   ./programs/nxdumpclient.nix
   ./programs/oblogout.nix
   ./programs/obs-studio.nix
@@ -885,7 +886,8 @@
   ./services/misc/gammu-smsd.nix
   ./services/misc/geoipupdate.nix
   ./services/misc/gitea.nix
-  ./services/misc/gitlab.nix
+  ./services/misc/gitlab/container-registry.nix
+  ./services/misc/gitlab/default.nix
   ./services/misc/gitolite.nix
   ./services/misc/gitweb.nix
   ./services/misc/gollum.nix
