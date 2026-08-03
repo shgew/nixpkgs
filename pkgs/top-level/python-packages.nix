@@ -1457,8 +1457,6 @@ self: super: with self; {
 
   async-stagger = callPackage ../development/python-modules/async-stagger { };
 
-  async-substrate-interface = callPackage ../development/python-modules/async-substrate-interface { };
-
   async-tiff = callPackage ../development/python-modules/async-tiff { };
 
   async-timeout = callPackage ../development/python-modules/async-timeout { };
@@ -2441,11 +2439,7 @@ self: super: with self; {
 
   bittensor = callPackage ../development/python-modules/bittensor { };
 
-  bittensor-cli = callPackage ../development/python-modules/bittensor-cli { };
-
-  bittensor-drand = callPackage ../development/python-modules/bittensor-drand { };
-
-  bittensor-wallet = callPackage ../development/python-modules/bittensor-wallet { };
+  bittensor-core = callPackage ../development/python-modules/bittensor-core { };
 
   bitvavo-aio = callPackage ../development/python-modules/bitvavo-aio { };
 
@@ -21683,6 +21677,13 @@ self: super: with self; {
   ush = callPackage ../development/python-modules/ush { };
 
   usort = callPackage ../development/python-modules/usort { };
+
+  ustreamer = toPythonModule (
+    pkgs.ustreamer.override {
+      python3Packages = self;
+      withPython = true;
+    }
+  );
 
   utils = callPackage ../development/python-modules/utils { };
 
