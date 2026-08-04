@@ -247,6 +247,7 @@
   ./programs/iftop.nix
   ./programs/iio-hyprland.nix
   ./programs/immersed.nix
+  ./programs/ioquake3.nix
   ./programs/iotop.nix
   ./programs/jai-jail.nix
   ./programs/java.nix
@@ -1674,6 +1675,7 @@
   ./services/web-apps/engelsystem.nix
   ./services/web-apps/ente.nix
   ./services/web-apps/fediwall.nix
+  ./services/web-apps/feishin.nix
   ./services/web-apps/fider.nix
   ./services/web-apps/filebrowser.nix
   ./services/web-apps/firefly-iii-data-importer.nix

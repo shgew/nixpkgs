@@ -5398,6 +5398,12 @@
     githubId = 718298;
     name = "Michael Livshin";
   };
+  cnst = {
+    name = "cnst";
+    email = "mail@cnst.dev";
+    github = "cnsta";
+    githubId = 61944575;
+  };
   CnTeng = {
     name = "CnTeng";
     email = "me@snakepi.xyz";
@@ -7424,6 +7430,12 @@
     github = "dpaetzel";
     githubId = 974130;
     name = "David Pätzel";
+  };
+  dpaulat = {
+    email = "dpaulat@gmail.com";
+    name = "Dan Paulat";
+    github = "dpaulat";
+    githubId = 2886605;
   };
   dpc = {
     email = "dpc@dpc.pw";
@@ -16567,6 +16579,7 @@
     name = "Lewis";
   };
   lubsch = {
+    matrix = "@lubsch:matrix.org";
     github = "lubsch";
     githubId = 33580245;
     name = "Benjamin Lohmar";
@@ -24029,6 +24042,12 @@
     githubId = 12279531;
     name = "Ricardo Guevara";
   };
+  rharish = {
+    email = "harish.rajagopals@gmail.com";
+    github = "rharish101";
+    githubId = 25344287;
+    name = "Harish Rajagopal";
+  };
   rhelmot = {
     name = "Audrey Dutcher";
     github = "rhelmot";
@@ -29052,6 +29071,12 @@
     github = "travisbhartwell";
     githubId = 10110;
     name = "Travis B. Hartwell";
+  };
+  travisty- = {
+    email = "travis@traviskinney.co";
+    github = "travisty-";
+    githubId = 10015877;
+    name = "Travis Kinney";
   };
   traxys = {
     email = "quentin+dev@familleboyer.net";
