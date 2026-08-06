@@ -128,13 +128,13 @@
     "vendorHash": "sha256-TLNHhSyMw0rKFtd9EChg7zSGoxe57rh36nAPqu1j8w8="
   },
   "buildkite_buildkite": {
-    "hash": "sha256-egeZCTQFyhKG0giyjNK9C/W+OGMOGv2l+65Vg3iTi2A=",
+    "hash": "sha256-9zolgrWxYKiDM4vjtTlmB9JEbd6ITlIgZnJQBBJJVMA=",
     "homepage": "https://registry.terraform.io/providers/buildkite/buildkite",
     "owner": "buildkite",
     "repo": "terraform-provider-buildkite",
-    "rev": "v1.35.0",
+    "rev": "v1.38.0",
     "spdx": "MIT",
-    "vendorHash": "sha256-oYwtPTXNCkTizQWix2GYpb23mFvTmIzbcY3UTfB2Leo="
+    "vendorHash": "sha256-ki2gQZMo+ApzwCIh2NuZAY24VKfuTidyDmDU7ZZcEKU="
   },
   "camptocamp_pass": {
     "hash": "sha256-GQ2g7VyK+eeBqW3LMR4U0gMYsvQnG3y+KEKKkvnmfsk=",
@@ -517,13 +517,13 @@
     "vendorHash": "sha256-qYV4FDTFUNuTThXUcjxNqAYtm8YQF0a4CVoLGJlzRhc="
   },
   "hashicorp_awscc": {
-    "hash": "sha256-dH3By6QoAYQCGOpg14wdW4WaIjoBB1c/AGBXDtOrl20=",
+    "hash": "sha256-J7nmxCcI7nWMMWZjbm0N/B+HpDjruJuaIukgI0Rtsuk=",
     "homepage": "https://registry.terraform.io/providers/hashicorp/awscc",
     "owner": "hashicorp",
     "repo": "terraform-provider-awscc",
-    "rev": "v1.94.0",
+    "rev": "v1.95.0",
     "spdx": "MPL-2.0",
-    "vendorHash": "sha256-g6Cl8TZq8W1pRq+PYcN4QPl7m0X2nhQgFhGJnIGn9oM="
+    "vendorHash": "sha256-e0zIqMHzbVd3Qx2tBD8B15162a53RdENNo/7ENJJ4oQ="
   },
   "hashicorp_azuread": {
     "hash": "sha256-mEYEZIztDjyqWSJFoJPXtV0E9YikumtwGVtZA4Jfw3U=",
@@ -851,11 +851,11 @@
     "vendorHash": "sha256-ckqikGwr3Y3GePpPkrE8SrsTgftWm1xNfAIrhm4QbW8="
   },
   "linode_linode": {
-    "hash": "sha256-N/SVZ1ajNRT53zxdYBT6Hd/wwAuKhEre0QSZUYbkwGA=",
+    "hash": "sha256-vWVU8LNXhBwiZ+Ky/Le05uPMxAlNja7zhVTIwBYmTD4=",
     "homepage": "https://registry.terraform.io/providers/linode/linode",
     "owner": "linode",
     "repo": "terraform-provider-linode",
-    "rev": "v4.1.0",
+    "rev": "v4.2.0",
     "spdx": "MPL-2.0",
     "vendorHash": "sha256-r5T8kmvCb2iBUJqw5m7hrr+ET7U9kIBUbsvEVqZlgrE="
   },
@@ -932,13 +932,13 @@
     "vendorHash": "sha256-ulhKT0DaS6gg9Ucz9pqqIg4mxRpGDGz2rN1R0RNuumg="
   },
   "mongodb_mongodbatlas": {
-    "hash": "sha256-AC2dxPaWzwYzNfMZtIHsCVkRU6U8NX1soL8zFzxomE8=",
+    "hash": "sha256-kwcwVYaoAcVF+dlhWVgmNs8cT0ahuUIxU3rCISrPEro=",
     "homepage": "https://registry.terraform.io/providers/mongodb/mongodbatlas",
     "owner": "mongodb",
     "repo": "terraform-provider-mongodbatlas",
-    "rev": "v2.14.0",
+    "rev": "v2.15.0",
     "spdx": "MPL-2.0",
-    "vendorHash": "sha256-oGCpF+upWZfYfobtbakmTLu+8/ZU+c88v6Ffd4UTBX0="
+    "vendorHash": "sha256-f9HE6bb/P0noMrN5h2Gj7+eHp2Qv93PXk44G5Ec5a8Y="
   },
   "namecheap_namecheap": {
     "hash": "sha256-eV2K3KHTEXEEt1WXwfYfNMK+gLUY0EoHFQg9kLdAI3s=",
@@ -1184,13 +1184,13 @@
     "vendorHash": "sha256-axcwlLXe3HMgpGxWc6YAS/rF0Esy5/Sk4BRmMlKD6Yg="
   },
   "scaleway_scaleway": {
-    "hash": "sha256-NXW3b4E92uqZbzIpRTFKVKbPRghwfRK4akn4KY7C9p0=",
+    "hash": "sha256-luax9j0caBIO4qMWWQeSr9G2eCt0EpS/BuiYKpuXThg=",
     "homepage": "https://registry.terraform.io/providers/scaleway/scaleway",
     "owner": "scaleway",
     "repo": "terraform-provider-scaleway",
-    "rev": "v2.79.0",
+    "rev": "v2.80.0",
     "spdx": "MPL-2.0",
-    "vendorHash": "sha256-MKYAdMLETD12850TIBqBfHLRNLy15B6ycDUckIapwt8="
+    "vendorHash": "sha256-tjZ+6z1gqSiX19N0dC1/9+WC8l8+A2t2YB9YQQpWM+A="
   },
   "scottwinkler_shell": {
     "hash": "sha256-LTWEdXxi13sC09jh+EFZ6pOi1mzuvgBz5vceIkNE/JY=",
@@ -1202,13 +1202,13 @@
     "vendorHash": "sha256-MIO0VHofPtKPtynbvjvEukMNr5NXHgk7BqwIhbc9+u0="
   },
   "selectel_selectel": {
-    "hash": "sha256-ff8XqDp31pwbPmKe7RFMupwVWuhQoOTizFdTAfW5eek=",
+    "hash": "sha256-Z5Z66WIZur68s0VkmIpbowZr26J2Ngy2l5269I6SxVA=",
     "homepage": "https://registry.terraform.io/providers/selectel/selectel",
     "owner": "selectel",
     "repo": "terraform-provider-selectel",
-    "rev": "v8.2.3",
+    "rev": "v8.2.4",
     "spdx": "MPL-2.0",
-    "vendorHash": "sha256-zdAJOPL+4gEsESzG4XHSMhM9JkFPuoMudwNmVr6HJFE="
+    "vendorHash": "sha256-qDQXedSS41lpV1o+lfCYHs81m3AcqHhku6xlul7725E="
   },
   "siderolabs_talos": {
     "hash": "sha256-/NACmEpodBNx+Q2M9y3JnKpw9a3Y1eFDdTQ+48MXAc8=",
