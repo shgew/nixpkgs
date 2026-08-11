@@ -10081,8 +10081,6 @@ with pkgs;
     }
   );
 
-  gnome2 = recurseIntoAttrs (callPackage ../desktops/gnome-2 { });
-
   gnome = recurseIntoAttrs (callPackage ../desktops/gnome { });
 
   inherit (callPackage ../desktops/gnome/extensions { })
@@ -10907,17 +10905,6 @@ with pkgs;
   vdrPlugins = recurseIntoAttrs (callPackage ../applications/video/vdr/plugins.nix { });
   wrapVdr = callPackage ../applications/video/vdr/wrapper.nix { };
 
-  phonetisaurus = callPackage ../development/libraries/phonetisaurus {
-    # https://github.com/AdolfVonKleist/Phonetisaurus/issues/70
-    openfst = openfst.overrideAttrs rec {
-      version = "1.7.9";
-      src = fetchurl {
-        url = "http://www.openfst.org/twiki/pub/FST/FstDownload/openfst-${version}.tar.gz";
-        hash = "sha256-kxmusx0eKVCuJUSYhOJVzCvJ36+Yf2AVkHY+YaEPvd4=";
-      };
-    };
-  };
-
   compressDrv = callPackage ../build-support/compress-drv { };
 
   compressDrvWeb = callPackage ../build-support/compress-drv/web.nix { };
@@ -10957,11 +10944,11 @@ with pkgs;
     meta.license = lib.licenses.mit;
   } ../os-specific/bsd/setup-hook.sh;
 
-  freebsd = callPackage ../os-specific/bsd/freebsd { };
+  freebsd = recurseIntoAttrs (callPackage ../os-specific/bsd/freebsd { });
 
-  netbsd = callPackage ../os-specific/bsd/netbsd { };
+  netbsd = recurseIntoAttrs (callPackage ../os-specific/bsd/netbsd { });
 
-  openbsd = callPackage ../os-specific/bsd/openbsd { };
+  openbsd = recurseIntoAttrs (callPackage ../os-specific/bsd/openbsd { });
 
   radicle-node-unstable = callPackage ../by-name/ra/radicle-node/unstable.nix { };
 

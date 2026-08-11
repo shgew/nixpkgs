@@ -262,8 +262,8 @@ let
         mktplcRef = {
           name = "ng-template";
           publisher = "Angular";
-          version = "22.0.0";
-          hash = "sha256-3b77hepFW03I2hwsVvCA3f1Jqwnq5WfGAq2yqBDIt5Q=";
+          version = "22.0.1";
+          hash = "sha256-IaaqFb0YLJcVqoV5QT9fZmYd5GbfQCUlK68SF76Y/dY=";
         };
         meta = {
           changelog = "https://marketplace.visualstudio.com/items/Angular.ng-template/changelog";
@@ -358,6 +358,22 @@ let
         };
         meta = {
           license = lib.licenses.mit;
+        };
+      };
+
+      arktypeio.arkdark = buildVscodeMarketplaceExtension {
+        mktplcRef = {
+          publisher = "arktypeio";
+          name = "arkdark";
+          version = "6.6.0";
+          hash = "sha256-9QsHaH8mXM7D7QE5+xTFrGyxh6MShPF9Wk0hFHpxk8A=";
+        };
+        meta = {
+          description = "Syntax highlighting and inline errors for ArkType";
+          downloadPage = "https://marketplace.visualstudio.com/items?itemName=arktypeio.arkdark";
+          homepage = "https://github.com/arktypeio/arktype";
+          license = lib.licenses.mit;
+          maintainers = with lib.maintainers; [ logn ];
         };
       };
 
@@ -1987,8 +2003,8 @@ let
         mktplcRef = {
           name = "vscode-github-actions";
           publisher = "github";
-          version = "0.31.5";
-          hash = "sha256-hGdcMAkzpJqX61Ki87ckFAhncOm6LmNCQh4imIg64oY=";
+          version = "0.32.3";
+          hash = "sha256-BYRiFiyynU0iNB2RLBXc+iGUd0sekvww/LoabKPJGr0=";
         };
         meta = {
           description = "Visual Studio Code extension for GitHub Actions workflows and runs for github.com hosted repositories";
@@ -2003,8 +2019,8 @@ let
         mktplcRef = {
           publisher = "github";
           name = "vscode-pull-request-github";
-          version = "0.158.0";
-          hash = "sha256-8wQRoWtVj3S/Dsc4IY1iThA4Jy96X3e0z/J8WzlliSQ=";
+          version = "0.162.0";
+          hash = "sha256-MoL6nM4Gvq9x0GohvryQYlFlg/I3cPX9RYztCObitAs=";
         };
         meta = {
           license = lib.licenses.mit;

@@ -1966,6 +1966,13 @@
     githubId = 143312793;
     name = "Annin";
   };
+  annoyingrains = {
+    email = "avali@avali.zone";
+    matrix = "@avali:avali.zone";
+    github = "AnnoyingRain5";
+    githubId = 35289650;
+    name = "AnnoyingRains";
+  };
   anntnzrb = {
     github = "anntnzrb";
     githubId = 51257127;
@@ -5737,6 +5744,11 @@
     githubId = 3077118;
     name = "David McFarland";
   };
+  corps-fini = {
+    github = "corps-fini";
+    githubId = 44802527;
+    name = "corps-fini";
+  };
   costrouc = {
     email = "chris.ostrouchov@gmail.com";
     github = "costrouc";
@@ -6324,6 +6336,13 @@
     email = "me@zqy.io";
     github = "darkyzhou";
     githubId = 7220778;
+  };
+  daroche = {
+    name = "daroche";
+    email = "him@daroche.me";
+    matrix = "@him:daroche.me";
+    github = "RealDaroche";
+    githubId = 94007359;
   };
   darshancode2005 = {
     name = "Darshan Thakare";
@@ -12007,6 +12026,13 @@
     githubId = 7685264;
     name = "Indexyz";
   };
+  indium114 = {
+    name = "indium114";
+    github = "indium114";
+    githubId = 156162907;
+    matrix = "@indium114:matrix.org";
+    keys = [ { fingerprint = "FEC7 A1E4 0F1A 528B 865C  A0B8 6249 5C16 5883 2CF0"; } ];
+  };
   ineol = {
     email = "leo.stefanesco@gmail.com";
     github = "ineol";
@@ -13967,6 +13993,12 @@
     github = "jsoo1";
     name = "John Soo";
     githubId = 10039785;
+  };
+  jsqu4re = {
+    email = "johannes.jeising@gmail.com";
+    github = "jsqu4re";
+    githubId = 35706792;
+    name = "Johannes Jeising";
   };
   jsusk = {
     email = "joshua@suskalo.org";
@@ -28755,6 +28787,13 @@
     githubId = 1334474;
     name = "Timothy Stott";
   };
+  tincotema = {
+    email = "tincotema@tincotema.org";
+    github = "tincotema";
+    githubId = 41209208;
+    name = "tincotema";
+    keys = [ { fingerprint = "F9D5 F663 E497 5CB1 66B5  FEA2 A961 39D7 C110 556C"; } ];
+  };
   tiptenbrink = {
     email = "tip@tenbrinkmeijs.com";
     github = "tiptenbrink";
@@ -29619,6 +29658,12 @@
     email = "username-generic@tuta.io";
     github = "username-generic";
     githubId = 202454830;
+  };
+  Username404-59 = {
+    name = "Charlie Quinet";
+    email = "charlie.quinet@gmail.com";
+    github = "Username404-59";
+    githubId = 53659497;
   };
   usertam = {
     name = "Samuel Tam";
