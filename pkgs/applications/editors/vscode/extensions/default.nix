@@ -1023,8 +1023,8 @@ let
         mktplcRef = {
           name = "coder-remote";
           publisher = "coder";
-          version = "1.15.2";
-          hash = "sha256-mBACvGUQF3LoaFJ9MIewN9zu4jDTWfUgyd1MQvZQUvk=";
+          version = "1.16.0";
+          hash = "sha256-ZQivZPBQ10KwtY8LaQPeDNYl5jcpY1kAkT65yiQvR+M=";
         };
         meta = {
           description = "Extension for Visual Studio Code to open any Coder workspace in VS Code with a single click";
@@ -1190,8 +1190,8 @@ let
         mktplcRef = {
           publisher = "DanielSanMedium";
           name = "dscodegpt";
-          version = "3.24.39";
-          hash = "sha256-r1XkER09s+38uCbUxK9MM5bHRNp3UnMj6VJCHUMZM1Q=";
+          version = "3.24.43";
+          hash = "sha256-Y3pCg0qauVu4K6qz610QGRizyodnRpDigGSSIn6m6gw=";
         };
         meta = {
           changelog = "https://marketplace.visualstudio.com/items/DanielSanMedium.dscodegpt/changelog";
@@ -1242,8 +1242,8 @@ let
         mktplcRef = {
           name = "databricks";
           publisher = "databricks";
-          version = "2.12.4";
-          hash = "sha256-29xG0/AhBhidM8Hd7vHUWxESCDt8MwACIkBpmfvhD2Q=";
+          version = "2.13.0";
+          hash = "sha256-4Fa1UABo7JUO7+IECjsYEq9zyscHTGUlrUCa3aBdhoI=";
         };
         meta = {
           changelog = "https://marketplace.visualstudio.com/items/databricks.databricks/changelog";
@@ -1259,8 +1259,8 @@ let
         mktplcRef = {
           name = "vscode-markdownlint";
           publisher = "DavidAnson";
-          version = "0.62.0";
-          hash = "sha256-cupXtTdzTKxhvTEHKe/OU8TFlp1CeAIIy2XCLvLMZ5s=";
+          version = "0.62.1";
+          hash = "sha256-zR0pWpxWTTxeAEfX49vlhaTPc2YZxcJCv62abriPtRg=";
         };
         meta = {
           changelog = "https://marketplace.visualstudio.com/items/DavidAnson.vscode-markdownlint/changelog";
@@ -1391,8 +1391,8 @@ let
         mktplcRef = {
           name = "competitive-programming-helper";
           publisher = "DivyanshuAgrawal";
-          version = "2026.7.1784984280";
-          hash = "sha256-0re8raTXTv61JUr0WeIOmSWIy5NsgmqKpkJo5nt8z+w=";
+          version = "2026.8.1785865132";
+          hash = "sha256-/JVuIOoTgeENtbvYFri1/RtiZ6PCabOrwC1mzHoaML4=";
         };
         meta = {
           changelog = "https://marketplace.visualstudio.com/items/DivyanshuAgrawal.competitive-programming-helper/changelog";
@@ -2031,8 +2031,8 @@ let
         mktplcRef = {
           name = "gitlab-workflow";
           publisher = "gitlab";
-          version = "6.85.5";
-          hash = "sha256-WtdTQjDxeI4YLOSQFdrFpdualNizYIQC7HQlsocSt4M=";
+          version = "6.86.0";
+          hash = "sha256-DzVfMMXifTASxb/YvjsAxQUnqZGgBGHKfpLEtkyJt88=";
         };
         meta = {
           description = "GitLab extension for Visual Studio Code";
@@ -4868,8 +4868,8 @@ let
         mktplcRef = {
           name = "emacs-mcx";
           publisher = "tuttieee";
-          version = "0.111.1";
-          hash = "sha256-+0wIC/7xbun2Wf8wePU6NSR9UMNd0RvLz6UdAM3X5Y4=";
+          version = "0.111.3";
+          hash = "sha256-yMiEvC7zCVnBSSo+HvK9m7RbD6Bmv7zwKabOtlsEXjE=";
         };
         meta = {
           changelog = "https://github.com/whitphx/vscode-emacs-mcx/blob/main/CHANGELOG.md";
