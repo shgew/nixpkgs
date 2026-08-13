@@ -7,11 +7,11 @@
 
 stdenv.mkDerivation rec {
   pname = "axe";
-  version = "1.7.1";
+  version = "1.8.0";
 
   src = fetchurl {
     url = "https://github.com/cameroncooke/AXe/releases/download/v${version}/AXe-macOS-v${version}-universal.tar.gz";
-    hash = "sha256-JqZACcCaOumAsfG0s3e9Ki3ZbLveJIIZNeRzUstxzGk=";
+    hash = "sha256-e3Y0C3LpDQ8hG8fEY28VAJB27/B6zvLytjKxdd69iDQ=";
   };
 
   sourceRoot = ".";
