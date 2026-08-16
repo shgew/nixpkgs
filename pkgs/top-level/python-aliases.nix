@@ -159,6 +159,7 @@ mapAliases {
   casbin = pycasbin; # added 2025-06-12
   cchardet = throw "'cchardet' has been renamed to/replaced by 'faust-cchardet'"; # Converted to throw 2025-10-29
   chai = throw "'chai' has been removed as it is no longer maintained upstream and the repository was archived"; # Added 2026-06-08
+  changefinder = throw "'changefinder' has been removed because it was unmaintained upstream"; # Added 2026-08-07
   characteristic = throw "'characteristic' has been removed because it is no longer maintained upstream"; # Added 2026-01-14
   chart-studio = throw "'chart-studio' has been removed as it is no longer maintained upstream"; # Added 2026-03-12
   cheetah3 = ct3; # added 2026-07-24
@@ -255,6 +256,7 @@ mapAliases {
   filesplit = throw "filesplit has been removed, since it is unmaintained"; # added 2025-08-20
   fints_4 = throw "fints_4 has been removed, migrate to fints"; # added 2026-06-04
   flake8-future-import = throw "'flake8-future-import' has been removed as it was unmaintained upstream"; # Added 2026-03-22
+  flashinfer = warnAlias "'flashinfer' has been renamed to 'flashinfer-python'" flashinfer-python; # Added 2026-08-13
   flask-security-too = throw "'flask-security-too' has been renamed to/replaced by 'flask-security'"; # Converted to throw 2025-10-29
   flask-silk = throw "flask-silk was removed, as it is unmaintained since 2018."; # added 2025-05-25
   flask-themes2 = throw "'flask-themes2' was removed as the only consumer pyload-ng was removed"; # added 2026-03-21
@@ -278,7 +280,11 @@ mapAliases {
   fvs = throw "'fvs' has been removed due to being unused"; # Added 2026-05-23
   garminconnect-ha = throw "'garminconnect-ha' has been renamed to/replaced by 'garminconnect'"; # Converted to throw 2025-10-29
   GeoIP = throw "'GeoIP' has been renamed to/replaced by 'geoip'"; # Converted to throw 2025-10-29
+  gepetto-gui = throw "'gepetto-gui' has been removed, as authors and most users moved to viser"; # Added 2026-03-24
+  gepetto-viewer = throw "'gepetto-viewer' has been removed, as authors and most users moved to viser"; # Added 2026-03-24
+  gepetto-viewer-corba = throw "'gepetto-viewer-corba' has been removed, as authors and most users moved to viser"; # Added 2026-03-24
   ghidra-bridge = throw "'ghidra-bridge' has been removed as it was unmaintained upstream"; # Added 2026-04-05
+  gistyc = throw "'gistyc' has been removed because it was deleted upstream and unmaintained in nixpkgs"; # Added 2026-08-15
   github3_py = throw "'github3_py' has been renamed to/replaced by 'github3-py'"; # Converted to throw 2025-10-29
   GitPython = throw "'GitPython' has been renamed to/replaced by 'gitpython'"; # Converted to throw 2025-10-29
   gitterpy = throw "'gitterpy' was removed. The service was migrated to Matrix"; # Added 2026-06-04
@@ -457,6 +463,7 @@ mapAliases {
   peakrdl = throw "'peakrdl' has been renamed to/replaced by 'peakrdl-cli'"; # added 2026-07-14
   pep257 = throw "'pep257' has been renamed to/replaced by 'pydocstyle'"; # Converted to throw 2025-10-29
   percol = throw "percol has been removed because it hasn't been updated since 2019"; # added 2025-05-25
+  piano-transcription-inference = throw "'piano-transcription-inference' has been removed, because its upstream repo was archived in 2025."; # added 2026-08-13
   pilight = throw "'pilight' has been removed, because it is unmaintained since 2019 and the integration was removed from Home Assistant."; # added 2026-05-06
   pillow-avif-plugin = throw "'pillow-avif-plugin' has been removed because 'pillow' has native avif support since 11.3"; # added 2025-11-26
   pinecone-client = warnAlias "'pinecone-client' has been renamed to 'pinecone'" pinecone; # added 2026-07-22
@@ -471,6 +478,7 @@ mapAliases {
   postgrest-py = postgrest; # added 2025-08-29
   powerlineMemSegment = throw "'powerlineMemSegment' has been renamed to/replaced by 'powerline-mem-segment'"; # Converted to throw 2025-10-29
   prayer-times-calculator = throw "'prayer-times-calculator' has been renamed to/replaced by 'prayer-times-calculator-offline'"; # Converted to throw 2025-10-29
+  primer3 = primer3-py; # Added 2026-08-13
   prometheus_client = throw "'prometheus_client' has been renamed to/replaced by 'prometheus-client'"; # Converted to throw 2025-10-29
   prompt_toolkit = throw "'prompt_toolkit' has been renamed to/replaced by 'prompt-toolkit'"; # Converted to throw 2025-10-29
   protonup = throw "'protonup' has been renamed to/replaced by 'protonup-ng'"; # Converted to throw 2025-10-29
@@ -628,6 +636,7 @@ mapAliases {
   requests_oauthlib = throw "'requests_oauthlib' has been renamed to/replaced by 'requests-oauthlib'"; # Converted to throw 2025-10-29
   requests_toolbelt = throw "'requests_toolbelt' has been renamed to/replaced by 'requests-toolbelt'"; # Converted to throw 2025-10-29
   restructuredtext_lint = throw "'restructuredtext_lint' has been renamed to/replaced by 'restructuredtext-lint'"; # Converted to throw 2025-10-29
+  retinaface = retina-face; # Added 2026-08-13
   retry_decorator = throw "'retry_decorator' has been renamed to/replaced by 'retry-decorator'"; # Converted to throw 2025-10-29
   retworkx = throw "'retworkx' has been renamed to/replaced by 'rustworkx'"; # Converted to throw 2025-10-29
   rki-covid-parser = throw "rki-covid-parser has been removed because it is unmaintained and broken"; # added 2025-09-20
@@ -654,10 +663,12 @@ mapAliases {
   setuptoolsTrial = throw "'setuptoolsTrial' has been renamed to/replaced by 'setuptools-trial'"; # Converted to throw 2025-10-29
   sharkiqpy = throw "'sharkiqpy' has been renamed to/replaced by 'sharkiq'"; # Converted to throw 2025-10-29
   shippai = throw "shippai has been removed because the upstream repository was archived in 2023"; # added 2025-07-09
+  showit = throw "'showit' has been removed because the upstream is unmaintained"; # Added 2026-08-14
   sip_4 = throw "'sip_4' has been renamed to/replaced by 'sip4'"; # Converted to throw 2025-10-29
   sipsimple = lib.warnOnInstantiate "'sipsimple' has been renamed to 'python3-sipsimple' to fit upstream naming" python3-sipsimple; # added 2026-01-05
   slackclient = throw "'slackclient' has been renamed to/replaced by 'slack-sdk'"; # Converted to throw 2025-10-29
   sleekxmpp = throw "'sleekxmpp' has been removed because it was deprecated in favor of 'slixmpp'"; # added 2026-01-19
+  slicedimage = throw "'slicedimage' has been removed because it was unused"; # Added 2026-08-14
   smart_open = throw "'smart_open' has been renamed to/replaced by 'smart-open'"; # Converted to throw 2025-10-29
   smpp_pdu = throw "'smpp_pdu' has been renamed to/replaced by 'smpp-pdu'"; # Converted to throw 2025-10-29
   sorl_thumbnail = throw "'sorl_thumbnail' has been renamed to/replaced by 'sorl-thumbnail'"; # Converted to throw 2025-10-29

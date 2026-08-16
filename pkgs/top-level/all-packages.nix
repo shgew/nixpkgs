@@ -1368,8 +1368,6 @@ with pkgs;
 
   github-to-sqlite = with python3Packages; toPythonApplication github-to-sqlite;
 
-  gistyc = with python3Packages; toPythonApplication gistyc;
-
   glm_1_0_1 = callPackage ../by-name/gl/glm/1_0_1.nix { };
 
   go2tv-lite = go2tv.override { withGui = false; };
@@ -1641,8 +1639,6 @@ with pkgs;
 
   kaggle = with python3Packages; toPythonApplication kaggle;
 
-  materialx = with python3Packages; toPythonApplication materialx;
-
   # while building documentation meson may want to run binaries for host
   # which needs an emulator
   # example of an error which this fixes
@@ -1897,28 +1893,6 @@ with pkgs;
   # TODO: move to alias
   cudatoolkit = cudaPackages.cudatoolkit;
 
-  curlFull = curl.override {
-    ldapSupport = true;
-    gsaslSupport = true;
-    rtmpSupport = true;
-    pslSupport = true;
-    websocketSupport = true;
-  };
-
-  curl = curlMinimal.override {
-    idnSupport = true;
-    pslSupport = true;
-    zstdSupport = true;
-    http3Support = true;
-    brotliSupport = true;
-  };
-
-  curlWithGnuTls = curl.override {
-    gnutlsSupport = true;
-    opensslSupport = false;
-    ngtcp2 = ngtcp2-gnutls;
-  };
-
   dconf2nix = callPackage ../development/tools/haskell/dconf2nix { };
 
   inherit (callPackages ../applications/networking/p2p/deluge { })
@@ -2081,7 +2055,7 @@ with pkgs;
   gnupg1 = gnupg1compat; # use config.packageOverrides if you prefer original gnupg1
 
   gnupg24 = callPackage ../tools/security/gnupg/24.nix {
-    pinentry = if stdenv.hostPlatform.isDarwin then pinentry_mac else pinentry-gtk2;
+    pinentry = if stdenv.hostPlatform.isDarwin then pinentry_mac else pinentry-gnome3;
   };
   gnupg = gnupg24;
   gnupgMinimal = gnupg.override {
@@ -2608,10 +2582,6 @@ with pkgs;
 
   open-interpreter = with python3Packages; toPythonApplication open-interpreter;
 
-  openmvs = callPackage ../applications/science/misc/openmvs {
-    inherit (llvmPackages) openmp;
-  };
-
   openntpd_nixos = openntpd.override {
     privsepUser = "ntp";
     privsepPath = "/var/empty";
@@ -2736,7 +2706,6 @@ with pkgs;
   inherit (callPackages ../tools/security/pinentry { })
     pinentry-curses
     pinentry-emacs
-    pinentry-gtk2
     pinentry-gnome3
     pinentry-qt
     pinentry-tty
@@ -3218,11 +3187,9 @@ with pkgs;
   filecheck = with python3Packages; toPythonApplication filecheck;
 
   flutterPackages-bin = recurseIntoAttrs (callPackage ../development/compilers/flutter { });
-  flutterPackages-source = recurseIntoAttrs (
-    callPackage ../development/compilers/flutter { useNixpkgsEngine = true; }
-  );
   flutterPackages = flutterPackages-bin;
   flutter = flutterPackages.stable;
+  flutter347 = flutterPackages.v3_47;
   flutter344 = flutterPackages.v3_44;
   flutter341 = flutterPackages.v3_41;
   flutter338 = flutterPackages.v3_38;
@@ -10072,14 +10039,6 @@ with pkgs;
 
   enlightenment = recurseIntoAttrs (callPackage ../desktops/enlightenment { });
 
-  expidus = recurseIntoAttrs (
-    callPackages ../desktops/expidus {
-      # Use the Nix built Flutter Engine for testing.
-      # Also needed when we eventually package Genesis Shell.
-      flutterPackages = flutterPackages-source;
-    }
-  );
-
   gnome = recurseIntoAttrs (callPackage ../desktops/gnome { });
 
   inherit (callPackage ../desktops/gnome/extensions { })
@@ -10449,14 +10408,6 @@ with pkgs;
   spyder = with python3.pkgs; toPythonApplication spyder;
 
   ### SCIENCE / PHYSICS
-
-  hepmc3 = callPackage ../development/libraries/physics/hepmc3 {
-    python = null;
-  };
-
-  pythia = callPackage ../development/libraries/physics/pythia {
-    hepmc = hepmc2;
-  };
 
   yoda-with-root = lowPrio (
     yoda.override {
