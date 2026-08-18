@@ -2341,9 +2341,7 @@ with pkgs;
     )
   );
 
-  netdata = callPackage ../tools/system/netdata {
-    protobuf = protobuf_21;
-  };
+  netdata = callPackage ../tools/system/netdata { };
   netdataCloud = netdata.override {
     withCloudUi = true;
   };
@@ -5257,8 +5255,6 @@ with pkgs;
     buildDocs = false;
   };
 
-  sbt = callPackage ../development/tools/build-managers/sbt { };
-  sbt-with-scala-native = callPackage ../development/tools/build-managers/sbt/scala-native.nix { };
   simpleBuildTool = sbt;
 
   shake =
@@ -5483,8 +5479,6 @@ with pkgs;
       vdpauinfo
       ;
   };
-
-  vapoursynth-editor = libsForQt5.callPackage ../by-name/va/vapoursynth/editor.nix { };
 
   enchant = enchant_2;
 
@@ -8765,12 +8759,6 @@ with pkgs;
     wlroots_0_20
     ;
 
-  inherit (callPackages ../development/libraries/scenefx { })
-    scenefx_0_4
-    scenefx_0_5
-    scenefx
-    ;
-
   sway-contrib = recurseIntoAttrs (callPackages ../applications/misc/sway-contrib { });
 
   ikiwiki = callPackage ../applications/misc/ikiwiki {
@@ -8941,8 +8929,6 @@ with pkgs;
 
   mediaelch-qt5 = callPackage ../by-name/me/mediaelch/package.nix { qtVersion = 5; };
   mediaelch-qt6 = mediaelch;
-
-  mendeley = callPackage ../applications/office/mendeley { };
 
   mercurialFull = mercurial.override { fullBuild = true; };
 

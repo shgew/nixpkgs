@@ -5188,6 +5188,11 @@
     githubId = 1103294;
     name = "Christopher Rosset";
   };
+  christo-auer = {
+    name = "Christopher Auer";
+    github = "christo-auer";
+    githubId = 15138131;
+  };
   christoph-heiss = {
     email = "christoph@c8h4.io";
     github = "christoph-heiss";
@@ -7782,7 +7787,8 @@
     matrix = "@dvdznf:gitter.im";
   };
   dvn0 = {
-    email = "git@dvn.me";
+    email = "devan@informatics.coop";
+    keys = [ { fingerprint = "E0F4 87C6 6298 7353 A7D0 E997 8203 BD5C 41D8 29DF"; } ];
     github = "dvn0";
     githubId = 10859387;
     name = "Devan Carpenter";
@@ -8797,6 +8803,12 @@
     github = "evanrichter";
     githubId = 330292;
     name = "Evan Richter";
+  };
+  evanwporter = {
+    email = "evanwporter@gmail.com";
+    github = "evanwporter";
+    githubId = 115374841;
+    name = "Evan Porter";
   };
   evax = {
     email = "nixos@evax.fr";
@@ -13626,6 +13638,12 @@
     github = "johnchildren";
     githubId = 32305209;
     name = "John Children";
+  };
+  johnhamelink = {
+    email = "me@johnhame.link";
+    github = "johnhamelink";
+    githubId = 101739;
+    name = "John Hamelink";
   };
   johnjohnstone = {
     email = "jjohnstone@riseup.net";
@@ -19295,6 +19313,13 @@
     matrix = "@motiejus:jakstys.lt";
     name = "Motiejus Jakštys";
   };
+  Mowerick = {
+    email = "oliverhagenauer@gmail.com";
+    github = "Mowerick";
+    githubId = 102822250;
+    keys = [ { fingerprint = "6472 901A F0E7 F983 4893  042F 5F76 361C 2EF9 C95F"; } ];
+    name = "Oliver Hagenauer";
+  };
   mpcsh = {
     email = "m@mpc.sh";
     github = "mpcsh";
@@ -20581,6 +20606,12 @@
     email = "fabio.matos999@gmail.com";
     githubId = 70602908;
     github = "nikolaizombie1";
+  };
+  nikp123 = {
+    name = "nikp123";
+    email = "nikp123@e.email";
+    github = "nikp123";
+    githubId = 4696350;
   };
   nikstur = {
     email = "nikstur@outlook.com";
@@ -23606,6 +23637,13 @@
     matrix = "@rachalaraj:matrix.org";
     github = "rachalaraj";
     githubId = 124191100;
+  };
+  rachitvrma = {
+    name = "Rachit Kumar Verma";
+    email = "rachitverma1122+nixpkgs@gmail.com";
+    matrix = "@rachitvrma:matrix.org";
+    github = "rachitvrma";
+    githubId = 155641117;
   };
   RadxaYuntian = {
     # This is the work account for @MakiseKurisu
@@ -31959,6 +31997,12 @@
     github = "zarelit";
     githubId = 3449926;
     name = "David Costa";
+  };
+  ZariTen = {
+    email = "ZaritenProt@proton.me";
+    github = "ZariTen";
+    githubId = 48529745;
+    name = "ZariTen";
   };
   zatm8 = {
     email = "maxis1191@gmail.com";
