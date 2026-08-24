@@ -5431,6 +5431,12 @@
     githubId = 69784758;
     matrix = "@clot27:matrix.org";
   };
+  cloudglides = {
+    name = "Cloud";
+    email = "cloudglides@proton.me";
+    github = "cloudglides";
+    githubId = 111557161;
+  };
   cloudripper = {
     email = "dev+nixpkgs@cldrpr.com";
     github = "cloudripper";
@@ -11084,6 +11090,12 @@
     githubId = 79340822;
     keys = [ { fingerprint = "3582 5B85 66C8 4F36 45C7  EC42 809F 7938 9CB1 8650"; } ];
   };
+  havunen = {
+    name = "Sampo Kivistö";
+    email = "sampo.kivisto@live.fi";
+    github = "havunen";
+    githubId = 2021355;
+  };
   hawkw = {
     email = "eliza@elizas.website";
     github = "hawkw";
@@ -11707,6 +11719,12 @@
     name = "I Al Istannen";
     github = "I-Al-Istannen";
     githubId = 20284688;
+  };
+  i-love-lean = {
+    name = "i-love-lean";
+    github = "i-love-lean";
+    githubId = 170473930;
+    email = "nixpkgs@unnamed.website";
   };
   i01011001 = {
     email = "yugen.m7@gmail.com";
@@ -17034,6 +17052,12 @@
       }
     ];
   };
+  lunitur = {
+    email = "karlo.puselj@gmail.com";
+    github = "Lunitur";
+    githubId = 8092435;
+    name = "Karlo Pušelj";
+  };
   lunkentuss = {
     email = "peter.hansson17@gmail.com";
     matrix = "@lunkentuss:matrix.org";
@@ -18810,6 +18834,12 @@
     github = "mikesperber";
     githubId = 1387206;
     name = "Mike Sperber";
+  };
+  mikilio = {
+    email = "kilian.mio@mikilio.com";
+    github = "Mikilio";
+    githubId = 86004375;
+    name = "Kilian Mio";
   };
   mikoim = {
     email = "ek@esh.ink";

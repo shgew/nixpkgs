@@ -815,6 +815,7 @@ mapAliases {
   fedifetcher = throw "'fedifetcher' has been removed because there is now a similar native feature in Mastodon."; # Added 2025-12-08
   fennel = throw "'fennel' has been renamed to/replaced by 'luaPackages.fennel'"; # Converted to throw 2025-10-27
   fetchbower = throw "fetchbower has been removed as bower was removed. It is recommended to migrate to yarn."; # Added 2025-09-17
+  fetchmtn = throw "fetchmtn has been removed as it is not used in-tree and the only publically-readable Monotone network server might be now Monotone's source code itself (which is a bootstrapping problem). Use local checkouts or locally vendor/adapt a copy from an older Nixpkgs checkout."; # Added 2026-08-22
   fflogs = throw "fflogs has been removed because it stopped working on 2026-06-29 and was replaced by archon-lite"; # Added 2026-07-03
   FIL-plugins = throw "'FIL-plugins' has been renamed to/replaced by 'fil-plugins'"; # Converted to throw 2025-10-27
   filesender = throw "'filesender' has been removed because of its simplesamlphp dependency"; # Added 2025-10-17
@@ -1067,6 +1068,7 @@ mapAliases {
   grig = throw "'grig' has been removed as it depended on the deprecated GTK 2 engine."; # Added 2026-08-14
   gringo = throw "'gringo' has been renamed to/replaced by 'clingo'"; # Converted to throw 2025-10-27
   grip = throw "'grip' has been removed because it depended on the deprecated GTK2 engine."; # Added 2026-07-30
+  grpc-health-check = throw "'grpc-health-check' has been removed because the upstream repository was deleted."; # Added 2026-08-23
   grub2_full = throw "'grub2_full' has been renamed to/replaced by 'grub2'"; # Converted to throw 2025-10-27
   grub4dos = throw "'grub4dos' has been removed due to being broken for more than a year; see RFC 180"; # Added 2026-02-05
   gruvbox-material-gtk-theme = throw "'gruvbox-material-gtk-theme' has been removed because it depended on 'gtk-engine-murrine', which was removed because it was unmaintained upstream and depended on GTK 2."; # Added 2026-07-22
@@ -1107,6 +1109,7 @@ mapAliases {
   hiawatha = throw "hiawatha has been removed, since it is no longer actively supported upstream, nor well maintained in nixpkgs"; # Added 2025-09-10
   hibernate = throw "hibernate has been removed due to lack of maintenance"; # Added 2025-09-10
   hiddify-app = throw "hiddify-app has been removed, since it is unmaintained"; # Added 2025-08-20
+  hifiscan = throw "'hifiscan' has been removed due to being archived upstream."; # Added 2026-08-22
   himitsu-firefox = throw "himitsu-firefox has been removed because it has been marked as broken since at least November 2024."; # Added 2025-10-11
   hiPrio = warnAlias "'hiPrio' has been removed from pkgs, use `lib.hiPrio` instead" lib.hiPrio; # Added 2025-10-30
   hiraeth = throw "hiraeth has been removed due to being unmaintained upstream";
