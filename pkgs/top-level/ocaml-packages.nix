@@ -196,11 +196,7 @@ let
 
         camlp-streams = callPackage ../development/ocaml-modules/camlp-streams { };
 
-        camlp4 =
-          if lib.versionOlder "4.02" ocaml.version then
-            callPackage ../development/tools/ocaml/camlp4 { }
-          else
-            null;
+        camlp4 = callPackage ../development/tools/ocaml/camlp4 { };
 
         camlp5 = callPackage ../development/tools/ocaml/camlp5 { };
 
@@ -211,11 +207,7 @@ let
 
         camlzip = callPackage ../development/ocaml-modules/camlzip { };
 
-        camomile =
-          if lib.versionOlder "4.02" ocaml.version then
-            callPackage ../development/ocaml-modules/camomile { }
-          else
-            callPackage ../development/ocaml-modules/camomile/0.8.5.nix { };
+        camomile = callPackage ../development/ocaml-modules/camomile { };
 
         capnp = callPackage ../development/ocaml-modules/capnp { };
 
@@ -788,11 +780,7 @@ let
 
         grace = callPackage ../development/ocaml-modules/grace { };
 
-        graphics =
-          if lib.versionOlder "4.09" ocaml.version then
-            callPackage ../development/ocaml-modules/graphics { }
-          else
-            null;
+        graphics = callPackage ../development/ocaml-modules/graphics { };
 
         graphql = callPackage ../development/ocaml-modules/graphql { };
 
@@ -948,12 +936,8 @@ let
             callPackage ../development/ocaml-modules/janestreet/janePackage_0_16.nix { }
           else if lib.versionOlder "4.10.2" ocaml.version then
             callPackage ../development/ocaml-modules/janestreet/janePackage_0_15.nix { }
-          else if lib.versionOlder "4.08" ocaml.version then
-            callPackage ../development/ocaml-modules/janestreet/janePackage_0_14.nix { }
-          else if lib.versionOlder "4.07" ocaml.version then
-            callPackage ../development/ocaml-modules/janestreet/janePackage_0_12.nix { }
           else
-            null;
+            callPackage ../development/ocaml-modules/janestreet/janePackage_0_14.nix { };
 
         janeStreet = lib.recurseIntoAttrs (
           if lib.versionOlder "5.1" ocaml.version then
@@ -993,7 +977,7 @@ let
                 zstd
                 ;
             }
-          else if lib.versionOlder "4.08" ocaml.version then
+          else
             import ../development/ocaml-modules/janestreet/0.14.nix {
               inherit self;
               inherit (pkgs)
@@ -1002,16 +986,6 @@ let
                 openssl
                 zstd
                 ;
-            }
-          else if lib.versionOlder "4.07" ocaml.version then
-            import ../development/ocaml-modules/janestreet/0.12.nix {
-              self = self // {
-                ppxlib = ppxlib.override { version = "0.8.1"; };
-              };
-              inherit (pkgs) openssl;
-            }
-          else
-            import ../development/ocaml-modules/janestreet {
             }
         );
 
@@ -1463,11 +1437,7 @@ let
           inherit (pkgs.python3Packages) numpy;
         };
 
-        num =
-          if lib.versionOlder "4.06" ocaml.version then
-            callPackage ../development/ocaml-modules/num { }
-          else
-            null;
+        num = callPackage ../development/ocaml-modules/num { };
 
         ### O ###
 
@@ -1513,17 +1483,11 @@ let
 
         ocaml-sat-solvers = callPackage ../development/ocaml-modules/ocaml-sat-solvers { };
 
-        ocaml_sqlite3 = callPackage ../development/ocaml-modules/sqlite3 { };
-
         ocaml-syntax-shims = callPackage ../development/ocaml-modules/ocaml-syntax-shims { };
 
         ocaml-version = callPackage ../development/ocaml-modules/ocaml-version { };
 
-        ocamlbuild =
-          if lib.versionOlder "4.03" ocaml.version then
-            callPackage ../development/tools/ocaml/ocamlbuild { }
-          else
-            null;
+        ocamlbuild = callPackage ../development/tools/ocaml/ocamlbuild { };
 
         ocamlc-loc = callPackage ../development/ocaml-modules/ocamlc-loc { };
 
@@ -1846,11 +1810,7 @@ let
 
         ppx_show = callPackage ../development/ocaml-modules/ppx_show { };
 
-        ppx_tools =
-          if lib.versionAtLeast ocaml.version "4.02" then
-            callPackage ../development/ocaml-modules/ppx_tools { }
-          else
-            null;
+        ppx_tools = callPackage ../development/ocaml-modules/ppx_tools { };
 
         ppx_tools_versioned = callPackage ../development/ocaml-modules/ppx_tools_versioned { };
 
@@ -2062,6 +2022,8 @@ let
         spelll = callPackage ../development/ocaml-modules/spelll { };
 
         spices = callPackage ../development/ocaml-modules/spices { };
+
+        sqlite3 = callPackage ../development/ocaml-modules/sqlite3 { };
 
         srt = callPackage ../development/ocaml-modules/srt {
           inherit (pkgs) srt;
@@ -2289,6 +2251,8 @@ let
 
         xenstore_transport = callPackage ../development/ocaml-modules/xenstore_transport { };
 
+        xkbcommon = callPackage ../development/ocaml-modules/xkbcommon { };
+
         xml-light = callPackage ../development/ocaml-modules/xml-light { };
 
         xmlm = callPackage ../development/ocaml-modules/xmlm { };
@@ -2382,6 +2346,7 @@ let
         ocaml-vdom = throw "2023-10-09: ocamlPackages.ocaml-vdom was renamed to ocamlPackages.vdom";
         ocaml_lwt = throw "ocamlPackages.ocaml_lwt has been renamed to ocamlPackages.lwt"; # Added 2025-12-05
         ocaml_mysql = throw "ocamlPackages.ocaml_mysql is not maintained, use ocamlPackages.mariadb instead";
+        ocaml_sqlite3 = sqlite3; # Added 2026-08-21
         ocamlfuse = throw "ocamlPackages.ocamlfuse has been removed as it depends on fuse2";
         ocamlgraph_gtk = throw "ocamlPackages.ocamlgraph_gtk has been removed as it depends onlibgnomecanvas, which has been removed from Nixpkgs. Consider using ocamlPackages.ocamlgraph instead."; # Added 2026-07-23
         torch = throw "ocamlPackages.torch has been removed due to being broken for more than a year; see RFC 180"; # Added 2026-02-05

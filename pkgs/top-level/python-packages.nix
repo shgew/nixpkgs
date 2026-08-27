@@ -582,6 +582,8 @@ self: super: with self; {
 
   aiotedee = callPackage ../development/python-modules/aiotedee { };
 
+  aiothreads = callPackage ../development/python-modules/aiothreads { };
+
   aiotools = callPackage ../development/python-modules/aiotools { };
 
   aiotractive = callPackage ../development/python-modules/aiotractive { };
@@ -2229,6 +2231,8 @@ self: super: with self; {
 
   bbox = callPackage ../development/python-modules/bbox { };
 
+  bbpb = callPackage ../development/python-modules/bbpb { };
+
   bc-detect-secrets = callPackage ../development/python-modules/bc-detect-secrets { };
 
   bc-jsonpath-ng = callPackage ../development/python-modules/bc-jsonpath-ng { };
@@ -3760,8 +3764,6 @@ self: super: with self; {
   croniter = callPackage ../development/python-modules/croniter { };
 
   cronsim = callPackage ../development/python-modules/cronsim { };
-
-  crontab = callPackage ../development/python-modules/crontab { };
 
   cross-web = callPackage ../development/python-modules/cross-web { };
 
@@ -5738,6 +5740,8 @@ self: super: with self; {
   expiringdict = callPackage ../development/python-modules/expiringdict { };
 
   explorerscript = callPackage ../development/python-modules/explorerscript { };
+
+  expression = callPackage ../development/python-modules/expression { };
 
   exrex = callPackage ../development/python-modules/exrex { };
 
@@ -8316,6 +8320,8 @@ self: super: with self; {
   inference-gym = callPackage ../development/python-modules/inference-gym { };
 
   infinity = callPackage ../development/python-modules/infinity { };
+
+  infisicalsdk = callPackage ../development/python-modules/infisicalsdk { };
 
   inflate64 = callPackage ../development/python-modules/inflate64 { };
 
@@ -13714,7 +13720,7 @@ self: super: with self; {
   };
 
   plover_5 = callPackage ../development/python-modules/plover/5.nix {
-    inherit (pkgs.qt6) qtbase wrapQtAppsHook;
+    inherit (pkgs.qt6) qtbase wrapQtAppsHook qtsvg;
   };
 
   pluggy = callPackage ../development/python-modules/pluggy { };
@@ -18952,6 +18958,8 @@ self: super: with self; {
 
   simber = callPackage ../development/python-modules/simber { };
 
+  simp-sexp = callPackage ../development/python-modules/simp-sexp { };
+
   simpful = callPackage ../development/python-modules/simpful { };
 
   simple-dftd3 = callPackage ../development/libraries/science/chemistry/simple-dftd3/python.nix {
@@ -20760,8 +20768,8 @@ self: super: with self; {
         # Tcl/Tk 9.0 support in Tkinter is not quite ready yet:
         # - https://github.com/python/cpython/issues/124111
         # - https://github.com/python/cpython/issues/104568
-        tcl = pkgs.tcl-8_6;
-        tk = pkgs.tk-8_6;
+        tcl = if pythonAtLeast "3.14" then pkgs.tcl-9_0 else pkgs.tcl-8_6;
+        tk = if pythonAtLeast "3.14" then pkgs.tk-9_0 else pkgs.tk-8_6;
       };
 
   tkinter-gl = callPackage ../development/python-modules/tkinter-gl { };
