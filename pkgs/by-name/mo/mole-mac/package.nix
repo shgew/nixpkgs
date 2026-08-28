@@ -8,16 +8,16 @@
 
 buildGoModule (finalAttrs: {
   pname = "mole-mac";
-  version = "1.47.1";
+  version = "1.52.0";
 
   src = fetchFromGitHub {
     owner = "tw93";
     repo = "Mole";
     tag = "V${finalAttrs.version}";
-    hash = "sha256-IcqROX7wdGTCQK/xCXw1IdORy7Gkc2X7WsPP1fUAIjU=";
+    hash = "sha256-VZewHI/AaSKkMgzI6CETso1hKqL6Ng/l7ZjGJoNkJ2g=";
   };
 
-  vendorHash = "sha256-hLFlAy4AE1eNOxd4d75Mbo3ZKlwvNK7QV2DNVPd7NHc=";
+  vendorHash = "sha256-Q7VzGJ1bGAyMi2Ih3LvI92lCVqxKIyr7H89LAFczNbo=";
 
   subPackages = [
     "cmd/analyze"
@@ -29,8 +29,11 @@ buildGoModule (finalAttrs: {
     "-w"
   ];
 
-  # Upstream test invokes `du -I` (GNU-only); BSD `du` on Darwin lacks it.
-  checkFlags = [ "-skip=TestGetDirectorySizeFromDuWithIgnoresSkipsCloudPlaceholderTree" ];
+  # Upstream tests need host tools the sandbox lacks: `du -I` (GNU-only, absent
+  # from Darwin's BSD du) and `ps`.
+  checkFlags = [
+    "-skip=^(TestGetDirectorySizeFromDuWithIgnoresSkipsCloudPlaceholderTree|TestCollectProcessesUnderCommaLocale)$"
+  ];
 
   nativeBuildInputs = [ makeWrapper ];
 
