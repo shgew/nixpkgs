@@ -1637,6 +1637,7 @@ in
   sslh = handleTest ./sslh.nix { };
   sssd-ldap = handleTestOn [ "x86_64-linux" "aarch64-linux" ] ./sssd-ldap.nix { };
   sssd-legacy-config = handleTestOn [ "x86_64-linux" "aarch64-linux" ] ./sssd-legacy-config.nix { };
+  sstorytime = runTest ./sstorytime.nix;
   stalwart = runTest ./stalwart/stalwart.nix;
   stardust-xr-atmosphere = runTest ./stardust-xr/atmosphere.nix;
   stardust-xr-flatland = runTest ./stardust-xr/flatland.nix;
@@ -1821,6 +1822,7 @@ in
   tracee = handleTestOn [ "x86_64-linux" ] ./tracee.nix { };
   traefik = runTestOn [ "aarch64-linux" "x86_64-linux" ] ./traefik.nix;
   trafficserver = runTest ./trafficserver.nix;
+  trailbase = runTest ./trailbase;
   tranquil-pds = runTest ./tranquil-pds.nix;
   transfer-sh = runTest ./transfer-sh.nix;
   transmission_4 = runTest ./transmission.nix;
