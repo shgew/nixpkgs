@@ -15,16 +15,15 @@ proton-ge-bin.overrideAttrs (
     pname = "dwproton-bin";
     version = "dwproton-11.0-12";
 
-    passthru = {
-      variants = {
-        "x86_64-linux" = {
-          toolName = "${finalAttrs.version}-x86_64";
-          src = fetchzip {
-            url = "https://dawn.wine/dawn-winery/dwproton/releases/download/${finalAttrs.version}/${finalAttrs.version}-x86_64.tar.xz";
-            hash = "sha256-NGyrXQcA+k87SnowFd41uq49luI32fZENTwFTma7NpI=";
-          };
-        };
-      };
+    src = fetchzip {
+      url = "https://dawn.wine/dawn-winery/dwproton/releases/download/${finalAttrs.version}/${finalAttrs.version}-x86_64.tar.xz";
+      hash = "sha256-NGyrXQcA+k87SnowFd41uq49luI32fZENTwFTma7NpI=";
+    };
+
+    preFixup = ''
+      substituteInPlace "$steamcompattool/compatibilitytool.vdf" \
+        --replace-fail "${finalAttrs.version}" "${steamDisplayName}"
+    '';
 
       updateScript = writeScript "update-dwproton" ''
         #!/usr/bin/env nix-shell
