@@ -5148,6 +5148,8 @@ self: super: with self; {
 
   doxmlparser = callPackage ../development/python-modules/doxmlparser { };
 
+  dpapi-ng = callPackage ../development/python-modules/dpapi-ng { };
+
   dparse = callPackage ../development/python-modules/dparse { };
 
   dparse2 = callPackage ../development/python-modules/dparse2 { };
@@ -5337,6 +5339,8 @@ self: super: with self; {
   eagle100 = callPackage ../development/python-modules/eagle100 { };
 
   earn-e-p1 = callPackage ../development/python-modules/earn-e-p1 { };
+
+  earth2studio = callPackage ../development/python-modules/earth2studio { };
 
   easy-thumbnails = callPackage ../development/python-modules/easy-thumbnails { };
 
@@ -12560,6 +12564,8 @@ self: super: with self; {
 
   openevsewifi = callPackage ../development/python-modules/openevsewifi { };
 
+  openexr = callPackage ../development/python-modules/openexr { };
+
   openfga-sdk = callPackage ../development/python-modules/openfga-sdk { };
 
   openhomedevice = callPackage ../development/python-modules/openhomedevice { };
@@ -15026,6 +15032,8 @@ self: super: with self; {
   pygraphviz = callPackage ../development/python-modules/pygraphviz { inherit (pkgs) graphviz; };
 
   pygreat = callPackage ../development/python-modules/pygreat { };
+
+  pygrib = callPackage ../development/python-modules/pygrib { };
 
   pygrok = callPackage ../development/python-modules/pygrok { };
 
@@ -17659,8 +17667,6 @@ self: super: with self; {
 
   quart-trio = callPackage ../development/python-modules/quart-trio { };
 
-  quaternion = callPackage ../development/python-modules/quaternion { };
-
   qudida = callPackage ../development/python-modules/qudida { };
 
   querystring-parser = callPackage ../development/python-modules/querystring-parser { };
@@ -19944,6 +19950,8 @@ self: super: with self; {
   stix2-validator = callPackage ../development/python-modules/stix2-validator { };
 
   stm32loader = callPackage ../development/python-modules/stm32loader { };
+
+  stockfish = callPackage ../development/python-modules/stockfish { inherit (pkgs) stockfish; };
 
   stomp-py = callPackage ../development/python-modules/stomp-py { };
 
