@@ -1474,6 +1474,12 @@
     githubId = 30437811;
     name = "Alex Andrews";
   };
+  aliheidary1381 = {
+    email = "aliheidary1381@gmail.com";
+    github = "aliheidary1381";
+    githubId = 31212739;
+    name = "Ali Heydari";
+  };
   alikaansun = {
     github = "alikaansun";
     githubId = 77810345;
@@ -7871,12 +7877,6 @@
     matrix = "@dwoffinden:matrix.org";
     name = "Daniel Woffinden";
   };
-  dwrege = {
-    email = "email@dwrege.de";
-    github = "DominicWrege";
-    githubId = 7389000;
-    name = "Dominic Wrege";
-  };
   dwt = {
     email = "spamfaenger@gmx.de";
     github = "dwt";
@@ -13305,7 +13305,7 @@
   };
   jfr = {
     name = "Joseph Fox-Rabinovitz";
-    github = " joe-saronic";
+    github = "joe-saronic";
     githubId = 156837150;
   };
   jfroche = {
@@ -16373,6 +16373,13 @@
     github = "liberodark";
     githubId = 4238928;
     name = "liberodark";
+  };
+  libewa = {
+    email = "linus@libewa.xyz";
+    github = "libewa";
+    githubId = 67926131;
+    name = "Linus Warnatz";
+    keys = [ { fingerprint = "EBD0 29E0 73D2 959A 9DC1  A74A 7BCA 3874 C2A0 475C"; } ];
   };
   libjared = {
     email = "jared@perrycode.com";
@@ -22241,6 +22248,11 @@
     github = "Parrot7483";
     githubId = 47054801;
     name = "Parrot7483";
+  };
+  parry-97 = {
+    github = "Parry-97";
+    githubId = 39216605;
+    name = "Parampal Singh";
   };
   parth = {
     github = "parth";
@@ -29375,6 +29387,12 @@
     github = "tobim";
     githubId = 858790;
     name = "Tobias Mayer";
+  };
+  tobinio = {
+    email = "tobias.frischmann@proton.me";
+    github = "ToBinio";
+    githubId = 81473300;
+    name = "Tobias Frischmann";
   };
   tobz619 = {
     email = "toloke@yahoo.co.uk";
