@@ -2734,6 +2734,7 @@ with pkgs;
     pnpm_10_34_0
     pnpm_10
     pnpm_11
+    pnpm_12
     ;
   pnpm = pnpm_11;
 
@@ -2956,8 +2957,6 @@ with pkgs;
   woodpecker-server =
     callPackage ../development/tools/continuous-integration/woodpecker/server.nix
       { };
-
-  testdisk = libsForQt5.callPackage ../tools/system/testdisk { };
 
   testdisk-qt = testdisk.override { enableQt = true; };
 
